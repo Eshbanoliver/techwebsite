@@ -221,9 +221,9 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 36px;
-  border-radius: var(--radius-full);
-  font-size: 1rem;
+  padding: 14px 32px;
+  border-radius: 6px; /* Rectangular shape */
+  font-size: 0.95rem;
   font-weight: 600;
   transition: all var(--transition-base);
   position: relative;
@@ -270,26 +270,37 @@ input, textarea, select { font-family: inherit; }
 /* ---- Navbar ---- */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 30px);
+  max-width: var(--container-max);
   z-index: 1000;
-  padding: 0 var(--container-padding);
+  padding: 0 20px;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glass);
   transition: all var(--transition-base);
 }
 
 .navbar.scrolled {
-  background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-glass);
-  box-shadow: var(--shadow-glass);
+  top: 10px;
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(0, 198, 255, 0.2);
+  box-shadow: var(--shadow-glow);
+}
+
+[data-theme='light'] .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .navbar-inner {
-  max-width: var(--container-max);
+  max-width: 100%;
   margin: 0 auto;
-  height: var(--nav-height);
+  height: 70px; /* Slimmer for floating style */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -297,49 +308,53 @@ input, textarea, select { font-family: inherit; }
 
 .navbar-logo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .navbar-logo .logo-icon {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   background: var(--gradient-primary);
-  border-radius: var(--radius-sm);
+  border-radius: 6px; /* Rectangular shape */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 900;
   color: white;
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.3);
 }
 
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px; /* Tighter for rectangle style */
 }
 
 .navbar-links a {
-  padding: 8px 18px;
-  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: all var(--transition-fast);
+  transition: all var(--transition-base);
 }
 
 .navbar-links a:hover,
 .navbar-links a.active {
   color: var(--text-primary);
-  background: var(--bg-glass);
+  background: var(--bg-glass-hover);
+  border: 1px solid var(--border-glass);
 }
 
 .navbar-links a.active {
   color: var(--neon-blue);
+  border-color: rgba(0, 198, 255, 0.3);
+  background: rgba(0, 198, 255, 0.05);
 }
 
 .navbar-cta {

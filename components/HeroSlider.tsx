@@ -198,18 +198,17 @@ export default function HeroSlider(): React.JSX.Element {
           z-index: 10;
         }
         .hero-dot {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
+          width: 12px;
+          height: 6px;
+          border-radius: 2px;
           background: var(--text-muted);
-          border: 2px solid transparent;
+          border: none;
           cursor: pointer;
           transition: all 0.3s ease;
           padding: 0;
         }
         .hero-dot.active {
-          width: 28px;
-          border-radius: 5px;
+          width: 32px;
           background: var(--neon-blue);
           box-shadow: 0 0 15px var(--neon-blue);
         }
