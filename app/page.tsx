@@ -20,7 +20,8 @@ import {
   Lightbulb,
   ShieldCheck,
   Star,
-  ArrowRight
+  ArrowRight,
+  Handshake
 } from 'lucide-react';
 import HeroSlider from '@/components/HeroSlider';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -55,16 +56,16 @@ interface ValueItem {
   icon: React.ReactNode;
   title: string;
   desc: string;
-  glow: string;
+  className: string;
 }
 
 const values: ValueItem[] = [
-  { icon: <Lightbulb size={24} />, title: 'Innovation', desc: 'Pushing boundaries with cutting-edge technologies and creative solutions.', glow: 'glow-cyan' },
-  { icon: <Star size={24} />, title: 'Quality', desc: 'Delivering excellence in every line of code and pixel of design.', glow: 'glow-blue' },
-  { icon: <Search size={24} />, title: 'Transparency', desc: 'Open communication and honest collaboration throughout every project.', glow: 'glow-purple' },
-  { icon: <Zap size={24} />, title: 'Speed', desc: 'Rapid delivery without compromising on quality or performance.', glow: 'glow-pink' },
-  { icon: <Target size={24} />, title: 'Client Success', desc: 'Your success is our success — we go the extra mile for results.', glow: 'glow-orange' },
-  { icon: <ShieldCheck size={24} />, title: 'Integrity', desc: 'Building trust through ethical practices and honest partnerships.', glow: 'glow-green' },
+  { icon: <ShieldCheck size={32} />, title: 'Quality Assurance', desc: 'Only precision-engineered solutions from trusted technical frameworks.', className: 'bg-vibrant-pink' },
+  { icon: <Users size={32} />, title: 'Client Satisfaction', desc: 'Your operational success is our topmost technical priority.', className: 'bg-vibrant-blue' },
+  { icon: <Target size={32} />, title: 'Honest Pricing', desc: 'Transparent and competitive world-class development value.', className: 'bg-vibrant-orange' },
+  { icon: <Code size={32} />, title: 'Reliable Products', desc: 'Durable software architectures built to last for decades.', className: 'bg-vibrant-green' },
+  { icon: <Cpu size={32} />, title: 'Professional Service', desc: 'Expert support from experienced technological professionals.', className: 'bg-vibrant-indigo' },
+  { icon: <Handshake size={32} />, title: 'Long-Term Trust', desc: 'Building lasting technical relationships since our establishment.', className: 'bg-vibrant-red' },
 ];
 
 const whyUs: ValueItem[] = [
@@ -280,7 +281,9 @@ export default function HomePage(): React.JSX.Element {
                     <span className="dot pulsed" /> 
                     <span>Live Operations</span>
                   </div>
-                  <ArrowRight size={18} />
+                  <Link href="/about" className="mv-link-arrow">
+                    <ArrowRight size={18} />
+                  </Link>
                 </div>
               </motion.div>
 
@@ -306,7 +309,9 @@ export default function HomePage(): React.JSX.Element {
                     <span className="dot pulsed" />
                     <span>2030 Roadmap</span>
                   </div>
-                  <ArrowRight size={18} />
+                  <Link href="/about" className="mv-link-arrow">
+                    <ArrowRight size={18} />
+                  </Link>
                 </div>
               </motion.div>
             </div>
@@ -328,17 +333,23 @@ export default function HomePage(): React.JSX.Element {
               </p>
             </div>
           </SectionReveal>
-          <div className="values-grid">
+          <div className="values-grid-vibrant">
             {values.map((v, i) => (
               <motion.div
                 key={i}
-                className={`value-card designer-card ${v.glow}`}
+                className={`value-card-vibrant ${v.className}`}
                 {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="service-icon-box">{v.icon}</div>
+                <div className="corner-marker">
+                  <span style={{ fontSize: '1.5rem' }}>*</span>
+                </div>
+                <div className="value-icon-box">{v.icon}</div>
                 <h3>{v.title}</h3>
                 <p>{v.desc}</p>
+                <Link href="/about" className="learn-more">
+                  Learn More <ArrowRight size={16} />
+                </Link>
               </motion.div>
             ))}
           </div>

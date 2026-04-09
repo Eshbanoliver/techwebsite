@@ -474,6 +474,143 @@ input, textarea, select { font-family: inherit; }
 .glow-orange { --glow-color: #ff8a00; }
 .glow-green { --glow-color: #10b981; }
 
+/* ---- Vibrant Rounded Value Cards ---- */
+.values-grid-vibrant {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.value-card-vibrant {
+  padding: 48px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+  color: white !important;
+  transition: all var(--transition-base);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.value-card-vibrant:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.value-card-vibrant .value-icon-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.value-card-vibrant h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white !important;
+  margin: 0;
+}
+
+.value-card-vibrant p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.value-card-vibrant .learn-more {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.value-card-vibrant:hover .learn-more {
+  gap: 12px;
+  opacity: 1;
+}
+
+.value-card-vibrant .corner-marker {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  opacity: 0.4;
+  color: white;
+}
+
+/* Vibrant Color Variants */
+.bg-vibrant-pink { background: linear-gradient(135deg, #d844b3 0%, #d83d91 100%); }
+.bg-vibrant-blue { background: linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 100%); }
+.bg-vibrant-orange { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+.bg-vibrant-green { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+.bg-vibrant-indigo { background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%); }
+.bg-vibrant-red { background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%); }
+
+/* Innovation Graphic (Concentric Rings) */
+.graphic-innovation {
+  background-image: radial-gradient(circle at 80% 80%, var(--glow-color) 0%, transparent 60%),
+                    radial-gradient(circle at 100% 100%, var(--glow-color) 0%, transparent 40%);
+}
+
+/* Quality Graphic (Star/Diamond Grid) */
+.graphic-quality {
+  background-image: radial-gradient(var(--glow-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Transparency Graphic (Glass Layers) */
+.graphic-transparency {
+  background: linear-gradient(135deg, transparent 45%, var(--glow-color) 45%, var(--glow-color) 55%, transparent 55%);
+  background-size: 60px 60px;
+}
+
+/* Speed Graphic (Motion Lines) */
+.graphic-speed {
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, var(--glow-color) 10px, var(--glow-color) 11px);
+}
+
+/* Success Graphic (Ascending Waves) */
+.graphic-success {
+  background: radial-gradient(ellipse at bottom right, var(--glow-color) 0%, transparent 70%);
+}
+
+/* Integrity Graphic (Hexagonal Pillars) */
+.graphic-integrity {
+  background-image: linear-gradient(30deg, var(--glow-color) 12%, transparent 12.5%, transparent 87%, var(--glow-color) 87.5%, var(--glow-color)),
+  linear-gradient(150deg, var(--glow-color) 12%, transparent 12.5%, transparent 87%, var(--glow-color) 87.5%, var(--glow-color)),
+  linear-gradient(30deg, var(--glow-color) 12%, transparent 12.5%, transparent 87%, var(--glow-color) 87.5%, var(--glow-color)),
+  linear-gradient(150deg, var(--glow-color) 12%, transparent 12.5%, transparent 87%, var(--glow-color) 87.5%, var(--glow-color));
+  background-size: 80px 140px;
+}
+
+/* ---- Core Values Grid Engineering ---- */
+.values-grid-engineering {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 992px) {
+  .values-grid-engineering {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---- Metrics ---- */
 .metrics-grid {
   display: grid;
@@ -1164,6 +1301,19 @@ input, textarea, select { font-family: inherit; }
   justify-content: space-between;
   border-top: 1px solid var(--border-glass);
   color: var(--text-secondary);
+}
+
+.mv-link-arrow {
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mv-link-arrow:hover {
+  color: var(--glow-color, var(--neon-blue));
+  transform: translateX(5px) scale(1.1);
 }
 
 .status-indicator {
