@@ -220,10 +220,10 @@ input, textarea, select { font-family: inherit; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 14px 32px;
+  gap: 10px;
+  padding: 16px 36px;
   border-radius: var(--radius-full);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   transition: all var(--transition-base);
   position: relative;
@@ -237,16 +237,34 @@ input, textarea, select { font-family: inherit; }
   box-shadow: 0 4px 20px rgba(0, 198, 255, 0.3);
 }
 
+.btn-primary:hover {
+  box-shadow: 0 6px 30px rgba(0, 198, 255, 0.5);
+  transform: translateY(-2px);
+}
+
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);
   border: 1px solid var(--border-glass);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 .btn-glow {
   background: var(--gradient-primary);
   color: white;
-  box-shadow: 0 0 20px rgba(0, 198, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.3), 0 0 60px rgba(127, 0, 255, 0.2);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 198, 255, 0.5), 0 0 80px rgba(127, 0, 255, 0.3);
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* ---- Navbar ---- */
@@ -308,7 +326,7 @@ input, textarea, select { font-family: inherit; }
 .navbar-links a {
   padding: 8px 18px;
   border-radius: var(--radius-full);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-secondary);
   transition: all var(--transition-fast);
@@ -318,6 +336,16 @@ input, textarea, select { font-family: inherit; }
 .navbar-links a.active {
   color: var(--text-primary);
   background: var(--bg-glass);
+}
+
+.navbar-links a.active {
+  color: var(--neon-blue);
+}
+
+.navbar-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* ---- Hero Section ---- */

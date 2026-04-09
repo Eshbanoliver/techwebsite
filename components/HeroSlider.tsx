@@ -53,7 +53,7 @@ export default function HeroSlider(): React.JSX.Element {
           />
           <div className="hero-overlay" />
           
-          <div className="hero-content">
+          <div className="hero-content container">
             <motion.div
               className="hero-badge"
               initial={{ opacity: 0, y: 20 }}
@@ -127,6 +127,8 @@ export default function HeroSlider(): React.JSX.Element {
           display: flex;
           align-items: center;
           justify-content: center;
+          text-align: center;
+          overflow: hidden;
         }
         .hero-image {
           position: absolute;
@@ -136,12 +138,12 @@ export default function HeroSlider(): React.JSX.Element {
           height: 100%;
           background-size: cover;
           background-position: center;
-          filter: brightness(0.65);
-          transition: transform 10s linear;
+          filter: brightness(0.5);
+          transition: transform 12s linear;
           transform: scale(1.05);
         }
         .hero-slide[style*="opacity: 1"] .hero-image {
-          transform: scale(1.15);
+          transform: scale(1.1);
         }
         .hero-overlay {
           position: absolute;
@@ -150,8 +152,41 @@ export default function HeroSlider(): React.JSX.Element {
           width: 100%;
           height: 100%;
           background: radial-gradient(circle at center, transparent 0%, var(--bg-primary) 100%),
-                      linear-gradient(to bottom, transparent 0%, var(--bg-primary) 90%);
-          opacity: 0.8;
+                      linear-gradient(to bottom, var(--bg-primary) 0%, transparent 20%, transparent 80%, var(--bg-primary) 100%);
+          opacity: 0.85;
+          pointer-events: none;
+        }
+        .hero-content {
+          position: relative;
+          z-index: 2;
+          padding: 140px 24px 80px; /* Strong top padding to clear fixed nav */
+          max-width: 1000px !important;
+          width: 100%;
+        }
+        .hero-badge {
+          margin-bottom: 28px;
+        }
+        .hero-title {
+          font-family: var(--font-heading);
+          font-size: clamp(2.2rem, 6vw, 4rem);
+          font-weight: 900;
+          line-height: 1.2;
+          margin-bottom: 28px;
+          color: var(--text-primary);
+          text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .hero-description {
+          font-size: clamp(1rem, 2vw, 1.2rem);
+          color: var(--text-secondary);
+          margin: 0 auto 48px;
+          max-width: 720px;
+          line-height: 1.8;
+        }
+        .hero-buttons {
+          display: flex;
+          gap: 16px;
+          justify-content: center;
+          flex-wrap: wrap;
         }
         .hero-dots {
           position: absolute;
@@ -167,24 +202,36 @@ export default function HeroSlider(): React.JSX.Element {
           height: 10px;
           border-radius: 50%;
           background: var(--text-muted);
-          border: none;
+          border: 2px solid transparent;
           cursor: pointer;
           transition: all 0.3s ease;
           padding: 0;
         }
         .hero-dot.active {
-          width: 30px;
+          width: 28px;
           border-radius: 5px;
           background: var(--neon-blue);
-          box-shadow: var(--shadow-glow);
+          box-shadow: 0 0 15px var(--neon-blue);
         }
         [data-theme='light'] .hero-image {
-          filter: brightness(0.9) grayscale(0.2);
+          filter: brightness(1);
+          opacity: 0.6;
         }
         [data-theme='light'] .hero-overlay {
           background: radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, var(--bg-primary) 100%),
-                      linear-gradient(to bottom, transparent 0%, var(--bg-primary) 90%);
-          opacity: 0.6;
+                      linear-gradient(to bottom, var(--bg-primary) 0%, transparent 20%, transparent 80%, var(--bg-primary) 100%);
+          opacity: 0.8;
+        }
+        [data-theme='light'] .hero-title {
+          text-shadow: 0 0 20px rgba(255,255,255,0.8);
+        }
+        @media (max-width: 768px) {
+          .hero-content {
+            padding-top: 120px; /* Still generous for mobile */
+          }
+          .hero-title {
+            font-size: 2.2rem;
+          }
         }
       `}</style>
     </div>
