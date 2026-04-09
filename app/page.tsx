@@ -1,6 +1,26 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { 
+  Rocket, 
+  Users, 
+  Calendar, 
+  Cpu, 
+  BrainCircuit, 
+  Layout, 
+  Smartphone, 
+  Code, 
+  Palette, 
+  Cloud, 
+  TrendingUp, 
+  Zap,
+  Target,
+  Search,
+  CheckCircle,
+  Lightbulb,
+  ShieldCheck,
+  Star
+} from 'lucide-react';
 import HeroSlider from '@/components/HeroSlider';
 import ParticleBackground from '@/components/ParticleBackground';
 import AnimatedCounter from '@/components/AnimatedCounter';
@@ -10,42 +30,42 @@ import type { FAQItem } from '@/components/FAQAccordion';
 import SectionReveal from '@/components/SectionReveal';
 
 interface ServiceItem {
-  icon: string;
-  title: string;
-  desc: string;
-}
-
-interface ValueItem {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   desc: string;
 }
 
 const services: ServiceItem[] = [
-  { icon: '🤖', title: 'AI & Machine Learning', desc: 'Intelligent solutions powered by advanced machine learning algorithms, natural language processing, and predictive analytics.' },
-  { icon: '🌐', title: 'Web Development', desc: 'Stunning, high-performance websites and web applications built with modern frameworks like React, Next.js, and Node.js.' },
-  { icon: '📱', title: 'Mobile App Development', desc: 'Native and cross-platform mobile apps for iOS and Android with seamless user experiences and robust backends.' },
-  { icon: '💻', title: 'Software Development', desc: 'Custom enterprise software solutions designed to streamline operations, boost productivity, and drive growth.' },
-  { icon: '🎨', title: 'UI/UX Design', desc: 'Beautiful, intuitive interfaces crafted with user-centered design principles that delight and convert visitors.' },
-  { icon: '☁️', title: 'Cloud & DevOps', desc: 'Scalable cloud infrastructure, CI/CD pipelines, containerization, and monitoring for reliable deployments.' },
-  { icon: '📈', title: 'Digital Marketing', desc: 'Data-driven SEO, social media, PPC, and content marketing strategies that maximize your digital presence and ROI.' },
+  { icon: <BrainCircuit size={24} />, title: 'AI & Machine Learning', desc: 'Intelligent solutions powered by advanced machine learning algorithms, natural language processing, and predictive analytics.' },
+  { icon: <Layout size={24} />, title: 'Web Development', desc: 'Stunning, high-performance websites and web applications built with modern frameworks like React, Next.js, and Node.js.' },
+  { icon: <Smartphone size={24} />, title: 'Mobile App Development', desc: 'Native and cross-platform mobile apps for iOS and Android with seamless user experiences and robust backends.' },
+  { icon: <Code size={24} />, title: 'Software Development', desc: 'Custom enterprise software solutions designed to streamline operations, boost productivity, and drive growth.' },
+  { icon: <Palette size={24} />, title: 'UI/UX Design', desc: 'Beautiful, intuitive interfaces crafted with user-centered design principles that delight and convert visitors.' },
+  { icon: <Cloud size={24} />, title: 'Cloud & DevOps', desc: 'Scalable cloud infrastructure, CI/CD pipelines, containerization, and monitoring for reliable deployments.' },
+  { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Data-driven SEO, social media, PPC, and content marketing strategies that maximize your digital presence and ROI.' },
 ];
 
+interface ValueItem {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+}
+
 const values: ValueItem[] = [
-  { icon: '💡', title: 'Innovation', desc: 'Pushing boundaries with cutting-edge technologies and creative solutions.' },
-  { icon: '✨', title: 'Quality', desc: 'Delivering excellence in every line of code and pixel of design.' },
-  { icon: '🔍', title: 'Transparency', desc: 'Open communication and honest collaboration throughout every project.' },
-  { icon: '⚡', title: 'Speed', desc: 'Rapid delivery without compromising on quality or performance.' },
-  { icon: '🏆', title: 'Client Success', desc: 'Your success is our success — we go the extra mile for results.' },
-  { icon: '🤝', title: 'Integrity', desc: 'Building trust through ethical practices and honest partnerships.' },
+  { icon: <Lightbulb size={24} />, title: 'Innovation', desc: 'Pushing boundaries with cutting-edge technologies and creative solutions.' },
+  { icon: <Star size={24} />, title: 'Quality', desc: 'Delivering excellence in every line of code and pixel of design.' },
+  { icon: <Search size={24} />, title: 'Transparency', desc: 'Open communication and honest collaboration throughout every project.' },
+  { icon: <Zap size={24} />, title: 'Speed', desc: 'Rapid delivery without compromising on quality or performance.' },
+  { icon: <Target size={24} />, title: 'Client Success', desc: 'Your success is our success — we go the extra mile for results.' },
+  { icon: <ShieldCheck size={24} />, title: 'Integrity', desc: 'Building trust through ethical practices and honest partnerships.' },
 ];
 
 const whyUs: ValueItem[] = [
-  { icon: '👥', title: 'Expert Team', desc: 'Skilled professionals with deep expertise across modern technologies.' },
-  { icon: '🛠️', title: 'Modern Tech Stack', desc: 'We use the latest tools, frameworks, and platforms for optimal results.' },
-  { icon: '📐', title: 'Scalable Solutions', desc: 'Architecture that grows with your business — from startup to enterprise.' },
-  { icon: '🚀', title: 'Fast Delivery', desc: 'Agile methodology ensures rapid iteration and on-time project completion.' },
-  { icon: '💎', title: 'Dedicated Support', desc: '24/7 post-launch support and maintenance to keep everything running smoothly.' },
+  { icon: <Users size={24} />, title: 'Expert Team', desc: 'Skilled professionals with deep expertise across modern technologies.' },
+  { icon: <Code size={24} />, title: 'Modern Tech Stack', desc: 'We use the latest tools, frameworks, and platforms for optimal results.' },
+  { icon: <TrendingUp size={24} />, title: 'Scalable Solutions', desc: 'Architecture that grows with your business — from startup to enterprise.' },
+  { icon: <Rocket size={24} />, title: 'Fast Delivery', desc: 'Agile methodology ensures rapid iteration and on-time project completion.' },
+  { icon: <ShieldCheck size={24} />, title: 'Dedicated Support', desc: '24/7 post-launch support and maintenance to keep everything running smoothly.' },
 ];
 
 const faqItems: FAQItem[] = [
@@ -157,10 +177,10 @@ export default function HomePage(): React.JSX.Element {
             </div>
           </SectionReveal>
           <div className="metrics-grid">
-            <AnimatedCounter end={150} suffix="+" label="Projects Completed" />
-            <AnimatedCounter end={80} suffix="+" label="Clients Served" />
-            <AnimatedCounter end={5} suffix="+" label="Years Experience" />
-            <AnimatedCounter end={30} suffix="+" label="Technologies Used" />
+            <AnimatedCounter end={150} suffix="+" label="Projects Completed" icon={<Rocket size={28} />} />
+            <AnimatedCounter end={80} suffix="+" label="Clients Served" icon={<Users size={28} />} />
+            <AnimatedCounter end={5} suffix="+" label="Years Experience" icon={<Calendar size={28} />} />
+            <AnimatedCounter end={30} suffix="+" label="Technologies Used" icon={<Cpu size={28} />} />
           </div>
         </div>
       </section>
@@ -183,11 +203,11 @@ export default function HomePage(): React.JSX.Element {
             {services.map((s, i) => (
               <motion.div
                 key={i}
-                className="service-card glass-card"
+                className="service-card designer-card"
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
-                <div className="service-icon">{s.icon}</div>
+                <div className="service-icon-box">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
               </motion.div>
@@ -208,8 +228,10 @@ export default function HomePage(): React.JSX.Element {
             </div>
           </SectionReveal>
           <div className="mv-grid">
-            <motion.div className="mv-card glass-card" {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }}>
-              <div className="mv-icon">🎯</div>
+            <motion.div className="mv-card designer-card" {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }}>
+              <div className="service-icon-box" style={{ width: '60px', height: '60px', marginBottom: '20px' }}>
+                <Target size={30} />
+              </div>
               <h3>Our Mission</h3>
               <p>
                 To empower businesses worldwide with innovative, reliable, and scalable technology solutions
@@ -217,8 +239,10 @@ export default function HomePage(): React.JSX.Element {
                 committed to delivering excellence through modern engineering practices and a client-first approach.
               </p>
             </motion.div>
-            <motion.div className="mv-card glass-card" {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }}>
-              <div className="mv-icon">🔭</div>
+            <motion.div className="mv-card designer-card" {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }}>
+              <div className="service-icon-box" style={{ width: '60px', height: '60px', marginBottom: '20px' }}>
+                <Search size={30} />
+              </div>
               <h3>Our Vision</h3>
               <p>
                 To become a globally recognized technology partner known for transforming ideas into
@@ -248,11 +272,11 @@ export default function HomePage(): React.JSX.Element {
             {values.map((v, i) => (
               <motion.div
                 key={i}
-                className="value-card glass-card"
+                className="value-card designer-card"
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
-                <div className="value-icon">{v.icon}</div>
+                <div className="service-icon-box">{v.icon}</div>
                 <h3>{v.title}</h3>
                 <p>{v.desc}</p>
               </motion.div>
@@ -279,11 +303,11 @@ export default function HomePage(): React.JSX.Element {
             {whyUs.map((w, i) => (
               <motion.div
                 key={i}
-                className="why-card glass-card"
+                className="why-card designer-card"
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
-                <div className="why-icon">{w.icon}</div>
+                <div className="service-icon-box">{w.icon}</div>
                 <h3>{w.title}</h3>
                 <p>{w.desc}</p>
               </motion.div>
