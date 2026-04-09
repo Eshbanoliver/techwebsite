@@ -2,20 +2,25 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-export default function AnimatedCounter({ end, suffix = '', duration = 2000, label }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
+interface AnimatedCounterProps {
+  end: number;
+  suffix?: string;
+  duration?: number;
+  label: string;
+}
+
+export default function AnimatedCounter({ end, suffix = '', duration = 2000, label }: AnimatedCounterProps): React.JSX.Element {
+  const [count, setCount] = useState<number>(0);
+  const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-50px' });
 
   useEffect(() => {
     if (!inView) return;
-    let start = 0;
     const startTime = Date.now();
 
-    const animate = () => {
+    const animate = (): void => {
       const elapsed = Date.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.floor(eased * end);
       setCount(current);

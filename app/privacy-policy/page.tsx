@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 
-export default function PrivacyPolicyPage() {
+export default function PrivacyPolicyPage(): React.JSX.Element {
   return (
     <>
       <div className="page-header">

@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 
-export default function TermsPage() {
+export default function TermsPage(): React.JSX.Element {
   return (
     <>
       <div className="page-header">

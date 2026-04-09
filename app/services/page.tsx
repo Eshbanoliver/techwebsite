@@ -3,7 +3,21 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import SectionReveal from '@/components/SectionReveal';
 
-const services = [
+interface ServiceDetail {
+  icon: string;
+  title: string;
+  desc: string;
+  features: string[];
+}
+
+interface ProcessStep {
+  num: string;
+  title: string;
+  desc: string;
+  icon: string;
+}
+
+const services: ServiceDetail[] = [
   {
     icon: '🤖',
     title: 'AI & Machine Learning',
@@ -48,31 +62,28 @@ const services = [
   },
 ];
 
-export default function ServicesPage() {
+const processSteps: ProcessStep[] = [
+  { num: '01', title: 'Discovery', desc: 'We analyze your needs, goals, and market to define the perfect strategy.', icon: '🔍' },
+  { num: '02', title: 'Design', desc: 'Crafting wireframes and visual designs that align with your brand identity.', icon: '🎨' },
+  { num: '03', title: 'Development', desc: 'Building your solution with clean, efficient, and well-tested code.', icon: '⚙️' },
+  { num: '04', title: 'Testing', desc: 'Rigorous QA testing across devices and scenarios for a flawless launch.', icon: '✅' },
+  { num: '05', title: 'Launch', desc: 'Deploying your solution with full monitoring and performance optimization.', icon: '🚀' },
+  { num: '06', title: 'Support', desc: 'Ongoing maintenance, updates, and feature enhancements post-launch.', icon: '💎' },
+];
+
+export default function ServicesPage(): React.JSX.Element {
   return (
     <>
       {/* Page Header */}
       <div className="page-header">
         <div className="page-header-content">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="section-label">Our Services</span>
           </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
             Solutions That <span className="gradient-text">Transform</span>
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
             Comprehensive technology services designed to accelerate your business growth and digital presence.
           </motion.p>
         </div>
@@ -115,23 +126,12 @@ export default function ServicesPage() {
           <SectionReveal>
             <div className="section-header">
               <span className="section-label">Our Process</span>
-              <h2 className="section-title">
-                How We <span className="gradient-text">Deliver</span>
-              </h2>
-              <p className="section-subtitle">
-                A streamlined, transparent process that ensures quality at every step.
-              </p>
+              <h2 className="section-title">How We <span className="gradient-text">Deliver</span></h2>
+              <p className="section-subtitle">A streamlined, transparent process that ensures quality at every step.</p>
             </div>
           </SectionReveal>
           <div className="metrics-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
-            {[
-              { num: '01', title: 'Discovery', desc: 'We analyze your needs, goals, and market to define the perfect strategy.', icon: '🔍' },
-              { num: '02', title: 'Design', desc: 'Crafting wireframes and visual designs that align with your brand identity.', icon: '🎨' },
-              { num: '03', title: 'Development', desc: 'Building your solution with clean, efficient, and well-tested code.', icon: '⚙️' },
-              { num: '04', title: 'Testing', desc: 'Rigorous QA testing across devices and scenarios for a flawless launch.', icon: '✅' },
-              { num: '05', title: 'Launch', desc: 'Deploying your solution with full monitoring and performance optimization.', icon: '🚀' },
-              { num: '06', title: 'Support', desc: 'Ongoing maintenance, updates, and feature enhancements post-launch.', icon: '💎' },
-            ].map((step, i) => (
+            {processSteps.map((step, i) => (
               <motion.div
                 key={i}
                 className="glass-card"
@@ -170,9 +170,7 @@ export default function ServicesPage() {
                 <h2>Need a Custom <span className="gradient-text">Solution</span>?</h2>
                 <p>Tell us about your project and we&apos;ll craft the perfect technology strategy for your goals.</p>
                 <div className="cta-buttons">
-                  <Link href="/contact" className="btn btn-glow" id="services-cta-btn">
-                    Get a Free Quote →
-                  </Link>
+                  <Link href="/contact" className="btn btn-glow" id="services-cta-btn">Get a Free Quote →</Link>
                 </div>
               </div>
             </div>

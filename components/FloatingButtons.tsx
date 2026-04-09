@@ -1,18 +1,18 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-export default function FloatingButtons() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
+export default function FloatingButtons(): React.JSX.Element {
+  const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       setShowScrollTop(window.scrollY > 500);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToTop = () => {
+  const scrollToTop = (): void => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

@@ -1,8 +1,14 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
 
-const testimonials = [
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  initials: string;
+}
+
+const testimonials: Testimonial[] = [
   {
     quote: "MS Infinix transformed our vision into a stunning digital platform. Their expertise in AI and web development is truly world-class. We saw a 300% increase in user engagement.",
     author: "Rajesh Sharma",
@@ -35,14 +41,14 @@ const testimonials = [
   },
 ];
 
-export default function TestimonialCarousel() {
-  const [current, setCurrent] = useState(0);
+export default function TestimonialCarousel(): React.JSX.Element {
+  const [current, setCurrent] = useState<number>(0);
 
-  const next = useCallback(() => {
+  const next = useCallback((): void => {
     setCurrent((prev) => (prev + 1) % testimonials.length);
   }, []);
 
-  const prev = useCallback(() => {
+  const prev = useCallback((): void => {
     setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   }, []);
 

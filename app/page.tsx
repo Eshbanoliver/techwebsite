@@ -5,9 +5,22 @@ import ParticleBackground from '@/components/ParticleBackground';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 import FAQAccordion from '@/components/FAQAccordion';
+import type { FAQItem } from '@/components/FAQAccordion';
 import SectionReveal from '@/components/SectionReveal';
 
-const services = [
+interface ServiceItem {
+  icon: string;
+  title: string;
+  desc: string;
+}
+
+interface ValueItem {
+  icon: string;
+  title: string;
+  desc: string;
+}
+
+const services: ServiceItem[] = [
   { icon: '🤖', title: 'AI & Machine Learning', desc: 'Intelligent solutions powered by advanced machine learning algorithms, natural language processing, and predictive analytics.' },
   { icon: '🌐', title: 'Web Development', desc: 'Stunning, high-performance websites and web applications built with modern frameworks like React, Next.js, and Node.js.' },
   { icon: '📱', title: 'Mobile App Development', desc: 'Native and cross-platform mobile apps for iOS and Android with seamless user experiences and robust backends.' },
@@ -17,7 +30,7 @@ const services = [
   { icon: '📈', title: 'Digital Marketing', desc: 'Data-driven SEO, social media, PPC, and content marketing strategies that maximize your digital presence and ROI.' },
 ];
 
-const values = [
+const values: ValueItem[] = [
   { icon: '💡', title: 'Innovation', desc: 'Pushing boundaries with cutting-edge technologies and creative solutions.' },
   { icon: '✨', title: 'Quality', desc: 'Delivering excellence in every line of code and pixel of design.' },
   { icon: '🔍', title: 'Transparency', desc: 'Open communication and honest collaboration throughout every project.' },
@@ -26,7 +39,7 @@ const values = [
   { icon: '🤝', title: 'Integrity', desc: 'Building trust through ethical practices and honest partnerships.' },
 ];
 
-const whyUs = [
+const whyUs: ValueItem[] = [
   { icon: '👥', title: 'Expert Team', desc: 'Skilled professionals with deep expertise across modern technologies.' },
   { icon: '🛠️', title: 'Modern Tech Stack', desc: 'We use the latest tools, frameworks, and platforms for optimal results.' },
   { icon: '📐', title: 'Scalable Solutions', desc: 'Architecture that grows with your business — from startup to enterprise.' },
@@ -34,7 +47,7 @@ const whyUs = [
   { icon: '💎', title: 'Dedicated Support', desc: '24/7 post-launch support and maintenance to keep everything running smoothly.' },
 ];
 
-const faqItems = [
+const faqItems: FAQItem[] = [
   { question: 'What services does MS Infinix offer?', answer: 'We offer a comprehensive range of tech services including AI & Machine Learning, Web Development, Mobile App Development, Software Development, UI/UX Design, Cloud & DevOps, and Digital Marketing. Each service is tailored to meet your specific business needs and goals.' },
   { question: 'Where is MS Infinix located?', answer: 'MS Infinix is headquartered in Udaipur, Rajasthan 313001, India. We serve clients globally and offer both on-site and remote collaboration options to ensure seamless project delivery.' },
   { question: 'How long does a typical project take?', answer: 'Project timelines vary based on scope and complexity. A simple website might take 2-4 weeks, while a complex enterprise application could take 3-6 months. We provide detailed timelines during our initial consultation and keep you updated throughout the development process.' },
@@ -49,7 +62,7 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
-export default function HomePage() {
+export default function HomePage(): React.JSX.Element {
   return (
     <>
       {/* ===== HERO ===== */}

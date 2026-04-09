@@ -3,7 +3,24 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import SectionReveal from '@/components/SectionReveal';
 
-const timeline = [
+interface TimelineItem {
+  year: string;
+  title: string;
+  desc: string;
+}
+
+interface TechItem {
+  icon: string;
+  name: string;
+}
+
+interface ValueItem {
+  icon: string;
+  title: string;
+  desc: string;
+}
+
+const timeline: TimelineItem[] = [
   { year: '2020', title: 'Founded', desc: 'MS Infinix was born in Udaipur with a vision to deliver world-class tech solutions.' },
   { year: '2021', title: 'First 25 Clients', desc: 'Expanded our team and delivered projects across web, mobile, and cloud domains.' },
   { year: '2022', title: 'AI Division Launch', desc: 'Launched our dedicated AI & ML division, building intelligent automation solutions.' },
@@ -12,7 +29,7 @@ const timeline = [
   { year: '2025', title: 'Innovation Hub', desc: 'Established our R&D lab focusing on emerging technologies and next-gen digital products.' },
 ];
 
-const techStack = [
+const techStack: TechItem[] = [
   { icon: '⚛️', name: 'React' },
   { icon: '▲', name: 'Next.js' },
   { icon: '🟢', name: 'Node.js' },
@@ -31,14 +48,14 @@ const techStack = [
   { icon: '📊', name: 'Power BI' },
 ];
 
-const teamValues = [
+const teamValues: ValueItem[] = [
   { icon: '🎯', title: 'Purpose-Driven', desc: 'Every project we take on has a clear purpose and measurable outcomes.' },
   { icon: '🔬', title: 'Research-First', desc: 'We invest time in understanding the problem before jumping to solutions.' },
   { icon: '🤝', title: 'Collaborative', desc: 'We work as an extension of your team, not just a vendor.' },
   { icon: '📈', title: 'Growth-Oriented', desc: 'We build solutions that scale with your business ambitions.' },
 ];
 
-export default function AboutPage() {
+export default function AboutPage(): React.JSX.Element {
   return (
     <>
       {/* Page Header */}

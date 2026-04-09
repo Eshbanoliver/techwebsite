@@ -2,10 +2,19 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-export default function FAQAccordion({ items }) {
-  const [openIndex, setOpenIndex] = useState(null);
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
 
-  const toggle = (index) => {
+interface FAQAccordionProps {
+  items: FAQItem[];
+}
+
+export default function FAQAccordion({ items }: FAQAccordionProps): React.JSX.Element {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (index: number): void => {
     setOpenIndex(openIndex === index ? null : index);
   };
 

@@ -2,9 +2,15 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import FAQAccordion from '@/components/FAQAccordion';
+import type { FAQItem } from '@/components/FAQAccordion';
 import SectionReveal from '@/components/SectionReveal';
 
-const faqCategories = [
+interface FAQCategory {
+  category: string;
+  items: FAQItem[];
+}
+
+const faqCategories: FAQCategory[] = [
   {
     category: 'General',
     items: [
@@ -42,45 +48,29 @@ const faqCategories = [
   },
 ];
 
-export default function FAQPage() {
+export default function FAQPage(): React.JSX.Element {
   return (
     <>
-      {/* Page Header */}
       <div className="page-header">
         <div className="page-header-content">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="section-label">FAQ</span>
           </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
             Frequently Asked <span className="gradient-text">Questions</span>
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
             Find answers to common questions about our services, process, and technology.
           </motion.p>
         </div>
       </div>
 
-      {/* FAQ Categories */}
       {faqCategories.map((cat, i) => (
         <section key={i} className="section" style={{ paddingTop: i === 0 ? 60 : 40, paddingBottom: 40 }} id={`faq-${cat.category.toLowerCase().replace(/\s+/g, '-')}`}>
           <div className="container">
             <SectionReveal>
               <div className="section-header" style={{ marginBottom: 36 }}>
-                <h2 className="section-title" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
-                  {cat.category}
-                </h2>
+                <h2 className="section-title" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>{cat.category}</h2>
               </div>
             </SectionReveal>
             <FAQAccordion items={cat.items} />
@@ -88,7 +78,6 @@ export default function FAQPage() {
         </section>
       ))}
 
-      {/* CTA */}
       <section className="section" id="faq-cta">
         <div className="container">
           <SectionReveal>
@@ -98,9 +87,7 @@ export default function FAQPage() {
                 <h2>Still Have <span className="gradient-text">Questions</span>?</h2>
                 <p>Can&apos;t find the answer you&apos;re looking for? Our team is happy to help.</p>
                 <div className="cta-buttons">
-                  <Link href="/contact" className="btn btn-glow" id="faq-cta-btn">
-                    Contact Us →
-                  </Link>
+                  <Link href="/contact" className="btn btn-glow" id="faq-cta-btn">Contact Us →</Link>
                 </div>
               </div>
             </div>

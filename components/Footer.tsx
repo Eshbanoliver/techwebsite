@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Footer() {
+export default function Footer(): React.JSX.Element {
   return (
     <footer className="footer" id="footer">
       <div className="container">
@@ -13,7 +13,7 @@ export default function Footer() {
                 display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: '1rem', fontWeight: 900, color: 'white',
               }}>M</span>
-              MS <span className="gradient-text">Infinix</span>
+              {' '}MS <span className="gradient-text">Infinix</span>
             </h3>
             <p>
               Building future-ready digital solutions with cutting-edge technology.

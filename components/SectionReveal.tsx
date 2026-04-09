@@ -1,7 +1,13 @@
 'use client';
 import { motion } from 'framer-motion';
 
-export default function SectionReveal({ children, delay = 0, className = '' }) {
+interface SectionRevealProps {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}
+
+export default function SectionReveal({ children, delay = 0, className = '' }: SectionRevealProps): React.JSX.Element {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
