@@ -35,37 +35,38 @@ interface ServiceItem {
   desc: string;
 }
 
-const services: ServiceItem[] = [
-  { icon: <BrainCircuit size={24} />, title: 'AI & Machine Learning', desc: 'Intelligent solutions powered by advanced machine learning algorithms, natural language processing, and predictive analytics.' },
-  { icon: <Layout size={24} />, title: 'Web Development', desc: 'Stunning, high-performance websites and web applications built with modern frameworks like React, Next.js, and Node.js.' },
-  { icon: <Smartphone size={24} />, title: 'Mobile App Development', desc: 'Native and cross-platform mobile apps for iOS and Android with seamless user experiences and robust backends.' },
-  { icon: <Code size={24} />, title: 'Software Development', desc: 'Custom enterprise software solutions designed to streamline operations, boost productivity, and drive growth.' },
-  { icon: <Palette size={24} />, title: 'UI/UX Design', desc: 'Beautiful, intuitive interfaces crafted with user-centered design principles that delight and convert visitors.' },
-  { icon: <Cloud size={24} />, title: 'Cloud & DevOps', desc: 'Scalable cloud infrastructure, CI/CD pipelines, containerization, and monitoring for reliable deployments.' },
-  { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Data-driven SEO, social media, PPC, and content marketing strategies that maximize your digital presence and ROI.' },
+const services: (ServiceItem & { glow: string })[] = [
+  { icon: <BrainCircuit size={24} />, title: 'AI & Machine Learning', desc: 'Intelligent solutions powered by advanced machine learning algorithms, natural language processing, and predictive analytics.', glow: 'glow-cyan' },
+  { icon: <Layout size={24} />, title: 'Web Development', desc: 'Stunning, high-performance websites and web applications built with modern frameworks like React, Next.js, and Node.js.', glow: 'glow-blue' },
+  { icon: <Smartphone size={24} />, title: 'Mobile App Development', desc: 'Native and cross-platform mobile apps for iOS and Android with seamless user experiences and robust backends.', glow: 'glow-purple' },
+  { icon: <Code size={24} />, title: 'Software Development', desc: 'Custom enterprise software solutions designed to streamline operations, boost productivity, and drive growth.', glow: 'glow-pink' },
+  { icon: <Palette size={24} />, title: 'UI/UX Design', desc: 'Beautiful, intuitive interfaces crafted with user-centered design principles that delight and convert visitors.', glow: 'glow-orange' },
+  { icon: <Cloud size={24} />, title: 'Cloud & DevOps', desc: 'Scalable cloud infrastructure, CI/CD pipelines, containerization, and monitoring for reliable deployments.', glow: 'glow-green' },
+  { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Data-driven SEO, social media, PPC, and content marketing strategies that maximize your digital presence and ROI.', glow: 'glow-blue' },
 ];
 
 interface ValueItem {
   icon: React.ReactNode;
   title: string;
   desc: string;
+  glow: string;
 }
 
 const values: ValueItem[] = [
-  { icon: <Lightbulb size={24} />, title: 'Innovation', desc: 'Pushing boundaries with cutting-edge technologies and creative solutions.' },
-  { icon: <Star size={24} />, title: 'Quality', desc: 'Delivering excellence in every line of code and pixel of design.' },
-  { icon: <Search size={24} />, title: 'Transparency', desc: 'Open communication and honest collaboration throughout every project.' },
-  { icon: <Zap size={24} />, title: 'Speed', desc: 'Rapid delivery without compromising on quality or performance.' },
-  { icon: <Target size={24} />, title: 'Client Success', desc: 'Your success is our success — we go the extra mile for results.' },
-  { icon: <ShieldCheck size={24} />, title: 'Integrity', desc: 'Building trust through ethical practices and honest partnerships.' },
+  { icon: <Lightbulb size={24} />, title: 'Innovation', desc: 'Pushing boundaries with cutting-edge technologies and creative solutions.', glow: 'glow-cyan' },
+  { icon: <Star size={24} />, title: 'Quality', desc: 'Delivering excellence in every line of code and pixel of design.', glow: 'glow-blue' },
+  { icon: <Search size={24} />, title: 'Transparency', desc: 'Open communication and honest collaboration throughout every project.', glow: 'glow-purple' },
+  { icon: <Zap size={24} />, title: 'Speed', desc: 'Rapid delivery without compromising on quality or performance.', glow: 'glow-pink' },
+  { icon: <Target size={24} />, title: 'Client Success', desc: 'Your success is our success — we go the extra mile for results.', glow: 'glow-orange' },
+  { icon: <ShieldCheck size={24} />, title: 'Integrity', desc: 'Building trust through ethical practices and honest partnerships.', glow: 'glow-green' },
 ];
 
 const whyUs: ValueItem[] = [
-  { icon: <Users size={24} />, title: 'Expert Team', desc: 'Skilled professionals with deep expertise across modern technologies.' },
-  { icon: <Code size={24} />, title: 'Modern Tech Stack', desc: 'We use the latest tools, frameworks, and platforms for optimal results.' },
-  { icon: <TrendingUp size={24} />, title: 'Scalable Solutions', desc: 'Architecture that grows with your business — from startup to enterprise.' },
-  { icon: <Rocket size={24} />, title: 'Fast Delivery', desc: 'Agile methodology ensures rapid iteration and on-time project completion.' },
-  { icon: <ShieldCheck size={24} />, title: 'Dedicated Support', desc: '24/7 post-launch support and maintenance to keep everything running smoothly.' },
+  { icon: <Users size={24} />, title: 'Expert Team', desc: 'Skilled professionals with deep expertise across modern technologies.', glow: 'glow-blue' },
+  { icon: <Code size={24} />, title: 'Modern Tech Stack', desc: 'We use the latest tools, frameworks, and platforms for optimal results.', glow: 'glow-cyan' },
+  { icon: <TrendingUp size={24} />, title: 'Scalable Solutions', desc: 'Architecture that grows with your business — from startup to enterprise.', glow: 'glow-purple' },
+  { icon: <Rocket size={24} />, title: 'Fast Delivery', desc: 'Agile methodology ensures rapid iteration and on-time project completion.', glow: 'glow-pink' },
+  { icon: <ShieldCheck size={24} />, title: 'Dedicated Support', desc: '24/7 post-launch support and maintenance to keep everything running smoothly.', glow: 'glow-orange' },
 ];
 
 const faqItems: FAQItem[] = [
@@ -177,10 +178,10 @@ export default function HomePage(): React.JSX.Element {
             </div>
           </SectionReveal>
           <div className="metrics-grid">
-            <AnimatedCounter end={150} suffix="+" label="Projects Completed" icon={<Rocket size={28} />} />
-            <AnimatedCounter end={80} suffix="+" label="Clients Served" icon={<Users size={28} />} />
-            <AnimatedCounter end={5} suffix="+" label="Years Experience" icon={<Calendar size={28} />} />
-            <AnimatedCounter end={30} suffix="+" label="Technologies Used" icon={<Cpu size={28} />} />
+            <AnimatedCounter end={150} suffix="+" label="Projects Completed" icon={<Rocket size={28} />} className="glow-cyan" />
+            <AnimatedCounter end={80} suffix="+" label="Clients Served" icon={<Users size={28} />} className="glow-blue" />
+            <AnimatedCounter end={5} suffix="+" label="Years Experience" icon={<Calendar size={28} />} className="glow-purple" />
+            <AnimatedCounter end={30} suffix="+" label="Technologies Used" icon={<Cpu size={28} />} className="glow-pink" />
           </div>
         </div>
       </section>
@@ -203,7 +204,7 @@ export default function HomePage(): React.JSX.Element {
             {services.map((s, i) => (
               <motion.div
                 key={i}
-                className="service-card designer-card"
+                className={`service-card designer-card ${s.glow}`}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
@@ -272,7 +273,7 @@ export default function HomePage(): React.JSX.Element {
             {values.map((v, i) => (
               <motion.div
                 key={i}
-                className="value-card designer-card"
+                className={`value-card designer-card ${v.glow}`}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
@@ -303,7 +304,7 @@ export default function HomePage(): React.JSX.Element {
             {whyUs.map((w, i) => (
               <motion.div
                 key={i}
-                className="why-card designer-card"
+                className={`why-card designer-card ${w.glow}`}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >

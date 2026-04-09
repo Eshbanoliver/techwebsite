@@ -8,9 +8,10 @@ interface AnimatedCounterProps {
   duration?: number;
   label: string;
   icon?: React.ReactNode;
+  className?: string;
 }
 
-export default function AnimatedCounter({ end, suffix = '', duration = 2000, label, icon }: AnimatedCounterProps): React.JSX.Element {
+export default function AnimatedCounter({ end, suffix = '', duration = 2000, label, icon, className = '' }: AnimatedCounterProps): React.JSX.Element {
   const [count, setCount] = useState<number>(0);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-50px' });
@@ -35,7 +36,7 @@ export default function AnimatedCounter({ end, suffix = '', duration = 2000, lab
   return (
     <motion.div
       ref={ref}
-      className="metric-card designer-card"
+      className={`metric-card designer-card ${className}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
