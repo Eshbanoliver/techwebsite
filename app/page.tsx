@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import HeroSlider from '@/components/HeroSlider';
 import ParticleBackground from '@/components/ParticleBackground';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
@@ -65,82 +66,13 @@ const fadeUp = {
 export default function HomePage(): React.JSX.Element {
   return (
     <>
-      {/* ===== HERO ===== */}
       <section className="hero" id="hero">
         <ParticleBackground />
-        <div className="hero-bg">
+        <HeroSlider />
+        <div className="hero-bg" style={{ display: 'none' }}>
           <div className="hero-orb hero-orb-1" />
           <div className="hero-orb hero-orb-2" />
           <div className="hero-orb hero-orb-3" />
-        </div>
-        <div className="hero-content">
-          <motion.div
-            className="hero-badge"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <span className="badge-dot" />
-            Trusted Tech Partner Since 2020
-          </motion.div>
-
-          <motion.h1
-            className="hero-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            Building <span className="gradient-text">Future-Ready</span><br />
-            Digital Solutions
-          </motion.h1>
-
-          <motion.p
-            className="hero-description"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            We design and develop intelligent, scalable, and visually stunning digital
-            products that transform businesses and create lasting impact.
-          </motion.p>
-
-          <motion.div
-            className="hero-buttons"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <Link href="/contact" className="btn btn-glow" id="hero-cta-start">
-              Get Started →
-            </Link>
-            <Link href="/contact" className="btn btn-secondary" id="hero-cta-contact">
-              Contact Us
-            </Link>
-          </motion.div>
-
-          <motion.div
-            className="hero-stats"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            <div className="hero-stat">
-              <div className="hero-stat-number">150+</div>
-              <div className="hero-stat-label">Projects Delivered</div>
-            </div>
-            <div className="hero-stat">
-              <div className="hero-stat-number">80+</div>
-              <div className="hero-stat-label">Happy Clients</div>
-            </div>
-            <div className="hero-stat">
-              <div className="hero-stat-number">5+</div>
-              <div className="hero-stat-label">Years Experience</div>
-            </div>
-            <div className="hero-stat">
-              <div className="hero-stat-number">30+</div>
-              <div className="hero-stat-label">Technologies</div>
-            </div>
-          </motion.div>
         </div>
       </section>
 

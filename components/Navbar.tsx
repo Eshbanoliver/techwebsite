@@ -37,32 +37,49 @@ export default function Navbar(): React.JSX.Element {
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="main-navbar">
         <div className="navbar-inner">
-          <Link href="/" className="navbar-logo" id="logo-link">
-            <div className="logo-icon">M</div>
-            <span>
-              MS <span className="gradient-text">Infinix</span>
-            </span>
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Link href="/" className="navbar-logo" id="logo-link">
+              <div className="logo-icon">M</div>
+              <span>
+                MS <span className="gradient-text">Infinix</span>
+              </span>
+            </Link>
+          </motion.div>
 
           <div className="navbar-links">
-            {navLinks.map((link) => (
-              <Link
+            {navLinks.map((link, i) => (
+              <motion.div
                 key={link.href}
-                href={link.href}
-                className={pathname === link.href ? 'active' : ''}
-                id={`nav-${link.label.toLowerCase()}`}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 + i * 0.05 }}
               >
-                {link.label}
-              </Link>
+                <Link
+                  href={link.href}
+                  className={pathname === link.href ? 'active' : ''}
+                  id={`nav-${link.label.toLowerCase()}`}
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
             ))}
           </div>
 
-          <div className="navbar-cta">
+          <motion.div 
+            className="navbar-cta"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <ThemeToggle />
             <Link href="/contact" className="btn btn-primary" id="nav-cta">
               Get Started
             </Link>
-          </div>
+          </motion.div>
 
           <button
             className="mobile-menu-btn"
