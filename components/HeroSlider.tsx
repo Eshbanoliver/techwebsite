@@ -151,32 +151,31 @@ export default function HeroSlider(): React.JSX.Element {
           left: 0;
           width: 100%;
           height: 100%;
-          background: radial-gradient(circle at center, transparent 0%, var(--bg-primary) 100%),
-                      linear-gradient(to bottom, var(--bg-primary) 0%, transparent 20%, transparent 80%, var(--bg-primary) 100%);
-          opacity: 0.85;
+          background: radial-gradient(circle at center, transparent 0%, var(--bg-primary) 100%);
+          opacity: 0.8;
           pointer-events: none;
         }
         .hero-content {
           position: relative;
           z-index: 2;
-          padding: 140px 24px 80px; /* Strong top padding to clear fixed nav */
+          padding: 120px 24px 100px;
           max-width: 1000px !important;
           width: 100%;
         }
         .hero-badge {
-          margin-bottom: 28px;
+          margin-bottom: 24px;
         }
         .hero-title {
           font-family: var(--font-heading);
-          font-size: clamp(2.2rem, 6vw, 4rem);
+          font-size: clamp(2rem, 6vw, 4rem);
           font-weight: 900;
           line-height: 1.2;
-          margin-bottom: 28px;
+          margin-bottom: 24px;
           color: var(--text-primary);
-          text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+          text-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .hero-description {
-          font-size: clamp(1rem, 2vw, 1.2rem);
+          font-size: clamp(1rem, 2vw, 1.15rem);
           color: var(--text-secondary);
           margin: 0 auto 48px;
           max-width: 720px;
@@ -190,36 +189,37 @@ export default function HeroSlider(): React.JSX.Element {
         }
         .hero-dots {
           position: absolute;
-          bottom: 40px;
+          bottom: 30px;
           left: 50%;
           transform: translateX(-50%);
           display: flex;
-          gap: 12px;
+          gap: 10px;
           z-index: 10;
         }
         .hero-dot {
-          width: 12px;
-          height: 6px;
-          border-radius: 2px;
+          width: 8px;
+          height: 8px;
+          border-radius: 1px;
           background: var(--text-muted);
           border: none;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.4s var(--transition-base);
           padding: 0;
+          opacity: 0.5;
         }
         .hero-dot.active {
-          width: 32px;
-          background: var(--neon-blue);
-          box-shadow: 0 0 15px var(--neon-blue);
+          width: 28px;
+          background: var(--neon-cyan);
+          opacity: 1;
+          box-shadow: 0 0 12px var(--neon-cyan);
         }
         [data-theme='light'] .hero-image {
           filter: brightness(1);
-          opacity: 0.6;
+          opacity: 0.55;
         }
         [data-theme='light'] .hero-overlay {
-          background: radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, var(--bg-primary) 100%),
-                      linear-gradient(to bottom, var(--bg-primary) 0%, transparent 20%, transparent 80%, var(--bg-primary) 100%);
-          opacity: 0.8;
+          background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, var(--bg-primary) 100%);
+          opacity: 0.85;
         }
         [data-theme='light'] .hero-title {
           text-shadow: 0 0 20px rgba(255,255,255,0.8);
