@@ -158,28 +158,61 @@ export default function HeroSlider(): React.JSX.Element {
         .hero-content {
           position: relative;
           z-index: 2;
-          padding: 120px 24px 100px;
+          padding: 80px 24px;
           max-width: 1000px !important;
           width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
         .hero-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 20px;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: var(--radius-full);
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: var(--neon-blue);
+          text-transform: uppercase;
+          letter-spacing: 2px;
           margin-bottom: 24px;
+        }
+        .badge-dot {
+          width: 8px;
+          height: 8px;
+          background: var(--neon-blue);
+          border-radius: 50%;
+          box-shadow: 0 0 10px var(--neon-blue);
+          animation: badge-pulse 2s infinite;
+        }
+        @keyframes badge-pulse {
+          0% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.4); opacity: 0.5; }
+          100% { transform: scale(1); opacity: 1; }
         }
         .hero-title {
           font-family: var(--font-heading);
-          font-size: clamp(2rem, 6vw, 4rem);
-          font-weight: 900;
-          line-height: 1.2;
-          margin-bottom: 24px;
+          font-size: clamp(2.2rem, 7vw, 4.5rem);
+          font-weight: 950;
+          line-height: 1.1;
+          margin-bottom: 16px;
           color: var(--text-primary);
           text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+          letter-spacing: -2px;
         }
         .hero-description {
-          font-size: clamp(1rem, 2vw, 1.15rem);
+          font-size: clamp(1rem, 2.2vw, 1.2rem);
           color: var(--text-secondary);
-          margin: 0 auto 48px;
-          max-width: 720px;
-          line-height: 1.8;
+          margin: 0 auto 32px;
+          max-width: 800px;
+          line-height: 1.6;
+          opacity: 0.9;
+          font-weight: 450;
         }
         .hero-buttons {
           display: flex;
@@ -222,7 +255,18 @@ export default function HeroSlider(): React.JSX.Element {
           opacity: 0.85;
         }
         [data-theme='light'] .hero-title {
-          text-shadow: 0 0 20px rgba(255,255,255,0.8);
+          color: #0f172a;
+          text-shadow: none;
+        }
+        [data-theme='light'] .hero-description {
+          color: #1e293b;
+          opacity: 1;
+        }
+        [data-theme='light'] .hero-badge {
+          background: rgba(0, 198, 255, 0.12);
+          border-color: rgba(0, 198, 255, 0.3);
+          color: #0369a1;
+          box-shadow: 0 2px 10px rgba(0, 198, 255, 0.1);
         }
         @media (max-width: 768px) {
           .hero-content {

@@ -30,6 +30,7 @@ import TestimonialCarousel from '@/components/TestimonialCarousel';
 import FAQAccordion from '@/components/FAQAccordion';
 import type { FAQItem } from '@/components/FAQAccordion';
 import SectionReveal from '@/components/SectionReveal';
+import TechStack from '@/components/TechStack';
 
 interface ServiceItem {
   icon: React.ReactNode;
@@ -226,6 +227,8 @@ export default function HomePage(): React.JSX.Element {
           </div>
         </div>
       </section>
+
+      <TechStack />
 
       {/* ===== SERVICES ===== */}
       <section className="section services-section" id="services">
