@@ -19,7 +19,8 @@ import {
   CheckCircle,
   Lightbulb,
   ShieldCheck,
-  Star
+  Star,
+  ArrowRight
 } from 'lucide-react';
 import HeroSlider from '@/components/HeroSlider';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -239,39 +240,76 @@ export default function HomePage(): React.JSX.Element {
       </section>
 
       {/* ===== MISSION & VISION ===== */}
-      <section className="section" id="mission-vision">
-        <div className="container">
+      <section className="section mv-section overflow-hidden" id="mission-vision">
+        <div className="mv-container container">
           <SectionReveal>
             <div className="section-header">
-              <span className="section-label">Our Purpose</span>
+              <span className="section-label">Our Strategic Evolution</span>
               <h2 className="section-title">
                 Mission & <span className="gradient-text">Vision</span>
               </h2>
             </div>
           </SectionReveal>
-          <div className="mv-grid">
-            <motion.div className="mv-card designer-card" {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }}>
-              <div className="service-icon-box" style={{ width: '60px', height: '60px', marginBottom: '20px' }}>
-                <Target size={30} />
-              </div>
-              <h3>Our Mission</h3>
-              <p>
-                To empower businesses worldwide with innovative, reliable, and scalable technology solutions
-                that drive growth, enhance efficiency, and create meaningful digital experiences. We are
-                committed to delivering excellence through modern engineering practices and a client-first approach.
-              </p>
-            </motion.div>
-            <motion.div className="mv-card designer-card" {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }}>
-              <div className="service-icon-box" style={{ width: '60px', height: '60px', marginBottom: '20px' }}>
-                <Search size={30} />
-              </div>
-              <h3>Our Vision</h3>
-              <p>
-                To become a globally recognized technology partner known for transforming ideas into
-                world-class digital products. We envision a future where every business, regardless of size,
-                has access to cutting-edge technology that propels them ahead of the competition.
-              </p>
-            </motion.div>
+
+          <div className="mv-creative-grid">
+            <div className="mv-visual-bridge">
+              <img src="/mv_visual.png" alt="Strategic Path" className="mv-visual-img" />
+              <div className="mv-glow-overlay" />
+            </div>
+
+            <div className="mv-cards-wrapper">
+              <motion.div 
+                className="mv-card-creative designer-card glow-cyan mission-card"
+                initial={{ opacity: 0, x: -70 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <div className="mv-badge">Operational Mission</div>
+                <div className="service-icon-box">
+                  <Target size={32} />
+                </div>
+                <h3>Accelerating Innovation</h3>
+                <p>
+                  To bridge the technical gap for businesses worldwide by delivering 
+                  precision-engineered solutions. We empower growth through code 
+                  integrity, architectural stability, and a client-centric engineering culture.
+                </p>
+                <div className="mv-card-footer-meta">
+                  <div className="status-indicator">
+                    <span className="dot pulsed" /> 
+                    <span>Live Operations</span>
+                  </div>
+                  <ArrowRight size={18} />
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="mv-card-creative designer-card glow-purple vision-card"
+                initial={{ opacity: 0, x: 70 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              >
+                <div className="mv-badge">Future Vision</div>
+                <div className="service-icon-box">
+                  <Search size={32} />
+                </div>
+                <h3>Planetary Excellence</h3>
+                <p>
+                  To be the global benchmark for creative technical problem-solving. 
+                  We envision a future where high-performance technology is accessible, 
+                  ethical, and seamlessly integrated into every human success story.
+                </p>
+                <div className="mv-card-footer-meta">
+                  <div className="status-indicator">
+                    <span className="dot pulsed" />
+                    <span>2030 Roadmap</span>
+                  </div>
+                  <ArrowRight size={18} />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
