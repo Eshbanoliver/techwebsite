@@ -33,16 +33,21 @@ interface ServiceItem {
   icon: React.ReactNode;
   title: string;
   desc: string;
+  slug: string;
+  glow: string;
+  bg: string;
 }
 
-const services: (ServiceItem & { glow: string })[] = [
-  { icon: <BrainCircuit size={24} />, title: 'AI & Machine Learning', desc: 'Intelligent solutions powered by advanced machine learning algorithms, natural language processing, and predictive analytics.', glow: 'glow-cyan' },
-  { icon: <Layout size={24} />, title: 'Web Development', desc: 'Stunning, high-performance websites and web applications built with modern frameworks like React, Next.js, and Node.js.', glow: 'glow-blue' },
-  { icon: <Smartphone size={24} />, title: 'Mobile App Development', desc: 'Native and cross-platform mobile apps for iOS and Android with seamless user experiences and robust backends.', glow: 'glow-purple' },
-  { icon: <Code size={24} />, title: 'Software Development', desc: 'Custom enterprise software solutions designed to streamline operations, boost productivity, and drive growth.', glow: 'glow-pink' },
-  { icon: <Palette size={24} />, title: 'UI/UX Design', desc: 'Beautiful, intuitive interfaces crafted with user-centered design principles that delight and convert visitors.', glow: 'glow-orange' },
-  { icon: <Cloud size={24} />, title: 'Cloud & DevOps', desc: 'Scalable cloud infrastructure, CI/CD pipelines, containerization, and monitoring for reliable deployments.', glow: 'glow-green' },
-  { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Data-driven SEO, social media, PPC, and content marketing strategies that maximize your digital presence and ROI.', glow: 'glow-blue' },
+const services: ServiceItem[] = [
+  { icon: <BrainCircuit size={24} />, title: 'AI & Machine Learning', desc: 'Intelligent solutions powered by advanced machine learning algorithms and predictive analytics.', slug: 'ai-ml', glow: 'glow-cyan', bg: '/services/ai-ml.png' },
+  { icon: <Layout size={24} />, title: 'Web Development', desc: 'Stunning, high-performance websites built with modern frameworks like React and Next.js.', slug: 'web-development', glow: 'glow-blue', bg: '/services/web.png' },
+  { icon: <Smartphone size={24} />, title: 'Mobile App Development', desc: 'Native and cross-platform mobile apps with seamless user experiences and robust backends.', slug: 'mobile-apps', glow: 'glow-purple', bg: '/services/mobile.png' },
+  { icon: <Code size={24} />, title: 'Software Development', desc: 'Custom enterprise software solutions designed to streamline operations and boost productivity.', slug: 'software-development', glow: 'glow-pink', bg: '/services/software.png' },
+  { icon: <Palette size={24} />, title: 'UI/UX Design', desc: 'Beautiful, intuitive interfaces crafted with user-centered design principles.', slug: 'ui-ux-design', glow: 'glow-orange', bg: '/services/uiux.png' },
+  { icon: <Cloud size={24} />, title: 'Cloud & DevOps', desc: 'Scalable cloud infrastructure and automated CI/CD pipelines for reliable deployments.', slug: 'cloud-devops', glow: 'glow-green', bg: '/services/cloud.png' },
+  { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Data-driven marketing strategies that maximize your digital presence and ROI.', slug: 'digital-marketing', glow: 'glow-blue', bg: '/services/marketing.png' },
+  { icon: <Target size={24} />, title: 'Branding & Logo', desc: 'Strategic brand identity and visual storytelling that resonates with your audience.', slug: 'branding', glow: 'glow-orange', bg: '/services/branding.png' },
+  { icon: <ShieldCheck size={24} />, title: 'Enterprise Solutions', desc: 'Large-scale architectural solutions for global enterprises and mission-critical systems.', slug: 'enterprise-solutions', glow: 'glow-blue', bg: '/services/enterprise.png' },
 ];
 
 interface ValueItem {
@@ -187,31 +192,47 @@ export default function HomePage(): React.JSX.Element {
       </section>
 
       {/* ===== SERVICES ===== */}
-      <section className="section" id="services">
-        <div className="container">
+      <section className="section services-section" id="services">
+        <div className="services-section-bg">
+          <img src="/services_bg.png" alt="Services Background" />
+          <div className="bg-overlay" />
+        </div>
+        <div className="container relative z-1">
           <SectionReveal>
             <div className="section-header">
-              <span className="section-label">Our Services</span>
+              <span className="section-label">Our Specialized Services</span>
               <h2 className="section-title">
                 What We <span className="gradient-text">Deliver</span>
               </h2>
               <p className="section-subtitle">
-                End-to-end technology solutions crafted to accelerate your business growth.
+                End-to-end technology solutions crafted to accelerate your business growth 
+                and drive sustainable innovation in a digital-first world.
               </p>
             </div>
           </SectionReveal>
           <div className="services-grid">
             {services.map((s, i) => (
-              <motion.div
-                key={i}
-                className={`service-card designer-card ${s.glow}`}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-              >
-                <div className="service-icon-box">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-              </motion.div>
+              <Link key={i} href={`/services/${s.slug}`} className="service-card-link">
+                <motion.div
+                  className={`service-card designer-card ${s.glow}`}
+                  {...fadeUp}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                >
+                  <div className="service-card-bg">
+                    <img src={s.bg} alt={s.title} />
+                    <div className="card-overlay" />
+                  </div>
+                  <div className="service-card-content relative z-1">
+                    <div className="service-icon-box">{s.icon}</div>
+                    <h3>{s.title}</h3>
+                    <p>{s.desc}</p>
+                    <div className="service-card-footer">
+                      <span>Explore Solutions</span>
+                      <Rocket size={16} />
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
