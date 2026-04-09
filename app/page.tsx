@@ -77,30 +77,65 @@ export default function HomePage(): React.JSX.Element {
       </section>
 
       {/* ===== ABOUT PREVIEW ===== */}
-      <section className="section" id="about-preview">
+      <section className="section overflow-hidden" id="about-preview">
         <div className="container">
           <SectionReveal>
-            <div className="about-content">
-              <div>
-                <span className="section-label">About Us</span>
+            <div className="about-grid">
+              <div className="about-text-content">
+                <span className="section-label">About MS Infinix</span>
                 <h2 className="section-title" style={{ textAlign: 'left' }}>
-                  We are <span className="gradient-text">MS Infinix</span>
+                  Innovating the <span className="gradient-text">Next Generation</span> of Digital Experiences
                 </h2>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, fontSize: '1.05rem', marginBottom: 16 }}>
-                  Based in the beautiful city of Udaipur, Rajasthan, MS Infinix is a forward-thinking
-                  technology company specializing in crafting premium digital solutions. We combine
-                  innovation with expertise to deliver products that exceed expectations.
+                <p className="about-description">
+                  Based in the historic city of Udaipur, Rajasthan, MS Infinix is more than just a 
+                  technology firm. We are architects of digital transformation, dedicated to pushing 
+                  the boundaries of what&apos;s possible through advanced engineering and creative design.
                 </p>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, fontSize: '1.05rem', marginBottom: 32 }}>
-                  From AI-powered applications to stunning web experiences, we help businesses
-                  of all sizes unlock their digital potential with modern, scalable technology.
-                </p>
-                <Link href="/about" className="btn btn-primary" id="about-readmore">
-                  Read More →
-                </Link>
+                <div className="about-features">
+                  <div className="about-feature">
+                    <div className="feature-dot" />
+                    <span>State-of-the-art AI Integration</span>
+                  </div>
+                  <div className="about-feature">
+                    <div className="feature-dot" />
+                    <span>Enterprise-Grade Scalability</span>
+                  </div>
+                  <div className="about-feature">
+                    <div className="feature-dot" />
+                    <span>User-Centric Visual Design</span>
+                  </div>
+                </div>
+                <div className="about-cta-group" style={{ marginTop: '40px' }}>
+                  <Link href="/about" className="btn btn-primary">
+                    Learn Our Story →
+                  </Link>
+                  <Link href="/contact" className="btn btn-secondary">
+                    Work With Us
+                  </Link>
+                </div>
               </div>
-              <div className="about-image-placeholder">
-                <span style={{ position: 'relative', zIndex: 1 }}>🚀</span>
+              <div className="about-visual">
+                <div className="visual-container glass-card">
+                  <motion.img 
+                    src="/about_innovation.png" 
+                    alt="Innovation Visual"
+                    initial={{ scale: 1.1, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                  />
+                  <div className="visual-overlay" />
+                  <motion.div 
+                    className="visual-float-card glass-card"
+                    animate={{ y: [0, -15, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <span className="float-icon">🚀</span>
+                    <div>
+                      <strong>Udaipur&apos;s Best</strong>
+                      <p>Top Rated Tech Studio</p>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
           </SectionReveal>
