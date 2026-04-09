@@ -68,12 +68,15 @@ const values: ValueItem[] = [
   { icon: <Handshake size={32} />, title: 'Long-Term Trust', desc: 'Building lasting technical relationships since our establishment.', className: 'bg-vibrant-red' },
 ];
 
-const whyUs: ValueItem[] = [
-  { icon: <Users size={24} />, title: 'Expert Team', desc: 'Skilled professionals with deep expertise across modern technologies.', glow: 'glow-blue' },
-  { icon: <Code size={24} />, title: 'Modern Tech Stack', desc: 'We use the latest tools, frameworks, and platforms for optimal results.', glow: 'glow-cyan' },
-  { icon: <TrendingUp size={24} />, title: 'Scalable Solutions', desc: 'Architecture that grows with your business — from startup to enterprise.', glow: 'glow-purple' },
-  { icon: <Rocket size={24} />, title: 'Fast Delivery', desc: 'Agile methodology ensures rapid iteration and on-time project completion.', glow: 'glow-pink' },
-  { icon: <ShieldCheck size={24} />, title: 'Dedicated Support', desc: '24/7 post-launch support and maintenance to keep everything running smoothly.', glow: 'glow-orange' },
+const whyUs = [
+  { title: 'Global Infrastructure', desc: 'Planetary-scale cloud architectures engineered for zero-latency operations.', className: 'bg-why-1' },
+  { title: 'Elite Talent Pool', desc: 'World-class engineers and architects with core contributions to top frameworks.', className: 'bg-why-2' },
+  { title: '24/7 Priority Support', desc: 'Instant access to senior technical leads regardless of your timezone.', className: 'bg-why-3' },
+  { title: 'Competitive ROI', desc: 'High-performance engineering that delivers measurable business value and growth.', className: 'bg-why-4' },
+  { title: 'Scalable Solutions', desc: 'Modular software that grows seamlessly from startup to global enterprise.', className: 'bg-why-5' },
+  { title: 'Zero-Downtime Policy', desc: 'Mission-critical reliability keeping your services online at all times.', className: 'bg-why-6' },
+  { title: 'Security First', desc: 'Military-grade encryption and proactive vulnerability scanning by default.', className: 'bg-why-7' },
+  { title: 'Rapid Deployment', desc: 'Automated CI/CD pipelines that move your ideas to production in hours.', className: 'bg-why-8' },
 ];
 
 const faqItems: FAQItem[] = [
@@ -370,15 +373,15 @@ export default function HomePage(): React.JSX.Element {
               </p>
             </div>
           </SectionReveal>
-          <div className="why-grid">
+          <div className="why-grid-vibrant">
             {whyUs.map((w, i) => (
               <motion.div
                 key={i}
-                className={`why-card designer-card ${w.glow}`}
+                className={`why-card-vibrant ${w.className}`}
                 {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="service-icon-box">{w.icon}</div>
+                <div className="why-card-watermark">0{i + 1}</div>
                 <h3>{w.title}</h3>
                 <p>{w.desc}</p>
               </motion.div>
