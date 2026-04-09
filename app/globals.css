@@ -548,6 +548,12 @@ input, textarea, select { font-family: inherit; }
   color: var(--text-primary);
 }
 
+.about-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .feature-dot {
   width: 10px;
   height: 10px;
