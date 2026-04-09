@@ -1,5 +1,7 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 interface Testimonial {
   quote: string;
@@ -43,65 +45,103 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialCarousel(): React.JSX.Element {
   const [current, setCurrent] = useState<number>(0);
+  const [direction, setDirection] = useState<number>(0);
 
-  const next = useCallback((): void => {
-    setCurrent((prev) => (prev + 1) % testimonials.length);
-  }, []);
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 500 : -500,
+      opacity: 0,
+      scale: 0.9,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? 500 : -500,
+      opacity: 0,
+      scale: 0.9,
+    }),
+  };
 
-  const prev = useCallback((): void => {
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  }, []);
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection);
+    setCurrent((prev) => (prev + newDirection + testimonials.length) % testimonials.length);
+  };
 
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(() => {
+      paginate(1);
+    }, 6000);
     return () => clearInterval(timer);
-  }, [next]);
+  }, []);
 
   return (
-    <div>
-      <div className="testimonials-wrapper">
-        <div
-          className="testimonials-track"
-          style={{
-            transform: `translateX(-${current * 424}px)`,
-          }}
-        >
-          {testimonials.map((t, i) => (
-            <div key={i} className="testimonial-card glass-card">
-              <div className="stars">★★★★★</div>
-              <p className="quote">&ldquo;{t.quote}&rdquo;</p>
-              <div className="author">
-                <div className="author-avatar">{t.initials}</div>
-                <div className="author-info">
-                  <h4>{t.author}</h4>
-                  <p>{t.role}</p>
-                </div>
+    <div className="testimonial-container-cinematic">
+      <div className="testimonial-view-window">
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.div
+            key={current}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.4 },
+              scale: { duration: 0.4 }
+            }}
+            className="testimonial-card-cinematic designer-card glow-cyan"
+          >
+            <div className="quote-symbol-bg">
+              <Quote size={80} strokeWidth={1} />
+            </div>
+
+            <div className="testimonial-rating">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={18} fill="currentColor" className="star-active" />
+              ))}
+            </div>
+
+            <p className="large-quote">
+              &ldquo;{testimonials[current].quote}&rdquo;
+            </p>
+
+            <div className="author-pod-premium">
+              <div className="avatar-pod-glow">
+                <span className="avatar-initials">{testimonials[current].initials}</span>
+              </div>
+              <div className="author-meta-premium">
+                <h4>{testimonials[current].author}</h4>
+                <p>{testimonials[current].role}</p>
               </div>
             </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="cinematic-controls">
+        <button onClick={() => paginate(-1)} className="control-btn" id="prev-btn">
+          <ChevronLeft size={24} />
+        </button>
+        <div className="paginator-dots">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setDirection(i > current ? 1 : -1);
+                setCurrent(i);
+              }}
+              className={`dot-indicator ${current === i ? 'active' : ''}`}
+            />
           ))}
         </div>
-      </div>
-      <div className="testimonial-controls">
-        <button onClick={prev} aria-label="Previous testimonial" id="testimonial-prev">
-          ←
-        </button>
-        {testimonials.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            aria-label={`Go to testimonial ${i + 1}`}
-            style={{
-              width: current === i ? 32 : 10,
-              height: 10,
-              borderRadius: 'var(--radius-full)',
-              background: current === i ? 'var(--gradient-primary)' : 'var(--bg-glass)',
-              border: `1px solid ${current === i ? 'transparent' : 'var(--border-glass)'}`,
-              transition: 'all 0.3s ease',
-            }}
-          />
-        ))}
-        <button onClick={next} aria-label="Next testimonial" id="testimonial-next">
-          →
+        <button onClick={() => paginate(1)} className="control-btn" id="next-btn">
+          <ChevronRight size={24} />
         </button>
       </div>
     </div>
