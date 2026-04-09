@@ -79,12 +79,43 @@ const whyUs = [
   { title: 'Rapid Deployment', desc: 'Automated CI/CD pipelines that move your ideas to production in hours.', className: 'bg-why-8' },
 ];
 
+interface FAQItem {
+  question: string;
+  answer: string;
+  className: string;
+}
+
 const faqItems: FAQItem[] = [
-  { question: 'What services does MS Infinix offer?', answer: 'We offer a comprehensive range of tech services including AI & Machine Learning, Web Development, Mobile App Development, Software Development, UI/UX Design, Cloud & DevOps, and Digital Marketing. Each service is tailored to meet your specific business needs and goals.' },
-  { question: 'Where is MS Infinix located?', answer: 'MS Infinix is headquartered in Udaipur, Rajasthan 313001, India. We serve clients globally and offer both on-site and remote collaboration options to ensure seamless project delivery.' },
-  { question: 'How long does a typical project take?', answer: 'Project timelines vary based on scope and complexity. A simple website might take 2-4 weeks, while a complex enterprise application could take 3-6 months. We provide detailed timelines during our initial consultation and keep you updated throughout the development process.' },
-  { question: 'Do you offer post-launch support?', answer: 'Absolutely! We provide comprehensive post-launch support including bug fixes, performance optimization, security updates, and feature enhancements. Our dedicated support team is available to ensure your solution runs smoothly 24/7.' },
-  { question: 'What technologies do you use?', answer: 'We work with modern technologies including React, Next.js, Node.js, Python, TensorFlow, Flutter, React Native, AWS, Google Cloud, Azure, Docker, Kubernetes, and many more. We always choose the best technology stack for your specific project requirements.' },
+  { 
+    question: 'What services does MS Infinix offer?', 
+    answer: 'We offer a comprehensive range of tech services including AI & Machine Learning, Web Development, Mobile App Development, Software Development, UI/UX Design, Cloud & DevOps, and Digital Marketing.',
+    className: 'bg-why-1'
+  },
+  { 
+    question: 'Where is MS Infinix located?', 
+    answer: 'MS Infinix is headquartered in Udaipur, Rajasthan 313001, India. We serve clients globally and offer both on-site and remote collaboration options to ensure seamless project delivery.',
+    className: 'bg-why-2'
+  },
+  { 
+    question: 'How long does a typical project take?', 
+    answer: 'Project timelines vary based on scope and complexity. A simple website might take 2-4 weeks, while a complex enterprise application could take 3-6 months.',
+    className: 'bg-why-3'
+  },
+  { 
+    question: 'Do you offer post-launch support?', 
+    answer: 'Absolutely! We provide comprehensive post-launch support including bug fixes, performance optimization, security updates, and feature enhancements 24/7.',
+    className: 'bg-why-4'
+  },
+  { 
+    question: 'What technologies do you use?', 
+    answer: 'We work with modern technologies including React, Next.js, Node.js, Python, TensorFlow, Flutter, React Native, AWS, Google Cloud, Azure, and Kubernetes.',
+    className: 'bg-why-5'
+  },
+  { 
+    question: 'How can I get a quote?', 
+    answer: 'You can get a free consultation and quote by clicking the "Contact Us" or "Get a Quote" buttons. Our technical team will reach out within 24 hours.',
+    className: 'bg-why-6'
+  },
 ];
 
 const fadeUp = {
@@ -422,7 +453,22 @@ export default function HomePage(): React.JSX.Element {
               </p>
             </div>
           </SectionReveal>
-          <FAQAccordion items={faqItems} />
+          <div className="faq-bento-grid">
+            {faqItems.map((item, i) => (
+              <motion.div
+                key={i}
+                className={`faq-bento-card ${item.className}`}
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="faq-watermark">?</div>
+                <div className="faq-content">
+                  <h3>{item.question}</h3>
+                  <p>{item.answer}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
