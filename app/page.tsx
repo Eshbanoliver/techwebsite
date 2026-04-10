@@ -460,12 +460,13 @@ export default function HomePage(): React.JSX.Element {
                   <div className="industry-bg-overlay" />
                 </div>
                 <div className="industry-tag">Sector_{i + 1}</div>
-                <div className="industry-icon-wrapper relative z-1">
-                  {ind.icon}
-                </div>
                 <div className="industry-card-content relative z-1">
+                  <div className="industry-icon-wrapper">
+                    {ind.icon}
+                  </div>
                   <h3>{ind.name}</h3>
                   <p>{ind.desc}</p>
+                  <button className="industry-btn">Explore Solutions →</button>
                 </div>
                 <div className="industry-glow" />
               </motion.div>
