@@ -1975,9 +1975,9 @@ input, textarea, select { font-family: inherit; }
     radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.02) 0%, transparent 70%),
     linear-gradient(135deg, #020202 0%, #0a0a0a 100%);
   border-top: 1px solid rgba(0, 198, 255, 0.3);
-  padding: 80px 0 40px;
+  padding: 40px 0 0px; /* Removed bottom padding entirely */
   color: var(--text-primary);
-  min-height: 500px;
+  min-height: auto;
 }
 
 [data-theme='light'] .footer-tech {
@@ -2146,7 +2146,7 @@ input, textarea, select { font-family: inherit; }
 .footer-main-grid {
   display: grid;
   grid-template-columns: 1.5fr repeat(3, 1fr);
-  gap: 48px;
+  gap: 32px; /* Reduced from 48px */
   position: relative;
   z-index: 10;
 }
@@ -2171,7 +2171,7 @@ input, textarea, select { font-family: inherit; }
   text-transform: uppercase;
   letter-spacing: 3px;
   color: var(--neon-blue);
-  margin-bottom: 32px;
+  margin-bottom: 20px; /* Reduced from 32px */
   display: flex;
   align-items: center;
   gap: 12px;
@@ -2234,7 +2234,7 @@ input, textarea, select { font-family: inherit; }
   line-height: 1.8;
   color: var(--text-secondary);
   opacity: 0.8;
-  margin: 24px 0;
+  margin: 16px 0; /* Reduced from 24px */
   max-width: 400px;
   position: relative;
   padding: 16px;
@@ -2307,9 +2307,9 @@ input, textarea, select { font-family: inherit; }
 }
 
 .footer-tech-bottom {
-  margin-top: 80px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(0, 198, 255, 0.1);
+  margin-top: 20px !important; /* Reduced dramatically */
+  padding: 10px 0 !important; /* Extremely tight */
+  border-top: 1px solid rgba(0, 240, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2977,5 +2977,77 @@ input, textarea, select { font-family: inherit; }
   .footer-legal-links {
     justify-content: center;
   }
+}
+
+
+/* ---- CRITICAL FOOTER SPACE REMOVAL ---- */
+.footer-tech {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.footer-tech .container {
+  padding-bottom: 20px !important; /* The only allowed space at the very bottom */
+}
+
+.footer-tech-bottom,
+.footer-tech-bottom p,
+.footer-tech-bottom div {
+  margin-bottom: 0 !important;
+}
+
+.footer-tech-coordinates {
+  margin-bottom: 0 !important;
+}
+
+
+/* ---- FIXING FLOATING BUTTONS FLOW ISSUE ---- */
+.floating-left, .floating-right {
+  position: fixed;
+  z-index: 1002;
+  pointer-events: none;
+}
+
+.floating-left {
+  bottom: 24px;
+  left: 24px;
+}
+
+.floating-right {
+  bottom: 24px;
+  right: 24px;
+}
+
+.float-btn {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.float-btn.scroll-top {
+  opacity: 0;
+  visibility: hidden;
+  background: var(--neon-blue);
+  color: white;
+  border: none;
+}
+
+.float-btn.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* FINAL FOOTER OVERRIDE */
+.footer-tech .container {
+  padding-bottom: 0 !important;
 }
 
