@@ -17,6 +17,8 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import ParticleBackground from '@/components/ParticleBackground';
+import SectionReveal from '@/components/SectionReveal';
+import CreativeCarousel from '@/components/CreativeCarousel';
 
 
 const pillars = [
@@ -182,6 +184,19 @@ export default function AboutPage() {
       </section>
 
 
+      {/* --- Creative Precision (Infinite Coverflow) --- */}
+      <section className="py-24 bg-primary relative overflow-hidden">
+        <div className="container px-6 mb-12">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-5xl font-black mb-6" style={{ color: 'var(--text-primary)' }}>Creative Precision</h2>
+            <p className="text-xl text-secondary">
+              We harmonize technical complexity with aesthetic brilliance to build complete brand experiences.
+            </p>
+          </div>
+        </div>
+        <CreativeCarousel />
+      </section>
+
       {/* --- Strategic Pillars (Screenshot Clone) --- */}
       <section className="py-24">
         <div className="container px-6">
@@ -284,24 +299,59 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* --- CTA --- */}
-      <section className="py-32">
-        <div className="container px-6">
-          <div className="glass-card text-center relative overflow-hidden" style={{ padding: '80px 40px', background: 'linear-gradient(to bottom right, #000, #050510)', border: 'none' }}>
-            <div className="absolute inset-0 opacity-10" style={{ pointerEvents: 'none' }}>
-              <Code size={400} style={{ position: 'absolute', bottom: '-80px', right: '-80px', transform: 'rotate(12deg)' }} />
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-6xl font-black mb-8">Let&apos;s Build the <span className="gradient-text">Exceptional</span></h2>
-              <p className="text-xl text-secondary mb-12 max-w-2xl">
-                Join our list of global partners and transform your technical landscape with Udaipur&apos;s most intensive tech studio.
-              </p>
-              <div className="flex-row justify-center gap-8 items-center" style={{ display: 'flex', flexWrap: 'wrap' }}>
-                <Link href="/contact" className="btn btn-primary" style={{ padding: '16px 48px', fontSize: '1.125rem' }}>Initiate Protocol →</Link>
-                <Link href="/services" className="btn" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', padding: '16px 48px', fontSize: '1.125rem' }}>Architecture Specs</Link>
+      {/* ===== TECH CTA ===== */}
+      <section className="section" id="cta">
+        <div className="container">
+          <SectionReveal>
+            <div className="cta-tech-wrapper">
+              <div className="cta-tech-grid" />
+              <div className="cta-tech-scan" />
+              
+              {/* Corner Decals */}
+              <div className="cta-tech-corner corner-tl" />
+              <div className="cta-tech-corner corner-tr" />
+              <div className="cta-tech-corner corner-bl" />
+              <div className="cta-tech-corner corner-br" />
+
+              {/* Technical Data Decals */}
+              <div className="cta-tech-status-bars">
+                <div className="status-row">
+                  <span>Core Logic</span>
+                  <div className="status-bar-bg"><div className="status-bar-fill" style={{ animationDelay: '0s' }} /></div>
+                </div>
+                <div className="status-row">
+                  <span>Neural Net</span>
+                  <div className="status-bar-bg"><div className="status-bar-fill" style={{ animationDelay: '-1.5s' }} /></div>
+                </div>
+                <div className="status-row">
+                  <span>Sync Status</span>
+                  <div className="status-row-text" style={{ color: '#00ff00' }}>[ ACTIVE ]</div>
+                </div>
+              </div>
+
+              <div className="cta-tech-coordinates">
+                SEC_ID: MS_INF_2026 // LOC: UDAIPUR_IN // 24.5854° N, 73.7125° E
+              </div>
+
+              <div className="cta-tech-content">
+                <h2 className="cta-tech-title">
+                  Let&apos;s Build Something <span className="gradient-text">Amazing</span> Together
+                </h2>
+                <p className="cta-tech-subtitle">
+                  Ready to transform your ideas into reality? Our elite technical team is 
+                  standing by to engineer your next digital breakthrough.
+                </p>
+                <div className="cta-tech-buttons">
+                  <Link href="/contact" className="btn btn-tech" id="cta-contact">
+                    Initialize Project →
+                  </Link>
+                  <Link href="/contact" className="btn btn-tech btn-tech-secondary" id="cta-quote">
+                    Technical Brief
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          </SectionReveal>
         </div>
       </section>
     </main>
