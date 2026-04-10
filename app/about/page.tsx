@@ -94,21 +94,23 @@ export default function AboutPage() {
             >
               {/* Floating Stat Cards */}
               <motion.div 
-                className="floating-stat-card stat-1"
+                className="floating-stat-card liquid-glass stat-1"
                 initial={{ x: -20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
+                <div className="glossy-shine" />
                 <div className="text-4xl font-black text-white mb-1">350+</div>
                 <div className="text-xs uppercase tracking-widest text-white">Global Deployments</div>
               </motion.div>
 
               <motion.div 
-                className="floating-stat-card stat-2"
+                className="floating-stat-card liquid-glass stat-2"
                 initial={{ x: 20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
+                <div className="glossy-shine" />
                 <div className="text-4xl font-black text-white mb-1">98%</div>
                 <div className="text-xs uppercase tracking-widest text-white">Client Satisfaction</div>
               </motion.div>
@@ -122,42 +124,38 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* --- Mission & Vision (Large Format) --- */}
-      <section className="py-24" style={{ backgroundColor: 'rgba(0,0,0,0.4)' }}>
+      {/* --- Mission & Vision (High Impact) --- */}
+      <section className="py-24" style={{ background: 'linear-gradient(to bottom, var(--bg-primary), #050505)' }}>
         <div className="container px-6">
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="mv-card-container">
             <motion.div 
-              className="industry-card"
-              style={{ minHeight: '500px' }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="mv-vibrant-card liquid-glass shadow-glow"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
             >
-              <div className="industry-bg">
-                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200" alt="Mission" />
-              </div>
-              <div className="industry-bg-overlay" />
-              <div className="industry-card-content">
-                <div className="industry-icon-wrapper"><Target size={32} /></div>
-                <h3 className="text-4xl font-black mb-4">Our Mission</h3>
-                <p className="text-lg">To accelerate global digital transformation by delivering robust, secure, and infinitely scalable software ecosystems.</p>
+              <div className="glossy-shine" />
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426" className="bg-image" alt="Mission" />
+              <div className="overlay" />
+              <div className="content">
+                <div className="icon-shield liquid-glass"><Target size={40} /></div>
+                <h3 className="mv-title">Mission</h3>
+                <p className="mv-desc">Accelerating global digital evolution through the deployment of unyielding, secure, and hyper-scalable architectural ecosystems.</p>
               </div>
             </motion.div>
 
             <motion.div 
-              className="industry-card"
-              style={{ minHeight: '500px' }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="mv-vibrant-card liquid-glass shadow-glow"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <div className="industry-bg">
-                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200" alt="Vision" />
-              </div>
-              <div className="industry-bg-overlay" />
-              <div className="industry-card-content">
-                <div className="industry-icon-wrapper"><Eye size={32} /></div>
-                <h3 className="text-4xl font-black mb-4">Our Vision</h3>
-                <p className="text-lg">To define the next era of industrial intelligence through decentralized, neural, and highly autonomous technical architectures.</p>
+              <div className="glossy-shine" />
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=2340" className="bg-image" alt="Vision" />
+              <div className="overlay" />
+              <div className="content">
+                <div className="icon-shield liquid-glass"><Eye size={40} /></div>
+                <h3 className="mv-title">Vision</h3>
+                <p className="mv-desc">Defining the autonomous horizon of industrial intelligence via decentralized neural networks and next-gen computational logic.</p>
               </div>
             </motion.div>
           </div>
@@ -179,7 +177,8 @@ export default function AboutPage() {
                   transition={{ delay: i * 0.1 }}
                 >
                   <span className="timeline-year">{item.year}</span>
-                  <div className="glass-card" style={{ padding: '32px' }}>
+                  <div className="liquid-glass" style={{ padding: '32px' }}>
+                    <div className="glossy-shine" />
                     <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
                     <p className="text-secondary leading-relaxed">{item.desc}</p>
                   </div>
@@ -191,7 +190,7 @@ export default function AboutPage() {
       </section>
 
       {/* --- Strategic Pillars --- */}
-      <section className="py-24" style={{ backgroundColor: 'rgba(0,0,0,0.2)' }}>
+      <section className="py-24" style={{ background: 'linear-gradient(to top, var(--bg-primary), #080808)' }}>
         <div className="container px-6">
           <div className="text-center mb-16">
             <div className="section-label mb-8">Our Core DNA</div>
@@ -201,12 +200,13 @@ export default function AboutPage() {
             {pillars.map((pillar, i) => (
               <motion.div 
                 key={i}
-                className="glass-card flex-col"
+                className="liquid-glass flex-col"
                 style={{ padding: '40px' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
               >
+                <div className="glossy-shine" />
                 <div className="text-neon-blue mb-6">{pillar.icon}</div>
                 <h3 className="text-xl font-bold mb-4">{pillar.title}</h3>
                 <p className="text-muted leading-relaxed" style={{ fontSize: '0.9rem' }}>{pillar.desc}</p>
