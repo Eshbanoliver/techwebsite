@@ -8,7 +8,11 @@ import {
   Mail, 
   Phone,
   Cpu,
-  ShieldCheck
+  ShieldCheck,
+  Linkedin,
+  Twitter,
+  Github,
+  Instagram
 } from 'lucide-react';
 
 export default function Footer(): React.JSX.Element {

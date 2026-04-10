@@ -8,23 +8,38 @@ import {
   ArrowRight,
   ShieldCheck,
   Zap,
-  Code
+  Code,
+  Workflow
 } from 'lucide-react';
 import Link from 'next/link';
 import ParticleBackground from '@/components/ParticleBackground';
 
-const timeline = [
-  { year: '2020', title: 'Genesis in Udaipur', desc: 'MS Infinex Tech was founded with a mission to bring silicon-valley engineering to the heart of Rajasthan.' },
-  { year: '2022', title: 'Neural Expansion', desc: 'Inception of our AI R&D division, focusing on large-scale machine learning and neural architectures.' },
-  { year: '2023', title: 'Global Benchmarks', desc: 'Successfully delivered 150+ high-performance systems for clients across North America and Europe.' },
-  { year: '2025', title: 'Next-Gen Infrastructure', desc: 'Launching our digital transformation framework, setting new standards for cloud and edge computing.' },
-];
 
 const pillars = [
-  { icon: <ShieldCheck size={32} />, title: 'Unyielding Quality', desc: 'Our engineering protocols follow strict ISO and agile standards for zero-latency products.' },
-  { icon: <Zap size={32} />, title: 'Rapid Deployment', desc: 'Utilizing automated CI/CD pipelines to bring your ideas to market at lightning speeds.' },
-  { icon: <Cpu size={32} />, title: 'Neural Synergy', desc: 'Deep integration of AI in every layer of development to optimize user experience.' },
-  { icon: <Globe size={32} />, title: 'Borderless Vision', desc: 'Operating from Udaipur, impacting the world. A global mindset in everything we build.' },
+  { 
+    icon: <Target size={24} />, 
+    title: 'Business-First Engineering', 
+    desc: 'We design technology solutions aligned with your business objectives, ensuring every feature delivers real impact — not just functionality.',
+    bg: 'pillar-card-1'
+  },
+  { 
+    icon: <Zap size={24} />, 
+    title: 'End-to-End Delivery Ownership', 
+    desc: 'From discovery and architecture to deployment and optimization, we take complete responsibility for outcomes.',
+    bg: 'pillar-card-2'
+  },
+  { 
+    icon: <Workflow size={24} />, 
+    title: 'Proven Execution Excellence', 
+    desc: 'Our structured processes, experienced teams, and delivery discipline ensure predictable timelines and consistent quality.',
+    bg: 'pillar-card-3'
+  },
+  { 
+    icon: <Cpu size={24} />, 
+    title: 'Scalable by Design', 
+    desc: 'We build systems that grow with your business — flexible, future-ready, and adaptable to evolving needs.',
+    bg: 'pillar-card-4'
+  },
 ];
 
 export default function AboutPage() {
@@ -94,25 +109,25 @@ export default function AboutPage() {
             >
               {/* Floating Stat Cards */}
               <motion.div 
-                className="floating-stat-card liquid-glass stat-1"
+                className="floating-stat-card stat-1"
                 initial={{ x: -20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
                 <div className="glossy-shine" />
-                <div className="text-4xl font-black text-white mb-1">350+</div>
-                <div className="text-xs uppercase tracking-widest text-white">Global Deployments</div>
+                <div className="text-4xl font-black text-black mb-1">350+</div>
+                <div className="text-xs uppercase tracking-widest text-black">Global Deployments</div>
               </motion.div>
 
               <motion.div 
-                className="floating-stat-card liquid-glass stat-2"
+                className="floating-stat-card stat-2"
                 initial={{ x: 20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
                 <div className="glossy-shine" />
-                <div className="text-4xl font-black text-white mb-1">98%</div>
-                <div className="text-xs uppercase tracking-widest text-white">Client Satisfaction</div>
+                <div className="text-4xl font-black text-black mb-1">98%</div>
+                <div className="text-xs uppercase tracking-widest text-black">Client Satisfaction</div>
               </motion.div>
 
               <div className="about-studio-image shadow-glow" style={{ height: '550px', border: '1px solid rgba(255,255,255,0.1)' }}>
@@ -162,54 +177,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* --- System Log Timeline --- */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="container px-6">
-          <div className="max-w-4xl">
-            <div className="section-label mb-16">Operational Milestones</div>
-            <div className="timeline-log">
-              {timeline.map((item, i) => (
-                <motion.div 
-                  key={i}
-                  className="timeline-entry"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <span className="timeline-year">{item.year}</span>
-                  <div className="liquid-glass" style={{ padding: '32px' }}>
-                    <div className="glossy-shine" />
-                    <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                    <p className="text-secondary leading-relaxed">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* --- Strategic Pillars --- */}
+      {/* --- Strategic Pillars (Screenshot Clone) --- */}
       <section className="py-24" style={{ background: 'linear-gradient(to top, var(--bg-primary), #080808)' }}>
         <div className="container px-6">
           <div className="text-center mb-16">
-            <div className="section-label mb-8">Our Core DNA</div>
-            <h2 className="text-5xl font-black">Foundational <span className="gradient-text">Principles</span></h2>
+            <h2 className="text-5xl font-black text-white">What Truly Sets Us Apart</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {pillars.map((pillar, i) => (
               <motion.div 
                 key={i}
-                className="liquid-glass flex-col"
-                style={{ padding: '40px' }}
+                className={`liquid-glass ${pillar.bg} flex-col`}
+                style={{ padding: '40px', borderRadius: '30px', border: 'none' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
               >
                 <div className="glossy-shine" />
-                <div className="text-neon-blue mb-6">{pillar.icon}</div>
-                <h3 className="text-xl font-bold mb-4">{pillar.title}</h3>
-                <p className="text-muted leading-relaxed" style={{ fontSize: '0.9rem' }}>{pillar.desc}</p>
+                <div className="pillar-icon-box">{pillar.icon}</div>
+                <h3 className="text-2xl font-bold mb-6 text-white leading-tight">{pillar.title}</h3>
+                <p className="text-secondary leading-relaxed" style={{ fontSize: '0.95rem' }}>{pillar.desc}</p>
               </motion.div>
             ))}
           </div>
