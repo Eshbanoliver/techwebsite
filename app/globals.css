@@ -3051,3 +3051,13 @@ input, textarea, select { font-family: inherit; }
   padding-bottom: 0 !important;
 }
 
+
+.footer-logo-link {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.footer-logo-link:hover {
+  opacity: 0.8;
+}
+
