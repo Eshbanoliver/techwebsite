@@ -15,13 +15,15 @@ import {
   TrendingUp, 
   Zap,
   Target,
-  Search,
   CheckCircle,
   Lightbulb,
   ShieldCheck,
   Star,
   ArrowRight,
-  Handshake
+  Handshake,
+  PenTool,
+  RefreshCw,
+  Search
 } from 'lucide-react';
 import HeroSlider from '@/components/HeroSlider';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -78,6 +80,51 @@ const whyUs = [
   { title: 'Zero-Downtime Policy', desc: 'Mission-critical reliability keeping your services online at all times.', className: 'bg-why-6' },
   { title: 'Security First', desc: 'Military-grade encryption and proactive vulnerability scanning by default.', className: 'bg-why-7' },
   { title: 'Rapid Deployment', desc: 'Automated CI/CD pipelines that move your ideas to production in hours.', className: 'bg-why-8' },
+];
+
+const processSteps = [
+  {
+    title: "Discovery & Strategy",
+    desc: "We analyze your business goals and user needs to build a solid technical foundation.",
+    icon: <Search size={28} />,
+    step: "01",
+    accent: "accent-cyan"
+  },
+  {
+    title: "System Architecture",
+    desc: "Defining high-performance tech stacks and scalable cloud infrastructures for long-term stability.",
+    icon: <PenTool size={28} />,
+    step: "02",
+    accent: "accent-blue"
+  },
+  {
+    title: "Agile Engineering",
+    desc: "Rapid development cycles with high-quality code and continuous stakeholder feedback loops.",
+    icon: <Code size={28} />,
+    step: "03",
+    accent: "accent-purple"
+  },
+  {
+    title: "Quality Assurance",
+    desc: "Comprehensive automated and manual testing ensure zero-defect software and top-tier security.",
+    icon: <ShieldCheck size={28} />,
+    step: "04",
+    accent: "accent-pink"
+  },
+  {
+    title: "Deployment & Ops",
+    desc: "Seamless release through automated CI/CD pipelines to a highly-available production cloud.",
+    icon: <Rocket size={28} />,
+    step: "05",
+    accent: "accent-orange"
+  },
+  {
+    title: "Evolution & Growth",
+    desc: "Post-launch monitoring and feature roadmaps to keep your platform at the cutting edge.",
+    icon: <RefreshCw size={28} />,
+    step: "06",
+    accent: "accent-green"
+  }
 ];
 
 interface FAQItem {
@@ -387,6 +434,46 @@ export default function HomePage(): React.JSX.Element {
                 <Link href="/about" className="learn-more">
                   Learn More <ArrowRight size={16} />
                 </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WORKING PROCESS ===== */}
+      <section className="process-section" id="process">
+        <div className="container">
+          <SectionReveal>
+            <div className="section-header">
+              <span className="section-label">Engineering Workflow</span>
+              <h2 className="section-title">
+                Our Working <span className="gradient-text">Process</span>
+              </h2>
+              <p className="section-subtitle">
+                A systematic, high-performance approach to turning complex ideas into 
+                market-ready digital products.
+              </p>
+            </div>
+          </SectionReveal>
+
+          <div className="process-grid">
+            {processSteps.map((step, i) => (
+              <motion.div
+                key={i}
+                className={`process-card ${step.accent}`}
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="process-middle-gradient" />
+                <div className="process-card-line" />
+                <div className="process-step-num">{step.step}</div>
+                <div className="process-icon-box">{step.icon}</div>
+                <div className="process-card-content relative z-1">
+                  <h3>{step.title}</h3>
+                  <p>{step.desc}</p>
+                </div>
+                <div className="process-indicator">Phase_{step.step}</div>
+                <div className="process-glow" />
               </motion.div>
             ))}
           </div>

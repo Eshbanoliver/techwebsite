@@ -2411,3 +2411,202 @@ input, textarea, select { font-family: inherit; }
   96% { opacity: 0.5; }
 }
 
+
+/* ---- Our Working Process Section ---- */
+.process-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  background: var(--bg-primary);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process-card {
+  position: relative;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 50px 35px;
+  transition: all var(--transition-base);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  backdrop-filter: blur(10px);
+}
+
+.process-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.process-card:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--neon-blue);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-glow);
+}
+
+.process-card:hover::before {
+  opacity: 1;
+}
+
+.process-step-num {
+  font-family: var(--font-mono);
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--neon-blue);
+  opacity: 0.05;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  line-height: 1;
+  transition: all var(--transition-base);
+  pointer-events: none;
+}
+
+.process-card:hover .process-step-num {
+  opacity: 0.15;
+  transform: scale(1.1) translateX(-10px);
+}
+
+.process-icon-box {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--gradient-subtle);
+  color: var(--neon-blue);
+  border: 1px solid var(--border-glass);
+  transition: all var(--transition-base);
+}
+
+.process-card:hover .process-icon-box {
+  background: var(--gradient-primary);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.4);
+}
+
+.process-card h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+.process-card p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.process-indicator {
+  position: absolute;
+  bottom: 12px;
+  right: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.process-glow {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(0, 198, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -75px;
+  right: -75px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.process-card:hover .process-glow {
+  opacity: 1;
+}
+
+
+/* Process Card Color Accents */
+.process-card.accent-cyan { --card-glow: #00f0ff; }
+.process-card.accent-blue { --card-glow: #3b82f6; }
+.process-card.accent-purple { --card-glow: #7f00ff; }
+.process-card.accent-pink { --card-glow: #ff00e5; }
+.process-card.accent-orange { --card-glow: #f97316; }
+.process-card.accent-green { --card-glow: #22c55e; }
+
+.process-middle-gradient {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, 
+    transparent, 
+    var(--card-glow, #00c6ff), 
+    transparent);
+  opacity: 0.03;
+  transform: translateY(-50%) skewY(-5deg);
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.process-card:hover .process-middle-gradient {
+  opacity: 0.08;
+  height: 160px;
+}
+
+.process-card-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--card-glow, #00c6ff), 
+    transparent);
+  opacity: 0.2;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.process-card:hover .process-card-line {
+  opacity: 0.6;
+  height: 2px;
+}
+
