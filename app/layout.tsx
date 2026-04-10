@@ -20,13 +20,13 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "MS Infinix | Future-Ready Digital Solutions",
-    template: "%s | MS Infinix",
+    default: "MS Infinex Tech | Infinite Ideas. Intelligent Execution.",
+    template: "%s | MS Infinex Tech",
   },
   description:
-    "MS Infinix delivers premium AI, Web, Mobile, Cloud & DevOps solutions from Udaipur, Rajasthan. Transform your business with cutting-edge technology.",
+    "MS Infinex Tech delivers premium AI, Web, Mobile, Cloud & DevOps solutions from Udaipur, Rajasthan. Transform your business with cutting-edge technology.",
   keywords: [
-    "MS Infinix",
+    "MS Infinex Tech",
     "web development",
     "AI solutions",
     "mobile app development",
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     "digital marketing",
     "UI UX design",
   ],
-  authors: [{ name: "MS Infinix" }],
+  authors: [{ name: "MS Infinex Tech" }],
   openGraph: {
-    title: "MS Infinix | Future-Ready Digital Solutions",
+    title: "MS Infinex Tech | Infinite Ideas. Intelligent Execution.",
     description:
       "Premium AI, Web, Mobile, Cloud & DevOps solutions from Udaipur, Rajasthan.",
     type: "website",
     locale: "en_IN",
-    siteName: "MS Infinix",
+    siteName: "MS Infinex Tech",
   },
 };
 

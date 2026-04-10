@@ -29,7 +29,7 @@ export default function TermsOfService() {
                 <h2 className="text-2xl font-bold">1. Service Definition</h2>
               </div>
               <p className="text-secondary leading-relaxed">
-                By accessing MS Infinix, you are entering into a professional engagement to utilize our technical infrastructure, 
+                By accessing MS Infinex Tech, you are entering into a professional engagement to utilize our technical infrastructure, 
                 engineering expertise, and software solutions. You agree to utilize these resources for lawful technical 
                 purposes only and to maintain the integrity of our source code and proprietary architectures.
               </p>
@@ -42,8 +42,8 @@ export default function TermsOfService() {
               </div>
               <p className="text-secondary leading-relaxed">
                 Unless otherwise specified in a custom Master Service Agreement (MSA), all core architectural patterns, 
-                custom modules, and engineering methodologies developed by MS Infinix remain the intellectual property 
-                of MS Infinix. Clients are granted a non-exclusive, perpetual license to use the final compiled software product 
+                custom modules, and engineering methodologies developed by MS Infinex Tech remain the intellectual property 
+                of MS Infinex Tech. Clients are granted a non-exclusive, perpetual license to use the final compiled software product 
                 provided all financial obligations are met.
               </p>
             </section>
@@ -54,8 +54,8 @@ export default function TermsOfService() {
                 <h2 className="text-2xl font-bold">3. Liability & Performance</h2>
               </div>
               <p className="text-secondary leading-relaxed">
-                MS Infinix strives for 99.9% uptime and zero-defect deployments. However, technical environments are subject 
-                to external variables. MS Infinix shall not be held liable for indirect, incidental, or consequential damages 
+                MS Infinex Tech strives for 99.9% uptime and zero-defect deployments. However, technical environments are subject 
+                to external variables. MS Infinex Tech shall not be held liable for indirect, incidental, or consequential damages 
                 arising from system downtime caused by third-party cloud outages or catastrophic network failures beyond 
                 our immediate control.
               </p>
@@ -146,7 +146,7 @@ export default function TermsOfService() {
               </p>
               <div className="p-4 bg-white/5 border-l-4 border-neon-blue rounded-r-lg">
                 <p className="text-secondary">
-                  <strong className="text-neon-blue">Email:</strong> legal@msinfinix.com<br />
+                  <strong className="text-neon-blue">Email:</strong> legal@msinfinextech.com<br />
                   <strong className="text-neon-blue">Phone:</strong> +91 98765 43210<br />
                   <strong className="text-neon-blue">Address:</strong> Udaipur, Rajasthan 313001, India
                 </p>

@@ -148,13 +148,13 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   { 
-    question: 'What services does MS Infinix offer?', 
+    question: 'What services does MS Infinex Tech offer?', 
     answer: 'We offer a comprehensive range of tech services including AI & Machine Learning, Web Development, Mobile App Development, Software Development, UI/UX Design, Cloud & DevOps, and Digital Marketing.',
     className: 'bg-why-1'
   },
   { 
-    question: 'Where is MS Infinix located?', 
-    answer: 'MS Infinix is headquartered in Udaipur, Rajasthan 313001, India. We serve clients globally and offer both on-site and remote collaboration options to ensure seamless project delivery.',
+    question: 'Where is MS Infinex Tech located?', 
+    answer: 'MS Infinex Tech is headquartered in Udaipur, Rajasthan 313001, India. We serve clients globally and offer both on-site and remote collaboration options to ensure seamless project delivery.',
     className: 'bg-why-2'
   },
   { 
@@ -220,12 +220,12 @@ export default function HomePage(): React.JSX.Element {
           <SectionReveal>
             <div className="about-grid">
               <div className="about-text-content">
-                <span className="section-label">About MS Infinix</span>
+                <span className="section-label">About MS Infinex Tech</span>
                 <h2 className="section-title" style={{ textAlign: 'left' }}>
                   Innovating the <span className="gradient-text">Next Generation</span> of Digital Experiences
                 </h2>
                 <p className="about-description">
-                  Based in the historic city of Udaipur, Rajasthan, MS Infinix is more than just a 
+                  Based in the historic city of Udaipur, Rajasthan, MS Infinex Tech is more than just a 
                   technology firm. We are architects of digital transformation, dedicated to pushing 
                   the boundaries of what&apos;s possible through advanced engineering and creative design.
                 </p>
@@ -559,7 +559,7 @@ export default function HomePage(): React.JSX.Element {
         <div className="container">
           <SectionReveal>
             <div className="section-header">
-              <span className="section-label">Why MS Infinix</span>
+              <span className="section-label">Why MS Infinex Tech</span>
               <h2 className="section-title">
                 Why <span className="gradient-text">Choose Us</span>
               </h2>

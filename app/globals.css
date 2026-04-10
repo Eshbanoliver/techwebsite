@@ -3259,3 +3259,55 @@ input, textarea, select { font-family: inherit; }
 .overflow-hidden { overflow: hidden; }
 .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
 
+
+/* ---- Studio Section Creativity ---- */
+.studio-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.studio-main-text {
+  grid-column: span 7;
+}
+
+.studio-visual-block {
+  grid-column: span 5;
+  position: relative;
+}
+
+.floating-stat-card {
+  position: absolute;
+  padding: 24px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glass);
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.floating-stat-card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.stat-1 { bottom: -40px; left: -80px; }
+.stat-2 { top: -20px; right: -40px; }
+
+.tech-decal {
+  font-family: 'Consolas', monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .studio-bento { display: flex; flex-direction: column; }
+  .stat-1, .stat-2 { position: static; margin-bottom: 20px; width: 100%; }
+}
+
+
+.text-white { color: #ffffff !important; }
+

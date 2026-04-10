@@ -46,7 +46,7 @@ export default function Navbar(): React.JSX.Element {
             <Link href="/" className="navbar-logo" id="logo-link">
               <div className="logo-icon">M</div>
               <span>
-                MS <span className="gradient-text">Infinix</span>
+                MS <span className="gradient-text">Infinex Tech</span>
               </span>
             </Link>
           </motion.div>

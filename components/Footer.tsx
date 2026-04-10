@@ -31,13 +31,13 @@ export default function Footer(): React.JSX.Element {
                   fontSize: '1rem', fontWeight: 900, color: 'white',
                   boxShadow: '0 0 15px rgba(0, 198, 255, 0.3)'
                 }}>M</span>
-                {' '}MS <span className="gradient-text">Infinix</span>
+                {' '}MS <span className="gradient-text">Infinex Tech</span>
               </h3>
             </Link>
             <p>
+              Infinite Ideas. Intelligent Execution. <br/>
               Architecting the next generation of digital infrastructure through 
-              strategic engineering and creative technical excellence. 
-              Udaipur&apos;s leading high-performance tech studio.
+              strategic engineering and creative technical excellence.
             </p>
             <div className="footer-tech-social">
               <a href="#" className="social-tech-btn" aria-label="LinkedIn">
@@ -85,9 +85,9 @@ export default function Footer(): React.JSX.Element {
                 <MapPin size={18} style={{ marginTop: 4, color: 'var(--neon-blue)' }} />
                 <span>Udaipur, Rajasthan<br />313001, India</span>
               </div>
-              <a href="mailto:info@msinfinix.com" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <a href="mailto:info@msinfinextech.com" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Mail size={18} style={{ color: 'var(--neon-blue)' }} />
-                <span>info@msinfinix.com</span>
+                <span>info@msinfinextech.com</span>
               </a>
               <a href="tel:+919876543210" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Phone size={18} style={{ color: 'var(--neon-blue)' }} />
@@ -99,7 +99,7 @@ export default function Footer(): React.JSX.Element {
 
         <div className="footer-tech-bottom">
           <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
-            <p>© 2026 MS INFINIX // ALL DATA ENCRYPTED</p>
+            <p>© 2026 MS INFINEX TECH // ALL DATA ENCRYPTED</p>
             <div className="footer-status-pill">
               <span className="footer-status-dot" />
               <span>SYSTEM ONLINE</span>

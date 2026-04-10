@@ -14,7 +14,7 @@ import Link from 'next/link';
 import ParticleBackground from '@/components/ParticleBackground';
 
 const timeline = [
-  { year: '2020', title: 'Genesis in Udaipur', desc: 'MS Infinix was founded with a mission to bring silicon-valley engineering to the heart of Rajasthan.' },
+  { year: '2020', title: 'Genesis in Udaipur', desc: 'MS Infinex Tech was founded with a mission to bring silicon-valley engineering to the heart of Rajasthan.' },
   { year: '2022', title: 'Neural Expansion', desc: 'Inception of our AI R&D division, focusing on large-scale machine learning and neural architectures.' },
   { year: '2023', title: 'Global Benchmarks', desc: 'Successfully delivered 150+ high-performance systems for clients across North America and Europe.' },
   { year: '2025', title: 'Next-Gen Infrastructure', desc: 'Launching our digital transformation framework, setting new standards for cloud and edge computing.' },
@@ -45,7 +45,7 @@ export default function AboutPage() {
               Engineering the <span className="gradient-text">Future</span> <br/> From Udaipur
             </h1>
             <p className="text-xl text-secondary max-w-2xl leading-relaxed">
-              MS Infinix is a high-performance technology studio dedicated to bridging the gap 
+              MS Infinex Tech is a high-performance technology studio dedicated to bridging the gap 
               between complex engineering and human-centric design.
             </p>
           </motion.div>
@@ -53,42 +53,70 @@ export default function AboutPage() {
       </section>
 
       {/* --- Studio Overview --- */}
-      <section className="py-24 relative">
+      <section className="py-32 relative">
         <div className="container px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="studio-bento">
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="flex-col"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="studio-main-text flex-col"
             >
               <div className="section-label mb-8">Studio Culture</div>
-              <h2 className="text-5xl font-bold leading-tight mb-8">
-                Where <span className="gradient-text">Creativity</span> Meets Computational Power
+              <h2 className="text-6xl font-black leading-tight mb-8">
+                Where <span className="gradient-text">Creativity</span> <br/> 
+                Meets Computational Power
               </h2>
-              <p className="text-lg text-secondary leading-relaxed mb-12">
-                Founded in 2020, MS Infinix has evolved from a specialized code workshop into a 
+              <p className="text-xl text-secondary leading-relaxed mb-12 max-w-2xl" style={{ margin: '0 0 48px 0' }}>
+                Founded in 2020, MS Infinex Tech has evolved from a specialized code workshop into a 
                 multidisciplinary technology powerhouse. Our studio in Udaipur serves as a 
                 crucible for innovation, where we combine deep technical expertise with 
                 unconventional creative strategies.
               </p>
-              <div className="grid grid-cols-2 gap-8">
-                <div className="p-6 glass-card" style={{ borderLeft: '4px solid var(--neon-blue)' }}>
-                  <div className="text-4xl font-black text-white mb-2">350+</div>
-                  <div className="text-sm text-muted uppercase tracking-widest">Deployments</div>
+              
+              <div className="flex-row gap-8" style={{ display: 'flex' }}>
+                <div className="tech-decal">
+                  // SYS_LOG: 0x44FF2<br/>
+                  // CORE_TEMP: 42C<br/>
+                  // STATUS: OPERATIONAL
                 </div>
-                <div className="p-6 glass-card" style={{ borderLeft: '4px solid var(--neon-blue)' }}>
-                  <div className="text-4xl font-black text-white mb-2">98%</div>
-                  <div className="text-sm text-muted uppercase tracking-widest">Client Retention</div>
+                <div className="tech-decal">
+                  // NODE_V: 20.11.0<br/>
+                  // FRAMEWORK: NEXT_14<br/>
+                  // LOC: 24.58 N / 73.71 E
                 </div>
               </div>
             </motion.div>
             
             <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="about-studio-image"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="studio-visual-block"
             >
-              <img src="/about/studio.png" alt="MS Infinix Studio" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              {/* Floating Stat Cards */}
+              <motion.div 
+                className="floating-stat-card stat-1"
+                initial={{ x: -20, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                <div className="text-4xl font-black text-white mb-1">350+</div>
+                <div className="text-xs uppercase tracking-widest text-white">Global Deployments</div>
+              </motion.div>
+
+              <motion.div 
+                className="floating-stat-card stat-2"
+                initial={{ x: 20, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                <div className="text-4xl font-black text-white mb-1">98%</div>
+                <div className="text-xs uppercase tracking-widest text-white">Client Satisfaction</div>
+              </motion.div>
+
+              <div className="about-studio-image shadow-glow" style={{ height: '550px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <img src="/about/studio.png" alt="MS Infinex Tech Studio" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+              </div>
             </motion.div>
           </div>
         </div>

@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold">1. Data Encryption & Security</h2>
               </div>
               <p className="text-secondary leading-relaxed">
-                At MS Infinix, we treat your data as mission-critical infrastructure. Every byte of information transmitted 
+                At MS Infinex Tech, we treat your data as mission-critical infrastructure. Every byte of information transmitted 
                 through our systems is encrypted using AES-256 standards at rest and TLS 1.3 in transit. Our internal 
                 protocols follow a "Zero-Trust" architecture, ensuring that client data is only accessible to authorized 
                 engineering personnel through multi-factor authentication (MFA).
@@ -73,12 +73,12 @@ export default function PrivacyPolicy() {
               <p className="text-secondary leading-relaxed">
                 You retain full root access to your personal data. You may request a complete data dump, rectification of 
                 inaccuracies, or permanent deletion of your profile from our active directories at any time by contacting 
-                our privacy officer at <span className="text-neon-blue">privacy@msinfinix.com</span>.
+                our privacy officer at <span className="text-neon-blue">privacy@msinfinextech.com</span>.
               </p>
             </section>
 
             <div className="pt-8 border-t border-white/10 text-center text-muted text-sm italic">
-              * This document is a binding technical agreement between MS Infinix and its users. Continuous monitoring 
+              * This document is a binding technical agreement between MS Infinex Tech and its users. Continuous monitoring 
               is in place to ensure compliance with global data protection laws.
             </div>
           </div>
