@@ -9,7 +9,11 @@ import {
   ShieldCheck,
   Zap,
   Code,
-  Workflow
+  Workflow,
+  Layers,
+  Activity,
+  Lock,
+  Compass
 } from 'lucide-react';
 import Link from 'next/link';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -179,27 +183,103 @@ export default function AboutPage() {
 
 
       {/* --- Strategic Pillars (Screenshot Clone) --- */}
-      <section className="py-24" style={{ background: 'linear-gradient(to top, var(--bg-primary), #080808)' }}>
+      <section className="py-24">
         <div className="container px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-black text-white">What Truly Sets Us Apart</h2>
+            <h2 className="text-5xl font-black" style={{ color: 'var(--text-primary)' }}>What Truly Sets Us Apart</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
             {pillars.map((pillar, i) => (
               <motion.div 
                 key={i}
-                className={`liquid-glass ${pillar.bg} flex-col`}
-                style={{ padding: '40px', borderRadius: '30px', border: 'none' }}
+                className={`${pillar.bg} flex-col`}
+                style={{ padding: '40px', borderRadius: '30px', border: 'none', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
               >
-                <div className="glossy-shine" />
                 <div className="pillar-icon-box">{pillar.icon}</div>
                 <h3 className="text-2xl font-bold mb-6 text-white leading-tight">{pillar.title}</h3>
-                <p className="text-secondary leading-relaxed" style={{ fontSize: '0.95rem' }}>{pillar.desc}</p>
+                <p className="leading-relaxed" style={{ fontSize: '0.95rem', color: 'rgba(255, 255, 255, 0.7)' }}>{pillar.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- Why Choose Us (Interactive Accordion) --- */}
+      <section className="py-24" style={{ backgroundColor: 'var(--grid-color)' }}>
+        <div className="container px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-black" style={{ color: 'var(--text-primary)' }}>Why <span className="gradient-text">Choose Us</span></h2>
+            <p className="text-secondary mt-6 max-w-2xl mx-auto">We don't just write code; we build resilient, high-performance engines that power modern enterprises.</p>
+          </div>
+          
+          <div className="interactive-accordion">
+            <div className="accordion-panel" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200)' }}>
+              <div className="accordion-content">
+                <div className="accordion-icon"><Cpu size={24} /></div>
+                <div className="accordion-title">Deep Tech Focus</div>
+                <div className="accordion-desc">Our roots in advanced computational logic allow us to solve problems that typical agencies cannot touch.</div>
+              </div>
+            </div>
+            
+            <div className="accordion-panel" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200)' }}>
+              <div className="accordion-content">
+                <div className="accordion-icon"><Globe size={24} /></div>
+                <div className="accordion-title">Global Standards</div>
+                <div className="accordion-desc">Operating with Silicon Valley protocols, we deliver world-class infrastructure from the heart of Rajasthan.</div>
+              </div>
+            </div>
+            
+            <div className="accordion-panel" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200)' }}>
+              <div className="accordion-content">
+                <div className="accordion-icon"><Activity size={24} /></div>
+                <div className="accordion-title">Zero Latency</div>
+                <div className="accordion-desc">Performance is our religion. Every application we deploy is heavily optimized for speed and reliability.</div>
+              </div>
+            </div>
+            
+            <div className="accordion-panel" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=1200)' }}>
+              <div className="accordion-content">
+                <div className="accordion-icon"><Lock size={24} /></div>
+                <div className="accordion-title">Military Security</div>
+                <div className="accordion-desc">We implement AES-256 encryption and zero-trust architectures to protect your digital assets unconditionally.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- Why We Are Different --- */}
+      <section className="py-24">
+        <div className="container px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-black" style={{ color: 'var(--text-primary)' }}>The <span className="gradient-text">MS Infinex</span> Difference</h2>
+            <p className="text-secondary mt-6 max-w-2xl mx-auto">Compare the industry standard with our hyper-optimized approach to digital engineering.</p>
+          </div>
+          
+          <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+            <div className="diff-card">
+              <div className="diff-badge">10x Output</div>
+              <div className="flex items-center gap-4 mb-6"><Layers size={32} style={{ color: 'var(--neon-blue)' }} /></div>
+              <div className="diff-title">Architecture vs. Assembly</div>
+              <div className="diff-text">Most agencies glue plugins together. We engineer custom architectures from the ground up to ensure absolute stability and infinite scalability.</div>
+            </div>
+            
+            <div className="diff-card">
+              <div className="diff-badge">AI Native</div>
+              <div className="flex items-center gap-4 mb-6"><Compass size={32} style={{ color: 'var(--neon-purple)' }} /></div>
+              <div className="diff-title">Proactive Intelligence</div>
+              <div className="diff-text">While others build static platforms, we embed neural components natively, turning your application into a self-learning business asset.</div>
+            </div>
+            
+            <div className="diff-card">
+              <div className="diff-badge">Guaranteed</div>
+              <div className="flex items-center gap-4 mb-6"><Target size={32} style={{ color: 'var(--neon-cyan)' }} /></div>
+              <div className="diff-title">Absolute Ownership</div>
+              <div className="diff-text">We don't disappear after launch. We offer continuous DevOps support, treating your infrastructure like it's our own.</div>
+            </div>
           </div>
         </div>
       </section>
