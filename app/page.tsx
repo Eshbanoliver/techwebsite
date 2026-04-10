@@ -23,7 +23,20 @@ import {
   Handshake,
   PenTool,
   RefreshCw,
-  Search
+  Search,
+  Stethoscope,
+  ShoppingBag,
+  GraduationCap,
+  Truck,
+  Home as HomeIcon,
+  Car,
+  Factory,
+  Gem,
+  Store,
+  Banknote,
+  Hotel,
+  Gavel,
+  Anchor
 } from 'lucide-react';
 import HeroSlider from '@/components/HeroSlider';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -164,6 +177,21 @@ const faqItems: FAQItem[] = [
     answer: 'You can get a free consultation and quote by clicking the "Contact Us" or "Get a Quote" buttons. Our technical team will reach out within 24 hours.',
     className: 'bg-why-6'
   },
+];
+
+const industries = [
+  { name: "Healthcare & Medical", icon: <Stethoscope size={24} />, desc: "AI-driven diagnostics, HIPAA-compliant patient portals, and precision medical analytics." },
+  { name: "E-commerce & Retail", icon: <ShoppingBag size={24} />, desc: "High-conversion storefronts, intelligent bento-grids, and integrated global payment gateways." },
+  { name: "Education & LMS", icon: <GraduationCap size={24} />, desc: "Digital learning ecosystems, LMS platforms, and interactive classroom technology." },
+  { name: "Logistics & Supply", icon: <Truck size={24} />, desc: "Real-time fleet tracking, AI route optimization, and automated warehouse management." },
+  { name: "Real Estate & PropTech", icon: <HomeIcon size={24} />, desc: "Virtual property tours, BIM visualization, and secure transaction management." },
+  { name: "Automotive & Mobility", icon: <Car size={24} />, desc: "Smart car interfaces, manufacturing automation, and fleet diagnostic systems." },
+  { name: "Manufacturing & IIoT", icon: <Factory size={24} />, desc: "Industry 4.0 solutions, IoT sensor networks, and predictive maintenance algorithms." },
+  { name: "Jewellery & Luxury", icon: <Gem size={24} />, desc: "Inventory management for high-value assets with 3D visualization and secure CRM." },
+  { name: "General Stores & POS", icon: <Store size={24} />, desc: "Next-gen POS systems with real-time stock sync and automated customer loyalty loops." },
+  { name: "Fintech & Banking", icon: <Banknote size={24} />, desc: "Secure digital wallets, blockchain integration, and AI-powered fraud detection." },
+  { name: "Hospitality & Tourism", icon: <Hotel size={24} />, desc: "Booking engines, guest service automation, and smart amenity management." },
+  { name: "LegalTech & Compliance", icon: <Gavel size={24} />, desc: "Document & case management, secure digital signatures, and automated audit trails." }
 ];
 
 const fadeUp = {
@@ -399,6 +427,43 @@ export default function HomePage(): React.JSX.Element {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== INDUSTRIES WE TRANSFORM ===== */}
+      <section className="industries-section" id="industries">
+        <div className="container">
+          <SectionReveal>
+            <div className="section-header">
+              <span className="section-label">Industry Expertise</span>
+              <h2 className="section-title">
+                Industries We <span className="gradient-text">Transform</span>
+              </h2>
+              <p className="section-subtitle">
+                Deploying deep technical expertise across diverse global sectors to drive 
+                innovation and operational excellence.
+              </p>
+            </div>
+          </SectionReveal>
+
+          <div className="industry-grid">
+            {industries.map((ind, i) => (
+              <motion.div
+                key={i}
+                className="industry-card"
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+              >
+                <div className="industry-tag">Sector_{i + 1}</div>
+                <div className="industry-icon-wrapper">
+                  {ind.icon}
+                </div>
+                <h3>{ind.name}</h3>
+                <p>{ind.desc}</p>
+                <div className="industry-glow" />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

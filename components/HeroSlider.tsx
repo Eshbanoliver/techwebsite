@@ -158,8 +158,8 @@ export default function HeroSlider(): React.JSX.Element {
         .hero-content {
           position: relative;
           z-index: 2;
-          padding: 80px 24px;
-          max-width: 1000px !important;
+          padding: 24px; 
+          max-width: 1100px !important;
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -170,17 +170,18 @@ export default function HeroSlider(): React.JSX.Element {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          padding: 10px 20px;
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          padding: 12px 24px;
+          background: rgba(255, 255, 255, 0.08); /* More subtle */
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.15);
           border-radius: var(--radius-full);
-          font-size: 0.85rem;
-          font-weight: 700;
+          font-size: 0.8rem;
+          font-weight: 800;
           color: var(--neon-blue);
           text-transform: uppercase;
-          letter-spacing: 2px;
-          margin-bottom: 24px;
+          letter-spacing: 3px;
+          margin-bottom: 32px; /* More space below badge */
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         .badge-dot {
           width: 8px;
@@ -197,28 +198,36 @@ export default function HeroSlider(): React.JSX.Element {
         }
         .hero-title {
           font-family: var(--font-heading);
-          font-size: clamp(2.2rem, 7vw, 4.5rem);
+          font-size: clamp(2.4rem, 7vw, 4.2rem); /* Slightly reduced for better fit */
           font-weight: 950;
-          line-height: 1.1;
-          margin-bottom: 16px;
+          line-height: 1.05;
+          margin-bottom: 24px;
           color: var(--text-primary);
-          text-shadow: 0 4px 15px rgba(0,0,0,0.3);
-          letter-spacing: -2px;
+          text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+          letter-spacing: -3px;
+          text-align: center;
         }
         .hero-description {
-          font-size: clamp(1rem, 2.2vw, 1.2rem);
+          font-size: clamp(1.1rem, 2.5vw, 1.3rem);
           color: var(--text-secondary);
-          margin: 0 auto 32px;
-          max-width: 800px;
-          line-height: 1.6;
+          margin: 0 auto 48px; /* More space below description */
+          max-width: 750px;
+          line-height: 1.5;
           opacity: 0.9;
-          font-weight: 450;
+          font-weight: 500;
+          text-align: center;
         }
         .hero-buttons {
           display: flex;
-          gap: 16px;
+          gap: 24px; /* More gap between buttons */
           justify-content: center;
+          align-items: center;
           flex-wrap: wrap;
+        }
+        .hero-buttons .btn {
+          padding: 16px 40px; /* Larger buttons for hero */
+          font-size: 1.05rem;
+          min-width: 200px;
         }
         .hero-dots {
           position: absolute;
