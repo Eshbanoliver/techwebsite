@@ -1,68 +1,113 @@
 import Link from 'next/link';
+import { 
+  Globe, 
+  Send, 
+  Terminal, 
+  Camera, 
+  MapPin, 
+  Mail, 
+  Phone,
+  Cpu,
+  ShieldCheck
+} from 'lucide-react';
 
 export default function Footer(): React.JSX.Element {
   return (
-    <footer className="footer" id="footer">
-      <div className="container">
-        <div className="footer-grid">
-          <div className="footer-brand">
+    <footer className="footer-tech" id="footer">
+      <div className="footer-tech-grid" />
+      <div className="footer-tech-scan" />
+      <div className="footer-tech-circuit" />
+      <div className="footer-tech-particles" />
+      
+      <div className="container relative z-10">
+        <div className="footer-main-grid">
+          <div className="footer-tech-col footer-tech-brand">
             <h3>
               <span style={{
-                width: 36, height: 36, borderRadius: 8,
+                width: 36, height: 36, borderRadius: 6,
                 background: 'var(--gradient-primary)',
                 display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: '1rem', fontWeight: 900, color: 'white',
+                boxShadow: '0 0 15px rgba(0, 198, 255, 0.3)'
               }}>M</span>
               {' '}MS <span className="gradient-text">Infinix</span>
             </h3>
             <p>
-              Building future-ready digital solutions with cutting-edge technology.
-              Your trusted partner for AI, web, mobile, and cloud solutions based in Udaipur, Rajasthan.
+              Architecting the next generation of digital infrastructure through 
+              strategic engineering and creative technical excellence. 
+              Udaipur&apos;s leading high-performance tech studio.
             </p>
-            <div className="footer-social">
-              <a href="#" aria-label="LinkedIn" id="social-linkedin">in</a>
-              <a href="#" aria-label="Twitter" id="social-twitter">𝕏</a>
-              <a href="#" aria-label="GitHub" id="social-github">⌥</a>
-              <a href="#" aria-label="Instagram" id="social-instagram">📷</a>
+            <div className="footer-tech-social">
+              <a href="#" className="social-tech-btn" aria-label="LinkedIn">
+                <Globe size={18} />
+              </a>
+              <a href="#" className="social-tech-btn" aria-label="Twitter">
+                <Send size={18} />
+              </a>
+              <a href="#" className="social-tech-btn" aria-label="GitHub">
+                <Terminal size={18} />
+              </a>
+              <a href="#" className="social-tech-btn" aria-label="Instagram">
+                <Camera size={18} />
+              </a>
             </div>
           </div>
 
-          <div className="footer-col">
-            <h4>Quick Links</h4>
-            <Link href="/">Home</Link>
-            <Link href="/about">About Us</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/faq">FAQ</Link>
-            <Link href="/contact">Contact Us</Link>
+          <div className="footer-tech-col">
+            <h4>Directory</h4>
+            <div className="footer-tech-links">
+              <Link href="/">Home</Link>
+              <Link href="/about">About Us</Link>
+              <Link href="/services">Our Solutions</Link>
+              <Link href="/faq">Help Center</Link>
+              <Link href="/contact">Get in Touch</Link>
+            </div>
           </div>
 
-          <div className="footer-col">
-            <h4>Services</h4>
-            <Link href="/services">AI & Machine Learning</Link>
-            <Link href="/services">Web Development</Link>
-            <Link href="/services">Mobile Apps</Link>
-            <Link href="/services">Cloud & DevOps</Link>
-            <Link href="/services">UI/UX Design</Link>
+          <div className="footer-tech-col">
+            <h4>Capabilities</h4>
+            <div className="footer-tech-links">
+              <Link href="/services/ai-ml">AI & Neural Networks</Link>
+              <Link href="/services/web-development">Advanced Web Systems</Link>
+              <Link href="/services/mobile-apps">Mobile Infrastructure</Link>
+              <Link href="/services/cloud-devops">Cloud Architecture</Link>
+              <Link href="/services/ui-ux-design">Visual Engineering</Link>
+            </div>
           </div>
 
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.8' }}>
-              Udaipur, Rajasthan 313001<br />
-              India
-            </p>
-            <a href="mailto:info@msinfinix.com" style={{ marginTop: 8, display: 'inline-block' }}>
-              info@msinfinix.com
-            </a>
-            <a href="tel:+919876543210">+91 98765 43210</a>
+          <div className="footer-tech-col">
+            <h4>Access Points</h4>
+            <div className="footer-tech-links">
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                <MapPin size={18} style={{ marginTop: 4, color: 'var(--neon-blue)' }} />
+                <span>Udaipur, Rajasthan<br />313001, India</span>
+              </div>
+              <a href="mailto:info@msinfinix.com" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <Mail size={18} style={{ color: 'var(--neon-blue)' }} />
+                <span>info@msinfinix.com</span>
+              </a>
+              <a href="tel:+919876543210" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <Phone size={18} style={{ color: 'var(--neon-blue)' }} />
+                <span>+91 98765 43210</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <p>©️ Copyright 2026 | MS Infinix | All Rights Reserved</p>
-          <div className="footer-bottom-links">
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms">Terms of Service</Link>
+        <div className="footer-tech-bottom">
+          <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
+            <p>© 2026 MS INFINIX // ALL DATA ENCRYPTED</p>
+            <div className="footer-status-pill">
+              <span className="footer-status-dot" />
+              <span>SYSTEM ONLINE</span>
+            </div>
+          </div>
+          <div className="footer-tech-coordinates">
+            24.5854° N, 73.7125° E // VER: 1.0.4
+          </div>
+          <div style={{ display: 'flex', gap: 24 }}>
+            <Link href="/privacy-policy" style={{ opacity: 0.6 }}>Privacy</Link>
+            <Link href="/terms" style={{ opacity: 0.6 }}>Terms</Link>
           </div>
         </div>
       </div>
