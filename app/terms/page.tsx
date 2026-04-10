@@ -1,94 +1,89 @@
 'use client';
 import { motion } from 'framer-motion';
+import { Scale, Terminal, Cpu, Zap, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
-export default function TermsPage(): React.JSX.Element {
+export default function TermsOfService() {
   return (
-    <>
-      <div className="page-header">
-        <div className="page-header-content">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="section-label">Legal</span>
-          </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
-            Terms of <span className="gradient-text">Service</span>
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
-            Last updated: April 2026
-          </motion.p>
-        </div>
+    <main className="min-h-screen pt-32 pb-20 bg-primary relative overflow-hidden">
+      <div className="grid-bg" />
+      
+      <div className="container relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-4xl mx-auto"
+        >
+          <Link href="/" className="inline-flex items-center gap-2 text-neon-blue mb-8 hover:gap-4 transition-all">
+            <ArrowLeft size={20} /> Back to Terminal
+          </Link>
+
+          <header className="mb-12">
+            <div className="section-label">Service Agreement</div>
+            <h1 className="text-5xl font-black mb-6">Terms of <span className="gradient-text">Service</span></h1>
+            <p className="text-xl text-secondary">Operational Protocols | Revision 2024.11</p>
+          </header>
+
+          <div className="glass-card p-10 space-y-12">
+            <section>
+              <div className="flex items-center gap-3 mb-4 text-neon-blue">
+                <Terminal size={24} />
+                <h2 className="text-2xl font-bold">1. Service Definition</h2>
+              </div>
+              <p className="text-secondary leading-relaxed">
+                By accessing MS Infinix, you are entering into a professional engagement to utilize our technical infrastructure, 
+                engineering expertise, and software solutions. You agree to utilize these resources for lawful technical 
+                purposes only and to maintain the integrity of our source code and proprietary architectures.
+              </p>
+            </section>
+
+            <section>
+              <div className="flex items-center gap-3 mb-4 text-neon-blue">
+                <Zap size={24} />
+                <h2 className="text-2xl font-bold">2. Intellectual Property (IP)</h2>
+              </div>
+              <p className="text-secondary leading-relaxed">
+                Unless otherwise specified in a custom Master Service Agreement (MSA), all core architectural patterns, 
+                custom modules, and engineering methodologies developed by MS Infinix remain the intellectual property 
+                of MS Infinix. Clients are granted a non-exclusive, perpetual license to use the final compiled software product 
+                provided all financial obligations are met.
+              </p>
+            </section>
+
+            <section>
+              <div className="flex items-center gap-3 mb-4 text-neon-blue">
+                <Scale size={24} />
+                <h2 className="text-2xl font-bold">3. Liability & Performance</h2>
+              </div>
+              <p className="text-secondary leading-relaxed">
+                MS Infinix strives for 99.9% uptime and zero-defect deployments. However, technical environments are subject 
+                to external variables. MS Infinix shall not be held liable for indirect, incidental, or consequential damages 
+                arising from system downtime caused by third-party cloud outages or catastrophic network failures beyond 
+                our immediate control.
+              </p>
+            </section>
+
+            <section>
+              <div className="flex items-center gap-3 mb-4 text-neon-blue">
+                <Cpu size={24} />
+                <h2 className="text-2xl font-bold">4. Termination of Access</h2>
+              </div>
+              <p className="text-secondary leading-relaxed">
+                Misuse of our APIs, unauthorized penetration testing, or violation of software licensing agreements will result 
+                in immediate termination of service access. We reserve the right to revoke system privileges for any account 
+                involved in malicious technical activities.
+              </p>
+            </section>
+
+            <div className="p-6 bg-white/5 border-l-4 border-neon-blue rounded-r-lg">
+              <p className="text-sm text-secondary">
+                <strong>Arbitration Clause:</strong> Any disputes arising from these terms shall be settled through digital 
+                arbitration in accordance with Indian Law, specifically within the jurisdiction of Udaipur, Rajasthan.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
-
-      <div className="container">
-        <div className="legal-content">
-          <p>
-            Welcome to MS Infinix. By accessing and using our website and services, you agree to be bound
-            by the following terms and conditions. Please read them carefully.
-          </p>
-
-          <h2>1. Services</h2>
-          <p>
-            MS Infinix provides technology consulting, software development, web and mobile development,
-            UI/UX design, AI/ML solutions, cloud services, and digital marketing. The scope, timeline,
-            and deliverables of each project are defined in individual service agreements.
-          </p>
-
-          <h2>2. Intellectual Property</h2>
-          <p>
-            All content on this website, including text, graphics, logos, and code, is the property of
-            MS Infinix unless otherwise stated. Client-specific deliverables are transferred upon full
-            payment as outlined in the project agreement.
-          </p>
-
-          <h2>3. Client Responsibilities</h2>
-          <ul>
-            <li>Provide accurate and complete project requirements</li>
-            <li>Respond to communications and review deliverables in a timely manner</li>
-            <li>Provide necessary access to systems, content, and resources</li>
-            <li>Make payments according to the agreed schedule</li>
-          </ul>
-
-          <h2>4. Payment Terms</h2>
-          <p>
-            Payment terms are defined in individual project agreements. Typically, a deposit is required
-            before project commencement, with remaining payments due at agreed milestones. Late payments
-            may result in project delays or suspension.
-          </p>
-
-          <h2>5. Confidentiality</h2>
-          <p>
-            Both parties agree to maintain the confidentiality of proprietary information shared during
-            the course of the project. We take data security seriously and implement appropriate measures
-            to protect your information.
-          </p>
-
-          <h2>6. Limitation of Liability</h2>
-          <p>
-            MS Infinix shall not be liable for any indirect, incidental, or consequential damages arising
-            from the use of our services. Our total liability shall not exceed the total fees paid by the
-            client for the specific project.
-          </p>
-
-          <h2>7. Termination</h2>
-          <p>
-            Either party may terminate a project agreement with written notice as specified in the
-            individual agreement. Upon termination, the client is responsible for payment of work
-            completed up to the termination date.
-          </p>
-
-          <h2>8. Governing Law</h2>
-          <p>
-            These terms are governed by the laws of India. Any disputes shall be subject to the
-            exclusive jurisdiction of the courts in Udaipur, Rajasthan.
-          </p>
-
-          <h2>9. Contact</h2>
-          <p>
-            For questions about these terms, please contact us at:<br />
-            <strong>Email:</strong> info@msinfinix.com<br />
-            <strong>Address:</strong> Udaipur, Rajasthan 313001, India
-          </p>
-        </div>
-      </div>
-    </>
+    </main>
   );
 }

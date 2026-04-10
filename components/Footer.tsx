@@ -60,6 +60,7 @@ export default function Footer(): React.JSX.Element {
               <Link href="/about">About Us</Link>
               <Link href="/services">Our Solutions</Link>
               <Link href="/faq">Help Center</Link>
+              <Link href="/blog">Our Blog</Link>
               <Link href="/contact">Get in Touch</Link>
             </div>
           </div>
@@ -105,9 +106,9 @@ export default function Footer(): React.JSX.Element {
           <div className="footer-tech-coordinates">
             24.5854° N, 73.7125° E // VER: 1.0.4
           </div>
-          <div style={{ display: 'flex', gap: 24 }}>
-            <Link href="/privacy-policy" style={{ opacity: 0.6 }}>Privacy</Link>
-            <Link href="/terms" style={{ opacity: 0.6 }}>Terms</Link>
+           <div style={{ display: 'flex', gap: 24 }}>
+            <Link href="/privacy" style={{ opacity: 0.6 }}>Privacy & Policy</Link>
+            <Link href="/terms" style={{ opacity: 0.6 }}>Terms of Service</Link>
           </div>
         </div>
       </div>

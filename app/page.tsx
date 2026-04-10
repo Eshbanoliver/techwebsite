@@ -466,7 +466,9 @@ export default function HomePage(): React.JSX.Element {
                   </div>
                   <h3>{ind.name}</h3>
                   <p>{ind.desc}</p>
-                  <button className="industry-btn">Explore Solutions →</button>
+                  <Link href="/services" className="industry-btn">
+                    Explore Solutions →
+                  </Link>
                 </div>
                 <div className="industry-glow" />
               </motion.div>
