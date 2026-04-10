@@ -5,10 +5,8 @@ import Link from 'next/link';
 
 export default function PrivacyPolicy() {
   return (
-    <main className="min-h-screen pt-32 pb-20 bg-primary relative overflow-hidden">
-      <div className="grid-bg" />
-      
-      <div className="container relative z-10">
+    <main className="min-h-screen pt-40 pb-20 bg-primary relative overflow-hidden">
+      <div className="container relative z-10 px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
