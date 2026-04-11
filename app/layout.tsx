@@ -39,10 +39,22 @@ export const metadata: Metadata = {
     "UI UX design",
   ],
   authors: [{ name: "Infinex Tech" }],
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "Infinex | Infinity: The Next Generation",
     description:
       "Premium AI, Web, Mobile, Cloud & DevOps solutions. Architecting the next generation of digital infrastructure.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Infinex Branding",
+      },
+    ],
     type: "website",
     locale: "en_IN",
     siteName: "Infinex",
