@@ -333,6 +333,7 @@ input, textarea, select { font-family: inherit; }
   gap: 12px;
   opacity: 1 !important;
   visibility: visible !important;
+  margin-right: 50px;
 }
 
 .navbar-links {
@@ -2809,18 +2810,24 @@ input, textarea, select { font-family: inherit; }
   border-radius: 2px;
   transition: all 0.3s ease;
 }.nav-logo-img {
-  height: 45px;
+  height: 52px !important;
   width: auto;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+  transform: scale(1.6);
+  transform-origin: left center;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-logo-img {
-  height: 60px;
+  height: 80px !important;
   width: auto;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   display: block;
+  transform: scale(1.3);
+  transform-origin: left center;
 }
 
 @media (max-width: 768px) {
