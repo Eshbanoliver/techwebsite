@@ -4440,3 +4440,61 @@ input, textarea, select { font-family: inherit; }
   transform: translateX(5px);
   box-shadow: 0 0 20px rgba(0, 198, 255, 0.4);
 }
+
+/* ---- VIBRANT WORKFLOW CARDS ---- */
+.process-timeline-v2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.vibrant-process-card {
+  padding: 40px !important;
+  border: none !important;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  color: white !important;
+}
+
+.vibrant-process-card:hover {
+  transform: translateY(-15px) scale(1.02) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+.vibrant-step-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: white !important;
+}
+
+.vibrant-step-desc {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.vibrant-process-card .step-num {
+  opacity: 0.1 !important;
+  font-size: 6rem !important;
+}
+
+.vibrant-process-card .step-icon {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  backdrop-filter: blur(5px);
+  margin-bottom: 32px !important;
+}
+
+/* Color Palette matches the value-card-vibrant for consistency */
+.bg-vibrant-purple { background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%); }
+.bg-vibrant-cyan { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
+.bg-vibrant-indigo { background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%); }
+
+
+.bg-vibrant-blue { background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); }
+.bg-vibrant-pink { background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); }
+.bg-vibrant-red { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+.bg-vibrant-orange { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+.bg-vibrant-green { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+

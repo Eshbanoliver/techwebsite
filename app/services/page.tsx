@@ -110,13 +110,23 @@ const services: ServiceDetail[] = [
   },
 ];
 
+interface ProcessStep {
+  num: string;
+  title: string;
+  desc: string;
+  icon: React.ReactNode;
+  color: string;
+}
+
 const processSteps: ProcessStep[] = [
-  { num: '01', title: 'Discovery', desc: 'We analyze your technical needs, strategic goals, and target market to define the perfect architectural blueprint.', icon: <Search size={24} /> },
-  { num: '02', title: 'Design', desc: 'Crafting comprehensive wireframes and high-fidelity visual systems that perfectly align with your brand identity.', icon: <PenTool size={24} /> },
-  { num: '03', title: 'Development', desc: 'Building your custom solution with ultra-clean, efficient, and well-tested code using modern CI/CD pipelines.', icon: <Settings size={24} /> },
-  { num: '04', title: 'Testing', desc: 'Rigorous Quality Assurance testing across all devices and edge-case scenarios to guarantee a flawless launch experience.', icon: <CheckCircle size={24} /> },
-  { num: '05', title: 'Deployment', desc: 'Deploying your solution gracefully with full automated monitoring and continuous performance optimization protocols.', icon: <Rocket size={24} /> },
-  { num: '06', title: 'Evolution', desc: 'Ongoing maintenance, intelligent updates, and strategic feature enhancements to keep your tech stack ahead of the curve.', icon: <ShieldCheck size={24} /> },
+  { num: '01', title: 'Discovery', desc: 'In-depth analysis of your technical landscape and strategic goals.', icon: <Search size={24} />, color: 'bg-vibrant-blue' },
+  { num: '02', title: 'Strategy', desc: 'Mapping out a high-performance roadmap and technical blueprint.', icon: <Target size={24} />, color: 'bg-vibrant-indigo' },
+  { num: '03', title: 'Design', desc: 'Crafting immersive visual systems and cinematic UI/UX prototypes.', icon: <PenTool size={24} />, color: 'bg-vibrant-pink' },
+  { num: '04', title: 'Logic', desc: 'Developing the core architecture and neural engine of your platform.', icon: <BrainCircuit size={24} />, color: 'bg-vibrant-purple' },
+  { num: '05', title: 'DevOps', desc: 'CI/CD orchestration for seamless and reliable delivery pipelines.', icon: <Cloud size={24} />, color: 'bg-vibrant-cyan' },
+  { num: '06', title: 'Security', desc: 'Rigorous auditing and implementing zero-trust security layers.', icon: <ShieldCheck size={24} />, color: 'bg-vibrant-red' },
+  { num: '07', title: 'Launch', desc: 'Strategic deployment and real-time performance monitoring.', icon: <Rocket size={24} />, color: 'bg-vibrant-orange' },
+  { num: '08', title: 'Scale', desc: 'Ongoing optimization and scaling for global market dominance.', icon: <TrendingUp size={24} />, color: 'bg-vibrant-green' },
 ];
 
 export default function ServicesPage(): React.JSX.Element {
@@ -129,7 +139,7 @@ export default function ServicesPage(): React.JSX.Element {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none" />
         <div className="container px-6 relative z-10 text-center max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="section-label-hacker mx-auto mb-6" style={{ display: 'inline-flex' }}>Capabilities</span>
+            <span className="section-label-hacker mx-auto mb-6" style={{ display: 'inline-flex' }}>Workflow</span>
           </motion.div>
           <motion.h1 className="text-6xl md:text-7xl font-black mb-8" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
             Solutions That <span className="gradient-text">Transform</span>
@@ -194,16 +204,18 @@ export default function ServicesPage(): React.JSX.Element {
             {processSteps.map((step, i) => (
               <motion.div
                 key={i}
-                className="process-step-v2"
+                className={`process-step-v2 vibrant-process-card ${step.color}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="step-num">{step.num}</div>
-                <div className="step-icon">{step.icon}</div>
-                <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                <p className="text-secondary leading-relaxed">{step.desc}</p>
+                <div className="step-icon">
+                  {step.icon}
+                </div>
+                <h3 className="vibrant-step-title">{step.title}</h3>
+                <p className="vibrant-step-desc">{step.desc}</p>
               </motion.div>
             ))}
           </div>
