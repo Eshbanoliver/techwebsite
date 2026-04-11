@@ -4981,17 +4981,19 @@ input, textarea, select { font-family: inherit; }
 }
 
 .avatar-stack-v3 div {
-  width: 40px;
-  height: 40px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  border: 2px solid var(--bg-primary);
+  border: none;
   background: #333;
-  margin-right: -15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  font-weight: 900;
+  margin-right: 8px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.avatar-stack-v3 div:hover {
+  transform: scale(1.5);
+  filter: brightness(1.5);
 }
 
 .hero-glow-v3 {

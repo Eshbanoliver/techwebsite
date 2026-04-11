@@ -197,8 +197,8 @@ export default function HomePage(): React.JSX.Element {
               >
                 <div className="hero-img-container">
                     <img 
-                      src="/hero_tech_architect.png" 
-                      alt="Future Tech Architect" 
+                      src="/hero_tech_monolith.png" 
+                      alt="Future Tech Monolith" 
                       style={{ width: '100%', height: 'auto', display: 'block' }}
                       onError={(e) => {
                         (e.target as any).src = 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200';
@@ -215,9 +215,9 @@ export default function HomePage(): React.JSX.Element {
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                      <div className="avatar-stack-v3">
-                        {['J', 'M', 'R'].map(i => (
-                          <div key={i}>{i}</div>
-                        ))}
+                        <div style={{ background: 'var(--neon-blue)', boxShadow: '0 0 10px var(--neon-blue)' }} />
+                        <div style={{ background: 'var(--neon-purple)', boxShadow: '0 0 10px var(--neon-purple)' }} />
+                        <div style={{ background: 'var(--neon-cyan)', boxShadow: '0 0 10px var(--neon-cyan)' }} />
                      </div>
                      <div>
                         <div style={{ fontSize: '1.25rem', fontWeight: 900, color: 'white' }}>1M+ Users</div>
