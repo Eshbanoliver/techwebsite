@@ -253,22 +253,23 @@ export default function ServicesPage(): React.JSX.Element {
               </div>
 
               <div className="cta-tech-coordinates">
-                SEC_ID: MS_INF_SER_26 // LOC: UDAIPUR_IN // 24.5854° N, 73.7125° E
+                SEC_ID: MS_INF_2026 // LOC: UDAIPUR_IN // 24.5854° N, 73.7125° E
               </div>
 
               <div className="cta-tech-content">
                 <h2 className="cta-tech-title">
-                  Ready to Build the <span className="gradient-text">Exceptional</span>?
+                  Let&apos;s Build Something <span className="gradient-text">Amazing</span> Together
                 </h2>
                 <p className="cta-tech-subtitle">
-                  Stop settling for standard templates. Our technical team is standing by to architect your next digital breakthrough.
+                  Ready to transform your ideas into reality? Our elite technical team is 
+                  standing by to engineer your next digital breakthrough.
                 </p>
                 <div className="cta-tech-buttons">
                   <Link href="/contact" className="btn btn-tech" id="cta-contact">
-                    Initialize Protocol →
+                    Initialize Project →
                   </Link>
-                  <Link href="/portfolio" className="btn btn-tech btn-tech-secondary" id="cta-quote">
-                    View Data Logs
+                  <Link href="/contact" className="btn btn-tech btn-tech-secondary" id="cta-quote">
+                    Technical Brief
                   </Link>
                 </div>
               </div>

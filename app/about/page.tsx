@@ -1,10 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 import { 
-  Target, 
-  Eye, 
-  Globe, 
-  Cpu, 
   ArrowRight,
   ShieldCheck,
   Zap,
@@ -13,7 +9,17 @@ import {
   Layers,
   Activity,
   Lock,
-  Compass
+  Compass,
+  Users,
+  Handshake,
+  Search,
+  PenTool,
+  RefreshCw,
+  Rocket,
+  Target,
+  Eye,
+  Cpu,
+  Globe
 } from 'lucide-react';
 import Link from 'next/link';
 import ParticleBackground from '@/components/ParticleBackground';
@@ -47,6 +53,67 @@ const pillars = [
     bg: 'pillar-card-4'
   },
 ];
+
+const values = [
+  { icon: <ShieldCheck size={32} />, title: 'Quality Assurance', desc: 'Only precision-engineered solutions from trusted technical frameworks.', className: 'bg-vibrant-pink' },
+  { icon: <Users size={32} />, title: 'Client Satisfaction', desc: 'Your operational success is our topmost technical priority.', className: 'bg-vibrant-blue' },
+  { icon: <Target size={32} />, title: 'Honest Pricing', desc: 'Transparent and competitive world-class development value.', className: 'bg-vibrant-orange' },
+  { icon: <Code size={32} />, title: 'Reliable Products', desc: 'Durable software architectures built to last for decades.', className: 'bg-vibrant-green' },
+  { icon: <Cpu size={32} />, title: 'Professional Service', desc: 'Expert support from experienced technological professionals.', className: 'bg-vibrant-indigo' },
+  { icon: <Handshake size={32} />, title: 'Long-Term Trust', desc: 'Building lasting technical relationships since our establishment.', className: 'bg-vibrant-red' },
+];
+
+const processSteps = [
+  {
+    title: "Discovery & Strategy",
+    desc: "We analyze your business goals and user needs to build a solid technical foundation.",
+    icon: <Search size={28} />,
+    step: "01",
+    accent: "accent-cyan"
+  },
+  {
+    title: "System Architecture",
+    desc: "Defining high-performance tech stacks and scalable cloud infrastructures for long-term stability.",
+    icon: <PenTool size={28} />,
+    step: "02",
+    accent: "accent-blue"
+  },
+  {
+    title: "Agile Engineering",
+    desc: "Rapid development cycles with high-quality code and continuous stakeholder feedback loops.",
+    icon: <Code size={28} />,
+    step: "03",
+    accent: "accent-purple"
+  },
+  {
+    title: "Quality Assurance",
+    desc: "Comprehensive automated and manual testing ensure zero-defect software and top-tier security.",
+    icon: <ShieldCheck size={28} />,
+    step: "04",
+    accent: "accent-pink"
+  },
+  {
+    title: "Deployment & Ops",
+    desc: "Seamless release through automated CI/CD pipelines to a highly-available production cloud.",
+    icon: <Rocket size={28} />,
+    step: "05",
+    accent: "accent-orange"
+  },
+  {
+    title: "Evolution & Growth",
+    desc: "Post-launch monitoring and feature roadmaps to keep your platform at the cutting edge.",
+    icon: <RefreshCw size={28} />,
+    step: "06",
+    accent: "accent-green"
+  }
+];
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6 },
+};
 
 export default function AboutPage() {
   return (
@@ -145,44 +212,148 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* --- Mission & Vision (High Impact) --- */}
-      <section className="py-24" style={{ background: 'linear-gradient(to bottom, var(--bg-primary), #050505)' }}>
-        <div className="container px-6">
-          <div className="mv-card-container">
-            <motion.div 
-              className="mv-vibrant-card liquid-glass shadow-glow"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-            >
-              <div className="glossy-shine" />
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426" className="bg-image" alt="Mission" />
-              <div className="overlay" />
-              <div className="content">
-                <div className="icon-shield liquid-glass"><Target size={40} /></div>
-                <h3 className="mv-title">Mission</h3>
-                <p className="mv-desc">Accelerating global digital evolution through the deployment of unyielding, secure, and hyper-scalable architectural ecosystems.</p>
-              </div>
-            </motion.div>
+      {/* ===== MISSION & VISION (MIGRATED) ===== */}
+      <section className="section mv-section overflow-hidden py-32" id="mission-vision">
+        <div className="mv-container container">
+          <SectionReveal>
+            <div className="section-header text-center mb-20">
+              <span className="section-label">Our Strategic Evolution</span>
+              <h2 className="text-6xl font-black mb-8">
+                Mission & <span className="gradient-text">Vision</span>
+              </h2>
+            </div>
+          </SectionReveal>
 
-            <motion.div 
-              className="mv-vibrant-card liquid-glass shadow-glow"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="glossy-shine" />
-              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=2340" className="bg-image" alt="Vision" />
-              <div className="overlay" />
-              <div className="content">
-                <div className="icon-shield liquid-glass"><Eye size={40} /></div>
-                <h3 className="mv-title">Vision</h3>
-                <p className="mv-desc">Defining the autonomous horizon of industrial intelligence via decentralized neural networks and next-gen computational logic.</p>
-              </div>
-            </motion.div>
+          <div className="mv-creative-grid relative">
+            <div className="mv-cards-wrapper flex flex-col md:flex-row gap-12 justify-center items-stretch">
+              <motion.div 
+                className="mv-card-creative designer-card glow-cyan mission-card flex-1 p-12 rounded-[3rem]"
+                initial={{ opacity: 0, x: -70 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <div className="mv-badge mb-8 bg-blue-500/20 text-blue-400 py-1 px-4 rounded-full text-xs font-bold w-fit uppercase tracking-widest">Operational Mission</div>
+                <div className="service-icon-box mb-8 bg-white/5 w-20 h-20 rounded-3xl flex items-center justify-center">
+                  <Target size={40} className="text-blue-500" />
+                </div>
+                <h3 className="text-3xl font-black mb-6 text-white">Accelerating Innovation</h3>
+                <p className="text-lg text-secondary leading-relaxed mb-10">
+                  To bridge the technical gap for businesses worldwide by delivering 
+                  precision-engineered solutions. We empower growth through code 
+                  integrity, architectural stability, and a client-centric engineering culture.
+                </p>
+                <div className="mv-card-footer-meta mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+                  <div className="status-indicator flex items-center gap-3">
+                    <span className="dot pulsed w-2 h-2 rounded-full bg-green-500" /> 
+                    <span className="text-xs font-mono opacity-50">Live Operations</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="mv-card-creative designer-card glow-purple vision-card flex-1 p-12 rounded-[3rem]"
+                initial={{ opacity: 0, x: 70 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              >
+                <div className="mv-badge mb-8 bg-purple-500/20 text-purple-400 py-1 px-4 rounded-full text-xs font-bold w-fit uppercase tracking-widest">Future Vision</div>
+                <div className="service-icon-box mb-8 bg-white/5 w-20 h-20 rounded-3xl flex items-center justify-center">
+                  <Search size={40} className="text-purple-500" />
+                </div>
+                <h3 className="text-3xl font-black mb-6 text-white">Planetary Excellence</h3>
+                <p className="text-lg text-secondary leading-relaxed mb-10">
+                  To be the global benchmark for creative technical problem-solving. 
+                  We envision a future where high-performance technology is accessible, 
+                  ethical, and seamlessly integrated into every human success story.
+                </p>
+                <div className="mv-card-footer-meta mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
+                  <div className="status-indicator flex items-center gap-3">
+                    <span className="dot pulsed w-2 h-2 rounded-full bg-blue-500" />
+                    <span className="text-xs font-mono opacity-50">2030 Roadmap</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* --- CORE VALUES (MIGRATED) --- */}
+      <section className="section py-32" id="values">
+        <div className="container px-6">
+          <SectionReveal>
+            <div className="section-header text-center mb-20">
+              <span className="section-label">What Drives Us</span>
+              <h2 className="text-6xl font-black mb-8">
+                Our Core <span className="gradient-text">Values</span>
+              </h2>
+              <p className="section-subtitle text-xl text-secondary max-w-2xl mx-auto">
+                The principles that guide every decision, every line of code, and every client interaction.
+              </p>
+            </div>
+          </SectionReveal>
+          <div className="values-grid-vibrant grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {values.map((v, i) => (
+              <motion.div
+                key={i}
+                className={`value-card-vibrant ${v.className} p-12 rounded-[3rem] relative overflow-hidden group`}
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="corner-marker absolute top-8 right-8 opacity-20 group-hover:opacity-100 transition-opacity">
+                  <span style={{ fontSize: '1.5rem', color: 'white' }}>*</span>
+                </div>
+                <div className="value-icon-box mb-8 bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-white">
+                  {v.icon}
+                </div>
+                <h3 className="text-2xl font-black mb-4 text-white uppercase tracking-tight">{v.title}</h3>
+                <p className="text-white/80 leading-relaxed font-medium">{v.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- WORKING PROCESS (MIGRATED) --- */}
+      <section className="process-section py-32 bg-secondary/5" id="process">
+        <div className="container px-6">
+          <SectionReveal>
+            <div className="section-header text-center mb-20">
+              <span className="section-label">Engineering Workflow</span>
+              <h2 className="text-6xl font-black mb-8">
+                Our Working <span className="gradient-text">Process</span>
+              </h2>
+              <p className="section-subtitle text-xl text-secondary max-w-2xl mx-auto">
+                A systematic, high-performance approach to turning complex ideas into 
+                market-ready digital products.
+              </p>
+            </div>
+          </SectionReveal>
+
+          <div className="process-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {processSteps.map((step, i) => (
+              <motion.div
+                key={i}
+                className={`process-card ${step.accent} p-12 rounded-[3.5rem] relative overflow-hidden group`}
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="process-step-num absolute top-8 right-8 text-6xl font-black opacity-5 group-hover:opacity-10 transition-opacity font-mono">{step.step}</div>
+                <div className="process-icon-box mb-10 bg-white/5 w-16 h-16 rounded-2xl flex items-center justify-center text-white border border-white/5">
+                  {step.icon}
+                </div>
+                <div className="process-card-content relative z-1">
+                  <h3 className="text-2xl font-black mb-4 text-white">{step.title}</h3>
+                  <p className="text-secondary leading-relaxed font-medium">{step.desc}</p>
+                </div>
+                <div className="process-indicator mt-8 text-[10px] font-mono opacity-30 uppercase tracking-[0.2em]">Phase_{step.step}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* --- Creative Precision (Infinite Coverflow) --- */}
       <section className="py-24 bg-primary relative overflow-hidden">

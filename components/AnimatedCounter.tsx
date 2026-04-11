@@ -11,7 +11,15 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
-export default function AnimatedCounter({ end, suffix = '', duration = 2000, label, icon, className = '' }: AnimatedCounterProps): React.JSX.Element {
+export default function AnimatedCounter({ 
+  end, 
+  suffix = '', 
+  duration = 2000, 
+  label, 
+  icon, 
+  className = '',
+  minimal = false 
+}: AnimatedCounterProps & { minimal?: boolean }): React.JSX.Element {
   const [count, setCount] = useState<number>(0);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-50px' });
@@ -24,7 +32,7 @@ export default function AnimatedCounter({ end, suffix = '', duration = 2000, lab
       const elapsed = Date.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.floor(eased * end);
+      const current = typeof end === 'number' ? Math.floor(eased * end) : 0;
       setCount(current);
       if (progress < 1) {
         requestAnimationFrame(animate);
@@ -32,6 +40,14 @@ export default function AnimatedCounter({ end, suffix = '', duration = 2000, lab
     };
     requestAnimationFrame(animate);
   }, [inView, end, duration]);
+
+  if (minimal) {
+    return (
+      <span ref={ref} className={className}>
+        {count}{suffix}
+      </span>
+    );
+  }
 
   return (
     <motion.div

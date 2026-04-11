@@ -38,7 +38,6 @@ import {
   Gavel,
   Anchor
 } from 'lucide-react';
-import HeroSlider from '@/components/HeroSlider';
 import ParticleBackground from '@/components/ParticleBackground';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
@@ -66,22 +65,6 @@ const services: ServiceItem[] = [
   { icon: <ShieldCheck size={24} />, title: 'Enterprise Solutions', desc: 'Large-scale architectural solutions for global enterprises and mission-critical systems.', slug: 'enterprise-solutions', glow: 'glow-blue', bg: '/services/enterprise.png' },
 ];
 
-interface ValueItem {
-  icon: React.ReactNode;
-  title: string;
-  desc: string;
-  className: string;
-}
-
-const values: ValueItem[] = [
-  { icon: <ShieldCheck size={32} />, title: 'Quality Assurance', desc: 'Only precision-engineered solutions from trusted technical frameworks.', className: 'bg-vibrant-pink' },
-  { icon: <Users size={32} />, title: 'Client Satisfaction', desc: 'Your operational success is our topmost technical priority.', className: 'bg-vibrant-blue' },
-  { icon: <Target size={32} />, title: 'Honest Pricing', desc: 'Transparent and competitive world-class development value.', className: 'bg-vibrant-orange' },
-  { icon: <Code size={32} />, title: 'Reliable Products', desc: 'Durable software architectures built to last for decades.', className: 'bg-vibrant-green' },
-  { icon: <Cpu size={32} />, title: 'Professional Service', desc: 'Expert support from experienced technological professionals.', className: 'bg-vibrant-indigo' },
-  { icon: <Handshake size={32} />, title: 'Long-Term Trust', desc: 'Building lasting technical relationships since our establishment.', className: 'bg-vibrant-red' },
-];
-
 const whyUs = [
   { title: 'Global Infrastructure', desc: 'Planetary-scale cloud architectures engineered for zero-latency operations.', className: 'bg-why-1' },
   { title: 'Elite Talent Pool', desc: 'World-class engineers and architects with core contributions to top frameworks.', className: 'bg-why-2' },
@@ -91,51 +74,6 @@ const whyUs = [
   { title: 'Zero-Downtime Policy', desc: 'Mission-critical reliability keeping your services online at all times.', className: 'bg-why-6' },
   { title: 'Security First', desc: 'Military-grade encryption and proactive vulnerability scanning by default.', className: 'bg-why-7' },
   { title: 'Rapid Deployment', desc: 'Automated CI/CD pipelines that move your ideas to production in hours.', className: 'bg-why-8' },
-];
-
-const processSteps = [
-  {
-    title: "Discovery & Strategy",
-    desc: "We analyze your business goals and user needs to build a solid technical foundation.",
-    icon: <Search size={28} />,
-    step: "01",
-    accent: "accent-cyan"
-  },
-  {
-    title: "System Architecture",
-    desc: "Defining high-performance tech stacks and scalable cloud infrastructures for long-term stability.",
-    icon: <PenTool size={28} />,
-    step: "02",
-    accent: "accent-blue"
-  },
-  {
-    title: "Agile Engineering",
-    desc: "Rapid development cycles with high-quality code and continuous stakeholder feedback loops.",
-    icon: <Code size={28} />,
-    step: "03",
-    accent: "accent-purple"
-  },
-  {
-    title: "Quality Assurance",
-    desc: "Comprehensive automated and manual testing ensure zero-defect software and top-tier security.",
-    icon: <ShieldCheck size={28} />,
-    step: "04",
-    accent: "accent-pink"
-  },
-  {
-    title: "Deployment & Ops",
-    desc: "Seamless release through automated CI/CD pipelines to a highly-available production cloud.",
-    icon: <Rocket size={28} />,
-    step: "05",
-    accent: "accent-orange"
-  },
-  {
-    title: "Evolution & Growth",
-    desc: "Post-launch monitoring and feature roadmaps to keep your platform at the cutting edge.",
-    icon: <RefreshCw size={28} />,
-    step: "06",
-    accent: "accent-green"
-  }
 ];
 
 interface FAQItem {
@@ -202,13 +140,117 @@ const fadeUp = {
 export default function HomePage(): React.JSX.Element {
   return (
     <>
-      <section className="hero" id="hero">
+      <section className="hero-v3" id="hero">
         <ParticleBackground />
-        <HeroSlider />
-        <div className="hero-bg" style={{ display: 'none' }}>
-          <div className="hero-orb hero-orb-1" />
-          <div className="hero-orb hero-orb-2" />
-          <div className="hero-orb hero-orb-3" />
+        
+        {/* Cinematic Glows */}
+        <div className="hero-glow-v3" style={{ top: '-10%', right: '0%', '--glow-rgb': '0, 198, 255' } as any} />
+        <div className="hero-glow-v3" style={{ bottom: '10%', left: '0%', '--glow-rgb': '168, 85, 247' } as any} />
+
+        <div className="container relative z-10">
+          <div className="hero-v3-inner">
+            
+            {/* Left Column: Messaging */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="hero-text-side"
+            >
+              <div className="hero-eyebrow-v3">
+                <span className="text-xl">👋</span>
+                <span>Welcome to MS Infinex Tech</span>
+              </div>
+
+              <h1 className="hero-title-v3">
+                Engineering Absolute <span className="gradient-text">Digital Mastery</span>
+              </h1>
+
+              <p className="hero-desc-v3">
+                We specialize in deploying hyper-scalable architectural ecosystems and advanced AI integrations that drive measurable industrial growth.
+              </p>
+
+              <div className="hero-actions-v3">
+                <Link href="/services" className="btn btn-tech" style={{ padding: '20px 48px', fontSize: '1.2rem' }}>
+                  Explore Solutions ↗
+                </Link>
+                <Link href="/about" className="btn btn-secondary" style={{ padding: '20px 48px', fontSize: '1.2rem' }}>
+                   Our Story 
+                </Link>
+              </div>
+
+              {/* Technical Coordinates */}
+              <div className="mt-16 pt-12 border-t border-white/5 flex items-center gap-8 opacity-30 font-mono text-[10px] tracking-[0.2em] uppercase" style={{ display: 'flex', marginTop: '60px', opacity: 0.3 }}>
+                <div>SEC_ID: INF_HQ_01</div>
+                <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'white' }} />
+                <div>LOC: 24.5° N / 73.7° E</div>
+              </div>
+            </motion.div>
+
+            {/* Right Column: Visual + Floating Data */}
+            <div className="hero-visual-side">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                style={{ position: 'relative' }}
+              >
+                <div className="hero-img-container">
+                    <img 
+                      src="/hero_tech_architect.png" 
+                      alt="Future Tech Architect" 
+                      style={{ width: '100%', height: 'auto', display: 'block' }}
+                      onError={(e) => {
+                        (e.target as any).src = 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent, transparent)' }} />
+                </div>
+
+                {/* Floating Metric 1: Users */}
+                <motion.div 
+                  className="floating-metric-card metric-users-v3"
+                  animate={{ y: [0, -15, 0] }}
+                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                     <div className="avatar-stack-v3">
+                        {['J', 'M', 'R'].map(i => (
+                          <div key={i}>{i}</div>
+                        ))}
+                     </div>
+                     <div>
+                        <div style={{ fontSize: '1.25rem', fontWeight: 900, color: 'white' }}>1M+ Users</div>
+                        <div style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '2px', color: 'rgba(255,255,255,0.4)', fontWeight: 700 }}>Global Scale</div>
+                     </div>
+                  </div>
+                </motion.div>
+
+                {/* Floating Metric 2: Ratings */}
+                <motion.div 
+                  className="floating-metric-card light metric-rating-v3"
+                  animate={{ y: [0, 15, 0] }}
+                  transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
+                >
+                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                      <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px' }}>
+                         <img src="https://www.google.com/favicon.ico" alt="Google" style={{ width: '100%', objectFit: 'contain' }} />
+                      </div>
+                      <div>
+                         <div style={{ display: 'flex', gap: '4px', marginBottom: '4px' }}>
+                            {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="#f59e0b" color="#f59e0b" />)}
+                         </div>
+                         <div style={{ fontSize: '0.9rem', fontWeight: 900, color: '#111' }}>(4.9) Review Matrix</div>
+                      </div>
+                   </div>
+                </motion.div>
+
+                {/* Background Pattern Decal */}
+                <div style={{ position: 'absolute', top: '-40px', right: '-40px', width: '240px', height: '240px', backgroundImage: 'radial-gradient(circle, rgba(249,115,22,0.1) 1px, transparent 1px)', backgroundSize: '20px 20px', zIndex: -1, opacity: 0.4 }} />
+              </motion.div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -350,84 +392,7 @@ export default function HomePage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ===== MISSION & VISION ===== */}
-      <section className="section mv-section overflow-hidden" id="mission-vision">
-        <div className="mv-container container">
-          <SectionReveal>
-            <div className="section-header">
-              <span className="section-label">Our Strategic Evolution</span>
-              <h2 className="section-title">
-                Mission & <span className="gradient-text">Vision</span>
-              </h2>
-            </div>
-          </SectionReveal>
-
-          <div className="mv-creative-grid">
-            <div className="mv-visual-bridge">
-              <img src="/mv_visual.png" alt="Strategic Path" className="mv-visual-img" />
-              <div className="mv-glow-overlay" />
-            </div>
-
-            <div className="mv-cards-wrapper">
-              <motion.div 
-                className="mv-card-creative designer-card glow-cyan mission-card"
-                initial={{ opacity: 0, x: -70 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <div className="mv-badge">Operational Mission</div>
-                <div className="service-icon-box">
-                  <Target size={32} />
-                </div>
-                <h3>Accelerating Innovation</h3>
-                <p>
-                  To bridge the technical gap for businesses worldwide by delivering 
-                  precision-engineered solutions. We empower growth through code 
-                  integrity, architectural stability, and a client-centric engineering culture.
-                </p>
-                <div className="mv-card-footer-meta">
-                  <div className="status-indicator">
-                    <span className="dot pulsed" /> 
-                    <span>Live Operations</span>
-                  </div>
-                  <Link href="/about" className="mv-link-arrow">
-                    <ArrowRight size={18} />
-                  </Link>
-                </div>
-              </motion.div>
-
-              <motion.div 
-                className="mv-card-creative designer-card glow-purple vision-card"
-                initial={{ opacity: 0, x: 70 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              >
-                <div className="mv-badge">Future Vision</div>
-                <div className="service-icon-box">
-                  <Search size={32} />
-                </div>
-                <h3>Planetary Excellence</h3>
-                <p>
-                  To be the global benchmark for creative technical problem-solving. 
-                  We envision a future where high-performance technology is accessible, 
-                  ethical, and seamlessly integrated into every human success story.
-                </p>
-                <div className="mv-card-footer-meta">
-                  <div className="status-indicator">
-                    <span className="dot pulsed" />
-                    <span>2030 Roadmap</span>
-                  </div>
-                  <Link href="/about" className="mv-link-arrow">
-                    <ArrowRight size={18} />
-                  </Link>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ===== INDUSTRIES WE TRANSFORM ===== */}
 
       {/* ===== INDUSTRIES WE TRANSFORM ===== */}
       <section className="industries-section" id="industries">
@@ -475,82 +440,7 @@ export default function HomePage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ===== CORE VALUES ===== */}
-      <section className="section" id="values">
-        <div className="container">
-          <SectionReveal>
-            <div className="section-header">
-              <span className="section-label">What Drives Us</span>
-              <h2 className="section-title">
-                Our Core <span className="gradient-text">Values</span>
-              </h2>
-              <p className="section-subtitle">
-                The principles that guide every decision, every line of code, and every client interaction.
-              </p>
-            </div>
-          </SectionReveal>
-          <div className="values-grid-vibrant">
-            {values.map((v, i) => (
-              <motion.div
-                key={i}
-                className={`value-card-vibrant ${v.className}`}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <div className="corner-marker">
-                  <span style={{ fontSize: '1.5rem' }}>*</span>
-                </div>
-                <div className="value-icon-box">{v.icon}</div>
-                <h3>{v.title}</h3>
-                <p>{v.desc}</p>
-                <Link href="/about" className="learn-more">
-                  Learn More <ArrowRight size={16} />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== WORKING PROCESS ===== */}
-      <section className="process-section" id="process">
-        <div className="container">
-          <SectionReveal>
-            <div className="section-header">
-              <span className="section-label">Engineering Workflow</span>
-              <h2 className="section-title">
-                Our Working <span className="gradient-text">Process</span>
-              </h2>
-              <p className="section-subtitle">
-                A systematic, high-performance approach to turning complex ideas into 
-                market-ready digital products.
-              </p>
-            </div>
-          </SectionReveal>
-
-          <div className="process-grid">
-            {processSteps.map((step, i) => (
-              <motion.div
-                key={i}
-                className={`process-card ${step.accent}`}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <div className="process-middle-gradient" />
-                <div className="process-card-line" />
-                <div className="process-step-num">{step.step}</div>
-                <div className="process-icon-box">{step.icon}</div>
-                <div className="process-card-content relative z-1">
-                  <h3>{step.title}</h3>
-                  <p>{step.desc}</p>
-                </div>
-                <div className="process-indicator">Phase_{step.step}</div>
-                <div className="process-glow" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ===== WHY CHOOSE US ===== */}
 
       {/* ===== WHY CHOOSE US ===== */}
       <section className="section" id="why-us">
