@@ -168,6 +168,9 @@ export default function ServicesPage(): React.JSX.Element {
                         <span key={j} className="psc-feature-tag">{f}</span>
                       ))}
                     </div>
+                    <div className="psc-btn-wrapper">
+                      <div className="btn btn-primary psc-actual-btn">Discover More →</div>
+                    </div>
                   </div>
                 </motion.div>
               </Link>
