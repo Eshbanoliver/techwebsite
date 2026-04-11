@@ -42,8 +42,6 @@ import HeroSlider from '@/components/HeroSlider';
 import ParticleBackground from '@/components/ParticleBackground';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
-import FAQAccordion from '@/components/FAQAccordion';
-import type { FAQItem } from '@/components/FAQAccordion';
 import SectionReveal from '@/components/SectionReveal';
 import TechStack from '@/components/TechStack';
 

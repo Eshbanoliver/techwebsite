@@ -6,13 +6,7 @@ import {
   Camera, 
   MapPin, 
   Mail, 
-  Phone,
-  Cpu,
-  ShieldCheck,
-  Linkedin,
-  Twitter,
-  Github,
-  Instagram
+  Phone
 } from 'lucide-react';
 
 export default function Footer(): React.JSX.Element {
