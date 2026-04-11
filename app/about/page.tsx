@@ -225,53 +225,55 @@ export default function AboutPage() {
             </div>
           </SectionReveal>
 
-          <div className="mv-creative-grid relative">
-            <div className="mv-cards-wrapper flex flex-col md:flex-row gap-12 justify-center items-stretch">
+          <div className="mv-cards-wrapper">
+            <div className="mv-visual-bridge" />
+            
+            <div className="mv-cards-grid">
               <motion.div 
-                className="mv-card-creative designer-card glow-cyan mission-card flex-1 p-12 rounded-[3rem]"
-                initial={{ opacity: 0, x: -70 }}
+                className="mv-card-creative designer-card glow-cyan mission-card"
+                initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <div className="mv-badge mb-8 bg-blue-500/20 text-blue-400 py-1 px-4 rounded-full text-xs font-bold w-fit uppercase tracking-widest">Operational Mission</div>
-                <div className="service-icon-box mb-8 bg-white/5 w-20 h-20 rounded-3xl flex items-center justify-center">
-                  <Target size={40} className="text-blue-500" />
+                <div className="mv-badge bg-blue-500/10 text-blue-400">Operational Mission</div>
+                <div className="service-icon-box">
+                  <Target size={36} className="text-blue-500" />
                 </div>
-                <h3 className="text-3xl font-black mb-6 text-white">Accelerating Innovation</h3>
-                <p className="text-lg text-secondary leading-relaxed mb-10">
+                <h3 className="text-3xl font-black mb-6">Accelerating Innovation</h3>
+                <p className="text-lg text-secondary leading-relaxed mb-8">
                   To bridge the technical gap for businesses worldwide by delivering 
                   precision-engineered solutions. We empower growth through code 
                   integrity, architectural stability, and a client-centric engineering culture.
                 </p>
-                <div className="mv-card-footer-meta mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
-                  <div className="status-indicator flex items-center gap-3">
-                    <span className="dot pulsed w-2 h-2 rounded-full bg-green-500" /> 
+                <div className="mv-card-footer-meta">
+                  <div className="status-indicator">
+                    <span className="dot pulsed bg-green-500" /> 
                     <span className="text-xs font-mono opacity-50">Live Operations</span>
                   </div>
                 </div>
               </motion.div>
 
               <motion.div 
-                className="mv-card-creative designer-card glow-purple vision-card flex-1 p-12 rounded-[3rem]"
-                initial={{ opacity: 0, x: 70 }}
+                className="mv-card-creative designer-card glow-purple vision-card"
+                initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
-                <div className="mv-badge mb-8 bg-purple-500/20 text-purple-400 py-1 px-4 rounded-full text-xs font-bold w-fit uppercase tracking-widest">Future Vision</div>
-                <div className="service-icon-box mb-8 bg-white/5 w-20 h-20 rounded-3xl flex items-center justify-center">
-                  <Search size={40} className="text-purple-500" />
+                <div className="mv-badge bg-purple-500/10 text-purple-400">Future Vision</div>
+                <div className="service-icon-box">
+                  <Search size={36} className="text-purple-500" />
                 </div>
-                <h3 className="text-3xl font-black mb-6 text-white">Planetary Excellence</h3>
-                <p className="text-lg text-secondary leading-relaxed mb-10">
+                <h3 className="text-3xl font-black mb-6">Planetary Excellence</h3>
+                <p className="text-lg text-secondary leading-relaxed mb-8">
                   To be the global benchmark for creative technical problem-solving. 
                   We envision a future where high-performance technology is accessible, 
                   ethical, and seamlessly integrated into every human success story.
                 </p>
-                <div className="mv-card-footer-meta mt-auto pt-8 border-t border-white/5 flex justify-between items-center">
-                  <div className="status-indicator flex items-center gap-3">
-                    <span className="dot pulsed w-2 h-2 rounded-full bg-blue-500" />
+                <div className="mv-card-footer-meta">
+                  <div className="status-indicator">
+                    <span className="dot pulsed bg-blue-500" />
                     <span className="text-xs font-mono opacity-50">2030 Roadmap</span>
                   </div>
                 </div>
@@ -295,22 +297,19 @@ export default function AboutPage() {
               </p>
             </div>
           </SectionReveal>
-          <div className="values-grid-vibrant grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="values-grid-vibrant">
             {values.map((v, i) => (
               <motion.div
                 key={i}
-                className={`value-card-vibrant ${v.className} p-12 rounded-[3rem] relative overflow-hidden group`}
+                className={`value-card-vibrant ${v.className} group`}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="corner-marker absolute top-8 right-8 opacity-20 group-hover:opacity-100 transition-opacity">
-                  <span style={{ fontSize: '1.5rem', color: 'white' }}>*</span>
-                </div>
-                <div className="value-icon-box mb-8 bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center text-white">
+                <div className="value-icon-box">
                   {v.icon}
                 </div>
-                <h3 className="text-2xl font-black mb-4 text-white uppercase tracking-tight">{v.title}</h3>
-                <p className="text-white/80 leading-relaxed font-medium">{v.desc}</p>
+                <h3 className="value-card-title">{v.title}</h3>
+                <p className="value-card-desc">{v.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -333,23 +332,23 @@ export default function AboutPage() {
             </div>
           </SectionReveal>
 
-          <div className="process-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="process-grid">
             {processSteps.map((step, i) => (
               <motion.div
                 key={i}
-                className={`process-card ${step.accent} p-12 rounded-[3.5rem] relative overflow-hidden group`}
+                className={`process-card ${step.accent} group`}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="process-step-num absolute top-8 right-8 text-6xl font-black opacity-5 group-hover:opacity-10 transition-opacity font-mono">{step.step}</div>
-                <div className="process-icon-box mb-10 bg-white/5 w-16 h-16 rounded-2xl flex items-center justify-center text-white border border-white/5">
+                <div className="process-step-num font-mono">{step.step}</div>
+                <div className="process-icon-box">
                   {step.icon}
                 </div>
-                <div className="process-card-content relative z-1">
-                  <h3 className="text-2xl font-black mb-4 text-white">{step.title}</h3>
-                  <p className="text-secondary leading-relaxed font-medium">{step.desc}</p>
+                <div className="process-card-content">
+                  <h3 className="process-title">{step.title}</h3>
+                  <p className="process-desc">{step.desc}</p>
                 </div>
-                <div className="process-indicator mt-8 text-[10px] font-mono opacity-30 uppercase tracking-[0.2em]">Phase_{step.step}</div>
+                <div className="process-phase-label font-mono">Phase_{step.step}</div>
               </motion.div>
             ))}
           </div>

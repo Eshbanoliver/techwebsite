@@ -509,21 +509,19 @@ input, textarea, select { font-family: inherit; }
 /* ---- Vibrant Rounded Value Cards ---- */
 .values-grid-vibrant {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
   margin-top: 60px;
 }
 
 .value-card-vibrant {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
   padding: 48px;
-  border-radius: 40px;
+  border-radius: 48px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  position: relative;
-  overflow: hidden;
-  color: white !important;
-  transition: all var(--transition-base);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: none;
 }
@@ -1302,45 +1300,85 @@ input, textarea, select { font-family: inherit; }
 }
 
 .mv-cards-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
   position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mv-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+  position: relative;
+  z-index: 2;
+}
+
+.mv-visual-bridge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--border-glass), transparent);
   z-index: 1;
 }
 
+.mv-visual-bridge::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: var(--bg-primary);
+  border: 2px solid var(--neon-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--neon-blue);
+}
+
 .mv-card-creative {
-  flex: 1;
-  max-width: 500px;
-  padding: 48px;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: 40px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  transition: all 0.4s ease;
 }
 
-.mission-card {
-  align-self: flex-start;
-  margin-top: -30px;
-}
-
-.vision-card {
-  align-self: flex-end;
-  margin-bottom: -30px;
+.mv-card-creative:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .mv-badge {
-  display: inline-block;
+  width: fit-content;
   padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 32px;
   background: var(--bg-glass);
   border: 1px solid var(--border-glass);
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   color: var(--glow-color, var(--neon-blue));
-  width: fit-content;
+}
+
+.mv-card-creative .service-icon-box {
+  width: 72px;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .mv-card-creative h3 {
@@ -1357,11 +1395,11 @@ input, textarea, select { font-family: inherit; }
 
 .mv-card-footer-meta {
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--border-glass);
   color: var(--text-secondary);
 }
 
@@ -2460,73 +2498,44 @@ input, textarea, select { font-family: inherit; }
 .process-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 32px;
   position: relative;
   z-index: 2;
 }
 
-@media (max-width: 1024px) {
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .process-card {
   position: relative;
-  background: var(--bg-glass);
+  background: var(--bg-card);
   border: 1px solid var(--border-glass);
-  border-radius: var(--radius-lg);
-  padding: 50px 35px;
-  transition: all var(--transition-base);
+  padding: 48px;
+  border-radius: 48px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  backdrop-filter: blur(10px);
-}
-
-.process-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--gradient-primary);
-  opacity: 0;
-  transition: opacity var(--transition-base);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 400px;
 }
 
 .process-card:hover {
-  background: var(--bg-glass-hover);
-  border-color: var(--neon-blue);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-glow);
-}
-
-.process-card:hover::before {
-  opacity: 1;
+  border-color: var(--accent-color, var(--neon-blue));
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
 }
 
 .process-step-num {
-  font-family: var(--font-mono);
-  font-size: 4rem;
-  font-weight: 900;
-  color: var(--neon-blue);
-  opacity: 0.05;
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 20px;
+  right: 30px;
+  font-size: 8rem;
+  font-weight: 900;
   line-height: 1;
-  transition: all var(--transition-base);
+  opacity: 0.1;
+  transition: all 0.5s ease;
   pointer-events: none;
+  font-family: var(--font-mono, monospace);
+  color: var(--white);
 }
+
 
 .process-card:hover .process-step-num {
   opacity: 0.15;
@@ -2534,77 +2543,66 @@ input, textarea, select { font-family: inherit; }
 }
 
 .process-icon-box {
-  width: 70px;
-  height: 70px;
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-md);
-  background: var(--gradient-subtle);
-  color: var(--neon-blue);
-  border: 1px solid var(--border-glass);
-  transition: all var(--transition-base);
+  margin-bottom: 32px;
+  color: var(--accent-color, var(--neon-blue));
+  transition: all 0.5s ease;
 }
 
 .process-card:hover .process-icon-box {
-  background: var(--gradient-primary);
-  color: #fff;
+  background: var(--accent-color, var(--neon-blue));
+  color: black;
   border-color: transparent;
-  box-shadow: 0 0 20px rgba(0, 198, 255, 0.4);
 }
 
-.process-card h3 {
+.process-title {
   font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin: 0;
-  font-family: var(--font-heading);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
 }
 
-.process-card p {
+.process-desc {
   color: var(--text-secondary);
-  font-size: 1rem;
   line-height: 1.7;
-  margin: 0;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
-.process-indicator {
-  position: absolute;
-  bottom: 12px;
-  right: 20px;
-  font-family: var(--font-mono);
+.process-phase-label {
+  margin-top: auto;
+  padding-top: 32px;
   font-size: 0.7rem;
-  color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 700;
+  letter-spacing: 2.5px;
+  opacity: 0.3;
+  color: white;
+  font-family: var(--font-mono, monospace);
 }
 
-.process-glow {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle, rgba(0, 198, 255, 0.2) 0%, transparent 70%);
-  border-radius: 50%;
-  top: -75px;
-  right: -75px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity var(--transition-base);
+/* Accent Colors for Process Steps */
+.process-card.accent-cyan { --accent-color: #00f0ff; }
+.process-card.accent-blue { --accent-color: #3b82f6; }
+.process-card.accent-purple { --accent-color: #8b5cf6; }
+.process-card.accent-pink { --accent-color: #ec4899; }
+.process-card.accent-orange { --accent-color: #f97316; }
+.process-card.accent-green { --accent-color: #10b981; }
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
-.process-card:hover .process-glow {
-  opacity: 1;
-}
-
-
-/* Process Card Color Accents */
-.process-card.accent-cyan { --card-glow: #00f0ff; }
-.process-card.accent-blue { --card-glow: #3b82f6; }
-.process-card.accent-purple { --card-glow: #7f00ff; }
-.process-card.accent-pink { --card-glow: #ff00e5; }
-.process-card.accent-orange { --card-glow: #f97316; }
-.process-card.accent-green { --card-glow: #22c55e; }
 
 .process-middle-gradient {
   position: absolute;
