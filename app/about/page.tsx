@@ -119,20 +119,21 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-primary">
       {/* --- Atmospheric Hero --- */}
-      <section className="about-hero relative overflow-hidden">
+      <section className="about-hero relative overflow-hidden flex items-center justify-center min-h-screen">
         <ParticleBackground />
         <div className="grid-bg" />
-        <div className="container relative z-10 px-6">
+        <div className="container relative z-10 px-6 flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-4xl text-center"
           >
             <div className="section-label mb-8">Institutional Profile</div>
-            <h1 className="text-7xl font-black mb-8 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
               Engineering the <span className="gradient-text">Future</span> <br/> From Udaipur
             </h1>
-            <p className="text-xl text-secondary max-w-2xl leading-relaxed">
+            <p className="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
               MS Infinex Tech is a high-performance technology studio dedicated to bridging the gap 
               between complex engineering and human-centric design.
             </p>
