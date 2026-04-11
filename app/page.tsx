@@ -6,12 +6,6 @@ import {
   Users, 
   Calendar, 
   Cpu, 
-  BrainCircuit, 
-  Layout, 
-  Smartphone, 
-  Code, 
-  Palette, 
-  Cloud, 
   TrendingUp, 
   Zap,
   Target,
@@ -36,7 +30,14 @@ import {
   Banknote,
   Hotel,
   Gavel,
-  Anchor
+  Anchor,
+  Share2,
+  Megaphone,
+  Globe,
+  Smartphone,
+  Paintbrush,
+  Brain,
+  ShoppingCart
 } from 'lucide-react';
 import ParticleBackground from '@/components/ParticleBackground';
 import AnimatedCounter from '@/components/AnimatedCounter';
@@ -54,15 +55,14 @@ interface ServiceItem {
 }
 
 const services: ServiceItem[] = [
-  { icon: <BrainCircuit size={24} />, title: 'AI & Machine Learning', desc: 'Intelligent solutions powered by advanced machine learning algorithms and predictive analytics.', slug: 'ai-ml', glow: 'glow-cyan', bg: '/services/ai-ml.png' },
-  { icon: <Layout size={24} />, title: 'Web Development', desc: 'Stunning, high-performance websites built with modern frameworks like React and Next.js.', slug: 'web-development', glow: 'glow-blue', bg: '/services/web.png' },
-  { icon: <Smartphone size={24} />, title: 'Mobile App Development', desc: 'Native and cross-platform mobile apps with seamless user experiences and robust backends.', slug: 'mobile-apps', glow: 'glow-purple', bg: '/services/mobile.png' },
-  { icon: <Code size={24} />, title: 'Software Development', desc: 'Custom enterprise software solutions designed to streamline operations and boost productivity.', slug: 'software-development', glow: 'glow-pink', bg: '/services/software.png' },
-  { icon: <Palette size={24} />, title: 'UI/UX Design', desc: 'Beautiful, intuitive interfaces crafted with user-centered design principles.', slug: 'ui-ux-design', glow: 'glow-orange', bg: '/services/uiux.png' },
-  { icon: <Cloud size={24} />, title: 'Cloud & DevOps', desc: 'Scalable cloud infrastructure and automated CI/CD pipelines for reliable deployments.', slug: 'cloud-devops', glow: 'glow-green', bg: '/services/cloud.png' },
-  { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Data-driven marketing strategies that maximize your digital presence and ROI.', slug: 'digital-marketing', glow: 'glow-blue', bg: '/services/marketing.png' },
-  { icon: <Target size={24} />, title: 'Branding & Logo', desc: 'Strategic brand identity and visual storytelling that resonates with your audience.', slug: 'branding', glow: 'glow-orange', bg: '/services/branding.png' },
-  { icon: <ShieldCheck size={24} />, title: 'Enterprise Solutions', desc: 'Large-scale architectural solutions for global enterprises and mission-critical systems.', slug: 'enterprise-solutions', glow: 'glow-blue', bg: '/services/enterprise.png' },
+  { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Local SEO, lead generation & content marketing strategies for Udaipur businesses.', slug: 'digital-marketing', glow: 'glow-orange', bg: '/services/digital-marketing.png' },
+  { icon: <Share2 size={24} />, title: 'Social Media Marketing', desc: 'Instagram, Reels & influencer collaborations for cafes, hotels & lifestyle brands.', slug: 'social-media-marketing', glow: 'glow-pink', bg: '/services/social-media.png' },
+  { icon: <Megaphone size={24} />, title: 'Paid Ads', desc: 'Google, Meta & YouTube ad campaigns that drive instant visibility and ROI.', slug: 'paid-ads', glow: 'glow-purple', bg: '/services/paid-ads.png' },
+  { icon: <Globe size={24} />, title: 'Web Development', desc: 'Business websites, e-commerce & custom solutions built for performance.', slug: 'web-development', glow: 'glow-blue', bg: '/services/web-development.png' },
+  { icon: <Smartphone size={24} />, title: 'App & Web App Dev', desc: 'Mobile apps, PWAs & startup MVPs built for Udaipur entrepreneurs.', slug: 'app-development', glow: 'glow-green', bg: '/services/app-development.png' },
+  { icon: <Paintbrush size={24} />, title: 'Graphic Design & Branding', desc: 'Logos, social media design & complete brand identity for local brands.', slug: 'graphic-design', glow: 'glow-pink', bg: '/services/graphic-design.png' },
+  { icon: <Brain size={24} />, title: 'AI Solutions', desc: 'Practical AI chatbots, automation & data insights for Udaipur businesses.', slug: 'ai-solutions', glow: 'glow-cyan', bg: '/services/ai-solutions.png' },
+  { icon: <ShoppingCart size={24} />, title: 'E-Commerce Management', desc: 'Amazon, Flipkart & marketplace management from setup to growth.', slug: 'ecommerce-management', glow: 'glow-orange', bg: '/services/ecommerce.png' },
 ];
 
 const whyUs = [
@@ -85,7 +85,7 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
   { 
     question: 'What services does MS Infinex Tech offer?', 
-    answer: 'We offer a comprehensive range of tech services including AI & Machine Learning, Web Development, Mobile App Development, Software Development, UI/UX Design, Cloud & DevOps, and Digital Marketing.',
+    answer: 'We offer Digital Marketing, Social Media Marketing, Paid Ads, Web Development, App Development, Graphic Design & Branding, AI Solutions, and E-Commerce Marketplace Management — all tailored for Udaipur businesses.',
     className: 'bg-why-1'
   },
   { 

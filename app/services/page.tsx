@@ -4,279 +4,185 @@ import Link from 'next/link';
 import SectionReveal from '@/components/SectionReveal';
 import ParticleBackground from '@/components/ParticleBackground';
 import { 
-  Cpu, Code, Smartphone, Layout, Cloud, TrendingUp, Search, 
-  PenTool, Settings, CheckCircle, Rocket, ShieldCheck,
-  BrainCircuit, Target
+  TrendingUp, Share2, Megaphone, Globe, Smartphone, Paintbrush, 
+  Brain, ShoppingCart, ArrowRight, CheckCircle, Rocket
 } from 'lucide-react';
 
-interface ServiceDetail {
-  category: string;
-  icon: React.ReactNode;
-  title: string;
-  desc: string;
-  features: string[];
-  slug: string;
-  image: string;
-}
+const iconMap: Record<string, React.ReactNode> = {
+  TrendingUp: <TrendingUp size={32} />,
+  Share2: <Share2 size={32} />,
+  Megaphone: <Megaphone size={32} />,
+  Globe: <Globe size={32} />,
+  Smartphone: <Smartphone size={32} />,
+  Paintbrush: <Paintbrush size={32} />,
+  Brain: <Brain size={32} />,
+  ShoppingCart: <ShoppingCart size={32} />,
+};
 
-interface ProcessStep {
-  num: string;
-  title: string;
-  desc: string;
-  icon: React.ReactNode;
-}
-
-const services: ServiceDetail[] = [
+const services = [
   {
-    category: "Neural Core",
-    icon: <BrainCircuit size={32} />,
-    title: 'AI & Machine Learning',
-    desc: 'Harness the power of artificial intelligence to automate processes, gain predictive insights, and build intelligent applications that learn and adapt.',
-    features: ['NLP Models', 'Predictive Analytics', 'Computer Vision', 'Generative AI'],
-    slug: 'ai-ml',
-    image: '/services/ai-ml.png'
-  },
-  {
-    category: "Architecture",
-    icon: <Code size={32} />,
-    title: 'Web & Enterprise Systems',
-    desc: 'We build stunning, high-performance web applications and enterprise software using the latest scalable frameworks and distributed best practices.',
-    features: ['React & Next.js', 'SaaS Architectures', 'Microservices', 'High-Load APIs'],
-    slug: 'web-development',
-    image: '/services/web.png'
-  },
-  {
-    category: "Interfaces",
-    icon: <Smartphone size={32} />,
-    title: 'Mobile Engineering',
-    desc: 'Create powerful native and cross-platform mobile applications. We design and develop feature-rich iOS and Android apps that users love.',
-    features: ['React Native', 'Swift & Kotlin', 'App Optimization', 'Offline-First Sync'],
-    slug: 'mobile-apps',
-    image: '/services/mobile.png'
-  },
-  {
-    category: "Design System",
-    icon: <Layout size={32} />,
-    title: 'Cinematic UI/UX',
-    desc: 'Beautiful, intuitive interfaces designed with a deep understanding of user behavior. We create designs that look stunning and drive massive engagement.',
-    features: ['Interactive Prototyping', 'Liquid Glass Systems', '3D Integration', 'User Psychology'],
-    slug: 'ui-ux-design',
-    image: '/services/uiux.png'
-  },
-  {
-    category: "Infrastructure",
-    icon: <Cloud size={32} />,
-    title: 'Cloud & DevOps',
-    desc: 'Build robust, scalable cloud infrastructure with automated deployment pipelines. We ensure your applications are always available.',
-    features: ['AWS & Azure Core', 'Kubernetes', 'CI/CD Automation', 'Zero-Trust Security'],
-    slug: 'cloud-devops',
-    image: '/services/cloud.png'
-  },
-  {
-    category: "Growth Ops",
-    icon: <TrendingUp size={32} />,
+    icon: 'TrendingUp',
     title: 'Digital Marketing',
-    desc: 'Digital marketing strategies powered by deep analytics that maximize your online visibility, attract qualified leads, and drive exponential growth.',
-    features: ['Algorithmic SEO', 'Conversion Optimization', 'Performance Advertising', 'Data Mining'],
+    desc: 'Local SEO, content marketing, lead generation & reputation management for Udaipur businesses.',
     slug: 'digital-marketing',
-    image: '/services/marketing.png'
+    color: '#f97316',
+    gradient: 'linear-gradient(135deg, #f97316, #ea580c)',
+    subpages: ['Local SEO', 'Website SEO', 'Content Marketing', 'Lead Generation', 'WhatsApp & Email', 'Reputation Management'],
   },
   {
-    category: "Identity",
-    icon: <Target size={32} />,
-    title: 'Branding & Logo',
-    desc: 'Strategic visual identities that command attention. We build iconic brands that resonate with your audience and stand the test of time.',
-    features: ['Brand Strategy', 'Logo Design', 'Visual Guidelines', 'Brand Voice'],
-    slug: 'branding',
-    image: '/services/branding.png'
+    icon: 'Share2',
+    title: 'Social Media Marketing',
+    desc: 'Instagram, Reels, Facebook & influencer collaborations for cafes, hotels & lifestyle brands.',
+    slug: 'social-media-marketing',
+    color: '#ec4899',
+    gradient: 'linear-gradient(135deg, #ec4899, #db2777)',
+    subpages: ['Instagram Marketing', 'Reels & Short Videos', 'Facebook Management', 'Influencer Collaboration', 'Daily Posting', 'Content Scheduling'],
   },
   {
-    category: "Engine",
-    icon: <Code size={32} />,
-    title: 'Software Development',
-    desc: 'Custom enterprise software designed for stability and scale. We build the backbone of your operations with precision engineering.',
-    features: ['Custom CRM/ERP', 'Legacy Migration', 'TDD/BDD', 'Microservices'],
-    slug: 'software-development',
-    image: '/services/software.png'
+    icon: 'Megaphone',
+    title: 'Paid Ads',
+    desc: 'Google Ads, Meta Ads & YouTube campaigns that drive instant visibility and measurable ROI.',
+    slug: 'paid-ads',
+    color: '#8b5cf6',
+    gradient: 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
+    subpages: ['Google Ads', 'Meta Ads', 'YouTube Ads', 'Lead Gen Campaigns', 'Retargeting', 'Product Selling'],
   },
   {
-    category: "Global Scale",
-    icon: <ShieldCheck size={32} />,
-    title: 'Enterprise Solutions',
-    desc: 'Mission-critical engineering for demanding environments. High-availability systems that power global infrastructures.',
-    features: ['Global SLIs', 'Zero-Trust Security', 'SLA Management', 'Scalable Arch'],
-    slug: 'enterprise-solutions',
-    image: '/services/enterprise.png'
+    icon: 'Globe',
+    title: 'Web Development',
+    desc: 'Business websites, e-commerce, custom solutions & SEO-friendly development for local businesses.',
+    slug: 'web-development',
+    color: '#3b82f6',
+    gradient: 'linear-gradient(135deg, #3b82f6, #2563eb)',
+    subpages: ['Business Website', 'E-commerce', 'Custom Solutions', 'UI/UX Design', 'Maintenance', 'SEO-Friendly Dev'],
+  },
+  {
+    icon: 'Smartphone',
+    title: 'App & Web App Development',
+    desc: 'Mobile apps, PWAs, startup MVPs & backend systems built for Udaipur entrepreneurs.',
+    slug: 'app-development',
+    color: '#10b981',
+    gradient: 'linear-gradient(135deg, #10b981, #059669)',
+    subpages: ['Mobile App Dev', 'Web App Dev', 'Startup Solutions', 'UI/UX Design', 'Backend & API', 'Maintenance', 'Advanced Features'],
+  },
+  {
+    icon: 'Paintbrush',
+    title: 'Graphic Design & Branding',
+    desc: 'Logos, social media design, marketing materials & complete brand identity for local brands.',
+    slug: 'graphic-design',
+    color: '#f43f5e',
+    gradient: 'linear-gradient(135deg, #f43f5e, #e11d48)',
+    subpages: ['Logo & Brand Identity', 'Social Media Design', 'Marketing Materials', 'Creative Content', 'Local Branding'],
+  },
+  {
+    icon: 'Brain',
+    title: 'AI Solutions for Businesses',
+    desc: 'Practical AI chatbots, automation tools & data insights designed for Udaipur entrepreneurs.',
+    slug: 'ai-solutions',
+    color: '#06b6d4',
+    gradient: 'linear-gradient(135deg, #06b6d4, #0891b2)',
+    subpages: ['AI Chatbots', 'AI Marketing Tools', 'AI for Local Business', 'Data & Insights', 'AI Integration', 'Automation'],
+  },
+  {
+    icon: 'ShoppingCart',
+    title: 'E-Commerce Management',
+    desc: 'Amazon, Flipkart & Meesho account management — from setup to scaling your online sales.',
+    slug: 'ecommerce-management',
+    color: '#eab308',
+    gradient: 'linear-gradient(135deg, #eab308, #ca8a04)',
+    subpages: ['Account Setup', 'Product Listing', 'Order Management', 'Ads & Promos', 'Account Growth', 'Analytics', 'Local Seller Support'],
   },
 ];
 
-interface ProcessStep {
-  num: string;
-  title: string;
-  desc: string;
-  icon: React.ReactNode;
-  color: string;
-}
-
-const processSteps: ProcessStep[] = [
-  { num: '01', title: 'Discovery', desc: 'In-depth analysis of your technical landscape and strategic goals.', icon: <Search size={24} />, color: 'bg-vibrant-blue' },
-  { num: '02', title: 'Strategy', desc: 'Mapping out a high-performance roadmap and technical blueprint.', icon: <Target size={24} />, color: 'bg-vibrant-indigo' },
-  { num: '03', title: 'Design', desc: 'Crafting immersive visual systems and cinematic UI/UX prototypes.', icon: <PenTool size={24} />, color: 'bg-vibrant-pink' },
-  { num: '04', title: 'Logic', desc: 'Developing the core architecture and neural engine of your platform.', icon: <BrainCircuit size={24} />, color: 'bg-vibrant-purple' },
-  { num: '05', title: 'DevOps', desc: 'CI/CD orchestration for seamless and reliable delivery pipelines.', icon: <Cloud size={24} />, color: 'bg-vibrant-cyan' },
-  { num: '06', title: 'Security', desc: 'Rigorous auditing and implementing zero-trust security layers.', icon: <ShieldCheck size={24} />, color: 'bg-vibrant-red' },
-  { num: '07', title: 'Launch', desc: 'Strategic deployment and real-time performance monitoring.', icon: <Rocket size={24} />, color: 'bg-vibrant-orange' },
-  { num: '08', title: 'Scale', desc: 'Ongoing optimization and scaling for global market dominance.', icon: <TrendingUp size={24} />, color: 'bg-vibrant-green' },
-];
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6 },
+};
 
 export default function ServicesPage(): React.JSX.Element {
   return (
-    <main className="min-h-screen pt-24 bg-primary text-primary relative overflow-hidden">
-      <ParticleBackground />
-      
-      {/* Page Header */}
-      <div className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none" />
-        <div className="container px-6 relative z-10 text-center max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="section-label-hacker mx-auto mb-6" style={{ display: 'inline-flex' }}>Workflow</span>
+    <>
+      {/* ===== HERO ===== */}
+      <section className="hero" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+        <ParticleBackground />
+        <div className="container relative z-10" style={{ textAlign: 'center', padding: '120px 24px 80px' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="section-label" style={{ marginBottom: '24px' }}>Our Services</span>
+            <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 950, letterSpacing: '-3px', marginBottom: '24px', lineHeight: 1.1 }}>
+              Everything Your Udaipur Business <span className="gradient-text">Needs to Grow</span>
+            </h1>
+            <p className="section-subtitle" style={{ maxWidth: '700px', margin: '0 auto 40px' }}>
+              From digital marketing to AI solutions — we provide end-to-end technology and marketing services tailored for Udaipur&apos;s thriving business ecosystem.
+            </p>
           </motion.div>
-          <motion.h1 className="text-6xl md:text-7xl font-black mb-8" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
-            Solutions That <span className="gradient-text">Transform</span>
-          </motion.h1>
-          <motion.p className="text-xl text-secondary" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
-            We engineer comprehensive technology solutions designed to accelerate your business growth and dominate the digital landscape.
-          </motion.p>
-        </div>
-      </div>
-
-      {/* Services List */}
-      <section className="py-12 pb-32 relative z-10" id="services-list">
-        <div className="container px-6">
-          <div className="service-showcase-grid">
-            {services.map((s, i) => (
-              <Link key={i} href={`/services/${s.slug}`} className="service-card-link">
-                <motion.div
-                  className="premium-service-card"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  id={`service-${i}`}
-                >
-                  <div className="psc-bg">
-                    <img src={s.image} alt={s.title} />
-                    <div className="psc-overlay" />
-                  </div>
-                  <div className="psc-content-inner">
-                    <div className="psc-icon-box">{s.icon}</div>
-                    <span className="psc-category">{s.category}</span>
-                    <h3 className="psc-title">{s.title}</h3>
-                    <p className="psc-desc">{s.desc}</p>
-                    <div className="psc-features">
-                      {s.features.map((f, j) => (
-                        <span key={j} className="psc-feature-tag">{f}</span>
-                      ))}
-                    </div>
-                    <div className="psc-btn-wrapper">
-                      <div className="btn btn-primary psc-actual-btn">Discover More →</div>
-                    </div>
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-32 relative z-10" style={{ background: 'var(--grid-color)', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }} id="our-process">
-        <div className="container px-6">
-          <SectionReveal>
-            <div className="text-center mb-20 max-w-3xl mx-auto">
-              <span className="section-label-hacker mx-auto mb-6" style={{ display: 'inline-flex' }}>Workflow</span>
-              <h2 className="text-5xl font-black mb-6">How We <span className="gradient-text">Engineer</span></h2>
-              <p className="text-xl text-secondary">A streamlined, transparent architectural process that ensures absolute quality at every step of development.</p>
-            </div>
-          </SectionReveal>
-          
-          <div className="process-timeline-v2">
-            {processSteps.map((step, i) => (
+      {/* ===== SERVICES GRID ===== */}
+      <section className="section">
+        <div className="container">
+          <div className="svc-listing-grid">
+            {services.map((svc, i) => (
               <motion.div
-                key={i}
-                className={`process-step-v2 vibrant-process-card ${step.color}`}
+                key={svc.slug}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
               >
-                <div className="step-num">{step.num}</div>
-                <div className="step-icon">
-                  {step.icon}
-                </div>
-                <h3 className="vibrant-step-title">{step.title}</h3>
-                <p className="vibrant-step-desc">{step.desc}</p>
+                <Link href={`/services/${svc.slug}`} className="svc-listing-card">
+                  <div className="svc-listing-accent" style={{ background: svc.gradient }} />
+                  <div className="svc-listing-body">
+                    <div className="svc-listing-icon" style={{ color: svc.color, background: `${svc.color}15`, borderColor: `${svc.color}25` }}>
+                      {iconMap[svc.icon]}
+                    </div>
+                    <h2 className="svc-listing-title">{svc.title}</h2>
+                    <p className="svc-listing-desc">{svc.desc}</p>
+                    <div className="svc-listing-tags">
+                      {svc.subpages.slice(0, 4).map(sp => (
+                        <span key={sp} className="svc-listing-tag" style={{ color: svc.color, background: `${svc.color}10`, borderColor: `${svc.color}20` }}>{sp}</span>
+                      ))}
+                      {svc.subpages.length > 4 && (
+                        <span className="svc-listing-tag" style={{ color: svc.color, background: `${svc.color}10`, borderColor: `${svc.color}20` }}>+{svc.subpages.length - 4} more</span>
+                      )}
+                    </div>
+                    <div className="svc-listing-cta" style={{ color: svc.color }}>
+                      Explore Services <ArrowRight size={16} />
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== TECH CTA ===== */}
-      <section className="section py-32 relative z-10" id="cta">
-        <div className="container px-6">
-          <SectionReveal>
-            <div className="cta-tech-wrapper">
-              <div className="cta-tech-grid" />
-              <div className="cta-tech-scan" />
-              
-              {/* Corner Decals */}
-              <div className="cta-tech-corner corner-tl" />
-              <div className="cta-tech-corner corner-tr" />
-              <div className="cta-tech-corner corner-bl" />
-              <div className="cta-tech-corner corner-br" />
-
-              {/* Technical Data Decals */}
-              <div className="cta-tech-status-bars">
-                <div className="status-row">
-                  <span>Core Logic</span>
-                  <div className="status-bar-bg"><div className="status-bar-fill" style={{ animationDelay: '0s' }} /></div>
-                </div>
-                <div className="status-row">
-                  <span>Neural Net</span>
-                  <div className="status-bar-bg"><div className="status-bar-fill" style={{ animationDelay: '-1.5s' }} /></div>
-                </div>
-                <div className="status-row">
-                  <span>Sync Status</span>
-                  <div className="status-row-text" style={{ color: '#00ff00' }}>[ ACTIVE ]</div>
-                </div>
-              </div>
-
-              <div className="cta-tech-coordinates">
-                SEC_ID: MS_INF_2026 // LOC: UDAIPUR_IN // 24.5854° N, 73.7125° E
-              </div>
-
-              <div className="cta-tech-content">
-                <h2 className="cta-tech-title">
-                  Let&apos;s Build Something <span className="gradient-text">Amazing</span> Together
-                </h2>
-                <p className="cta-tech-subtitle">
-                  Ready to transform your ideas into reality? Our elite technical team is 
-                  standing by to engineer your next digital breakthrough.
-                </p>
-                <div className="cta-tech-buttons">
-                  <Link href="/contact" className="btn btn-tech" id="cta-contact">
-                    Initialize Project →
-                  </Link>
-                  <Link href="/contact" className="btn btn-tech btn-tech-secondary" id="cta-quote">
-                    Technical Brief
-                  </Link>
-                </div>
+      {/* ===== BOTTOM CTA ===== */}
+      <section className="subpage-bottom-cta">
+        <div className="container">
+          <motion.div
+            className="bottom-cta-wrapper"
+            style={{ background: 'linear-gradient(135deg, #f97316, #ec4899)' }}
+            {...fadeUp}
+          >
+            <div className="bottom-cta-content">
+              <h2>Not Sure What You Need? Let&apos;s Talk!</h2>
+              <p>Tell us about your business and we&apos;ll recommend the perfect service mix for your growth goals.</p>
+              <div className="bottom-cta-actions">
+                <Link href="/contact" className="bottom-cta-btn primary">
+                  Get Free Consultation <ArrowRight size={18} />
+                </Link>
               </div>
             </div>
-          </SectionReveal>
+          </motion.div>
         </div>
       </section>
-    </main>
+    </>
   );
 }
