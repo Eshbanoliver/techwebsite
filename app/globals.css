@@ -2835,8 +2835,16 @@ input, textarea, select { font-family: inherit; }
 }
 
 @media (max-width: 768px) {
-  .nav-logo-img { height: 35px; }
-  .footer-logo-img { height: 50px; }
+  .nav-logo-img { 
+    height: 48px !important; 
+    margin: 0 !important;
+    filter: none;
+  }
+  .navbar-logo {
+    min-width: auto !important;
+    margin-right: 15px !important;
+  }
+  .footer-logo-img { height: 70px !important; transform: none; }
 }
 
 .mobile-menu {
