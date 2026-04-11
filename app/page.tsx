@@ -171,18 +171,18 @@ export default function HomePage(): React.JSX.Element {
               </p>
 
               <div className="hero-actions-v3">
-                <Link href="/services" className="btn btn-tech" style={{ padding: '20px 48px', fontSize: '1.2rem' }}>
+                <Link href="/services" className="btn btn-tech hero-btn-main">
                   Explore Solutions ↗
                 </Link>
-                <Link href="/about" className="btn btn-secondary" style={{ padding: '20px 48px', fontSize: '1.2rem' }}>
+                <Link href="/about" className="btn btn-secondary hero-btn-sub">
                    Our Story 
                 </Link>
               </div>
 
               {/* Technical Coordinates */}
-              <div className="mt-16 pt-12 border-t border-white/5 flex items-center gap-8 opacity-30 font-mono text-[10px] tracking-[0.2em] uppercase" style={{ display: 'flex', marginTop: '60px', opacity: 0.3 }}>
+              <div className="hero-tech-coordinates-v3">
                 <div>SEC_ID: INF_HQ_01</div>
-                <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'white' }} />
+                <div className="coord-dot" />
                 <div>LOC: 24.5° N / 73.7° E</div>
               </div>
             </motion.div>
