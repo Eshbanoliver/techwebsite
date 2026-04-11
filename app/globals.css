@@ -2792,13 +2792,17 @@ input, textarea, select { font-family: inherit; }
 }
 
 .navbar-logo img {
-  height: 32px !important; /* Smaller logo on mobile */
-  transition: height var(--transition-base);
+  height: 32px; /* Base size */
+  width: auto;
+  display: block;
+  transition: all var(--transition-base);
+  object-fit: contain;
 }
 
 @media (min-width: 992px) {
   .navbar-logo img {
-    height: 40px !important;
+    height: 48px !important; /* Larger for desktop */
+    min-width: 120px; /* Ensure it has some base horizontal presence */
   }
 }
 
@@ -4408,4 +4412,10 @@ input, textarea, select { font-family: inherit; }
 .psc-desc {
   flex-grow: 1;
   margin-bottom: 24px;
+}
+
+.navbar-logo {
+  min-width: 150px;
+  display: flex;
+  align-items: center;
 }

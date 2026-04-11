@@ -44,7 +44,7 @@ export default function Navbar(): React.JSX.Element {
             transition={{ duration: 0.6 }}
           >
             <Link href="/" className="navbar-logo" id="logo-link">
-              <img src="/logo.png" alt="Infinex Logo" style={{ height: '40px', width: 'auto' }} />
+              <img src="/logo.png" alt="Infinex Logo" />
             </Link>
           </motion.div>
 
