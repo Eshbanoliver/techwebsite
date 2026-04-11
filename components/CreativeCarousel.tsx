@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import { PenTool, Radio, Code, Smartphone, Palette } from 'lucide-react';
 
 const originalCards = [
-  { title: 'Content Creation', icon: <PenTool size={20} />, desc: 'Engaging content strategies to elevate your entire digital presence.' },
-  { title: 'Promotion & Growth', icon: <Radio size={20} />, desc: 'Data-driven marketing, SEO, and robust analytics for scaling.' },
-  { title: 'Web & App Dev', icon: <Code size={20} />, desc: 'Robust engineering meeting modern creative standards.' },
-  { title: 'Graphic Designing', icon: <Smartphone size={20} />, desc: 'Stunning visual interfaces and UX designs that convert out-of-the-box.' },
-  { title: 'Branding & Identity', icon: <Palette size={20} />, desc: 'Complete brand experiences, identity systems, and typography.' }
+  { title: 'Content Creation', icon: <PenTool size={20} />, desc: 'Engaging content strategies to elevate your entire digital presence.', image: '/about/content.png' },
+  { title: 'Promotion & Growth', icon: <Radio size={20} />, desc: 'Data-driven marketing, SEO, and robust analytics for scaling.', image: '/about/promotion.png' },
+  { title: 'Web & App Dev', icon: <Code size={20} />, desc: 'Robust engineering meeting modern creative standards.', image: '/about/webdev.png' },
+  { title: 'Graphic Designing', icon: <Smartphone size={20} />, desc: 'Stunning visual interfaces and UX designs that convert out-of-the-box.', image: '/about/graphics.png' },
+  { title: 'Branding & Identity', icon: <Palette size={20} />, desc: 'Complete brand experiences, identity systems, and typography.', image: '/about/branding.png' }
 ];
 
 // Duplicate the array to 10 items to allow invisible wrapping in framer-motion 3D coverflow
@@ -44,13 +44,6 @@ export default function CreativeCarousel() {
         const opacity = isVisible ? 1 : 0; 
         const pointerEvents = isVisible ? 'auto' : 'none';
 
-        // Apply exactly the screenshot's color-coding
-        let bg = '#9ca3af'; // Lighter grey for outer cards
-        if (isActive) {
-          bg = 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%)'; // Vibrant dark blue
-        } else if (Math.abs(diff) === 1) {
-          bg = '#374151'; // Dark grey for adjacent cards
-        }
 
         return (
           <motion.div
@@ -65,9 +58,11 @@ export default function CreativeCarousel() {
               cursor: 'pointer',
               width: '270px',
               height: '360px',
-              background: bg,
+              backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%), url(${card.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
               boxShadow: isActive ? '0 30px 60px rgba(0,0,0,0.3)' : '0 10px 20px rgba(0,0,0,0.15)',
-              border: isActive ? '1px solid rgba(255,255,255,0.1)' : 'none',
+              border: isActive ? '1px solid rgba(255,255,255,0.2)' : '1px solid rgba(255,255,255,0.05)',
               pointerEvents,
               boxSizing: 'border-box'
             }}
