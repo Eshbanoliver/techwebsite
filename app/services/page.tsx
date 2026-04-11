@@ -6,7 +6,7 @@ import ParticleBackground from '@/components/ParticleBackground';
 import { 
   Cpu, Code, Smartphone, Layout, Cloud, TrendingUp, Search, 
   PenTool, Settings, CheckCircle, Rocket, ShieldCheck,
-  BrainCircuit
+  BrainCircuit, Target
 } from 'lucide-react';
 
 interface ServiceDetail {
@@ -15,6 +15,8 @@ interface ServiceDetail {
   title: string;
   desc: string;
   features: string[];
+  slug: string;
+  image: string;
 }
 
 interface ProcessStep {
@@ -31,13 +33,17 @@ const services: ServiceDetail[] = [
     title: 'AI & Machine Learning',
     desc: 'Harness the power of artificial intelligence to automate processes, gain predictive insights, and build intelligent applications that learn and adapt.',
     features: ['NLP Models', 'Predictive Analytics', 'Computer Vision', 'Generative AI'],
+    slug: 'ai-ml',
+    image: '/services/ai-ml.png'
   },
   {
     category: "Architecture",
     icon: <Code size={32} />,
-    title: 'Enterprise Development',
+    title: 'Web & Enterprise Systems',
     desc: 'We build stunning, high-performance web applications and enterprise software using the latest scalable frameworks and distributed best practices.',
     features: ['React & Next.js', 'SaaS Architectures', 'Microservices', 'High-Load APIs'],
+    slug: 'web-development',
+    image: '/services/web.png'
   },
   {
     category: "Interfaces",
@@ -45,6 +51,8 @@ const services: ServiceDetail[] = [
     title: 'Mobile Engineering',
     desc: 'Create powerful native and cross-platform mobile applications. We design and develop feature-rich iOS and Android apps that users love.',
     features: ['React Native', 'Swift & Kotlin', 'App Optimization', 'Offline-First Sync'],
+    slug: 'mobile-apps',
+    image: '/services/mobile.png'
   },
   {
     category: "Design System",
@@ -52,6 +60,8 @@ const services: ServiceDetail[] = [
     title: 'Cinematic UI/UX',
     desc: 'Beautiful, intuitive interfaces designed with a deep understanding of user behavior. We create designs that look stunning and drive massive engagement.',
     features: ['Interactive Prototyping', 'Liquid Glass Systems', '3D Integration', 'User Psychology'],
+    slug: 'ui-ux-design',
+    image: '/services/uiux.png'
   },
   {
     category: "Infrastructure",
@@ -59,13 +69,44 @@ const services: ServiceDetail[] = [
     title: 'Cloud & DevOps',
     desc: 'Build robust, scalable cloud infrastructure with automated deployment pipelines. We ensure your applications are always available.',
     features: ['AWS & Azure Core', 'Kubernetes', 'CI/CD Automation', 'Zero-Trust Security'],
+    slug: 'cloud-devops',
+    image: '/services/cloud.png'
   },
   {
     category: "Growth Ops",
     icon: <TrendingUp size={32} />,
-    title: 'Data-Driven Marketing',
+    title: 'Digital Marketing',
     desc: 'Digital marketing strategies powered by deep analytics that maximize your online visibility, attract qualified leads, and drive exponential growth.',
     features: ['Algorithmic SEO', 'Conversion Optimization', 'Performance Advertising', 'Data Mining'],
+    slug: 'digital-marketing',
+    image: '/services/marketing.png'
+  },
+  {
+    category: "Identity",
+    icon: <Target size={32} />,
+    title: 'Branding & Logo',
+    desc: 'Strategic visual identities that command attention. We build iconic brands that resonate with your audience and stand the test of time.',
+    features: ['Brand Strategy', 'Logo Design', 'Visual Guidelines', 'Brand Voice'],
+    slug: 'branding',
+    image: '/services/branding.png'
+  },
+  {
+    category: "Engine",
+    icon: <Code size={32} />,
+    title: 'Software Development',
+    desc: 'Custom enterprise software designed for stability and scale. We build the backbone of your operations with precision engineering.',
+    features: ['Custom CRM/ERP', 'Legacy Migration', 'TDD/BDD', 'Microservices'],
+    slug: 'software-development',
+    image: '/services/software.png'
+  },
+  {
+    category: "Global Scale",
+    icon: <ShieldCheck size={32} />,
+    title: 'Enterprise Solutions',
+    desc: 'Mission-critical engineering for demanding environments. High-availability systems that power global infrastructures.',
+    features: ['Global SLIs', 'Zero-Trust Security', 'SLA Management', 'Scalable Arch'],
+    slug: 'enterprise-solutions',
+    image: '/services/enterprise.png'
   },
 ];
 
@@ -104,25 +145,32 @@ export default function ServicesPage(): React.JSX.Element {
         <div className="container px-6">
           <div className="service-showcase-grid">
             {services.map((s, i) => (
-              <motion.div
-                key={i}
-                className="premium-service-card"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                id={`service-${i}`}
-              >
-                <div className="psc-icon-box">{s.icon}</div>
-                <span className="psc-category">{s.category}</span>
-                <h3 className="psc-title">{s.title}</h3>
-                <p className="psc-desc">{s.desc}</p>
-                <div className="psc-features">
-                  {s.features.map((f, j) => (
-                    <span key={j} className="psc-feature-tag">{f}</span>
-                  ))}
-                </div>
-              </motion.div>
+              <Link key={i} href={`/services/${s.slug}`} className="service-card-link">
+                <motion.div
+                  className="premium-service-card"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  id={`service-${i}`}
+                >
+                  <div className="psc-bg">
+                    <img src={s.image} alt={s.title} />
+                    <div className="psc-overlay" />
+                  </div>
+                  <div className="psc-content-inner">
+                    <div className="psc-icon-box">{s.icon}</div>
+                    <span className="psc-category">{s.category}</span>
+                    <h3 className="psc-title">{s.title}</h3>
+                    <p className="psc-desc">{s.desc}</p>
+                    <div className="psc-features">
+                      {s.features.map((f, j) => (
+                        <span key={j} className="psc-feature-tag">{f}</span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
