@@ -21,20 +21,11 @@ export default function Footer(): React.JSX.Element {
         <div className="footer-main-grid">
           <div className="footer-tech-col footer-tech-brand">
             <Link href="/" className="footer-logo-link">
-              <h3>
-                <span style={{
-                  width: 36, height: 36, borderRadius: 6,
-                  background: 'var(--gradient-primary)',
-                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '1rem', fontWeight: 900, color: 'white',
-                  boxShadow: '0 0 15px rgba(0, 198, 255, 0.3)'
-                }}>M</span>
-                {' '}MS <span className="gradient-text">Infinex Tech</span>
-              </h3>
+              <img src="/logo.png" alt="Infinex Logo" style={{ height: '50px', width: 'auto', marginBottom: '10px' }} />
             </Link>
             <p>
-              Infinite Ideas. Intelligent Execution. <br/>
-              Architecting the next generation of digital infrastructure through 
+              Infinity: The Next Generation. <br/>
+              Architecting state-of-the-art digital infrastructure through 
               strategic engineering and creative technical excellence.
             </p>
             <div className="footer-tech-social">

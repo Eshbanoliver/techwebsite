@@ -218,7 +218,7 @@ export default function HomePage(): React.JSX.Element {
           <SectionReveal>
             <div className="about-grid">
               <div className="about-text-content">
-                <span className="section-label">About MS Infinex Tech</span>
+                <span className="section-label">About Infinex</span>
                 <h2 className="section-title" style={{ textAlign: 'left' }}>
                   Innovating the <span className="gradient-text">Next Generation</span> of Digital Experiences
                 </h2>
@@ -557,7 +557,7 @@ export default function HomePage(): React.JSX.Element {
         <div className="container">
           <SectionReveal>
             <div className="section-header">
-              <span className="section-label">Why MS Infinex Tech</span>
+              <span className="section-label">Why Infinex</span>
               <h2 className="section-title">
                 Why <span className="gradient-text">Choose Us</span>
               </h2>
