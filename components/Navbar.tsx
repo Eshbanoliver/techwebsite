@@ -127,8 +127,12 @@ export default function Navbar(): React.JSX.Element {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              style={{ marginTop: 16 }}
+              className="mobile-menu-footer"
             >
+              <div className="mobile-theme-box">
+                <span>Interface Theme</span>
+                <ThemeToggle />
+              </div>
               <Link href="/contact" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
                 Get Started
               </Link>

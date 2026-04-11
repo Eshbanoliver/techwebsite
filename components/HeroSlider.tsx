@@ -198,7 +198,7 @@ export default function HeroSlider(): React.JSX.Element {
         }
         .hero-title {
           font-family: var(--font-heading);
-          font-size: clamp(2.4rem, 7vw, 4.2rem); /* Slightly reduced for better fit */
+          font-size: clamp(1.8rem, 7vw, 4.2rem); /* Slightly reduced for better fit */
           font-weight: 950;
           line-height: 1.05;
           margin-bottom: 24px;
