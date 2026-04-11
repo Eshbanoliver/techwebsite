@@ -302,48 +302,12 @@ export default function HomePage(): React.JSX.Element {
                     transition={{ duration: 1.2, ease: "easeOut" }}
                   />
                   <div className="visual-overlay" />
-                  <motion.div 
-                    className="visual-float-card glass-card"
-                    animate={{ y: [0, -15, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <span className="float-icon">🚀</span>
-                    <div>
-                      <strong>Udaipur&apos;s Best</strong>
-                      <p>Top Rated Tech Studio</p>
-                    </div>
-                  </motion.div>
                 </div>
               </div>
             </div>
           </SectionReveal>
         </div>
       </section>
-
-      {/* ===== KEY METRICS ===== */}
-      <section className="section" id="metrics">
-        <div className="container">
-          <SectionReveal>
-            <div className="section-header">
-              <span className="section-label">Our Impact</span>
-              <h2 className="section-title">
-                Numbers That <span className="gradient-text">Speak</span>
-              </h2>
-              <p className="section-subtitle">
-                Real results that reflect our commitment to excellence and client success.
-              </p>
-            </div>
-          </SectionReveal>
-          <div className="metrics-grid">
-            <AnimatedCounter end={150} suffix="+" label="Projects Completed" icon={<Rocket size={28} />} className="glow-cyan" />
-            <AnimatedCounter end={80} suffix="+" label="Clients Served" icon={<Users size={28} />} className="glow-blue" />
-            <AnimatedCounter end={5} suffix="+" label="Years Experience" icon={<Calendar size={28} />} className="glow-purple" />
-            <AnimatedCounter end={30} suffix="+" label="Technologies Used" icon={<Cpu size={28} />} className="glow-pink" />
-          </div>
-        </div>
-      </section>
-
-      <TechStack />
 
       {/* ===== SERVICES ===== */}
       <section className="section services-section" id="services">
@@ -392,7 +356,61 @@ export default function HomePage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ===== INDUSTRIES WE TRANSFORM ===== */}
+      {/* ===== KEY METRICS ===== */}
+      <section className="section" id="metrics">
+        <div className="container">
+          <SectionReveal>
+            <div className="section-header">
+              <span className="section-label">Our Impact</span>
+              <h2 className="section-title">
+                Numbers That <span className="gradient-text">Speak</span>
+              </h2>
+              <p className="section-subtitle">
+                Real results that reflect our commitment to excellence and client success.
+              </p>
+            </div>
+          </SectionReveal>
+          <div className="metrics-grid">
+            <AnimatedCounter end={150} suffix="+" label="Projects Completed" icon={<Rocket size={28} />} className="glow-cyan" />
+            <AnimatedCounter end={80} suffix="+" label="Clients Served" icon={<Users size={28} />} className="glow-blue" />
+            <AnimatedCounter end={5} suffix="+" label="Years Experience" icon={<Calendar size={28} />} className="glow-purple" />
+            <AnimatedCounter end={30} suffix="+" label="Technologies Used" icon={<Cpu size={28} />} className="glow-pink" />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHY CHOOSE US ===== */}
+      <section className="section" id="why-us">
+        <div className="container">
+          <SectionReveal>
+            <div className="section-header">
+              <span className="section-label">Why Infinex</span>
+              <h2 className="section-title">
+                Why <span className="gradient-text">Choose Us</span>
+              </h2>
+              <p className="section-subtitle">
+                We don&apos;t just build software — we build lasting partnerships and deliver real results.
+              </p>
+            </div>
+          </SectionReveal>
+          <div className="why-grid-vibrant">
+            {whyUs.map((w, i) => (
+              <motion.div
+                key={i}
+                className={`why-card-vibrant ${w.className}`}
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="why-card-watermark">0{i + 1}</div>
+                <h3>{w.title}</h3>
+                <p>{w.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <TechStack />
 
       {/* ===== INDUSTRIES WE TRANSFORM ===== */}
       <section className="industries-section" id="industries">
@@ -440,38 +458,6 @@ export default function HomePage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ===== WHY CHOOSE US ===== */}
-
-      {/* ===== WHY CHOOSE US ===== */}
-      <section className="section" id="why-us">
-        <div className="container">
-          <SectionReveal>
-            <div className="section-header">
-              <span className="section-label">Why Infinex</span>
-              <h2 className="section-title">
-                Why <span className="gradient-text">Choose Us</span>
-              </h2>
-              <p className="section-subtitle">
-                We don&apos;t just build software — we build lasting partnerships and deliver real results.
-              </p>
-            </div>
-          </SectionReveal>
-          <div className="why-grid-vibrant">
-            {whyUs.map((w, i) => (
-              <motion.div
-                key={i}
-                className={`why-card-vibrant ${w.className}`}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <div className="why-card-watermark">0{i + 1}</div>
-                <h3>{w.title}</h3>
-                <p>{w.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ===== TESTIMONIALS ===== */}
       <section className="section" id="testimonials">
