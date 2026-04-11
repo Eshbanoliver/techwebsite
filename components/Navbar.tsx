@@ -15,7 +15,8 @@ import {
   Paintbrush, 
   Brain, 
   ShoppingCart,
-  ArrowRight
+  ArrowRight,
+  Infinity
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -83,7 +84,7 @@ export default function Navbar(): React.JSX.Element {
             transition={{ duration: 0.6 }}
           >
             <Link href="/" className="navbar-logo" id="logo-link">
-              <img src="/logo.png" alt="Infinex Logo" />
+              <img src="/logo.png" alt="MS Infinex Logo" className="nav-logo-img" />
             </Link>
           </motion.div>
 

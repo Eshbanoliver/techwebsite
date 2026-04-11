@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { MessageCircle, Phone, ArrowUp } from 'lucide-react';
 
 export default function FloatingButtons(): React.JSX.Element {
   const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
@@ -27,7 +28,8 @@ export default function FloatingButtons(): React.JSX.Element {
           aria-label="WhatsApp"
           id="float-whatsapp"
         >
-          💬
+          <MessageCircle size={20} />
+          <span className="float-label">Consult</span>
         </a>
         <a
           href="tel:+919876543210"
@@ -35,7 +37,8 @@ export default function FloatingButtons(): React.JSX.Element {
           aria-label="Call Us"
           id="float-call"
         >
-          📞
+          <Phone size={20} />
+          <span className="float-label">Call Support</span>
         </a>
       </div>
 
@@ -46,7 +49,7 @@ export default function FloatingButtons(): React.JSX.Element {
           aria-label="Scroll to top"
           id="float-scroll-top"
         >
-          ↑
+          <ArrowUp size={20} />
         </button>
       </div>
     </>

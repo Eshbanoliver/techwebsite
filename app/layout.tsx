@@ -21,16 +21,16 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "Infinex | Infinity: The Next Generation",
-    template: "%s | Infinex",
+    default: "MS Infinex Tech | Infinity: The Next Generation",
+    template: "%s | MS Infinex",
   },
   description:
-    "Infinex delivers premium AI, Web, Mobile, Cloud & DevOps solutions. Infinity: The Next Generation of digital transformation and strategic engineering.",
+    "MS Infinex Tech delivers enterprise-grade AI, Cloud, Web, and Mobile solutions. Architecting infinity through next-generation digital transformation and high-performance technical engineering in Udaipur and beyond.",
   keywords: [
     "Infinex",
     "MS Infinex Tech",
-    "web development",
-    "AI solutions",
+    "web development Udaipur",
+    "AI solutions India",
     "mobile app development",
     "cloud devops",
     "Udaipur",
@@ -38,28 +38,38 @@ export const metadata: Metadata = {
     "software company",
     "digital marketing",
     "UI UX design",
+    "Infinity The Next Generation"
   ],
-  authors: [{ name: "Infinex Tech" }],
+  authors: [{ name: "MS Infinex Tech" }],
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
   },
   openGraph: {
-    title: "Infinex | Infinity: The Next Generation",
+    title: "MS Infinex Tech | Infinity: The Next Generation",
     description:
-      "Premium AI, Web, Mobile, Cloud & DevOps solutions. Architecting the next generation of digital infrastructure.",
+      "Premium AI, Web, Mobile, Cloud & DevOps solutions. Architecting the next generation of digital infrastructure with absolute precision.",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Infinex Branding",
+        alt: "MS Infinex Branding",
       },
     ],
     type: "website",
     locale: "en_IN",
-    siteName: "Infinex",
+    siteName: "MS Infinex Tech",
   },
+  alternates: {
+    canonical: "https://msinfinex.com",
+  },
+};
+
+export const viewport = {
+  themeColor: "#00f0ff",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }): React.JSX.Element {

@@ -15,6 +15,7 @@ import {
 import Link from 'next/link';
 import { blogPosts, type BlogPost } from '@/lib/blog-data';
 import SectionReveal from '@/components/SectionReveal';
+import TechCTA from '@/components/TechCTA';
 
 const categories = ["All", "Social Media", "AI Solutions", "Branding", "Digital Marketing", "E-Commerce", "App Dev", "Web Dev"];
 
@@ -174,84 +175,9 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* 5. TECH CTA (Imported from About Page) */}
-      <section className="section" id="cta">
-        <div className="container">
-          <SectionReveal>
-            <div className="cta-tech-wrapper">
-              <div className="cta-tech-grid" />
-              <div className="cta-tech-scan" />
-              
-              <div className="cta-tech-corner corner-tl" />
-              <div className="cta-tech-corner corner-tr" />
-              <div className="cta-tech-corner corner-bl" />
-              <div className="cta-tech-corner corner-br" />
+      {/* 5. TECH CTA (Modularized) */}
+      <TechCTA />
 
-              <div className="cta-tech-status-bars">
-                <div className="status-row">
-                  <span>Core Logic</span>
-                  <div className="status-bar-bg"><div className="status-bar-fill" style={{ animationDelay: '0s' }} /></div>
-                </div>
-                <div className="status-row">
-                  <span>Neural Net</span>
-                  <div className="status-bar-bg"><div className="status-bar-fill" style={{ animationDelay: '-1.5s' }} /></div>
-                </div>
-                <div className="status-row">
-                  <span>Sync Status</span>
-                  <div className="status-row-text" style={{ color: '#00ff00' }}>[ ACTIVE ]</div>
-                </div>
-              </div>
-
-              <div className="cta-tech-coordinates">
-                SEC_ID: MS_INF_2026 // LOC: UDAIPUR_IN // 24.5854° N, 73.7125° E
-              </div>
-
-              <div className="cta-tech-content">
-                <h2 className="cta-tech-title">
-                  Let&apos;s Build Something <span className="gradient-text">Amazing</span> Together
-                </h2>
-                <p className="cta-tech-subtitle">
-                  Ready to transform your ideas into reality? Our elite technical team is 
-                  standing by to engineer your next digital breakthrough.
-                </p>
-                <div className="cta-tech-buttons">
-                  <Link href="/contact" className="btn btn-tech" id="cta-contact">
-                    Initialize Project →
-                  </Link>
-                  <Link href="/contact" className="btn btn-tech btn-tech-secondary" id="cta-quote">
-                    Technical Brief
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* 6. NEWSLETTER CTA */}
-      <section className="section newsletter-section">
-        <div className="container">
-          <SectionReveal>
-            <div className="newsletter-wrapper premium-card overflow-hidden relative">
-              <div className="newsletter-content relative z-10">
-                <h2>Join the <span className="gradient-text">Inner Circle</span></h2>
-                <p>Stay ahead of the curve. Get our monthly digest of deep-tech trends, local market insights, and engineering hacks delivered to your inbox.</p>
-                
-                <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-                  <div className="newsletter-input-group">
-                    <input type="email" placeholder="Enter your business email" required />
-                    <button type="submit" className="btn btn-primary newsletter-submit">
-                      Subscribe <Send size={18} />
-                    </button>
-                  </div>
-                  <p className="newsletter-trust">No spam. Only high-signal intelligence. Unsubscribe anytime.</p>
-                </form>
-              </div>
-              <div className="newsletter-glow-bg" />
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
     </>
   );
 }

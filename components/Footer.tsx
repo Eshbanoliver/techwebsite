@@ -6,7 +6,8 @@ import {
   Camera, 
   MapPin, 
   Mail, 
-  Phone
+  Phone,
+  Infinity
 } from 'lucide-react';
 
 export default function Footer(): React.JSX.Element {
@@ -21,7 +22,7 @@ export default function Footer(): React.JSX.Element {
         <div className="footer-main-grid">
           <div className="footer-tech-col footer-tech-brand">
             <Link href="/" className="footer-logo-link">
-              <img src="/logo.png" alt="Infinex Logo" style={{ height: '50px', width: 'auto', marginBottom: '10px' }} />
+              <img src="/logo.png" alt="MS Infinex Logo" className="footer-logo-img" />
             </Link>
             <p>
               Infinity: The Next Generation. <br/>
