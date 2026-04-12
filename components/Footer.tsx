@@ -67,11 +67,11 @@ export default function Footer(): React.JSX.Element {
           <div className="footer-tech-col">
             <h4>Capabilities</h4>
             <div className="footer-tech-links">
-              <Link href="/services/ai-ml">AI & Neural Networks</Link>
-              <Link href="/services/web-development">Advanced Web Systems</Link>
-              <Link href="/services/mobile-apps">Mobile Infrastructure</Link>
-              <Link href="/services/cloud-devops">Cloud Architecture</Link>
-              <Link href="/services/ui-ux-design">Visual Engineering</Link>
+              <Link href="/services/digital-marketing">Digital Marketing</Link>
+              <Link href="/services/web-development">Web Development</Link>
+              <Link href="/services/app-development">App Development</Link>
+              <Link href="/services/ai-solutions">AI Solutions</Link>
+              <Link href="/services/graphic-design">Graphic Design</Link>
             </div>
           </div>
 
