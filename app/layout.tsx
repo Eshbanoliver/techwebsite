@@ -48,8 +48,8 @@ export const metadata: Metadata = {
   creator: "MS Infinex Tech",
   publisher: "MS Infinex Tech",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/2.png",
+    apple: "/2.png",
   },
   openGraph: {
     title: "Best IT Company in Udaipur | MS Infinex Tech – Digital Marketing & Web Development",
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
       "MS Infinex Tech is Udaipur's leading IT company and digital marketing agency. Expert web development, app development, SEO, and branding services for businesses in Rajasthan.",
     images: [
       {
-        url: "/logo.png",
-        width: 1200,
-        height: 630,
+        url: "/2.png",
+        width: 1024,
+        height: 1024,
         alt: "MS Infinex Tech - Best IT Company in Udaipur, Rajasthan",
       },
     ],
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     title: "Best IT Company in Udaipur | MS Infinex Tech",
     description:
       "MS Infinex Tech is the best IT company and digital marketing agency in Udaipur, Rajasthan. Web development, SEO, app development & more.",
-    images: ["/logo.png"],
+    images: ["/2.png"],
   },
   alternates: {
     canonical: "https://msinfinextech.com",
@@ -111,8 +111,8 @@ const jsonLd = {
   name: 'MS Infinex Tech',
   alternateName: 'MS Infinex Tech Pvt. Ltd.',
   url: 'https://msinfinextech.com',
-  logo: 'https://msinfinextech.com/logo.png',
-  image: 'https://msinfinextech.com/logo.png',
+  logo: 'https://msinfinextech.com/2.png',
+  image: 'https://msinfinextech.com/2.png',
   description: 'MS Infinex Tech is the best IT company and digital marketing agency in Udaipur, Rajasthan. We offer web development, app development, SEO, social media marketing, graphic design, AI solutions, and e-commerce management services.',
   telephone: '+91-98765-43210',
   email: 'info@msinfinextech.com',
