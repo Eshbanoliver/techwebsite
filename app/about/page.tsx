@@ -201,7 +201,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.5 }}
               >
                 <div className="glossy-shine" />
-                <div className="text-4xl font-black text-black mb-1">98%</div>
+                <div className="text-4xl font-black text-black mb-1">98%+</div>
                 <div className="text-xs uppercase tracking-widest text-black">Client Satisfaction</div>
               </motion.div>
 

@@ -89,7 +89,7 @@ export default function Footer(): React.JSX.Element {
 
         <div className="footer-tech-bottom">
           <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
-            <p>© 2026 MS INFINEX TECH // ALL DATA ENCRYPTED</p>
+            <p>© 2026 <Link href="/" className="hover:text-neon-blue transition-colors">MS INFINEX TECH</Link> // ALL DATA ENCRYPTED</p>
             <div className="footer-status-pill">
               <span className="footer-status-dot" />
               <span>SYSTEM ONLINE</span>
