@@ -13,8 +13,24 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   const service = getServiceBySlug(slug);
   if (!service) return {};
   return {
-    title: `${service.title} | MS Infinex Tech Udaipur`,
-    description: service.description,
+    title: `${service.title} in Udaipur | MS Infinex Tech`,
+    description: `${service.description} Expert ${service.title.toLowerCase()} services for businesses in Udaipur, Rajasthan by MS Infinex Tech.`,
+    keywords: [
+      `${service.title.toLowerCase()} Udaipur`,
+      `${service.title.toLowerCase()} services Udaipur`,
+      `best ${service.title.toLowerCase()} agency Udaipur`,
+      `${service.title.toLowerCase()} company Rajasthan`,
+      'MS Infinex Tech',
+    ],
+    openGraph: {
+      title: `${service.title} Services in Udaipur | MS Infinex Tech`,
+      description: service.description,
+      url: `https://msinfinextech.com/services/${slug}`,
+      type: 'website',
+    },
+    alternates: {
+      canonical: `https://msinfinextech.com/services/${slug}`,
+    },
   };
 }
 

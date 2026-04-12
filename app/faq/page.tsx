@@ -120,8 +120,28 @@ export default function FAQPage(): React.JSX.Element {
     }));
   };
 
+  // Generate FAQ Schema (JSON-LD) for rich search results
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqCategories.flatMap(cat =>
+      cat.items.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      }))
+    ),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="page-header faq-hero">
         <div className="container">
           <div className="page-header-content">

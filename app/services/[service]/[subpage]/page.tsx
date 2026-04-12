@@ -17,9 +17,24 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   const { service: svcSlug, subpage: spSlug } = await params;
   const result = getSubpage(svcSlug, spSlug);
   if (!result) return {};
+  const { service, subpage } = result;
   return {
-    title: `${result.subpage.title} — ${result.service.title} | MS Infinex Tech Udaipur`,
-    description: result.subpage.description,
+    title: `${subpage.title} — ${service.title} in Udaipur | MS Infinex Tech`,
+    description: `${subpage.description} Professional ${subpage.title.toLowerCase()} services in Udaipur, Rajasthan by MS Infinex Tech.`,
+    keywords: [
+      `${subpage.title.toLowerCase()} Udaipur`,
+      `${service.title.toLowerCase()} Udaipur`,
+      `${subpage.title.toLowerCase()} services Rajasthan`,
+      'MS Infinex Tech',
+    ],
+    openGraph: {
+      title: `${subpage.title} – ${service.title} | MS Infinex Tech Udaipur`,
+      description: subpage.description,
+      url: `https://msinfinextech.com/services/${svcSlug}/${spSlug}`,
+    },
+    alternates: {
+      canonical: `https://msinfinextech.com/services/${svcSlug}/${spSlug}`,
+    },
   };
 }
 

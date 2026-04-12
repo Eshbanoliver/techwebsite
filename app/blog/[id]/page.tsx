@@ -15,8 +15,20 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const post = blogPosts.find(p => p.id === id);
   if (!post) return {};
   return {
-    title: `${post.title} | MS Infinex Insights`,
+    title: `${post.title} | MS Infinex Tech Blog`,
     description: post.excerpt,
+    keywords: [post.category, 'MS Infinex Tech blog', 'IT company Udaipur blog', 'digital marketing insights'],
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://msinfinextech.com/blog/${id}`,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+    },
+    alternates: {
+      canonical: `https://msinfinextech.com/blog/${id}`,
+    },
   };
 }
 

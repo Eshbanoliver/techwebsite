@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow admin/private areas
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap
+Sitemap: https://msinfinextech.com/sitemap.xml
+Sitemap: https://msinfinextech.com/sitemap-0.xml
