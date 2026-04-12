@@ -2528,10 +2528,19 @@ input, textarea, select { font-family: inherit; }
   min-height: 400px;
 }
 
+[data-theme='light'] .process-card {
+  background: white;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
 .process-card:hover {
   border-color: var(--accent-color, var(--neon-blue));
   transform: translateY(-5px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='light'] .process-card:hover {
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
 }
 
 .process-step-num {
@@ -2545,13 +2554,12 @@ input, textarea, select { font-family: inherit; }
   transition: all 0.5s ease;
   pointer-events: none;
   font-family: var(--font-mono, monospace);
-  color: var(--white);
+  color: var(--text-primary);
 }
 
-
-.process-card:hover .process-step-num {
-  opacity: 0.15;
-  transform: scale(1.1) translateX(-10px);
+[data-theme='light'] .process-step-num {
+  opacity: 0.08;
+  color: #0f172a;
 }
 
 .process-icon-box {
@@ -2568,6 +2576,11 @@ input, textarea, select { font-family: inherit; }
   transition: all 0.5s ease;
 }
 
+[data-theme='light'] .process-icon-box {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
 .process-card:hover .process-icon-box {
   background: var(--accent-color, var(--neon-blue));
   color: black;
@@ -2577,10 +2590,14 @@ input, textarea, select { font-family: inherit; }
 .process-title {
   font-size: 1.6rem;
   font-weight: 900;
-  color: white;
+  color: var(--text-primary);
   margin-bottom: 16px;
   position: relative;
   z-index: 2;
+}
+
+[data-theme='light'] .process-title {
+  color: #0f172a;
 }
 
 .process-desc {
@@ -2589,6 +2606,10 @@ input, textarea, select { font-family: inherit; }
   font-size: 1rem;
   position: relative;
   z-index: 2;
+}
+
+[data-theme='light'] .process-desc {
+  color: #475569;
 }
 
 .process-phase-label {
@@ -3133,17 +3154,22 @@ input, textarea, select { font-family: inherit; }
   /* Stack Mission & Vision */
   .mv-cards-wrapper {
     flex-direction: column !important;
-    gap: 60px !important;
+    gap: 40px !important;
+  }
+
+  .mv-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
   }
   
   .mv-card-creative {
     margin: 0 !important;
     max-width: 100% !important;
-    padding: 32px !important;
+    padding: 30px 24px !important;
   }
 
   .mv-visual-bridge {
-    display: none; /* Hide visual bridge on mobile */
+    display: none !important;
   }
 
   /* Metrics stacking */
