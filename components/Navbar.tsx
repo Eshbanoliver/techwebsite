@@ -53,7 +53,7 @@ export default function Navbar(): React.JSX.Element {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const handleScroll = (): void => setScrolled(window.scrollY > 30);
+    const handleScroll = (): void => setScrolled(window.scrollY > 100);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

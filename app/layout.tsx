@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
-import ScrollToTop from "@/components/ScrollToTop";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -71,12 +70,10 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
 };
-
 export default function RootLayout({ children }: { children: React.ReactNode }): React.JSX.Element {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body>
-        <ScrollToTop />
         <div className="grid-bg" aria-hidden="true" />
         <Navbar />
         <main style={{ position: "relative", zIndex: 1 }}>{children}</main>
