@@ -16,7 +16,8 @@ import {
   Brain, 
   ShoppingCart,
   ArrowRight,
-  Infinity
+  Infinity,
+  X
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -186,51 +187,76 @@ export default function Navbar(): React.JSX.Element {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="mobile-menu open"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            className="mobile-menu"
+            initial={{ opacity: 0, scale: 0.95, y: -20, x: "-50%" }}
+            animate={{ opacity: 1, scale: 1, y: 0, x: "-50%" }}
+            exit={{ opacity: 0, scale: 0.95, y: -20, x: "-50%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
             id="mobile-menu"
           >
-            {navLinks.map((link, i) => (
-              <motion.div
-                key={link.href}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.05 }}
-              >
-                <Link
-                  href={link.href}
-                  className={pathname === link.href ? 'active' : ''}
-                >
-                  {link.label}
-                </Link>
-                {link.hasDropdown && (
-                  <div className="mobile-dropdown-links">
-                    {allServices.map(svc => (
-                      <Link key={svc.slug} href={`/services/${svc.slug}`} className="mobile-dropdown-sublink">
-                        {svc.title}
-                      </Link>
-                    ))}
+            <div className="mobile-menu-header">
+              <img src="/logo.png" alt="Logo" className="mobile-logo-img" />
+              <button className="mobile-close-btn" onClick={() => setMobileOpen(false)}>
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="mobile-menu-scroll">
+              {navLinks.map((link, i) => (
+                <div key={link.href} className="mobile-nav-item-wrapper">
+                  <div className="mobile-nav-link-row">
+                    <Link
+                      href={link.href}
+                      className={`mobile-nav-link ${pathname === link.href ? 'active' : ''}`}
+                      onClick={() => !link.hasDropdown && setMobileOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                    {link.hasDropdown && (
+                      <button 
+                        className={`mobile-dropdown-toggle ${megaMenuOpen ? 'active' : ''}`}
+                        onClick={() => setMegaMenuOpen(!megaMenuOpen)}
+                      >
+                        <ChevronDown size={20} />
+                      </button>
+                    )}
                   </div>
-                )}
-              </motion.div>
-            ))}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="mobile-menu-footer"
-            >
+
+                  {link.hasDropdown && (
+                    <motion.div 
+                      className="mobile-dropdown-container"
+                      initial={false}
+                      animate={{ height: megaMenuOpen ? 'auto' : 0, opacity: megaMenuOpen ? 1 : 0 }}
+                      style={{ overflow: 'hidden' }}
+                    >
+                      <div className="mobile-dropdown-links">
+                        {allServices.map(svc => (
+                          <Link 
+                            key={svc.slug} 
+                            href={`/services/${svc.slug}`} 
+                            className="mobile-dropdown-sublink"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            <span className="svc-dot" style={{ backgroundColor: svc.color }}></span>
+                            {svc.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mobile-menu-footer">
               <div className="mobile-theme-box">
                 <span>Interface Theme</span>
                 <ThemeToggle />
               </div>
-              <Link href="/contact" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
+              <Link href="/contact" className="btn btn-primary" onClick={() => setMobileOpen(false)}>
                 Get Started
               </Link>
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
