@@ -643,6 +643,29 @@ input, textarea, select { font-family: inherit; }
   text-align: left;
 }
 
+@media (max-width: 640px) {
+  .metric-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 16px;
+    gap: 16px;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+
+  .metric-number {
+    font-size: 1.8rem;
+  }
+
+  .metric-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+}
+
 .metric-icon-box {
   width: 56px;
   height: 56px;
