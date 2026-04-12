@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Globe, 
   Send, 
@@ -22,7 +23,13 @@ export default function Footer(): React.JSX.Element {
         <div className="footer-main-grid">
           <div className="footer-tech-col footer-tech-brand">
             <Link href="/" className="footer-logo-link">
-              <img src="/logo.png" alt="MS Infinex Logo" className="footer-logo-img" />
+              <Image 
+                src="/logo.png" 
+                alt="MS Infinex Logo" 
+                width={120} 
+                height={40} 
+                className="footer-logo-img" 
+              />
             </Link>
             <p>
               Infinity: The Next Generation. <br/>

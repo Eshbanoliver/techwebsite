@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { PenTool, Radio, Code, Smartphone, Palette } from 'lucide-react';
 
@@ -58,9 +59,7 @@ export default function CreativeCarousel() {
               cursor: 'pointer',
               width: '270px',
               height: '360px',
-              backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%), url(${card.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              overflow: 'hidden',
               boxShadow: isActive ? '0 30px 60px rgba(0,0,0,0.3)' : '0 10px 20px rgba(0,0,0,0.15)',
               border: isActive ? '1px solid rgba(255,255,255,0.2)' : '1px solid rgba(255,255,255,0.05)',
               pointerEvents,
@@ -70,7 +69,23 @@ export default function CreativeCarousel() {
             transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }} 
             onClick={() => setPosition(position + diff)}
           >
+            <Image 
+              src={card.image}
+              alt={card.title}
+              fill
+              className="object-cover"
+              sizes="270px"
+            />
             <div style={{ 
+              position: 'absolute', 
+              inset: 0, 
+              background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.2) 100%)',
+              zIndex: 1
+            }} />
+            
+            <div style={{ 
+                   position: 'relative',
+                   zIndex: 2,
                    marginBottom: 'auto',
                    width: '48px',
                    height: '48px',
@@ -86,13 +101,13 @@ export default function CreativeCarousel() {
               {card.icon}
             </div>
             
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', transition: 'color 0.5s', margin: '0 0 12px 0', color: isActive ? 'white' : 'rgba(255,255,255,0.9)' }}>
+            <h3 style={{ position: 'relative', zIndex: 2, fontSize: '1.25rem', fontWeight: 'bold', transition: 'color 0.5s', margin: '0 0 12px 0', color: isActive ? 'white' : 'rgba(255,255,255,0.9)' }}>
               {card.title}
             </h3>
             
             <motion.div 
                animate={{ height: isActive ? 'auto' : 0, opacity: isActive ? 1 : 0 }}
-               style={{ overflow: 'hidden' }}
+               style={{ position: 'relative', zIndex: 2, overflow: 'hidden' }}
                transition={{ duration: 0.4 }}
             >
               <p style={{ margin: 0, color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem' }}>{card.desc}</p>

@@ -1,8 +1,9 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import SectionReveal from '@/components/SectionReveal';
-import ParticleBackground from '@/components/ParticleBackground';
+const ParticleBackground = dynamic(() => import('@/components/ParticleBackground'), { ssr: false });
 import { 
   TrendingUp, Share2, Megaphone, Globe, Smartphone, Paintbrush, 
   Brain, ShoppingCart, ArrowRight, CheckCircle, Rocket

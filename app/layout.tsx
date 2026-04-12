@@ -78,6 +78,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://msinfinextech.com",
   },
+  other: {
+    "resource-hints": "https://skillicons.dev https://www.google.com",
+  },
   robots: {
     index: true,
     follow: true,

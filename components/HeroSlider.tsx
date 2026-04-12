@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const slides = [
   {
@@ -47,10 +48,17 @@ export default function HeroSlider(): React.JSX.Element {
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: 'easeInOut' }}
         >
-          <div 
-            className="hero-image" 
-            style={{ backgroundImage: `url(${slides[current].image})` }} 
-          />
+          <div className="hero-image">
+            <Image 
+              src={slides[current].image}
+              alt={slides[current].title.replace(/<\/?[^>]+(>|$)/g, "")}
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+              quality={90}
+            />
+          </div>
           <div className="hero-overlay" />
           
           <div className="hero-content container">

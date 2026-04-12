@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
@@ -85,7 +86,14 @@ export default function Navbar(): React.JSX.Element {
             transition={{ duration: 0.6 }}
           >
             <Link href="/" className="navbar-logo" id="logo-link">
-              <img src="/logo.png" alt="MS Infinex Logo" className="nav-logo-img" />
+              <Image 
+                src="/logo.png" 
+                alt="MS Infinex Logo" 
+                width={120} 
+                height={40} 
+                className="nav-logo-img" 
+                priority
+              />
             </Link>
           </motion.div>
 
@@ -195,7 +203,13 @@ export default function Navbar(): React.JSX.Element {
             id="mobile-menu"
           >
             <div className="mobile-menu-header">
-              <img src="/logo.png" alt="Logo" className="mobile-logo-img" />
+              <Image 
+                src="/logo.png" 
+                alt="Logo" 
+                width={100} 
+                height={35} 
+                className="mobile-logo-img" 
+              />
               <button className="mobile-close-btn" onClick={() => setMobileOpen(false)}>
                 <X size={20} />
               </button>

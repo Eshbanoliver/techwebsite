@@ -39,11 +39,14 @@ import {
   Brain,
   ShoppingCart
 } from 'lucide-react';
-import ParticleBackground from '@/components/ParticleBackground';
-import AnimatedCounter from '@/components/AnimatedCounter';
-import TestimonialCarousel from '@/components/TestimonialCarousel';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+
+const ParticleBackground = dynamic(() => import('@/components/ParticleBackground'), { ssr: false });
+const AnimatedCounter = dynamic(() => import('@/components/AnimatedCounter'), { ssr: false });
+const TestimonialCarousel = dynamic(() => import('@/components/TestimonialCarousel'), { ssr: false });
+const TechStack = dynamic(() => import('@/components/TechStack'), { ssr: false });
 import SectionReveal from '@/components/SectionReveal';
-import TechStack from '@/components/TechStack';
 
 interface ServiceItem {
   icon: React.ReactNode;
@@ -196,13 +199,14 @@ export default function HomePage(): React.JSX.Element {
                 style={{ position: 'relative' }}
               >
                 <div className="hero-img-container">
-                    <img 
+                    <Image 
                       src="/hero_tech_monolith.png" 
-                      alt="Future Tech Monolith" 
-                      style={{ width: '100%', height: 'auto', display: 'block' }}
-                      onError={(e) => {
-                        (e.target as any).src = 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200';
-                      }}
+                      alt="Main Hero Monolith" 
+                      width={800}
+                      height={900}
+                      className="hero-monolith-img"
+                      priority
+                      quality={90}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent, transparent)' }} />
                 </div>
@@ -234,7 +238,13 @@ export default function HomePage(): React.JSX.Element {
                 >
                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                       <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px' }}>
-                         <img src="https://www.google.com/favicon.ico" alt="Google" style={{ width: '100%', objectFit: 'contain' }} />
+                         <Image 
+                           src="https://www.google.com/favicon.ico" 
+                           alt="Google" 
+                           width={20}
+                           height={20}
+                           style={{ width: '100%', height: 'auto', objectFit: 'contain' }} 
+                         />
                       </div>
                       <div>
                          <div style={{ display: 'flex', gap: '4px', marginBottom: '4px' }}>
@@ -312,7 +322,13 @@ export default function HomePage(): React.JSX.Element {
       {/* ===== SERVICES ===== */}
       <section className="section services-section" id="services">
         <div className="services-section-bg">
-          <img src="/services_bg.png" alt="Services Background" />
+          <Image 
+            src="/services_bg.png" 
+            alt="Services Background" 
+            fill
+            className="object-cover opacity-20"
+            sizes="100vw"
+          />
           <div className="bg-overlay" />
         </div>
         <div className="container relative z-1">
@@ -337,7 +353,13 @@ export default function HomePage(): React.JSX.Element {
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                 >
                   <div className="service-card-bg">
-                    <img src={s.bg} alt={s.title} />
+                    <Image 
+                      src={s.bg} 
+                      alt={s.title} 
+                      fill 
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      className="object-cover"
+                    />
                     <div className="card-overlay" />
                   </div>
                   <div className="service-card-content relative z-1">
@@ -437,7 +459,13 @@ export default function HomePage(): React.JSX.Element {
                 transition={{ duration: 0.5, delay: i * 0.05 }}
               >
                 <div className="industry-bg">
-                  <img src={ind.image} alt={ind.name} />
+                  <Image 
+                    src={ind.image} 
+                    alt={ind.name} 
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                    className="object-cover"
+                  />
                   <div className="industry-bg-overlay" />
                 </div>
                 <div className="industry-tag">Sector_{i + 1}</div>

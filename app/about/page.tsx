@@ -22,10 +22,13 @@ import {
   Globe
 } from 'lucide-react';
 import Link from 'next/link';
-import ParticleBackground from '@/components/ParticleBackground';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+
+const ParticleBackground = dynamic(() => import('@/components/ParticleBackground'), { ssr: false });
 import SectionReveal from '@/components/SectionReveal';
-import TechCTA from '@/components/TechCTA';
-import CreativeCarousel from '@/components/CreativeCarousel';
+const TechCTA = dynamic(() => import('@/components/TechCTA'), { ssr: false });
+const CreativeCarousel = dynamic(() => import('@/components/CreativeCarousel'), { ssr: false });
 
 
 const pillars = [
@@ -205,8 +208,14 @@ export default function AboutPage() {
                 <div className="text-xs uppercase tracking-widest text-black">Client Satisfaction</div>
               </motion.div>
 
-              <div className="about-studio-image shadow-glow" style={{ height: '550px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                <img src="/about/studio.png" alt="MS Infinex Tech Studio" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="about-studio-image shadow-glow" style={{ height: '550px', border: '1px solid rgba(255,255,255,0.1)', position: 'relative', overflow: 'hidden' }}>
+                <Image 
+                  src="/about/studio.png" 
+                  alt="MS Infinex Tech Studio" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
               </div>
             </motion.div>

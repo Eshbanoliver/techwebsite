@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight,
@@ -165,11 +166,13 @@ export default function TechStack() {
                   <div key={tech.name} className="tech-matrix-card" style={{ '--color': tech.color } as any}>
                     <div className="card-top">
                       <div className="tech-icon-circle-v3">
-                        <img 
+                        <Image 
                           src={`https://skillicons.dev/icons?i=${tech.slug}`} 
                           alt={tech.name}
+                          width={32}
+                          height={32}
                           className="original-brand-icon-v2"
-                          loading="lazy"
+                          unoptimized={true}
                         />
                       </div>
                       <div className="card-right-info">
