@@ -147,7 +147,7 @@ export default function TermsOfService() {
               <div className="p-4 bg-white/5 border-l-4 border-neon-blue rounded-r-lg">
                 <p className="text-secondary">
                   <strong className="text-neon-blue">Email:</strong> legal@msinfinextech.com<br />
-                  <strong className="text-neon-blue">Phone:</strong> +91 98765 43210<br />
+                  <strong className="text-neon-blue">Phone:</strong> +91 92511 48882<br />
                   <strong className="text-neon-blue">Address:</strong> Udaipur, Rajasthan 313001, India
                 </p>
               </div>

@@ -129,11 +129,11 @@ export default function ServiceSubpageLayout({ service, subpage }: ServiceSubpag
                 <div className="sidebar-card">
                   <h3 className="sidebar-card-title">Get in Touch</h3>
                   <div className="sidebar-contact-list">
-                    <a href="tel:+919876543210" className="sidebar-contact-item">
+                    <a href="tel:+919251148882" className="sidebar-contact-item">
                       <Phone size={16} />
-                      <span>+91 98765 43210</span>
+                      <span>+91 92511 48882</span>
                     </a>
-                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="sidebar-contact-item whatsapp">
+                    <a href="https://wa.me/919251148882" target="_blank" rel="noopener noreferrer" className="sidebar-contact-item whatsapp">
                       <MessageCircle size={16} />
                       <span>WhatsApp Us</span>
                     </a>
@@ -214,7 +214,7 @@ export default function ServiceSubpageLayout({ service, subpage }: ServiceSubpag
                 <Link href="/contact" className="bottom-cta-btn primary">
                   Start Your Project <ArrowRight size={18} />
                 </Link>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="bottom-cta-btn secondary">
+                <a href="https://wa.me/919251148882" target="_blank" rel="noopener noreferrer" className="bottom-cta-btn secondary">
                   <MessageCircle size={18} /> Chat on WhatsApp
                 </a>
               </div>

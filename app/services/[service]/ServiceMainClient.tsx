@@ -57,7 +57,7 @@ export default function ServiceMainClient({ service }: ServiceMainProps) {
               <Link href="/contact" className="btn-svc primary" style={{ background: 'white', color: service.color }}>
                 Get Started <ArrowRight size={18} />
               </Link>
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="btn-svc secondary">
+              <a href="https://wa.me/919251148882" target="_blank" rel="noopener noreferrer" className="btn-svc secondary">
                 <MessageCircle size={18} /> WhatsApp Us
               </a>
             </div>
@@ -161,7 +161,7 @@ export default function ServiceMainClient({ service }: ServiceMainProps) {
                 <Link href="/contact" className="bottom-cta-btn primary">
                   Get Free Consultation <ArrowRight size={18} />
                 </Link>
-                <a href="tel:+919876543210" className="bottom-cta-btn secondary">
+                <a href="tel:+919251148882" className="bottom-cta-btn secondary">
                   📞 Call Now
                 </a>
               </div>

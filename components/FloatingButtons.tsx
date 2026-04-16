@@ -21,7 +21,7 @@ export default function FloatingButtons(): React.JSX.Element {
     <>
       <div className="floating-left">
         <a
-          href="https://wa.me/919876543210"
+          href="https://wa.me/919251148882"
           className="float-btn whatsapp"
           target="_blank"
           rel="noopener noreferrer"
@@ -32,7 +32,7 @@ export default function FloatingButtons(): React.JSX.Element {
           <span className="float-label">Consult</span>
         </a>
         <a
-          href="tel:+919876543210"
+          href="tel:+919251148882"
           className="float-btn call"
           aria-label="Call Us"
           id="float-call"

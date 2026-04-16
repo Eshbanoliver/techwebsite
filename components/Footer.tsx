@@ -86,9 +86,9 @@ export default function Footer(): React.JSX.Element {
                 <Mail size={18} style={{ color: 'var(--neon-blue)' }} />
                 <span>info@msinfinextech.com</span>
               </a>
-              <a href="tel:+919876543210" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <a href="tel:+919251148882" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Phone size={18} style={{ color: 'var(--neon-blue)' }} />
-                <span>+91 98765 43210</span>
+                <span>+91 92511 48882</span>
               </a>
             </div>
           </div>

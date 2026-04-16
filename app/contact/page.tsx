@@ -97,7 +97,7 @@ export default function ContactPage(): React.JSX.Element {
                       <div className="v-card-icon"><MessageCircle size={24} /></div>
                       <div className="v-card-text">
                         <span>WhatsApp Quick Chat</span>
-                        <strong>+91 98765 43210</strong>
+                        <strong>+91 92511 48882</strong>
                       </div>
                     </div>
 
@@ -105,7 +105,7 @@ export default function ContactPage(): React.JSX.Element {
                       <div className="v-card-icon"><Phone size={24} /></div>
                       <div className="v-card-text">
                         <span>Direct Call Line</span>
-                        <strong>+91 98765 43210</strong>
+                        <strong>+91 92511 48882</strong>
                       </div>
                     </div>
                   </div>
