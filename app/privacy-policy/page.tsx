@@ -147,7 +147,7 @@ export default function PrivacyPolicyPage(): React.JSX.Element {
               </p>
               <div className="mt-4 p-4 bg-white/5 border-l-4 border-neon-blue rounded-r-lg">
                 <p className="text-secondary">
-                  <strong className="text-neon-blue">Email:</strong> info@msinfinix.com<br />
+                  <strong className="text-neon-blue">Email:</strong> msinfinex@gmail.com<br />
                   <strong className="text-neon-blue">Address:</strong> Udaipur, Rajasthan 313001, India
                 </p>
               </div>

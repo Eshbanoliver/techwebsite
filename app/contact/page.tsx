@@ -89,7 +89,7 @@ export default function ContactPage(): React.JSX.Element {
                       <div className="v-card-icon"><Mail size={24} /></div>
                       <div className="v-card-text">
                         <span>Email us at</span>
-                        <strong>hello@msinfinex.com</strong>
+                        <strong>msinfinex@gmail.com</strong>
                       </div>
                     </div>
                     

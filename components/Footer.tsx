@@ -82,9 +82,9 @@ export default function Footer(): React.JSX.Element {
                 <MapPin size={18} style={{ marginTop: 4, color: 'var(--neon-blue)' }} />
                 <span>Udaipur, Rajasthan<br />313001, India</span>
               </div>
-              <a href="mailto:info@msinfinextech.com" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <a href="mailto:msinfinex@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Mail size={18} style={{ color: 'var(--neon-blue)' }} />
-                <span>info@msinfinextech.com</span>
+                <span>msinfinex@gmail.com</span>
               </a>
               <a href="tel:+919251148882" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Phone size={18} style={{ color: 'var(--neon-blue)' }} />

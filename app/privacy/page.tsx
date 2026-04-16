@@ -73,7 +73,7 @@ export default function PrivacyPolicy() {
               <p className="text-secondary leading-relaxed">
                 You retain full root access to your personal data. You may request a complete data dump, rectification of 
                 inaccuracies, or permanent deletion of your profile from our active directories at any time by contacting 
-                our privacy officer at <span className="text-neon-blue">privacy@msinfinextech.com</span>.
+                our privacy officer at <span className="text-neon-blue">msinfinex@gmail.com</span>.
               </p>
             </section>
 

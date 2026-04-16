@@ -137,9 +137,9 @@ export default function ServiceSubpageLayout({ service, subpage }: ServiceSubpag
                       <MessageCircle size={16} />
                       <span>WhatsApp Us</span>
                     </a>
-                    <a href="mailto:info@msinfinex.com" className="sidebar-contact-item">
+                    <a href="mailto:msinfinex@gmail.com" className="sidebar-contact-item">
                       <Mail size={16} />
-                      <span>info@msinfinex.com</span>
+                      <span>msinfinex@gmail.com</span>
                     </a>
                     <div className="sidebar-contact-item">
                       <MapPin size={16} />
