@@ -47,6 +47,7 @@ const ParticleBackground = dynamic(() => import('@/components/ParticleBackground
 const AnimatedCounter = dynamic(() => import('@/components/AnimatedCounter'), { ssr: false });
 const TestimonialCarousel = dynamic(() => import('@/components/TestimonialCarousel'), { ssr: false });
 const TechStack = dynamic(() => import('@/components/TechStack'), { ssr: false });
+const CategorizedFAQ = dynamic(() => import('@/components/CategorizedFAQ'), { ssr: false });
 import SectionReveal from '@/components/SectionReveal';
 
 interface ServiceItem {
@@ -80,44 +81,6 @@ const whyUs = [
   { title: 'Rapid Launch', desc: 'Move from idea to live deployment in record time without cutting corners.', className: 'bg-why-8' },
 ];
 
-interface FAQItem {
-  question: string;
-  answer: string;
-  className: string;
-}
-
-const faqItems: FAQItem[] = [
-  { 
-    question: 'What services does MS Infinex Tech offer?', 
-    answer: 'We offer Digital Marketing, Social Media Marketing, Paid Ads, Web Development, App Development, Graphic Design & Branding, AI Solutions, and E-Commerce Marketplace Management — all tailored for Udaipur businesses.',
-    className: 'bg-why-1'
-  },
-  { 
-    question: 'Where is MS Infinex Tech located?', 
-    answer: 'MS Infinex Tech is headquartered in Udaipur, Rajasthan 313001, India. We serve clients globally and offer both on-site and remote collaboration options to ensure seamless project delivery.',
-    className: 'bg-why-2'
-  },
-  { 
-    question: 'How long does a typical project take?', 
-    answer: 'Project timelines vary based on scope and complexity. A simple website might take 2-4 weeks, while a complex enterprise application could take 3-6 months.',
-    className: 'bg-why-3'
-  },
-  { 
-    question: 'Do you offer post-launch support?', 
-    answer: 'Absolutely! We provide comprehensive post-launch support including bug fixes, performance optimization, security updates, and feature enhancements 24/7.',
-    className: 'bg-why-4'
-  },
-  { 
-    question: 'What technologies do you use?', 
-    answer: 'We work with modern technologies including React, Next.js, Node.js, Python, TensorFlow, Flutter, React Native, AWS, Google Cloud, Azure, and Kubernetes.',
-    className: 'bg-why-5'
-  },
-  { 
-    question: 'How can I get a quote?', 
-    answer: 'You can get a free consultation and quote by clicking the "Contact Us" or "Get a Quote" buttons. Our technical team will reach out within 24 hours.',
-    className: 'bg-why-6'
-  },
-];
 
 const industries = [
   { name: "E-commerce & Retail", icon: <ShoppingCart size={22} />, desc: "High-conversion growth engines with intelligent inventory and global payment maturity.", image: "/assets/industry_ecommerce_visual_1776415874745.png" },
@@ -437,37 +400,22 @@ export default function HomePage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ===== FAQ ===== */}
       <section className="section" id="faq">
         <div className="container">
           <SectionReveal>
             <div className="section-header">
-              <span className="section-label">Got Questions?</span>
+              <span className="section-label">Knowledge Base</span>
               <h2 className="section-title">
                 Frequently Asked <span className="gradient-text">Questions</span>
               </h2>
               <p className="section-subtitle">
-                Find quick answers to common questions about our services and process.
+                Expert insights and transparent answers to the most common queries across 
+                our entire technical and marketing ecosystem.
               </p>
             </div>
           </SectionReveal>
-          <div className="faq-bento-grid">
-            {faqItems.map((item, i) => (
-              <motion.div
-                key={i}
-                className={`faq-bento-card ${item.className}`}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <div className="faq-watermark">?</div>
-                <div className="faq-content">
-                  <h3>{item.question}</h3>
-                  <p>{item.answer}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
+        <CategorizedFAQ />
       </section>
 
       {/* ===== TECH CTA ===== */}
