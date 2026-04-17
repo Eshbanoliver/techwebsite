@@ -271,7 +271,7 @@ export default function HomePage(): React.JSX.Element {
             {services.map((s, i) => (
               <Link key={i} href={`/services/${s.slug}`} className="service-card-link">
                 <motion.div
-                  className={`service-card designer-card ${s.glow}`}
+                  className="service-card"
                   {...fadeUp}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                 >
@@ -280,19 +280,16 @@ export default function HomePage(): React.JSX.Element {
                       src={s.bg} 
                       alt={s.title} 
                       fill 
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover"
                     />
-                    <div className="card-overlay" />
                   </div>
-                  <div className="service-card-content relative z-1">
-                    <div className="service-icon-box">{s.icon}</div>
-                    <h3>{s.title}</h3>
-                    <p>{s.desc}</p>
-                    <div className="service-card-footer">
-                      <span>Explore Solutions</span>
-                      <Rocket size={16} />
-                    </div>
+                  <div className="service-icon-box">{s.icon}</div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <div className="service-card-footer">
+                    <span>Learn More</span>
+                    <ArrowRight size={18} />
                   </div>
                 </motion.div>
               </Link>
