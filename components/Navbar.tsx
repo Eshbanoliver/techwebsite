@@ -89,9 +89,10 @@ export default function Navbar(): React.JSX.Element {
               <Image 
                 src="/logo.png" 
                 alt="MS Infinex Logo" 
-                width={120} 
-                height={40} 
+                width={140} 
+                height={48} 
                 className="nav-logo-img" 
+                style={{ objectFit: 'contain' }}
                 priority
               />
             </Link>
@@ -168,7 +169,7 @@ export default function Navbar(): React.JSX.Element {
             transition={{ duration: 0.6 }}
           >
             <ThemeToggle />
-            <Link href="/contact" className="btn btn-primary" id="nav-cta">
+            <Link href="/contact" className="btn btn-primary btn-apple" id="nav-cta">
               Get Started
             </Link>
           </motion.div>

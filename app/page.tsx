@@ -146,119 +146,42 @@ export default function HomePage(): React.JSX.Element {
       <section className="hero-v3" id="hero">
         <ParticleBackground />
         
-        {/* Cinematic Glows */}
-        <div className="hero-glow-v3" style={{ top: '-10%', right: '0%', '--glow-rgb': '255, 138, 0' } as any} />
-        <div className="hero-glow-v3" style={{ bottom: '10%', left: '0%', '--glow-rgb': '255, 92, 0' } as any} />
+        {/* Cinematic Glows - More Subtle */}
+        <div className="hero-glow-v3" style={{ top: '20%', left: '50%', transform: 'translate(-50%, -50%)', '--glow-rgb': '255, 138, 0', opacity: 0.2 } as any} />
 
         <div className="container relative z-10">
-          <div className="hero-v3-inner">
+          <div className="hero-v3-inner centered">
             
-            {/* Left Column: Messaging */}
+            {/* Messaging - Centered Layout */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="hero-text-side"
+              className="hero-content-modern"
             >
-              <div className="hero-eyebrow-v3">
-                <span className="text-xl">👋</span>
-                <span>Welcome to MS Infinex Tech</span>
+              <div className="hero-eyebrow-modern">
+                <span className="badge-dot" />
+                <span>Excellence in Digital Engineering</span>
               </div>
 
-              <h1 className="hero-title-v3">
-                Engineering Absolute <span className="gradient-text">Digital Mastery</span>
+              <h1 className="hero-title-modern">
+                Crafting the Future of <span className="gradient-text">Digital Marketing & Technology</span>
               </h1>
 
-              <p className="hero-desc-v3">
-                We specialize in deploying hyper-scalable architectural ecosystems and advanced AI integrations that drive measurable industrial growth.
+              <p className="hero-desc-modern">
+                From high-performance web development and AI solutions to strategic marketing 
+                and creative branding — we deliver end-to-end digital excellence designed for your growth.
               </p>
 
-              <div className="hero-actions-v3">
-                <Link href="/services" className="btn btn-tech hero-btn-main">
-                  Explore Solutions ↗
+              <div className="hero-actions-modern">
+                <Link href="/services" className="btn btn-primary btn-apple">
+                  Explore Solutions
                 </Link>
-                <Link href="/about" className="btn btn-secondary hero-btn-sub">
-                   Our Story 
+                <Link href="/contact" className="btn btn-secondary btn-apple">
+                  Get a Quote
                 </Link>
-              </div>
-
-              {/* Technical Coordinates */}
-              <div className="hero-tech-coordinates-v3">
-                <div>SEC_ID: INF_HQ_01</div>
-                <div className="coord-dot" />
-                <div>LOC: 24.5° N / 73.7° E</div>
               </div>
             </motion.div>
-
-            {/* Right Column: Visual + Floating Data */}
-            <div className="hero-visual-side">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                style={{ position: 'relative' }}
-              >
-                <div className="hero-img-container">
-                    <Image 
-                      src="/hero_tech_monolith.png" 
-                      alt="Main Hero Monolith" 
-                      width={800}
-                      height={900}
-                      className="hero-monolith-img"
-                      priority
-                      quality={90}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent, transparent)' }} />
-                </div>
-
-                {/* Floating Metric 1: Users */}
-                <motion.div 
-                  className="floating-metric-card metric-users-v3"
-                  animate={{ y: [0, -15, 0] }}
-                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                     <div className="avatar-stack-v3">
-                        <div style={{ background: 'var(--neon-blue)', boxShadow: '0 0 10px var(--neon-blue)' }} />
-                        <div style={{ background: 'var(--neon-purple)', boxShadow: '0 0 10px var(--neon-purple)' }} />
-                        <div style={{ background: 'var(--neon-cyan)', boxShadow: '0 0 10px var(--neon-cyan)' }} />
-                     </div>
-                     <div>
-                        <div style={{ fontSize: '1.25rem', fontWeight: 900, color: 'white' }}>1M+ Users</div>
-                        <div style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '2px', color: 'rgba(255,255,255,0.4)', fontWeight: 700 }}>Global Scale</div>
-                     </div>
-                  </div>
-                </motion.div>
-
-                {/* Floating Metric 2: Ratings */}
-                <motion.div 
-                  className="floating-metric-card light metric-rating-v3"
-                  animate={{ y: [0, 15, 0] }}
-                  transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
-                >
-                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                      <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px' }}>
-                         <Image 
-                           src="https://www.google.com/favicon.ico" 
-                           alt="Google" 
-                           width={20}
-                           height={20}
-                           style={{ width: '100%', height: 'auto', objectFit: 'contain' }} 
-                         />
-                      </div>
-                      <div>
-                         <div style={{ display: 'flex', gap: '4px', marginBottom: '4px' }}>
-                            {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="#f59e0b" color="#f59e0b" />)}
-                         </div>
-                         <div style={{ fontSize: '0.9rem', fontWeight: 900, color: '#111' }}>(4.9) Review Matrix</div>
-                      </div>
-                   </div>
-                </motion.div>
-
-                {/* Background Pattern Decal */}
-                <div style={{ position: 'absolute', top: '-40px', right: '-40px', width: '240px', height: '240px', backgroundImage: 'radial-gradient(circle, rgba(249,115,22,0.1) 1px, transparent 1px)', backgroundSize: '20px 20px', zIndex: -1, opacity: 0.4 }} />
-              </motion.div>
-            </div>
 
           </div>
         </div>
@@ -468,7 +391,6 @@ export default function HomePage(): React.JSX.Element {
                   />
                   <div className="industry-bg-overlay" />
                 </div>
-                <div className="industry-tag">Sector_{i + 1}</div>
                 <div className="industry-card-content relative z-1">
                   <div className="industry-icon-wrapper">
                     {ind.icon}
