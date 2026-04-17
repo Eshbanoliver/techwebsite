@@ -787,21 +787,32 @@ input, textarea, select { font-family: inherit; }
   display: block;
 }
 
-.service-card {
-  height: 100%;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
+/* ---- Services Grid (4 Columns) ---- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.designer-card {
   position: relative;
+  height: 480px;
+  border-radius: 32px;
   overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.designer-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(255, 138, 0, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
 
 .service-card-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 0;
 }
 
@@ -809,86 +820,101 @@ input, textarea, select { font-family: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.15;
-  filter: saturate(0) blur(2px);
-  transition: all var(--transition-base);
+  transition: transform 0.8s ease;
+  filter: brightness(0.7);
 }
 
-.service-card-bg .card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--bg-card) 60%, transparent 100%);
-}
-
-.service-card:hover .service-card-bg img {
-  opacity: 0.25;
-  filter: saturate(1) blur(0);
+.designer-card:hover .service-card-bg img {
   transform: scale(1.1);
+  filter: brightness(0.5);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.9) 100%);
+  z-index: 1;
 }
 
 .service-card-content {
-  position: relative;
-  z-index: 1;
-  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 32px;
+  z-index: 2;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 }
 
 .service-icon-box {
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  background: var(--gradient-subtle);
-  border-radius: 6px;
-  color: var(--neon-blue);
+  width: 54px;
+  height: 54px;
+  background: rgba(255, 138, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 138, 0, 0.3);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #ff8a00;
   margin-bottom: 20px;
+  transition: all 0.4s ease;
 }
 
-.service-card h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-primary);
+.designer-card:hover .service-icon-box {
+  background: #ff8a00;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.designer-card h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
   margin-bottom: 12px;
+  line-height: 1.2;
 }
 
-.service-card p {
-  color: var(--text-secondary);
-  line-height: 1.7;
+.designer-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.designer-card:hover p {
+  opacity: 1;
+  height: auto;
   margin-bottom: 24px;
 }
 
 .service-card-footer {
-  margin-top: auto;
-  padding-top: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid var(--border-glass);
+  gap: 12px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: #ff8a00;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--neon-blue);
-  opacity: 0.6;
-  transition: all var(--transition-base);
+  letter-spacing: 2px;
 }
 
-.service-card:hover .service-card-footer {
-  opacity: 1;
-  transform: translateX(5px);
+@media (max-width: 1400px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ---- Services Grid ---- */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+@media (max-width: 1100px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 650px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .designer-card { height: 400px; }
 }
 
 .service-icon {

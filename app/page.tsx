@@ -60,11 +60,11 @@ interface ServiceItem {
 const services: ServiceItem[] = [
   { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Expert SEO, lead generation, and content strategies to rank your business higher.', slug: 'digital-marketing', glow: 'glow-orange', bg: '/assets/marketing_no_human_stock_1776416291000.png' },
   { icon: <Share2 size={24} />, title: 'Social Media Marketing', desc: 'Creative social media management to engage customers and build brand loyalty.', slug: 'social-media-marketing', glow: 'glow-pink', bg: '/assets/social_no_human_stock_1776416264473.png' },
-  { icon: <Megaphone size={24} />, title: 'Paid Ads', desc: 'Results-driven Google and Meta ad campaigns that maximize your marketing ROI.', slug: 'paid-ads', glow: 'glow-purple', bg: '/assets/services_cinematic_bg_1776415793060.png' },
+  { icon: <Megaphone size={24} />, title: 'Paid Ads', desc: 'Results-driven Google and Meta ad campaigns that maximize your marketing ROI.', slug: 'paid-ads', glow: 'glow-purple', bg: '/assets/service_paidads_stock_1776416655014.png' },
   { icon: <Globe size={24} />, title: 'Web Development', desc: 'Dynamic websites and e-commerce platforms built for speed and conversions.', slug: 'web-development', glow: 'glow-orange', bg: '/assets/service_webdev_stock_1776416031626.png' },
-  { icon: <Smartphone size={24} />, title: 'App Development', desc: 'Native-feel mobile apps and PWAs designed for exceptional user experience.', slug: 'app-development', glow: 'glow-green', bg: '/assets/service_webdev_stock_1776416031626.png' },
+  { icon: <Smartphone size={24} />, title: 'App Development', desc: 'Native-feel mobile apps and PWAs designed for exceptional user experience.', slug: 'app-development', glow: 'glow-green', bg: '/assets/service_appdev_stock_v2_1776416681623.png' },
   { icon: <Paintbrush size={24} />, title: 'Branding & Design', desc: 'High-end visual identity and logo design to make your brand stand out.', slug: 'graphic-design', glow: 'glow-pink', bg: '/assets/service_branding_stock_1776416084682.png' },
-  { icon: <Brain size={24} />, title: 'AI Solutions', desc: 'Smart AI chatbots and automation to streamline your business operations.', slug: 'ai-solutions', glow: 'glow-orange', bg: '/assets/about_business_v2_stock_1776416113626.png' },
+  { icon: <Brain size={24} />, title: 'AI Solutions', desc: 'Smart AI chatbots and automation to streamline your business operations.', slug: 'ai-solutions', glow: 'glow-orange', bg: '/assets/about_no_human_stock_1776416238612.png' },
   { icon: <ShoppingCart size={24} />, title: 'Marketplace Management', desc: 'Expert Amazon and Flipkart management to grow your national sales.', slug: 'ecommerce-management', glow: 'glow-orange', bg: '/assets/industry_ecommerce_visual_1776415874745.png' },
 ];
 
