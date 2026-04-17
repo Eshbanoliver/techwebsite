@@ -88,107 +88,98 @@ export default function TechStack() {
   return (
     <section className="corporate-tech-section" id="tech-stack">
       <div className="container">
-        {/* Top Label & Header */}
         <div className="tech-header-centered">
-          <span className="tech-badge">Our Technology Matrix</span>
-          <h2 className="tech-title">High-Performance <span className="blue-gradient">Technical Studio</span> Capacity</h2>
+          <span className="tech-badge">Our High-Performance Stack</span>
+          <h2 className="tech-title">THE MS INFINEX <span className="blue-gradient">TECHNOLOGY MATRIX</span></h2>
           <p className="tech-desc">
-            We deploy an enterprise-grade stack and precision marketing tools designed for 
-            unlimited scale, military-level security, and measurable business growth. Our methodology 
-            prioritizes long-term ROI over fleeting industry trends.
+            We leverage a world-class production stack and growth-intelligence tools to 
+            engineer scalable digital empires and ROI-driven marketing campaigns. Total 
+            visibility into the precision tools that power your growth.
           </p>
-
-          <div className="tech-tabs-horizontal">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                className={`tech-tab-horizontal-item ${activeTab === tab ? 'active' : ''}`}
-                onClick={() => handleTabChange(tab)}
-              >
-                <div className="tab-icon-frame-sm">
-                  {categoryIcons[tab]}
-                </div>
-                <span className="tab-name-horizontal">{tab}</span>
-              </button>
-            ))}
-          </div>
         </div>
 
-        <div className="tech-display-full">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="tech-matrix-grid"
-            >
-              {techData[activeTab].map((tech) => (
-                <div key={tech.name} className="tech-matrix-card" style={{ '--color': tech.color } as any}>
-                  <div className="card-top">
-                    <div className="tech-icon-circle-v3">
-                      <Image 
-                        src={`https://skillicons.dev/icons?i=${tech.slug}`} 
-                        alt={tech.name}
-                        width={32}
-                        height={32}
-                        className="original-brand-icon-v2"
-                        unoptimized={true}
-                      />
-                    </div>
-                    <div className="card-right-info">
-                      <span className="info-label">Architecture</span>
-                      <div className="status-container">
-                        <CheckCircle2 size={10} color="#4ade80" />
-                        <span className="info-value">Stable</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card-body">
-                    <div className="tech-main-detail">
-                      <div className="title-row">
-                        <h3 className="tech-matrix-name">{tech.name}</h3>
-                        <Zap size={14} className="pulse-icon" style={{ color: tech.color }} />
-                      </div>
-                      <div className="tech-tags">
-                        <span className="tag">Official SDK</span>
-                        <span className="tag">Production Level</span>
-                      </div>
-                    </div>
-                    <div className="tech-stats-side">
-                      <div className="stat-item">
-                        <span className="stat-bar"><span className="bar-fill" /></span>
-                        <span className="stat-txt">98.4% Reliability</span>
-                      </div>
-                    </div>
-                  </div>
+        <div className="tech-matrix-v3">
+          {/* Column 1: Branding & Creative */}
+          <div className="tech-column glow-purple">
+            <div className="column-head">
+              <div className="column-icon"><Palette size={24} /></div>
+              <h3>Branding & Design</h3>
+              <p>Visual Craftsmanship</p>
+            </div>
+            <div className="column-body">
+              {techData['Branding & Design'].map(tech => (
+                <div key={tech.name} className="tech-row-item">
+                  <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized />
+                  <span>{tech.name}</span>
                 </div>
               ))}
-            </motion.div>
-          </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Column 2: Growth & Paid Ads */}
+          <div className="tech-column glow-orange">
+            <div className="column-head">
+              <div className="column-icon"><Briefcase size={24} /></div>
+              <h3>Marketing & Ads</h3>
+              <p>ROI & Scale</p>
+            </div>
+            <div className="column-body">
+              {techData['Marketing & Growth'].map(tech => (
+                <div key={tech.name} className="tech-row-item">
+                  <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized />
+                  <span>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Column 3: Web & App Development */}
+          <div className="tech-column glow-cyan">
+            <div className="column-head">
+              <div className="column-icon"><Layout size={24} /></div>
+              <h3>Development</h3>
+              <p>Engineering Excellence</p>
+            </div>
+            <div className="column-body">
+              {techData['Development'].map(tech => (
+                <div key={tech.name} className="tech-row-item">
+                  <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized />
+                  <span>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Column 4: Infrastructure & Cloud */}
+          <div className="tech-pink">
+            <div className="column-head">
+              <div className="column-icon"><Cloud size={24} /></div>
+              <h3>Cloud & DevOps</h3>
+              <p>Stability & Performance</p>
+            </div>
+            <div className="column-body">
+              {techData['Cloud & DevOps'].map(tech => (
+                <div key={tech.name} className="tech-row-item">
+                  <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized />
+                  <span>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-
 
       <style jsx>{`
         .corporate-tech-section {
           padding: 140px 0;
-          background: #0a0c12; /* Refined deep charcoal */
-          position: relative;
+          background: #0a0c12;
           color: white;
-          border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        .tech-layout {
-          display: grid;
-          grid-template-columns: 440px 1fr;
-          gap: 100px;
-          align-items: start;
+          overflow: hidden;
         }
         .tech-header-centered {
           text-align: center;
           max-width: 900px;
-          margin: 0 auto 60px;
+          margin: 0 auto 80px;
         }
         .tech-badge {
           display: inline-block;
@@ -203,11 +194,11 @@ export default function TechStack() {
           margin-bottom: 24px;
         }
         .tech-title {
-          font-size: 4rem;
-          font-weight: 850;
+          font-size: 3.5rem;
+          font-weight: 900;
           line-height: 1.1;
+          letter-spacing: -2px;
           margin-bottom: 20px;
-          letter-spacing: -1.5px;
         }
         .blue-gradient {
           background: linear-gradient(to right, #ff8a00, #ff5c00);
@@ -216,226 +207,126 @@ export default function TechStack() {
         }
         .tech-desc {
           font-size: 1.15rem;
-          line-height: 1.7;
           color: rgba(255,255,255,0.6);
-          margin-bottom: 60px;
-        }
-        .tech-tabs-horizontal {
-          display: flex;
-          justify-content: center;
-          gap: 16px;
-          flex-wrap: wrap;
-          padding: 8px;
-          background: rgba(255,255,255,0.02);
-          border: 1px solid rgba(255,255,255,0.05);
-          border-radius: 20px;
-          width: fit-content;
-          margin: 0 auto;
-        }
-        .tech-tab-horizontal-item {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 12px 24px;
-          border-radius: 14px;
-          color: rgba(255,255,255,0.5);
-          font-weight: 700;
-          transition: all 0.4s ease;
-          border: 1px solid transparent;
-        }
-        .tab-icon-frame-sm {
-          opacity: 0.6;
-          transition: all 0.4s ease;
-        }
-        .tech-tab-horizontal-item:hover {
-          background: rgba(255,255,255,0.05);
-          color: white;
-        }
-        .tech-tab-horizontal-item.active {
-          background: #ff8a00;
-          color: white;
-          box-shadow: 0 10px 30px rgba(255, 138, 0, 0.3);
-        }
-        .tech-tab-horizontal-item.active .tab-icon-frame-sm {
-          opacity: 1;
-          transform: scale(1.1);
-        }
-        .tab-name-horizontal {
-          font-size: 0.95rem;
-          letter-spacing: 0.5px;
+          line-height: 1.6;
         }
 
-        .tech-matrix-grid {
+        .tech-matrix-v3 {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          grid-template-columns: repeat(4, 1fr);
           gap: 24px;
         }
-        .tech-matrix-card {
-          background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
-          border: 1px solid rgba(255,255,255,0.05);
-          padding: 32px;
-          border-radius: 24px;
-          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+        .tech-column {
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 32px;
+          padding: 40px 30px;
           position: relative;
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
+          transition: all 0.5s ease;
+          overflow: hidden;
         }
-        .tech-matrix-card:hover {
-          background: rgba(255,255,255,0.06);
-          border-color: var(--color);
-          transform: translateY(-8px);
-          box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+
+        .tech-pink {
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 32px;
+          padding: 40px 30px;
+          position: relative;
+          transition: all 0.5s ease;
+          overflow: hidden;
         }
-        .card-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
+
+        .tech-column:hover, .tech-pink:hover {
+          transform: translateY(-10px);
+          background: rgba(255, 255, 255, 0.04);
+          border-color: rgba(255, 138, 0, 0.2);
         }
-        .card-right-info {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          gap: 6px;
+
+        .column-head {
+          margin-bottom: 40px;
+          text-align: center;
         }
-        .status-container {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-        }
-        .info-label {
-          font-size: 0.68rem;
-          color: rgba(255,255,255,0.3);
-          text-transform: uppercase;
-          letter-spacing: 1.5px;
-          font-weight: 800;
-        }
-        .info-value {
-          font-size: 0.78rem;
-          color: #4ade80;
-          font-weight: 900;
-          text-transform: uppercase;
-        }
-        .tech-icon-circle-v3 {
-          width: 64px;
-          height: 64px;
-          border-radius: 18px;
-          background: rgba(255,255,255,0.04);
+
+        .column-icon {
+          width: 54px;
+          height: 54px;
+          background: rgba(255, 138, 0, 0.1);
+          border-radius: 16px;
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: all 0.5s ease;
-          border: 1px solid rgba(255,255,255,0.06);
-          position: relative;
+          margin: 0 auto 20px;
+          color: #ff8a00;
         }
-        .original-brand-icon-v2 {
-          width: 32px;
-          height: 32px;
-          object-fit: contain;
-          transition: all 0.5s ease;
-        }
-        .tech-matrix-card:hover .tech-icon-circle-v3 {
-          background: white;
-          box-shadow: 0 0 30px rgba(255,255,255,0.1);
-          border-color: transparent;
-        }
-        .tech-matrix-card:hover .original-brand-icon-v2 {
-          transform: scale(1.15) rotate(3deg);
-        }
-        .card-body {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
-          gap: 20px;
-        }
-        .tech-main-detail {
-          flex: 1;
-        }
-        .title-row {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          margin-bottom: 14px;
-        }
-        .tech-matrix-name {
+
+        .column-head h3 {
           font-size: 1.4rem;
           font-weight: 850;
-          color: white;
-          letter-spacing: -1px;
+          margin-bottom: 6px;
         }
-        .pulse-icon {
-          opacity: 0.6;
-          animation: mini-pulse 2s infinite;
+
+        .column-head p {
+          font-size: 0.8rem;
+          color: rgba(255, 255, 255, 0.4);
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
         }
-        .tech-stats-side {
+
+        .column-body {
           display: flex;
           flex-direction: column;
-          align-items: flex-end;
-          gap: 8px;
-          min-width: 120px;
+          gap: 16px;
         }
-        .stat-bar {
-          width: 100%;
-          height: 5px;
-          background: rgba(255,255,255,0.08);
-          border-radius: 3px;
-          overflow: hidden;
-          display: block;
-        }
-        .bar-fill {
-          display: block;
-          width: 88%;
-          height: 100%;
-          background: var(--color);
-          box-shadow: 0 0 12px var(--color);
-        }
-        .stat-txt {
-          font-size: 0.68rem;
-          font-weight: 900;
-          color: rgba(255,255,255,0.3);
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-        .tech-tags {
+
+        .tech-row-item {
           display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-        }
-        .tag {
-          font-size: 0.64rem;
-          font-weight: 800;
-          padding: 6px 12px;
-          background: rgba(255,255,255,0.04);
-          border-radius: 8px;
-          text-transform: uppercase;
-          color: rgba(255,255,255,0.5);
-          letter-spacing: 0.5px;
-          border: 1px solid rgba(255,255,255,0.04);
-        }
-        .tech-matrix-card:hover .tag {
-          background: rgba(255,255,255,0.08);
-          color: white;
-          border-color: var(--color);
+          align-items: center;
+          gap: 16px;
+          padding: 12px 16px;
+          background: rgba(255, 255, 255, 0.03);
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.02);
+          transition: all 0.3s ease;
         }
 
-        @keyframes mini-pulse {
-          0% { opacity: 0.4; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.1); }
-          100% { opacity: 0.4; transform: scale(1); }
+        .tech-row-item:hover {
+          background: rgba(255, 255, 255, 0.08);
+          transform: translateX(5px);
         }
 
-        @media (max-width: 1300px) {
-          .tech-layout { grid-template-columns: 1fr; gap: 50px; }
-          .tech-content { position: relative; top: 0; text-align: center; max-width: 800px; margin: 0 auto; }
-          .tech-tabs-list { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-          .tech-tab-item { width: auto; padding: 16px 24px; border-radius: 12px; }
-          .tab-icon-frame { margin-right: 12px; width: 36px; height: 36px; }
+        .tech-row-item span {
+          font-weight: 700;
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.8);
         }
-        @media (max-width: 768px) {
-          .tech-title { font-size: 2.8rem; }
-          .tech-matrix-grid { grid-template-columns: 1fr; }
-          .tech-icon-circle-v3 { width: 56px; height: 56px; }
-          .original-brand-icon-v2 { width: 28px; height: 28px; }
+
+        /* Ambient Glows */
+        .tech-column::after, .tech-pink::after {
+          content: '';
+          position: absolute;
+          bottom: -50px;
+          right: -50px;
+          width: 150px;
+          height: 150px;
+          filter: blur(60px);
+          opacity: 0.2;
+          z-index: 0;
+        }
+
+        .glow-purple::after { background: var(--gradient-primary); }
+        .glow-orange::after { background: #ff8a00; }
+        .glow-cyan::after { background: #00f2ff; }
+        .tech-pink::after { background: #ff007a; }
+
+        @media (max-width: 1200px) {
+          .tech-matrix-v3 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+          .tech-matrix-v3 { grid-template-columns: 1fr; }
+          .tech-title { font-size: 2.5rem; }
         }
       `}</style>
     </section>
