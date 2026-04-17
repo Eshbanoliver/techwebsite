@@ -1268,6 +1268,110 @@ input, textarea, select { font-family: inherit; }
   .why-features-row { grid-template-columns: 1fr; }
 }
 
+/* ===== INDUSTRY V5 (MATCHING REFERENCE) ===== */
+.industries-section-v5 {
+  padding: 120px 0;
+  background: var(--bg-primary);
+  text-align: center;
+}
+
+.section-header-centered {
+  margin-bottom: 80px;
+}
+
+.industries-title-v5 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ff6b6b; /* Matching the red/coral from image */
+  letter-spacing: -1px;
+}
+
+.industries-title-v5 .italic-text {
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+[data-theme='dark'] .industries-title-v5 .italic-text {
+  color: white;
+}
+
+.industry-pill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.industry-pill-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 40px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .industry-pill-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.pill-number-badge {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 32px;
+  height: 32px;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+}
+
+.pill-content {
+  text-align: center;
+}
+
+.pill-content h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+.pill-sub {
+  display: block;
+  font-size: 1.4rem;
+  color: #ff6b6b;
+  margin-top: 5px;
+}
+
+[data-theme='dark'] .pill-content h3 { color: white; }
+
+.industry-pill-card:hover {
+  transform: translateY(-5px);
+  border-color: #ff6b6b;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+  .industry-pill-grid { grid-template-columns: 1fr; }
+  .industries-title-v5 { font-size: 3rem; }
+  .industry-pill-card { padding: 30px 20px; min-height: 100px; }
+}
+
 .faq-answer {
   max-height: 0;
   overflow: hidden;

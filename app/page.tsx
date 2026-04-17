@@ -37,7 +37,8 @@ import {
   Smartphone,
   Paintbrush,
   Brain,
-  ShoppingCart
+  ShoppingCart,
+  Layers
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -119,18 +120,16 @@ const faqItems: FAQItem[] = [
 ];
 
 const industries = [
-  { name: "Healthcare & Medical", icon: <Stethoscope size={24} />, desc: "AI-driven diagnostics, HIPAA-compliant patient portals, and precision medical analytics.", image: "/assets/industry_healthcare_visual_1776415815696.png" },
-  { name: "E-commerce & Retail", icon: <ShoppingBag size={24} />, desc: "High-conversion storefronts, intelligent bento-grids, and integrated global payment gateways.", image: "/assets/industry_ecommerce_visual_1776415874745.png" },
-  { name: "Education & LMS", icon: <GraduationCap size={24} />, desc: "Digital learning ecosystems, LMS platforms, and interactive classroom technology.", image: "/assets/about_business_growth_visual_1776415616126.png" },
-  { name: "Logistics & Supply", icon: <Truck size={24} />, desc: "Real-time fleet tracking, AI route optimization, and automated warehouse management.", image: "/assets/service_webdev_stock_1776416031626.png" },
-  { name: "Real Estate & PropTech", icon: <HomeIcon size={24} />, desc: "Virtual property tours, BIM visualization, and secure transaction management.", image: "/assets/industry_hospitality_visual_1776415839091.png" },
-  { name: "Automotive & Mobility", icon: <Car size={24} />, desc: "Smart car interfaces, manufacturing automation, and fleet diagnostic systems.", image: "/assets/services_cinematic_bg_1776415793060.png" },
-  { name: "Manufacturing & IIoT", icon: <Factory size={24} />, desc: "Industry 4.0 solutions, IoT sensor networks, and predictive maintenance algorithms.", image: "/assets/about_business_v2_stock_1776416113626.png" },
-  { name: "Jewellery & Luxury", icon: <Gem size={24} />, desc: "Inventory management for high-value assets with 3D visualization and secure CRM.", image: "/assets/service_branding_stock_1776416084682.png" },
-  { name: "General Stores & POS", icon: <Store size={24} />, desc: "Next-gen POS systems with real-time stock sync and automated customer loyalty loops.", image: "/assets/service_marketing_stock_1776416007039.png" },
-  { name: "Fintech & Banking", icon: <Banknote size={24} />, desc: "Secure digital wallets, blockchain integration, and AI-powered fraud detection.", image: "/assets/service_social_stock_1776416055715.png" },
-  { name: "Hospitality & Tourism", icon: <Hotel size={24} />, desc: "Booking engines, guest service automation, and smart amenity management.", image: "/assets/hospitality_no_human_stock_1776416321098.png" },
-  { name: "LegalTech & Compliance", icon: <Gavel size={24} />, desc: "Document & case management, secure digital signatures, and automated audit trails.", image: "/assets/about_business_v2_stock_1776416113626.png" }
+  { name: "E-commerce & Retail", icon: <ShoppingCart size={22} />, desc: "High-conversion growth engines with intelligent inventory and global payment maturity.", image: "/assets/industry_ecommerce_visual_1776415874745.png" },
+  { name: "Fintech & Banking", icon: <Banknote size={22} />, desc: "Secure transaction ecosystems, blockchain protocols, and AI fraud prevention systems.", image: "/assets/service_social_stock_1776416055715.png" },
+  { name: "Healthcare & MedTech", icon: <Stethoscope size={22} />, desc: "HIPAA-compliant platforms, diagnostic AI, and data-driven patient experience nodes.", image: "/assets/industry_healthcare_visual_1776415815696.png" },
+  { name: "Enterprise SaaS", icon: <Layers size={22} />, desc: "High-velocity product architectures designed for unlimited scale and global multi-tenancy.", image: "/assets/about_business_v2_stock_1776416113626.png" },
+  { name: "EdTech & Learning", icon: <GraduationCap size={22} />, desc: "Interactive digital classrooms and high-engagement LMS ecosystems for the modern age.", image: "/assets/about_business_growth_visual_1776415616126.png" },
+  { name: "Travel & Hospitality", icon: <Hotel size={22} />, desc: "Comprehensive booking logic, guest automation, and immersive tourism experiences.", image: "/assets/hospitality_no_human_stock_1776416321098.png" },
+  { name: "Real Estate & PropTech", icon: <HomeIcon size={22} />, desc: "Marketplace intelligence, virtual tours, and secure property transaction engines.", image: "/assets/industry_hospitality_visual_1776415839091.png" },
+  { name: "Logistics & Supply", icon: <Truck size={22} />, desc: "Real-time visibility, route optimization logic, and intelligence-driven supply chains.", image: "/assets/service_webdev_stock_1776416031626.png" },
+  { name: "Media & Entertainment", icon: <Zap size={22} />, desc: "Immersive streaming pipelines, digital asset management, and viral content tech.", image: "/assets/services_cinematic_bg_1776415793060.png" },
+  { name: "Impact & Nonprofits", icon: <Handshake size={22} />, desc: "High-transparency donation engines and community-centric global impact platforms.", image: "/assets/about_no_human_stock_1776416238612.png" }
 ];
 
 const fadeUp = {
@@ -390,51 +389,29 @@ export default function HomePage(): React.JSX.Element {
 
       <TechStack />
 
-      {/* ===== INDUSTRIES WE TRANSFORM ===== */}
-      <section className="industries-section" id="industries">
+      <section className="industries-section-v5" id="industries">
         <div className="container">
           <SectionReveal>
-            <div className="section-header">
-              <span className="section-label">Industry Expertise</span>
-              <h2 className="section-title">
-                Industries We <span className="gradient-text">Transform</span>
+            <div className="section-header-centered">
+              <h2 className="industries-title-v5">
+                Industries <span className="italic-text">We Serve</span>
               </h2>
-              <p className="section-subtitle">
-                Deploying deep technical expertise across diverse global sectors to drive 
-                innovation and operational excellence.
-              </p>
             </div>
           </SectionReveal>
 
-          <div className="industry-grid">
+          <div className="industry-pill-grid">
             {industries.map((ind, i) => (
               <motion.div
                 key={i}
-                className="industry-card"
+                className="industry-pill-card"
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
               >
-                <div className="industry-bg">
-                  <Image 
-                    src={ind.image} 
-                    alt={ind.name} 
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
-                    className="object-cover"
-                  />
-                  <div className="industry-bg-overlay" />
+                <div className="pill-number-badge">{i + 1}</div>
+                <div className="pill-content">
+                  <h3>{ind.name.split(' & ')[0]}</h3>
+                  {ind.name.includes(' & ') && <span className="pill-sub">& {ind.name.split(' & ')[1]}</span>}
                 </div>
-                <div className="industry-card-content relative z-1">
-                  <div className="industry-icon-wrapper">
-                    {ind.icon}
-                  </div>
-                  <h3>{ind.name}</h3>
-                  <p>{ind.desc}</p>
-                  <Link href="/services" className="industry-btn">
-                    Explore Solutions →
-                  </Link>
-                </div>
-                <div className="industry-glow" />
               </motion.div>
             ))}
           </div>
