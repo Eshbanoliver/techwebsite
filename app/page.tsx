@@ -58,25 +58,25 @@ interface ServiceItem {
 }
 
 const services: ServiceItem[] = [
-  { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Local SEO, lead generation & content marketing strategies for Udaipur businesses.', slug: 'digital-marketing', glow: 'glow-orange', bg: '/services/digital-marketing.png' },
-  { icon: <Share2 size={24} />, title: 'Social Media Marketing', desc: 'Instagram, Reels & influencer collaborations for cafes, hotels & lifestyle brands.', slug: 'social-media-marketing', glow: 'glow-pink', bg: '/services/social-media.png' },
-  { icon: <Megaphone size={24} />, title: 'Paid Ads', desc: 'Google, Meta & YouTube ad campaigns that drive instant visibility and ROI.', slug: 'paid-ads', glow: 'glow-purple', bg: '/services/paid-ads.png' },
-  { icon: <Globe size={24} />, title: 'Web Development', desc: 'Business websites, e-commerce & custom solutions built for performance.', slug: 'web-development', glow: 'glow-orange', bg: '/services/web-development.png' },
-  { icon: <Smartphone size={24} />, title: 'App & Web App Dev', desc: 'Mobile apps, PWAs & startup MVPs built for Udaipur entrepreneurs.', slug: 'app-development', glow: 'glow-green', bg: '/services/app-development.png' },
-  { icon: <Paintbrush size={24} />, title: 'Graphic Design & Branding', desc: 'Logos, social media design & complete brand identity for local brands.', slug: 'graphic-design', glow: 'glow-pink', bg: '/services/graphic-design.png' },
-  { icon: <Brain size={24} />, title: 'AI Solutions', desc: 'Practical AI chatbots, automation & data insights for Udaipur businesses.', slug: 'ai-solutions', glow: 'glow-orange', bg: '/services/ai-solutions.png' },
-  { icon: <ShoppingCart size={24} />, title: 'E-Commerce Management', desc: 'Amazon, Flipkart & marketplace management from setup to growth.', slug: 'ecommerce-management', glow: 'glow-orange', bg: '/services/ecommerce.png' },
+  { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Expert SEO, lead generation, and content strategies to rank your business higher.', slug: 'digital-marketing', glow: 'glow-orange', bg: '/assets/marketing_no_human_stock_1776416291000.png' },
+  { icon: <Share2 size={24} />, title: 'Social Media Marketing', desc: 'Creative social media management to engage customers and build brand loyalty.', slug: 'social-media-marketing', glow: 'glow-pink', bg: '/assets/social_no_human_stock_1776416264473.png' },
+  { icon: <Megaphone size={24} />, title: 'Paid Ads', desc: 'Results-driven Google and Meta ad campaigns that maximize your marketing ROI.', slug: 'paid-ads', glow: 'glow-purple', bg: '/assets/services_cinematic_bg_1776415793060.png' },
+  { icon: <Globe size={24} />, title: 'Web Development', desc: 'Dynamic websites and e-commerce platforms built for speed and conversions.', slug: 'web-development', glow: 'glow-orange', bg: '/assets/service_webdev_stock_1776416031626.png' },
+  { icon: <Smartphone size={24} />, title: 'App Development', desc: 'Native-feel mobile apps and PWAs designed for exceptional user experience.', slug: 'app-development', glow: 'glow-green', bg: '/assets/service_webdev_stock_1776416031626.png' },
+  { icon: <Paintbrush size={24} />, title: 'Branding & Design', desc: 'High-end visual identity and logo design to make your brand stand out.', slug: 'graphic-design', glow: 'glow-pink', bg: '/assets/service_branding_stock_1776416084682.png' },
+  { icon: <Brain size={24} />, title: 'AI Solutions', desc: 'Smart AI chatbots and automation to streamline your business operations.', slug: 'ai-solutions', glow: 'glow-orange', bg: '/assets/about_business_v2_stock_1776416113626.png' },
+  { icon: <ShoppingCart size={24} />, title: 'Marketplace Management', desc: 'Expert Amazon and Flipkart management to grow your national sales.', slug: 'ecommerce-management', glow: 'glow-orange', bg: '/assets/industry_ecommerce_visual_1776415874745.png' },
 ];
 
 const whyUs = [
-  { title: 'Global Infrastructure', desc: 'Planetary-scale cloud architectures engineered for zero-latency operations.', className: 'bg-why-1' },
-  { title: 'Elite Talent Pool', desc: 'World-class engineers and architects with core contributions to top frameworks.', className: 'bg-why-2' },
-  { title: '24/7 Priority Support', desc: 'Instant access to senior technical leads regardless of your timezone.', className: 'bg-why-3' },
-  { title: 'Competitive ROI', desc: 'High-performance engineering that delivers measurable business value and growth.', className: 'bg-why-4' },
-  { title: 'Scalable Solutions', desc: 'Modular software that grows seamlessly from startup to global enterprise.', className: 'bg-why-5' },
-  { title: 'Zero-Downtime Policy', desc: 'Mission-critical reliability keeping your services online at all times.', className: 'bg-why-6' },
-  { title: 'Security First', desc: 'Military-grade encryption and proactive vulnerability scanning by default.', className: 'bg-why-7' },
-  { title: 'Rapid Deployment', desc: 'Automated CI/CD pipelines that move your ideas to production in hours.', className: 'bg-why-8' },
+  { title: 'Strategic Growth', desc: 'We engineer data-driven marketing strategies that scale local brands globally.', className: 'bg-why-1' },
+  { title: 'Quality Engineering', desc: 'Clean, secure, and high-performance code built by experienced technicians.', className: 'bg-why-2' },
+  { title: 'Udaipur Experts', desc: 'We have a deep understanding of Udaipur’s market and audience preferences.', className: 'bg-why-3' },
+  { title: 'Dedicated Support', desc: 'Round-the-clock technical assistance from experts who care about your results.', className: 'bg-why-4' },
+  { title: 'Enterprise Scalability', desc: 'Solutions designed to grow seamlessly as your customer base expands nationwide.', className: 'bg-why-5' },
+  { title: 'Measurable ROI', desc: 'Every marketing rupee is optimized to ensure maximum profit for your business.', className: 'bg-why-6' },
+  { title: 'Bulletproof Security', desc: 'Industry-standard encryption and security protocols protecting your data.', className: 'bg-why-7' },
+  { title: 'Rapid Launch', desc: 'Move from idea to live deployment in record time without cutting corners.', className: 'bg-why-8' },
 ];
 
 interface FAQItem {
@@ -119,18 +119,18 @@ const faqItems: FAQItem[] = [
 ];
 
 const industries = [
-  { name: "Healthcare & Medical", icon: <Stethoscope size={24} />, desc: "AI-driven diagnostics, HIPAA-compliant patient portals, and precision medical analytics.", image: "/industries/healthcare.png" },
-  { name: "E-commerce & Retail", icon: <ShoppingBag size={24} />, desc: "High-conversion storefronts, intelligent bento-grids, and integrated global payment gateways.", image: "/industries/ecommerce.png" },
-  { name: "Education & LMS", icon: <GraduationCap size={24} />, desc: "Digital learning ecosystems, LMS platforms, and interactive classroom technology.", image: "/industries/education.png" },
-  { name: "Logistics & Supply", icon: <Truck size={24} />, desc: "Real-time fleet tracking, AI route optimization, and automated warehouse management.", image: "/industries/logistics.png" },
-  { name: "Real Estate & PropTech", icon: <HomeIcon size={24} />, desc: "Virtual property tours, BIM visualization, and secure transaction management.", image: "/industries/realestate.png" },
-  { name: "Automotive & Mobility", icon: <Car size={24} />, desc: "Smart car interfaces, manufacturing automation, and fleet diagnostic systems.", image: "/industries/automotive.png" },
-  { name: "Manufacturing & IIoT", icon: <Factory size={24} />, desc: "Industry 4.0 solutions, IoT sensor networks, and predictive maintenance algorithms.", image: "/industries/manufacturing.png" },
-  { name: "Jewellery & Luxury", icon: <Gem size={24} />, desc: "Inventory management for high-value assets with 3D visualization and secure CRM.", image: "/industries/jewellery.png" },
-  { name: "General Stores & POS", icon: <Store size={24} />, desc: "Next-gen POS systems with real-time stock sync and automated customer loyalty loops.", image: "/industries/generalstores.png" },
-  { name: "Fintech & Banking", icon: <Banknote size={24} />, desc: "Secure digital wallets, blockchain integration, and AI-powered fraud detection.", image: "/industries/fintech.png" },
-  { name: "Hospitality & Tourism", icon: <Hotel size={24} />, desc: "Booking engines, guest service automation, and smart amenity management.", image: "/industries/hospitality.png" },
-  { name: "LegalTech & Compliance", icon: <Gavel size={24} />, desc: "Document & case management, secure digital signatures, and automated audit trails.", image: "/industries/legal.png" }
+  { name: "Healthcare & Medical", icon: <Stethoscope size={24} />, desc: "AI-driven diagnostics, HIPAA-compliant patient portals, and precision medical analytics.", image: "/assets/industry_healthcare_visual_1776415815696.png" },
+  { name: "E-commerce & Retail", icon: <ShoppingBag size={24} />, desc: "High-conversion storefronts, intelligent bento-grids, and integrated global payment gateways.", image: "/assets/industry_ecommerce_visual_1776415874745.png" },
+  { name: "Education & LMS", icon: <GraduationCap size={24} />, desc: "Digital learning ecosystems, LMS platforms, and interactive classroom technology.", image: "/assets/about_business_growth_visual_1776415616126.png" },
+  { name: "Logistics & Supply", icon: <Truck size={24} />, desc: "Real-time fleet tracking, AI route optimization, and automated warehouse management.", image: "/assets/service_webdev_stock_1776416031626.png" },
+  { name: "Real Estate & PropTech", icon: <HomeIcon size={24} />, desc: "Virtual property tours, BIM visualization, and secure transaction management.", image: "/assets/industry_hospitality_visual_1776415839091.png" },
+  { name: "Automotive & Mobility", icon: <Car size={24} />, desc: "Smart car interfaces, manufacturing automation, and fleet diagnostic systems.", image: "/assets/services_cinematic_bg_1776415793060.png" },
+  { name: "Manufacturing & IIoT", icon: <Factory size={24} />, desc: "Industry 4.0 solutions, IoT sensor networks, and predictive maintenance algorithms.", image: "/assets/about_business_v2_stock_1776416113626.png" },
+  { name: "Jewellery & Luxury", icon: <Gem size={24} />, desc: "Inventory management for high-value assets with 3D visualization and secure CRM.", image: "/assets/service_branding_stock_1776416084682.png" },
+  { name: "General Stores & POS", icon: <Store size={24} />, desc: "Next-gen POS systems with real-time stock sync and automated customer loyalty loops.", image: "/assets/service_marketing_stock_1776416007039.png" },
+  { name: "Fintech & Banking", icon: <Banknote size={24} />, desc: "Secure digital wallets, blockchain integration, and AI-powered fraud detection.", image: "/assets/service_social_stock_1776416055715.png" },
+  { name: "Hospitality & Tourism", icon: <Hotel size={24} />, desc: "Booking engines, guest service automation, and smart amenity management.", image: "/assets/hospitality_no_human_stock_1776416321098.png" },
+  { name: "LegalTech & Compliance", icon: <Gavel size={24} />, desc: "Document & case management, secure digital signatures, and automated audit trails.", image: "/assets/about_business_v2_stock_1776416113626.png" }
 ];
 
 const fadeUp = {
@@ -193,43 +193,43 @@ export default function HomePage(): React.JSX.Element {
           <SectionReveal>
             <div className="about-grid">
               <div className="about-text-content">
-                <span className="section-label">About Infinex</span>
-                <h2 className="section-title" style={{ textAlign: 'left' }}>
-                  Innovating the <span className="gradient-text">Next Generation</span> of Digital Experiences
+                <span className="section-label">Your Growth Partner</span>
+                <h2 className="section-title" style={{ textAlign: 'left', maxWidth: '600px' }}>
+                  Accelerating Your <span className="gradient-text">Business Success</span> in the Digital Era
                 </h2>
                 <p className="about-description">
-                  Based in the historic city of Udaipur, Rajasthan, MS Infinex Tech is more than just a 
-                  technology firm. We are architects of digital transformation, dedicated to pushing 
-                  the boundaries of what&apos;s possible through advanced engineering and creative design.
+                  At MS Infinex Tech, we combine data-driven marketing with enterprise-grade engineering 
+                   to deliver measurable ROI. We don&apos;t just build software; we build the future 
+                  of Udaipur&apos;s digital economy through sustainable quality and innovative design.
                 </p>
                 <div className="about-features">
                   <div className="about-feature">
                     <div className="feature-dot" />
-                    <span>State-of-the-art AI Integration</span>
+                    <span>ROI-Focused Marketing Strategies</span>
                   </div>
                   <div className="about-feature">
                     <div className="feature-dot" />
-                    <span>Enterprise-Grade Scalability</span>
+                    <span>High-Performance Custom Development</span>
                   </div>
                   <div className="about-feature">
                     <div className="feature-dot" />
-                    <span>User-Centric Visual Design</span>
+                    <span>Smart AI Business Automation</span>
                   </div>
                 </div>
                 <div className="about-cta-group" style={{ marginTop: '40px' }}>
-                  <Link href="/about" className="btn btn-primary">
-                    Learn Our Story →
+                  <Link href="/services" className="btn btn-primary btn-apple">
+                    Our Solutions
                   </Link>
-                  <Link href="/contact" className="btn btn-secondary">
-                    Work With Us
+                  <Link href="/about" className="btn btn-secondary btn-apple">
+                    Learn about us
                   </Link>
                 </div>
               </div>
               <div className="about-visual">
                 <div className="visual-container glass-card">
                   <motion.img 
-                    src="/about_innovation.png" 
-                    alt="Innovation Visual"
+                    src="/assets/about_no_human_stock_1776416238612.png" 
+                    alt="Business Growth Visualization"
                     initial={{ scale: 1.1, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
@@ -245,13 +245,13 @@ export default function HomePage(): React.JSX.Element {
       {/* ===== SERVICES ===== */}
       <section className="section services-section" id="services">
         <div className="services-section-bg">
-          <Image 
-            src="/services_bg.png" 
-            alt="Services Background" 
-            fill
-            className="object-cover opacity-20"
-            sizes="100vw"
-          />
+    <Image 
+      src="/assets/services_cinematic_bg_1776415793060.png" 
+      alt="Services Background" 
+      fill
+      className="object-cover opacity-30"
+      sizes="100vw"
+    />
           <div className="bg-overlay" />
         </div>
         <div className="container relative z-1">
@@ -474,40 +474,24 @@ export default function HomePage(): React.JSX.Element {
               <div className="cta-tech-corner corner-bl" />
               <div className="cta-tech-corner corner-br" />
 
-              {/* Technical Data Decals */}
-              <div className="cta-tech-status-bars">
-                <div className="status-row">
-                  <span>Core Logic</span>
-                  <div className="status-bar-bg"><div className="status-bar-fill" style={{ animationDelay: '0s' }} /></div>
-                </div>
-                <div className="status-row">
-                  <span>Neural Net</span>
-                  <div className="status-bar-bg"><div className="status-bar-fill" style={{ animationDelay: '-1.5s' }} /></div>
-                </div>
-                <div className="status-row">
-                  <span>Sync Status</span>
-                  <div className="status-row-text" style={{ color: '#00ff00' }}>[ ACTIVE ]</div>
-                </div>
-              </div>
 
-              <div className="cta-tech-coordinates">
-                SEC_ID: MS_INF_2026 // LOC: UDAIPUR_IN // 24.5854° N, 73.7125° E
-              </div>
+
+
 
               <div className="cta-tech-content">
                 <h2 className="cta-tech-title">
-                  Let&apos;s Build Something <span className="gradient-text">Amazing</span> Together
+                  Ready to Grow Your <span className="gradient-text">Business?</span>
                 </h2>
                 <p className="cta-tech-subtitle">
-                  Ready to transform your ideas into reality? Our elite technical team is 
-                  standing by to engineer your next digital breakthrough.
+                  We are ready to transform your ideas into reality. Our team is 
+                  standing by to engineer your next big milestone.
                 </p>
                 <div className="cta-tech-buttons">
-                  <Link href="/contact" className="btn btn-tech" id="cta-contact">
-                    Initialize Project →
+                  <Link href="/contact" className="btn btn-primary btn-apple">
+                    Work With Us
                   </Link>
-                  <Link href="/contact" className="btn btn-tech btn-tech-secondary" id="cta-quote">
-                    Technical Brief
+                  <Link href="/contact" className="btn btn-secondary btn-apple">
+                    Get a Free Quote
                   </Link>
                 </div>
               </div>
