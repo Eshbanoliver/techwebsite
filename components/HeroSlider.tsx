@@ -280,10 +280,10 @@ export default function HeroSlider(): React.JSX.Element {
           opacity: 1;
         }
         [data-theme='light'] .hero-badge {
-          background: rgba(0, 198, 255, 0.12);
-          border-color: rgba(0, 198, 255, 0.3);
-          color: #0369a1;
-          box-shadow: 0 2px 10px rgba(0, 198, 255, 0.1);
+          background: rgba(255, 138, 0, 0.12);
+          border-color: rgba(255, 138, 0, 0.3);
+          color: #ff5c00;
+          box-shadow: 0 2px 10px rgba(255, 138, 0, 0.1);
         }
         @media (max-width: 768px) {
           .hero-content {

@@ -235,8 +235,8 @@ export default function TechStack() {
           text-transform: uppercase;
           letter-spacing: 2px;
           padding: 8px 16px;
-          background: rgba(0, 198, 255, 0.1);
-          color: #00c6ff;
+          background: rgba(255, 138, 0, 0.1);
+          color: #ff8a00;
           border-radius: 6px;
           margin-bottom: 24px;
         }
@@ -248,7 +248,7 @@ export default function TechStack() {
           letter-spacing: -1px;
         }
         .blue-gradient {
-          background: linear-gradient(to right, #00c6ff, #0072ff);
+          background: linear-gradient(to right, #ff8a00, #ff5c00);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -282,7 +282,7 @@ export default function TechStack() {
           position: absolute;
           left: 0;
           top: 0;
-          background: linear-gradient(to right, rgba(0, 198, 255, 0.1), transparent);
+          background: linear-gradient(to right, rgba(255, 138, 0, 0.1), transparent);
           transition: width 0.4s ease;
           z-index: 0;
         }
@@ -332,14 +332,14 @@ export default function TechStack() {
           transform: translateX(5px);
         }
         .tech-tab-item.active {
-          color: #00c6ff;
-          border-color: rgba(0, 198, 255, 0.3);
-          background: rgba(0, 198, 255, 0.05);
+          color: #ff8a00;
+          border-color: rgba(255, 138, 0, 0.3);
+          background: rgba(255, 138, 0, 0.05);
         }
         .tech-tab-item.active .tab-icon-frame {
-          background: #00c6ff;
+          background: #ff8a00;
           color: white;
-          box-shadow: 0 0 20px rgba(0, 198, 255, 0.4);
+          box-shadow: 0 0 20px rgba(255, 138, 0, 0.4);
           border-color: transparent;
         }
         .tech-tab-item.active .tab-indicator {

@@ -61,10 +61,10 @@ const services: ServiceItem[] = [
   { icon: <TrendingUp size={24} />, title: 'Digital Marketing', desc: 'Local SEO, lead generation & content marketing strategies for Udaipur businesses.', slug: 'digital-marketing', glow: 'glow-orange', bg: '/services/digital-marketing.png' },
   { icon: <Share2 size={24} />, title: 'Social Media Marketing', desc: 'Instagram, Reels & influencer collaborations for cafes, hotels & lifestyle brands.', slug: 'social-media-marketing', glow: 'glow-pink', bg: '/services/social-media.png' },
   { icon: <Megaphone size={24} />, title: 'Paid Ads', desc: 'Google, Meta & YouTube ad campaigns that drive instant visibility and ROI.', slug: 'paid-ads', glow: 'glow-purple', bg: '/services/paid-ads.png' },
-  { icon: <Globe size={24} />, title: 'Web Development', desc: 'Business websites, e-commerce & custom solutions built for performance.', slug: 'web-development', glow: 'glow-blue', bg: '/services/web-development.png' },
+  { icon: <Globe size={24} />, title: 'Web Development', desc: 'Business websites, e-commerce & custom solutions built for performance.', slug: 'web-development', glow: 'glow-orange', bg: '/services/web-development.png' },
   { icon: <Smartphone size={24} />, title: 'App & Web App Dev', desc: 'Mobile apps, PWAs & startup MVPs built for Udaipur entrepreneurs.', slug: 'app-development', glow: 'glow-green', bg: '/services/app-development.png' },
   { icon: <Paintbrush size={24} />, title: 'Graphic Design & Branding', desc: 'Logos, social media design & complete brand identity for local brands.', slug: 'graphic-design', glow: 'glow-pink', bg: '/services/graphic-design.png' },
-  { icon: <Brain size={24} />, title: 'AI Solutions', desc: 'Practical AI chatbots, automation & data insights for Udaipur businesses.', slug: 'ai-solutions', glow: 'glow-cyan', bg: '/services/ai-solutions.png' },
+  { icon: <Brain size={24} />, title: 'AI Solutions', desc: 'Practical AI chatbots, automation & data insights for Udaipur businesses.', slug: 'ai-solutions', glow: 'glow-orange', bg: '/services/ai-solutions.png' },
   { icon: <ShoppingCart size={24} />, title: 'E-Commerce Management', desc: 'Amazon, Flipkart & marketplace management from setup to growth.', slug: 'ecommerce-management', glow: 'glow-orange', bg: '/services/ecommerce.png' },
 ];
 
@@ -147,8 +147,8 @@ export default function HomePage(): React.JSX.Element {
         <ParticleBackground />
         
         {/* Cinematic Glows */}
-        <div className="hero-glow-v3" style={{ top: '-10%', right: '0%', '--glow-rgb': '0, 198, 255' } as any} />
-        <div className="hero-glow-v3" style={{ bottom: '10%', left: '0%', '--glow-rgb': '168, 85, 247' } as any} />
+        <div className="hero-glow-v3" style={{ top: '-10%', right: '0%', '--glow-rgb': '255, 138, 0' } as any} />
+        <div className="hero-glow-v3" style={{ bottom: '10%', left: '0%', '--glow-rgb': '255, 92, 0' } as any} />
 
         <div className="container relative z-10">
           <div className="hero-v3-inner">
@@ -393,8 +393,8 @@ export default function HomePage(): React.JSX.Element {
             </div>
           </SectionReveal>
           <div className="metrics-grid">
-            <AnimatedCounter end={150} suffix="+" label="Projects Completed" icon={<Rocket size={28} />} className="glow-cyan" />
-            <AnimatedCounter end={80} suffix="+" label="Clients Served" icon={<Users size={28} />} className="glow-blue" />
+            <AnimatedCounter end={150} suffix="+" label="Projects Completed" icon={<Rocket size={28} />} className="glow-orange" />
+            <AnimatedCounter end={80} suffix="+" label="Clients Served" icon={<Users size={28} />} className="glow-orange" />
             <AnimatedCounter end={5} suffix="+" label="Years Experience" icon={<Calendar size={28} />} className="glow-purple" />
             <AnimatedCounter end={30} suffix="+" label="Technologies Used" icon={<Cpu size={28} />} className="glow-pink" />
           </div>

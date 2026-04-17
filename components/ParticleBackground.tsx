@@ -71,10 +71,10 @@ export default function ParticleBackground(): React.JSX.Element {
           this.speedY = (Math.random() - 0.5) * 0.4;
           
           if (isLight) {
-            this.color = Math.random() > 0.5 ? '14, 165, 233' : '139, 92, 246';
+            this.color = Math.random() > 0.5 ? '255, 138, 0' : '255, 92, 0';
             this.opacity = Math.random() * 0.3 + 0.1;
           } else {
-            this.color = Math.random() > 0.5 ? '0, 198, 255' : '127, 0, 255';
+            this.color = Math.random() > 0.5 ? '255, 138, 0' : '255, 61, 0';
             this.opacity = Math.random() * 0.5 + 0.1;
           }
         },
@@ -109,7 +109,7 @@ export default function ParticleBackground(): React.JSX.Element {
     }
 
     const drawConnections = (): void => {
-      const connectionColor = isLight ? '14, 165, 233' : '0, 198, 255';
+      const connectionColor = isLight ? '255, 138, 0' : '255, 138, 0';
       const maxOpacity = isLight ? 0.08 : 0.15;
       
       for (let i = 0; i < particles.length; i++) {

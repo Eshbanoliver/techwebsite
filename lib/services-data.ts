@@ -459,8 +459,8 @@ const webDevelopment: ServiceData = {
   tagline: 'Build Your Digital Foundation in Udaipur',
   description: 'Professional web development services for Udaipur businesses — from stunning business websites to powerful e-commerce platforms and custom solutions.',
   icon: 'Globe',
-  color: '#3b82f6',
-  gradient: 'linear-gradient(135deg, #3b82f6, #2563eb)',
+  color: '#ff8a00',
+  gradient: 'linear-gradient(135deg, #ff8a00, #ff5c00)',
   image: '/services/web-development.png',
   subpages: [
     {
@@ -874,8 +874,8 @@ const aiSolutions: ServiceData = {
   tagline: 'Smart AI Tools for Udaipur Entrepreneurs',
   description: 'Practical, affordable AI solutions designed for Udaipur\'s local businesses — chatbots, automation, marketing AI, and data insights that drive real results.',
   icon: 'Brain',
-  color: '#06b6d4',
-  gradient: 'linear-gradient(135deg, #06b6d4, #0891b2)',
+  color: '#ffbf00',
+  gradient: 'linear-gradient(135deg, #ffbf00, #ff8a00)',
   image: '/services/ai-solutions.png',
   subpages: [
     {
