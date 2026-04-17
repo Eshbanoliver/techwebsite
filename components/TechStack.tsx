@@ -88,95 +88,88 @@ export default function TechStack() {
   return (
     <section className="corporate-tech-section" id="tech-stack">
       <div className="container">
-        <div className="tech-layout">
-          {/* Left Content Column */}
-          <div className="tech-content">
-            <span className="tech-badge">Our Technology Matrix</span>
-            <h2 className="tech-title">High-Performance <span className="blue-gradient">Technical Studio</span> Capacity</h2>
-            <p className="tech-desc">
-              We deploy an enterprise-grade stack and precision marketing tools designed for 
-              unlimited scale, military-level security, and measurable business growth. Our methodology 
-              prioritizes long-term ROI over fleeting industry trends.
-            </p>
+        {/* Top Label & Header */}
+        <div className="tech-header-centered">
+          <span className="tech-badge">Our Technology Matrix</span>
+          <h2 className="tech-title">High-Performance <span className="blue-gradient">Technical Studio</span> Capacity</h2>
+          <p className="tech-desc">
+            We deploy an enterprise-grade stack and precision marketing tools designed for 
+            unlimited scale, military-level security, and measurable business growth. Our methodology 
+            prioritizes long-term ROI over fleeting industry trends.
+          </p>
 
-            <div className="tech-tabs-list">
-              {tabs.map((tab) => (
-                <button
-                  key={tab}
-                  className={`tech-tab-item ${activeTab === tab ? 'active' : ''}`}
-                  onClick={() => handleTabChange(tab)}
-                >
-                  <div className="tab-indicator" />
-                  <div className="tab-icon-frame">
-                    {categoryIcons[tab]}
-                  </div>
-                  <div className="tab-text-content">
-                    <span className="tab-name">{tab}</span>
-                    <span className="tab-label-sm">{categoryLabels[tab]}</span>
-                  </div>
-                  <ArrowRight size={14} className="tab-arrow" />
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Cards Column */}
-          <div className="tech-display">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="tech-matrix-grid"
+          <div className="tech-tabs-horizontal">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                className={`tech-tab-horizontal-item ${activeTab === tab ? 'active' : ''}`}
+                onClick={() => handleTabChange(tab)}
               >
-                {techData[activeTab].map((tech) => (
-                  <div key={tech.name} className="tech-matrix-card" style={{ '--color': tech.color } as any}>
-                    <div className="card-top">
-                      <div className="tech-icon-circle-v3">
-                        <Image 
-                          src={`https://skillicons.dev/icons?i=${tech.slug}`} 
-                          alt={tech.name}
-                          width={32}
-                          height={32}
-                          className="original-brand-icon-v2"
-                          unoptimized={true}
-                        />
-                      </div>
-                      <div className="card-right-info">
-                        <span className="info-label">Architecture</span>
-                        <div className="status-container">
-                          <CheckCircle2 size={10} color="#4ade80" />
-                          <span className="info-value">Stable</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="card-body">
-                      <div className="tech-main-detail">
-                        <div className="title-row">
-                          <h3 className="tech-matrix-name">{tech.name}</h3>
-                          <Zap size={14} className="pulse-icon" style={{ color: tech.color }} />
-                        </div>
-                        <div className="tech-tags">
-                          <span className="tag">Official SDK</span>
-                          <span className="tag">Production Level</span>
-                        </div>
-                      </div>
-                      <div className="tech-stats-side">
-                        <div className="stat-item">
-                          <span className="stat-bar"><span className="bar-fill" /></span>
-                          <span className="stat-txt">98.4% Reliability</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+                <div className="tab-icon-frame-sm">
+                  {categoryIcons[tab]}
+                </div>
+                <span className="tab-name-horizontal">{tab}</span>
+              </button>
+            ))}
           </div>
         </div>
+
+        <div className="tech-display-full">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="tech-matrix-grid"
+            >
+              {techData[activeTab].map((tech) => (
+                <div key={tech.name} className="tech-matrix-card" style={{ '--color': tech.color } as any}>
+                  <div className="card-top">
+                    <div className="tech-icon-circle-v3">
+                      <Image 
+                        src={`https://skillicons.dev/icons?i=${tech.slug}`} 
+                        alt={tech.name}
+                        width={32}
+                        height={32}
+                        className="original-brand-icon-v2"
+                        unoptimized={true}
+                      />
+                    </div>
+                    <div className="card-right-info">
+                      <span className="info-label">Architecture</span>
+                      <div className="status-container">
+                        <CheckCircle2 size={10} color="#4ade80" />
+                        <span className="info-value">Stable</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-body">
+                    <div className="tech-main-detail">
+                      <div className="title-row">
+                        <h3 className="tech-matrix-name">{tech.name}</h3>
+                        <Zap size={14} className="pulse-icon" style={{ color: tech.color }} />
+                      </div>
+                      <div className="tech-tags">
+                        <span className="tag">Official SDK</span>
+                        <span className="tag">Production Level</span>
+                      </div>
+                    </div>
+                    <div className="tech-stats-side">
+                      <div className="stat-item">
+                        <span className="stat-bar"><span className="bar-fill" /></span>
+                        <span className="stat-txt">98.4% Reliability</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
+
 
       <style jsx>{`
         .corporate-tech-section {
@@ -192,10 +185,10 @@ export default function TechStack() {
           gap: 100px;
           align-items: start;
         }
-        .tech-content {
-          position: sticky;
-          top: 140px;
-          height: fit-content;
+        .tech-header-centered {
+          text-align: center;
+          max-width: 900px;
+          margin: 0 auto 60px;
         }
         .tech-badge {
           display: inline-block;
@@ -210,11 +203,11 @@ export default function TechStack() {
           margin-bottom: 24px;
         }
         .tech-title {
-          font-size: 3.5rem;
+          font-size: 4rem;
           font-weight: 850;
           line-height: 1.1;
           margin-bottom: 20px;
-          letter-spacing: -1px;
+          letter-spacing: -1.5px;
         }
         .blue-gradient {
           background: linear-gradient(to right, #ff8a00, #ff5c00);
@@ -222,101 +215,54 @@ export default function TechStack() {
           -webkit-text-fill-color: transparent;
         }
         .tech-desc {
-          font-size: 1.1rem;
+          font-size: 1.15rem;
           line-height: 1.7;
           color: rgba(255,255,255,0.6);
-          margin-bottom: 40px;
+          margin-bottom: 60px;
         }
-        .tech-tabs-list {
+        .tech-tabs-horizontal {
           display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-        .tech-tab-item {
-          display: flex;
-          align-items: center;
-          padding: 24px;
-          background: rgba(255,255,255,0.02);
-          border: 1px solid rgba(255,255,255,0.03);
-          border-radius: 20px;
-          color: rgba(255,255,255,0.4);
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-          position: relative;
-          overflow: hidden;
-          text-align: left;
-        }
-        .tab-indicator {
-          width: 0;
-          height: 100%;
-          position: absolute;
-          left: 0;
-          top: 0;
-          background: linear-gradient(to right, rgba(255, 138, 0, 0.1), transparent);
-          transition: width 0.4s ease;
-          z-index: 0;
-        }
-        .tab-icon-frame {
-          width: 44px;
-          height: 44px;
-          border-radius: 12px;
-          background: rgba(255,255,255,0.05);
-          display: flex;
-          align-items: center;
           justify-content: center;
-          margin-right: 20px;
-          transition: all 0.4s ease;
+          gap: 16px;
+          flex-wrap: wrap;
+          padding: 8px;
+          background: rgba(255,255,255,0.02);
           border: 1px solid rgba(255,255,255,0.05);
+          border-radius: 20px;
+          width: fit-content;
+          margin: 0 auto;
         }
-        .tab-text-content {
-          position: relative;
-          z-index: 1;
+        .tech-tab-horizontal-item {
           display: flex;
-          flex-direction: column;
-        }
-        .tab-name {
-          font-weight: 850;
-          font-size: 1.2rem;
-          line-height: 1.2;
-        }
-        .tab-label-sm {
-          font-size: 0.72rem;
-          font-weight: 600;
-          opacity: 0.4;
-          margin-top: 6px;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-        .tab-arrow {
-          margin-left: auto;
-          opacity: 0;
-          transform: translateX(-10px);
+          align-items: center;
+          gap: 12px;
+          padding: 12px 24px;
+          border-radius: 14px;
+          color: rgba(255,255,255,0.5);
+          font-weight: 700;
           transition: all 0.4s ease;
-          position: relative;
-          z-index: 1;
+          border: 1px solid transparent;
         }
-        .tech-tab-item:hover {
-          color: rgba(255,255,255,0.8);
+        .tab-icon-frame-sm {
+          opacity: 0.6;
+          transition: all 0.4s ease;
+        }
+        .tech-tab-horizontal-item:hover {
           background: rgba(255,255,255,0.05);
-          border-color: rgba(255,255,255,0.08);
-          transform: translateX(5px);
+          color: white;
         }
-        .tech-tab-item.active {
-          color: #ff8a00;
-          border-color: rgba(255, 138, 0, 0.3);
-          background: rgba(255, 138, 0, 0.05);
-        }
-        .tech-tab-item.active .tab-icon-frame {
+        .tech-tab-horizontal-item.active {
           background: #ff8a00;
           color: white;
-          box-shadow: 0 0 20px rgba(255, 138, 0, 0.4);
-          border-color: transparent;
+          box-shadow: 0 10px 30px rgba(255, 138, 0, 0.3);
         }
-        .tech-tab-item.active .tab-indicator {
-          width: 100%;
-        }
-        .tech-tab-item.active .tab-arrow {
+        .tech-tab-horizontal-item.active .tab-icon-frame-sm {
           opacity: 1;
-          transform: translateX(0);
+          transform: scale(1.1);
+        }
+        .tab-name-horizontal {
+          font-size: 0.95rem;
+          letter-spacing: 0.5px;
         }
 
         .tech-matrix-grid {
