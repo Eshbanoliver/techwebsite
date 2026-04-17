@@ -25,88 +25,56 @@ interface TechItem {
 }
 
 const techData: Record<string, TechItem[]> = {
-  'Frontend': [
+  'Development': [
     { name: 'React', slug: 'react', color: '#61DAFB' },
     { name: 'Next.js', slug: 'nextjs', color: '#ffffff' },
     { name: 'TypeScript', slug: 'typescript', color: '#3178C6' },
-    { name: 'Angular', slug: 'angular', color: '#DD0031' },
-    { name: 'HTML5', slug: 'html', color: '#E34F26' },
-    { name: 'CSS3', slug: 'css', color: '#1572B6' },
-    { name: 'JavaScript', slug: 'js', color: '#F7DF1E' },
-    { name: 'Three.js', slug: 'threejs', color: '#ffffff' },
-    { name: 'Tailwind CSS', slug: 'tailwind', color: '#06B6D4' },
-    { name: 'Framer Motion', slug: 'framer', color: '#0055FF' },
-    { name: 'Redux', slug: 'redux', color: '#764ABC' },
-    { name: 'Svelte', slug: 'svelte', color: '#FF3E00' },
-  ],
-  'Backend': [
     { name: 'Node.js', slug: 'nodejs', color: '#339933' },
-    { name: 'PostgreSQL', slug: 'postgres', color: '#4169E1' },
-    { name: 'Python', slug: 'python', color: '#3776AB' },
     { name: 'Go Lang', slug: 'go', color: '#00ADD8' },
-    { name: 'MongoDB', slug: 'mongodb', color: '#47A248' },
-    { name: 'Redis', slug: 'redis', color: '#DC382D' },
-    { name: 'GraphQL', slug: 'graphql', color: '#E10098' },
-    { name: 'Express', slug: 'express', color: '#ffffff' },
-  ],
-  'UI/UX Design': [
-    { name: 'Figma', slug: 'figma', color: '#F24E1E' },
-    { name: 'Adobe XD', slug: 'xd', color: '#FF61F6' },
-    { name: 'Photoshop', slug: 'ps', color: '#31A8FF' },
-    { name: 'Illustrator', slug: 'ai', color: '#FF9A00' },
-    { name: 'Blender', slug: 'blender', color: '#F5792A' },
-  ],
-  'Cloud & DevOps': [
+    { name: 'PostgreSQL', slug: 'postgres', color: '#4169E1' },
     { name: 'AWS', slug: 'aws', color: '#FF9900' },
-    { name: 'Docker', slug: 'docker', color: '#2496ED' },
-    { name: 'Kubernetes', slug: 'kubernetes', color: '#326CE5' },
-    { name: 'Google Cloud', slug: 'gcp', color: '#4285F4' },
-    { name: 'Terraform', slug: 'terraform', color: '#7B42BC' },
-    { name: 'Nginx', slug: 'nginx', color: '#009639' },
   ],
-  'AI Development': [
-    { name: 'PyTorch', slug: 'pytorch', color: '#EE4C2C' },
-    { name: 'TensorFlow', slug: 'tensorflow', color: '#FF6F00' },
-    { name: 'Scikit-Learn', slug: 'sklearn', color: '#F7931E' },
-    { name: 'OpenAI', slug: 'openai', color: '#412991' },
-  ],
-  'Digital Marketing': [
+  'Marketing & Growth': [
     { name: 'Google Ads', slug: 'gads', color: '#4285F4' },
+    { name: 'Meta Ads', slug: 'meta', color: '#0668E1' },
+    { name: 'SEMrush', slug: 'semrush', color: '#FF642D' },
     { name: 'Google Analytics', slug: 'ga', color: '#E37400' },
+    { name: 'Ahrefs', slug: 'ahrefs', color: '#ffffff' },
     { name: 'HubSpot', slug: 'hubspot', color: '#FF7A59' },
   ],
-  'Mobile Apps': [
-    { name: 'React Native', slug: 'react', color: '#61DAFB' },
-    { name: 'Flutter', slug: 'flutter', color: '#02569B' },
-    { name: 'Swift', slug: 'swift', color: '#F05138' },
-    { name: 'Kotlin', slug: 'kotlin', color: '#7F52FF' },
-    { name: 'Firebase', slug: 'firebase', color: '#FFCA28' },
-    { name: 'Android', slug: 'android', color: '#3DDC84' },
+  'Branding & Design': [
+    { name: 'Figma', slug: 'figma', color: '#F24E1E' },
+    { name: 'Adobe Suite', slug: 'adobe', color: '#FF0000' },
+    { name: 'After Effects', slug: 'ae', color: '#CF96FD' },
+    { name: 'Photoshop', slug: 'ps', color: '#31A8FF' },
+    { name: 'Illustrator', slug: 'ai', color: '#FF9A00' },
+    { name: 'Canva', slug: 'canva', color: '#00C4CC' },
+  ],
+  'Cloud & DevOps': [
+    { name: 'Docker', slug: 'docker', color: '#2496ED' },
+    { name: 'Kubernetes', slug: 'kubernetes', color: '#326CE5' },
+    { name: 'Terraform', slug: 'terraform', color: '#7B42BC' },
+    { name: 'Nginx', slug: 'nginx', color: '#009639' },
+    { name: 'GitHub', slug: 'github', color: '#ffffff' },
   ],
 };
 
 const categoryLabels: Record<string, string> = {
-  'Frontend': 'Visual & Interactive Excellence',
-  'Backend': 'Scalable Logic & Architecture',
-  'UI/UX Design': 'User-Centric Craftsmanship',
-  'Cloud & DevOps': 'Global Infrastructure & Velocity',
-  'AI Development': 'Cognitive Solutions & Data Science',
-  'Digital Marketing': 'Strategic Growth & Analytics',
-  'Mobile Apps': 'Native & Hybrid Mobility',
+  'Development': 'Enterprise-Grade Engineering',
+  'Marketing & Growth': 'Data-Driven Market Intelligence',
+  'Branding & Design': 'Visual & Creative Craftsmanship',
+  'Cloud & DevOps': 'Scalable Infrastructure & Velocity',
 };
 
 const categoryIcons: Record<string, any> = {
-  'Frontend': <Layout size={22} />,
-  'Backend': <Database size={22} />,
-  'UI/UX Design': <Palette size={22} />,
+  'Development': <Layout size={22} />,
+  'Marketing & Growth': <Briefcase size={22} />,
+  'Branding & Design': <Palette size={22} />,
   'Cloud & DevOps': <Cloud size={22} />,
-  'AI Development': <Layers size={22} />,
-  'Digital Marketing': <Briefcase size={22} />,
-  'Mobile Apps': <Smartphone size={22} />,
 };
 
 export default function TechStack() {
-  const [activeTab, setActiveTab] = useState('Frontend');
+  const [activeTab, setActiveTab] = useState('Development');
   const tabs = Object.keys(techData);
 
   const handleTabChange = (tab: string) => {
@@ -124,10 +92,11 @@ export default function TechStack() {
           {/* Left Content Column */}
           <div className="tech-content">
             <span className="tech-badge">Our Technology Matrix</span>
-            <h2 className="tech-title">Enterprise <span className="blue-gradient">Engineering</span> Capacity</h2>
+            <h2 className="tech-title">High-Performance <span className="blue-gradient">Technical Studio</span> Capacity</h2>
             <p className="tech-desc">
-              We deploy a production-ready stack designed for scale, security, and developer velocity. 
-              Our methodology prioritizes long-term reliability over architecture and fleeting trends.
+              We deploy an enterprise-grade stack and precision marketing tools designed for 
+              unlimited scale, military-level security, and measurable business growth. Our methodology 
+              prioritizes long-term ROI over fleeting industry trends.
             </p>
 
             <div className="tech-tabs-list">
@@ -212,7 +181,7 @@ export default function TechStack() {
       <style jsx>{`
         .corporate-tech-section {
           padding: 140px 0;
-          background: #080a10;
+          background: #0a0c12; /* Refined deep charcoal */
           position: relative;
           color: white;
           border-top: 1px solid rgba(255,255,255,0.05);
