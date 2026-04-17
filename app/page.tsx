@@ -324,33 +324,66 @@ export default function HomePage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ===== WHY CHOOSE US ===== */}
-      <section className="section" id="why-us">
+      {/* ===== WHY CHOOSE US (REDESIGNED) ===== */}
+      <section className="section overflow-hidden" id="why-choose-us-modern">
         <div className="container">
-          <SectionReveal>
-            <div className="section-header">
-              <span className="section-label">Why Infinex</span>
-              <h2 className="section-title">
-                Why <span className="gradient-text">Choose Us</span>
-              </h2>
-              <p className="section-subtitle">
-                We don&apos;t just build software — we build lasting partnerships and deliver real results.
-              </p>
-            </div>
-          </SectionReveal>
-          <div className="why-grid-vibrant">
-            {whyUs.map((w, i) => (
-              <motion.div
-                key={i}
-                className={`why-card-vibrant ${w.className}`}
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <div className="why-card-watermark">0{i + 1}</div>
-                <h3>{w.title}</h3>
-                <p>{w.desc}</p>
+          <div className="why-grid-v2">
+            <div className="why-content-v2">
+              <motion.div {...fadeUp}>
+                <span className="section-label">Institutional Authority</span>
+                <h2 className="section-title" style={{ textAlign: 'left', fontSize: '3.5rem', marginBottom: '24px' }}>
+                  WHY <span className="gradient-text">CHOOSE US</span>
+                </h2>
+                <p className="about-description" style={{ maxWidth: '95%' }}>
+                   MS Infinex Tech is a high-performance digital studio in Udaipur dedicated to 
+                  bridging the gap between complex engineering and human-centric design. We don&apos;t 
+                  just build websites; we engineer sustainable growth ecosystems.
+                </p>
+
+                <div className="why-stats-row">
+                  <div className="why-stat-item">
+                    <div className="why-stat-value">98%</div>
+                    <div className="why-stat-label">Client Progress ROI</div>
+                  </div>
+                  <div className="why-stat-item">
+                    <div className="why-stat-value">250+</div>
+                    <div className="why-stat-label">Project Deployments</div>
+                  </div>
+                </div>
+
+                <div className="why-features-row">
+                  <div className="why-feat-box glow-orange">
+                    <h4>Strategic Precision</h4>
+                    <p>Data-backed roadmaps for long-term growth.</p>
+                  </div>
+                  <div className="why-feat-box glow-orange">
+                    <h4>Technical Mastery</h4>
+                    <p>Scalable code architectures without compromises.</p>
+                  </div>
+                  <div className="why-feat-box glow-orange">
+                    <h4>Agile Execution</h4>
+                    <p>Rapid delivery with global quality standards.</p>
+                  </div>
+                </div>
               </motion.div>
-            ))}
+            </div>
+
+            <div className="why-visual-v2">
+              <motion.div 
+                className="why-image-wrapper"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+              >
+                <Image 
+                  src="/assets/services_cinematic_bg_1776415793060.png" 
+                  alt="Futuristic Digital Engineering Visualization" 
+                  fill
+                  className="object-cover"
+                />
+                <div className="why-image-overlay" />
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
