@@ -314,8 +314,8 @@ export default function HomePage(): React.JSX.Element {
           </SectionReveal>
           <div className="metrics-grid">
             <AnimatedCounter end={150} suffix="+" label="Projects Completed" icon={<Rocket size={28} />} className="glow-orange" />
-            <AnimatedCounter end={80} suffix="+" label="Clients Served" icon={<Users size={28} />} className="glow-orange" />
-            <AnimatedCounter end={5} suffix="+" label="Years Experience" icon={<Calendar size={28} />} className="glow-purple" />
+            <AnimatedCounter end={98} suffix="%" label="Client Satisfaction" icon={<Users size={28} />} className="glow-orange" />
+            <AnimatedCounter end={10} suffix="+" label="Years of Developer Experience" icon={<Calendar size={28} />} className="glow-purple" />
             <AnimatedCounter end={30} suffix="+" label="Technologies Used" icon={<Cpu size={28} />} className="glow-pink" />
           </div>
         </div>
