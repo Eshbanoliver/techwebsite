@@ -218,8 +218,8 @@ export default function CategorizedFAQ() {
           font-weight: 700;
           font-size: 1rem;
           color: var(--text-secondary);
-          background: transparent;
-          border: none;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
           border-radius: 16px;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -231,10 +231,13 @@ export default function CategorizedFAQ() {
         .category-tab:hover {
           color: var(--text-primary);
           background: rgba(255, 255, 255, 0.03);
+          border-color: rgba(255, 138, 0, 0.3);
         }
         .category-tab.active {
           color: var(--text-primary);
           background: rgba(255, 255, 255, 0.05);
+          border-color: rgba(255, 138, 0, 0.6);
+          box-shadow: 0 5px 15px rgba(255, 138, 0, 0.1);
         }
         .active-indicator {
           position: absolute;
