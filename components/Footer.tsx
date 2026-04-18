@@ -102,9 +102,6 @@ export default function Footer(): React.JSX.Element {
               <span>SYSTEM ONLINE</span>
             </div>
           </div>
-          <div className="footer-tech-coordinates">
-            24.5854° N, 73.7125° E // VER: 1.0.4
-          </div>
            <div style={{ display: 'flex', gap: 24 }}>
             <Link href="/privacy" style={{ opacity: 0.6 }}>Privacy & Policy</Link>
             <Link href="/terms" style={{ opacity: 0.6 }}>Terms of Service</Link>
