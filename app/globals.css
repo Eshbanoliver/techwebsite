@@ -1301,13 +1301,14 @@ input, textarea, select { font-family: inherit; }
 .industry-pill-v5 {
   background: white;
   border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 25px 35px;
+  border-radius: 20px;
+  padding: 15px 20px;
   position: relative;
-  min-height: 80px;
+  min-height: 90px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.02);
   transition: all 0.3s ease;
 }
@@ -1327,15 +1328,25 @@ input, textarea, select { font-family: inherit; }
   font-size: 0.75rem;
   font-weight: 700;
   box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+  z-index: 5;
+}
+
+.pill-icon-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .industry-pill-v5 h3 {
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #1a1a1a;
-  text-align: center;
   margin: 0;
-  line-height: 1.2;
+  text-align: left;
 }
 
 /* Character Styling */

@@ -86,16 +86,16 @@ const whyUs = [
 
 
 const industries = [
-  { name: "E-commerce", icon: <ShoppingCart size={22} />, desc: "High-conversion growth engines with intelligent inventory and global payment maturity.", image: "/assets/industry_ecommerce_visual_1776415874745.png" },
-  { name: "Fintech", icon: <Banknote size={22} />, desc: "Secure transaction ecosystems, blockchain protocols, and AI fraud prevention systems.", image: "/assets/service_social_stock_1776416055715.png" },
-  { name: "Healthcare", icon: <Stethoscope size={22} />, desc: "HIPAA-compliant platforms, diagnostic AI, and data-driven patient experience nodes.", image: "/assets/industry_healthcare_visual_1776415815696.png" },
-  { name: "SaaS", icon: <Layers size={22} />, desc: "High-velocity product architectures designed for unlimited scale and global multi-tenancy.", image: "/assets/about_business_v2_stock_1776416113626.png" },
-  { name: "EdTech", icon: <GraduationCap size={22} />, desc: "Interactive digital classrooms and high-engagement LMS ecosystems for the age.", image: "/assets/about_business_growth_visual_1776415616126.png" },
-  { name: "Travel & Hospitality", icon: <Hotel size={22} />, desc: "Comprehensive booking logic, guest automation, and immersive experiences.", image: "/assets/hospitality_no_human_stock_1776416321098.png" },
-  { name: "Real Estate", icon: <HomeIcon size={22} />, desc: "Marketplace intelligence, virtual tours, and secure property engines.", image: "/assets/industry_hospitality_visual_1776415839091.png" },
-  { name: "Logistics & Transportation", icon: <Truck size={22} />, desc: "Real-time visibility, route optimization logic, and intelligence-driven supply chains.", image: "/assets/service_webdev_stock_1776416031626.png" },
-  { name: "Entertainment & Media", icon: <Zap size={22} />, desc: "Immersive streaming pipelines, digital asset management, and viral content tech.", image: "/assets/services_cinematic_bg_1776415793060.png" },
-  { name: "Nonprofit & Social Impact", icon: <Handshake size={22} />, desc: "High-transparency donation engines and community-centric global impact platforms.", image: "/assets/about_no_human_stock_1776416238612.png" }
+  { name: "Healthcare", icon: <Stethoscope size={24} />, lightColor: "#fef2f2", iconColor: "#ef4444" },
+  { name: "E-commerce", icon: <ShoppingCart size={24} />, lightColor: "#fffbeb", iconColor: "#f59e0b" },
+  { name: "FinTech", icon: <Banknote size={24} />, lightColor: "#ecfdf5", iconColor: "#10b981" },
+  { name: "Education", icon: <GraduationCap size={24} />, lightColor: "#eff6ff", iconColor: "#3b82f6" },
+  { name: "Logistics", icon: <Truck size={24} />, lightColor: "#f5f3ff", iconColor: "#8b5cf6" },
+  { name: "Real Estate", icon: <HomeIcon size={24} />, lightColor: "#fdf2f8", iconColor: "#ec4899" },
+  { name: "Automotive", icon: <Car size={24} />, lightColor: "#f8fafc", iconColor: "#64748b" },
+  { name: "Manufacturing", icon: <Factory size={24} />, lightColor: "#ecfeff", iconColor: "#06b6d4" },
+  { name: "SaaS", icon: <Layers size={24} />, lightColor: "#f0f9ff", iconColor: "#0ea5e9" },
+  { name: "Social Impact", icon: <Handshake size={24} />, lightColor: "#f0fdf4", iconColor: "#22c55e" }
 ];
 
 const fadeUp = {
@@ -380,6 +380,9 @@ export default function HomePage(): React.JSX.Element {
                   transition={{ duration: 0.5, delay: i * 0.05 }}
                 >
                   <div className="pill-num-v5">{i + 1}</div>
+                  <div className="pill-icon-box" style={{ background: ind.lightColor, color: ind.iconColor }}>
+                    {ind.icon}
+                  </div>
                   <h3>{ind.name}</h3>
                 </motion.div>
               ))}
