@@ -287,10 +287,35 @@ export default function HeroSlider(): React.JSX.Element {
         }
         @media (max-width: 768px) {
           .hero-content {
-            padding-top: 120px; /* Still generous for mobile */
+            padding-top: 60px; /* Reduced from 120px to remove useless space */
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
           }
           .hero-title {
             font-size: 2.2rem;
+            letter-spacing: -2px;
+            width: 100%;
+            text-align: center;
+          }
+          .hero-description {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+          }
+          .hero-buttons {
+            width: 100%;
+            gap: 12px;
+            flex-direction: column;
+            align-items: center;
+          }
+          .hero-buttons .btn {
+            width: 100%;
+            min-width: unset;
           }
         }
       `}</style>
