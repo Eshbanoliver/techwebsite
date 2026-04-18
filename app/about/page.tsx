@@ -27,7 +27,6 @@ import Image from 'next/image';
 
 const ParticleBackground = dynamic(() => import('@/components/ParticleBackground'), { ssr: false });
 import SectionReveal from '@/components/SectionReveal';
-const TechCTA = dynamic(() => import('@/components/TechCTA'), { ssr: false });
 const CreativeCarousel = dynamic(() => import('@/components/CreativeCarousel'), { ssr: false });
 
 
@@ -480,8 +479,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===== TECH CTA (Modularized) ===== */}
-      <TechCTA />
     </main>
   );
 }

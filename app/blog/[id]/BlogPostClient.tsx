@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import type { BlogPost } from '@/lib/blog-data';
-import TechCTA from '@/components/TechCTA';
 
 export default function BlogPostClient({ post }: { post: BlogPost }) {
   return (
@@ -151,7 +150,6 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
         </div>
       </section>
 
-      <TechCTA />
     </div>
   );
 }

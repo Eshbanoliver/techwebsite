@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ModernCTA from "@/components/ModernCTA";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -205,6 +206,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         <div className="grid-bg" aria-hidden="true" />
         <Navbar />
         <main style={{ position: "relative", zIndex: 1 }}>{children}</main>
+        <ModernCTA />
         <Footer />
         <FloatingButtons />
       </body>

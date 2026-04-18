@@ -417,46 +417,6 @@ export default function HomePage(): React.JSX.Element {
         </div>
         <CategorizedFAQ />
       </section>
-
-      {/* ===== TECH CTA ===== */}
-      <section className="section" id="cta">
-        <div className="container">
-          <SectionReveal>
-            <div className="cta-tech-wrapper">
-              <div className="cta-tech-grid" />
-              <div className="cta-tech-scan" />
-              
-              {/* Corner Decals */}
-              <div className="cta-tech-corner corner-tl" />
-              <div className="cta-tech-corner corner-tr" />
-              <div className="cta-tech-corner corner-bl" />
-              <div className="cta-tech-corner corner-br" />
-
-
-
-
-
-              <div className="cta-tech-content">
-                <h2 className="cta-tech-title">
-                  Ready to Grow Your <span className="gradient-text">Business?</span>
-                </h2>
-                <p className="cta-tech-subtitle">
-                  We are ready to transform your ideas into reality. Our team is 
-                  standing by to engineer your next big milestone.
-                </p>
-                <div className="cta-tech-buttons">
-                  <Link href="/contact" className="btn btn-primary btn-apple">
-                    Work With Us
-                  </Link>
-                  <Link href="/contact" className="btn btn-secondary btn-apple">
-                    Get a Free Quote
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
     </>
   );
 }

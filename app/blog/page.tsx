@@ -15,7 +15,6 @@ import {
 import Link from 'next/link';
 import { blogPosts, type BlogPost } from '@/lib/blog-data';
 import SectionReveal from '@/components/SectionReveal';
-import TechCTA from '@/components/TechCTA';
 
 const categories = ["All", "Social Media", "AI Solutions", "Branding", "Digital Marketing", "E-Commerce", "App Dev", "Web Dev"];
 
@@ -174,9 +173,6 @@ export default function BlogPage() {
           )}
         </div>
       </section>
-
-      {/* 5. TECH CTA (Modularized) */}
-      <TechCTA />
 
     </>
   );

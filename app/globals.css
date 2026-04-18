@@ -8625,3 +8625,137 @@ input, textarea, select { font-family: inherit; }
     top: -60px;
   }
 }
+
+/* Modern CTA Design */
+.modern-cta-section {
+  padding: 80px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.modern-cta-wrapper {
+  background: #ff8a00; /* Vibrant Orange */
+  border-radius: 40px;
+  padding: 80px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 5;
+  max-width: 600px;
+}
+
+.cta-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.cta-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pill-btn {
+  background: #000;
+  color: white;
+  padding: 12px 12px 12px 30px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pill-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: #111;
+}
+
+.pill-dot {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Concentric Rings */
+.cta-rings-container {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  transform: translateY(-50%);
+  width: 700px;
+  height: 700px;
+}
+
+.cta-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 40px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.ring-1 { width: 100%; height: 100%; border-width: 80px; opacity: 0.05; }
+.ring-2 { width: 80%; height: 80%; border-width: 60px; opacity: 0.1; }
+.ring-3 { width: 60%; height: 60%; border-width: 50px; opacity: 0.15; }
+.ring-4 { width: 40%; height: 40%; border-width: 40px; opacity: 0.2; }
+.ring-5 { width: 20%; height: 20%; border-width: 30px; opacity: 0.3; }
+
+@media (max-width: 992px) {
+  .modern-cta-wrapper {
+    padding: 60px 40px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .cta-description {
+    margin: 0 auto 40px;
+  }
+  .cta-actions {
+    justify-content: center;
+  }
+  .cta-rings-container {
+    right: 50%;
+    transform: translate(50%, -50%);
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 640px) {
+  .modern-cta-wrapper {
+    padding: 50px 24px;
+    border-radius: 30px;
+  }
+  .cta-title {
+    font-size: 2rem;
+  }
+  .pill-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
