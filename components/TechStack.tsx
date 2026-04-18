@@ -15,12 +15,19 @@ import {
   Cpu,
   Palette,
   Briefcase,
-  CheckCircle2
+  CheckCircle2,
+  TrendingUp,
+  Target,
+  BarChart3,
+  Search as SearchIcon,
+  MousePointer2,
+  Share2
 } from 'lucide-react';
 
 interface TechItem {
   name: string;
-  slug: string;
+  slug?: string;
+  icon?: any;
   color: string;
 }
 
@@ -35,20 +42,20 @@ const techData: Record<string, TechItem[]> = {
     { name: 'AWS', slug: 'aws', color: '#FF9900' },
   ],
   'Marketing & Growth': [
-    { name: 'Google Ads', slug: 'gads', color: '#4285F4' },
-    { name: 'Meta Ads', slug: 'meta', color: '#0668E1' },
-    { name: 'SEMrush', slug: 'semrush', color: '#FF642D' },
-    { name: 'Google Analytics', slug: 'ga', color: '#E37400' },
-    { name: 'Ahrefs', slug: 'ahrefs', color: '#ffffff' },
-    { name: 'HubSpot', slug: 'hubspot', color: '#FF7A59' },
+    { name: 'Google Ads', icon: <Target size={20} />, color: '#4285F4' },
+    { name: 'Meta Ads', icon: <Share2 size={20} />, color: '#0668E1' },
+    { name: 'SEMrush', icon: <SearchIcon size={20} />, color: '#FF642D' },
+    { name: 'Analytics', icon: <BarChart3 size={20} />, color: '#E37400' },
+    { name: 'Performance', icon: <TrendingUp size={20} />, color: '#ffffff' },
+    { name: 'Paid Search', icon: <MousePointer2 size={20} />, color: '#FF7A59' },
   ],
   'Branding & Design': [
     { name: 'Figma', slug: 'figma', color: '#F24E1E' },
-    { name: 'Adobe Suite', slug: 'adobe', color: '#FF0000' },
+    { name: 'Adobe Suite', icon: <Palette size={20} />, color: '#FF0000' },
     { name: 'After Effects', slug: 'ae', color: '#CF96FD' },
     { name: 'Photoshop', slug: 'ps', color: '#31A8FF' },
     { name: 'Illustrator', slug: 'ai', color: '#FF9A00' },
-    { name: 'Canva', slug: 'canva', color: '#00C4CC' },
+    { name: 'Canva', icon: <Layers size={20} />, color: '#00C4CC' },
   ],
   'Cloud & DevOps': [
     { name: 'Docker', slug: 'docker', color: '#2496ED' },
@@ -109,7 +116,7 @@ export default function TechStack() {
             <div className="column-body">
               {techData['Branding & Design'].map(tech => (
                 <div key={tech.name} className="tech-row-item">
-                  <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized />
+                  {tech.icon ? tech.icon : tech.slug ? <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized /> : null}
                   <span>{tech.name}</span>
                 </div>
               ))}
@@ -126,7 +133,7 @@ export default function TechStack() {
             <div className="column-body">
               {techData['Marketing & Growth'].map(tech => (
                 <div key={tech.name} className="tech-row-item">
-                  <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized />
+                  {tech.icon ? tech.icon : tech.slug ? <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized /> : null}
                   <span>{tech.name}</span>
                 </div>
               ))}
@@ -143,7 +150,7 @@ export default function TechStack() {
             <div className="column-body">
               {techData['Development'].map(tech => (
                 <div key={tech.name} className="tech-row-item">
-                  <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized />
+                  {tech.icon ? tech.icon : tech.slug ? <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized /> : null}
                   <span>{tech.name}</span>
                 </div>
               ))}
@@ -160,7 +167,7 @@ export default function TechStack() {
             <div className="column-body">
               {techData['Cloud & DevOps'].map(tech => (
                 <div key={tech.name} className="tech-row-item">
-                  <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized />
+                  {tech.icon ? tech.icon : tech.slug ? <Image src={`https://skillicons.dev/icons?i=${tech.slug}`} alt={tech.name} width={24} height={24} unoptimized /> : null}
                   <span>{tech.name}</span>
                 </div>
               ))}

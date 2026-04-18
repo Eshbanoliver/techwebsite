@@ -118,7 +118,7 @@ export default function CategorizedFAQ() {
                   <span className="cat-icon">{cat.icon}</span>
                   <span className="cat-title">{cat.title}</span>
                   {activeCategory === cat.id && (
-                    <motion.div luxury-indicator layoutId="active-pill" className="active-indicator" />
+                    <motion.div layoutId="active-pill" className="active-indicator" />
                   )}
                 </button>
               ))}
