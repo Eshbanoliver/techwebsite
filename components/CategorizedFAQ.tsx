@@ -213,10 +213,9 @@ export default function CategorizedFAQ() {
           text-transform: uppercase;
           letter-spacing: 2px;
           font-weight: 800;
-          color: var(--text-secondary);
+          color: var(--text-muted);
           margin-bottom: 20px;
           padding-left: 20px;
-          opacity: 0.6;
         }
         .category-tab {
           padding: 20px 24px;
@@ -224,8 +223,8 @@ export default function CategorizedFAQ() {
           font-weight: 700;
           font-size: 1rem;
           color: var(--text-secondary);
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: var(--bg-glass);
+          border: 1px solid var(--border-glass);
           border-radius: 16px;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -236,32 +235,27 @@ export default function CategorizedFAQ() {
         }
         .category-tab:hover {
           color: var(--text-primary);
-          background: rgba(255, 255, 255, 0.03);
+          background: var(--bg-glass-hover);
           border-color: rgba(255, 138, 0, 0.3);
         }
         .category-tab.active {
           color: var(--text-primary);
-          background: rgba(255, 255, 255, 0.05);
-          border-color: rgba(255, 138, 0, 0.6);
+          background: var(--bg-glass-hover);
+          border-color: #ff8a00;
           box-shadow: 0 5px 15px rgba(255, 138, 0, 0.1);
         }
         .active-indicator {
           position: absolute;
           left: 0;
+          top: 25%;
+          height: 50%;
           width: 4px;
-          height: 30px;
           background: #ff8a00;
           border-radius: 0 4px 4px 0;
-          box-shadow: 0 0 15px rgba(255, 138, 0, 0.6);
         }
-        .cat-icon {
-          opacity: 0.5;
-          transition: all 0.3s ease;
-        }
-        .category-tab.active .cat-icon {
-          opacity: 1;
-          color: #ff8a00;
-          transform: scale(1.1);
+        
+        .faq-v2-content {
+          position: relative;
         }
         .faq-accordion-list {
           display: flex;
@@ -269,19 +263,19 @@ export default function CategorizedFAQ() {
           gap: 20px;
         }
         .faq-item-v2 {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 138, 0, 0.3);
-          border-radius: 20px;
-          cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          background: var(--bg-card);
+          border: 1px solid var(--border-glass);
+          border-radius: 24px;
           overflow: hidden;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          cursor: pointer;
         }
         .faq-question-row {
-          padding: 30px 40px;
+          padding: 32px 40px;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          gap: 25px;
+          gap: 24px;
         }
         .q-wrap {
           display: flex;
@@ -290,10 +284,10 @@ export default function CategorizedFAQ() {
         }
         .q-icon {
           color: #ff8a00;
-          opacity: 0.6;
+          flex-shrink: 0;
         }
         .faq-question-row h3 {
-          font-size: 1.2rem;
+          font-size: 1.35rem;
           font-weight: 800;
           color: var(--text-primary);
           margin: 0;
@@ -304,7 +298,7 @@ export default function CategorizedFAQ() {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.05);
+          background: var(--bg-glass);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -333,15 +327,15 @@ export default function CategorizedFAQ() {
           margin: 0;
         }
         .faq-item-v2:hover, .faq-item-v2.open {
-          background: rgba(255, 255, 255, 0.04);
+          background: var(--bg-glass-hover);
           border-color: rgba(255, 138, 0, 0.6);
           transform: translateX(5px);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: var(--shadow-glass);
         }
         .faq-support-card {
           margin-top: 80px;
           padding: 40px;
-          background: linear-gradient(135deg, rgba(255, 138, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+          background: var(--gradient-subtle);
           border: 1px solid rgba(255, 138, 0, 0.2);
           border-radius: 32px;
           display: flex;
@@ -360,13 +354,14 @@ export default function CategorizedFAQ() {
           height: 48px;
           border-radius: 50%;
           background: #333;
-          border: 3px solid #111;
+          border: 3px solid var(--bg-primary);
           display: flex;
           align-items: center;
           justify-content: center;
           font-weight: 800;
           font-size: 0.9rem;
           margin-left: -15px;
+          color: white;
         }
         .avatar:first-child { margin-left: 0; background: #ff8a00; }
         .support-info h4 {
@@ -400,31 +395,87 @@ export default function CategorizedFAQ() {
           box-shadow: 0 20px 40px rgba(255, 138, 0, 0.5);
         }
 
-        @media (max-width: 1200px) {
-          .faq-v2-layout { gap: 60px; }
+        @media (max-width: 1024px) {
+          .faq-v2-container { padding: 0 24px; }
+          .faq-v2-layout { gap: 40px; }
         }
 
         @media (max-width: 992px) {
+          .faq-v2-section {
+            width: 100%;
+            padding: 60px 0;
+            overflow: hidden;
+          }
+          .faq-v2-container {
+            width: 100%;
+            padding: 0 16px;
+            overflow: hidden;
+          }
           .faq-v2-layout {
-            grid-template-columns: 1fr;
-            gap: 60px;
+            grid-template-columns: 100%;
+            gap: 30px;
+          }
+          .sidebar-label {
+            display: none !important;
           }
           .sidebar-sticky {
-            flex-direction: row;
-            overflow-x: auto;
-            padding-bottom: 15px;
-            top: 80px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 10px 0 20px;
+            width: 100%;
+            position: relative;
+            top: 0;
           }
+          
           .category-tab {
-            white-space: nowrap;
+            padding: 10px 12px;
+            justify-content: center;
+            flex-direction: column;
+            gap: 6px;
+            text-align: center;
+            border-radius: 12px;
           }
+          .category-tab .cat-title { 
+            font-size: 0.75rem; 
+            line-height: 1.2;
+            white-space: normal; /* Allow text to wrap if needed */
+          }
+          .category-tab .cat-icon { font-size: 1rem; }
+          .active-indicator {
+            left: 20%;
+            top: auto;
+            bottom: 0px;
+            height: 3px;
+            width: 60%;
+            border-radius: 3px 3px 0 0;
+          }
+
+          .faq-v2-content { width: 100%; }
+          .faq-item-v2 { width: 100% !important; margin: 0 !important; }
+          .faq-question-row { padding: 20px 16px; }
+          .faq-answer-row { padding: 0 16px 0 16px; }
+          .faq-question-row h3 { font-size: 1rem; }
+          
           .faq-support-card {
+            width: 100%;
             flex-direction: column;
             text-align: center;
-            padding: 50px 30px;
+            padding: 30px 16px;
+            border-radius: 20px;
           }
-          .avatar-stack { justify-content: center; margin-bottom: 10px; }
-          .faq-answer-row { padding-left: 40px; }
+          .btn-support { width: 100%; justify-content: center; }
+          .faq-item-v2:hover { transform: none; }
+        }
+
+        @media (max-width: 480px) {
+          .sidebar-sticky {
+            gap: 8px;
+          }
+          .category-tab {
+            padding: 8px;
+          }
+          .category-tab .cat-title { font-size: 0.7rem; }
         }
       `}</style>
     </section>
