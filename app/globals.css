@@ -815,7 +815,7 @@ input, textarea, select { font-family: inherit; }
 }
 
 .designer-card:hover::after {
-  height: 60%; 
+  height: 25%; 
   opacity: 0.95;
 }
 
