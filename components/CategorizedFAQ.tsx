@@ -261,7 +261,7 @@ export default function CategorizedFAQ() {
         }
         .faq-item-v2 {
           background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 138, 0, 0.3);
           border-radius: 20px;
           cursor: pointer;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -323,10 +323,11 @@ export default function CategorizedFAQ() {
           color: var(--text-secondary);
           margin: 0;
         }
-        .faq-item-v2:hover {
+        .faq-item-v2:hover, .faq-item-v2.open {
           background: rgba(255, 255, 255, 0.04);
-          border-color: rgba(255, 138, 0, 0.3);
+          border-color: rgba(255, 138, 0, 0.6);
           transform: translateX(5px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         .faq-support-card {
           margin-top: 80px;
