@@ -1185,7 +1185,7 @@ input, textarea, select { font-family: inherit; }
 
 [data-theme='light'] .why-feat-box {
   background: white;
-  border-color: rgba(255, 138, 0, 0.2);
+  border-color: rgba(var(--glow-rgb, 255, 138, 0), 0.2);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
@@ -1199,15 +1199,15 @@ input, textarea, select { font-family: inherit; }
 
 .why-feat-box:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 138, 0, 0.4);
+  border-color: var(--glow-color, rgba(255, 138, 0, 0.4));
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme='light'] .why-feat-box:hover {
   background: #fff;
-  border-color: rgba(255, 138, 0, 0.6);
-  box-shadow: 0 10px 30px rgba(255, 138, 0, 0.1);
+  border-color: var(--glow-color, rgba(255, 138, 0, 0.6));
+  box-shadow: 0 10px 30px rgba(var(--glow-rgb, 255, 138, 0), 0.1);
 }
 
 .why-visual-v2 {
@@ -8820,4 +8820,41 @@ input, textarea, select { font-family: inherit; }
 
 .service-card-footer {
   color: var(--glow-color) !important;
+}
+
+/* Specific Overrides for Strategy Cards (why-feat-box) to have VIBRANT BG COLORS */
+.why-feat-box.glow-blue { 
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05)) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important; 
+}
+.why-feat-box.glow-blue:hover { 
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important; 
+  border-color: #3b82f6 !important; 
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3) !important;
+}
+
+.why-feat-box.glow-purple { 
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(168, 85, 247, 0.05)) !important;
+  border-color: rgba(168, 85, 247, 0.3) !important; 
+}
+.why-feat-box.glow-purple:hover { 
+  background: linear-gradient(135deg, #a855f7, #7e22ce) !important; 
+  border-color: #a855f7 !important; 
+  box-shadow: 0 20px 40px rgba(168, 85, 247, 0.3) !important;
+}
+
+.why-feat-box.glow-pink { 
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(236, 72, 153, 0.05)) !important;
+  border-color: rgba(236, 72, 153, 0.3) !important; 
+}
+.why-feat-box.glow-pink:hover { 
+  background: linear-gradient(135deg, #ec4899, #be185d) !important; 
+  border-color: #ec4899 !important; 
+  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3) !important;
+}
+
+/* Ensure text is readable on vibrant hover */
+.why-feat-box:hover h4, 
+.why-feat-box:hover p {
+  color: white !important;
 }

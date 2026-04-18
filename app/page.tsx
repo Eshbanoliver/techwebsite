@@ -314,15 +314,15 @@ export default function HomePage(): React.JSX.Element {
                 </div>
 
                 <div className="why-features-row">
-                  <div className="why-feat-box glow-orange">
+                  <div className="why-feat-box glow-blue">
                     <h4>Strategic Precision</h4>
                     <p>Data-backed roadmaps for long-term growth.</p>
                   </div>
-                  <div className="why-feat-box glow-orange">
+                  <div className="why-feat-box glow-purple">
                     <h4>Technical Mastery</h4>
                     <p>Scalable code architectures without compromises.</p>
                   </div>
-                  <div className="why-feat-box glow-orange">
+                  <div className="why-feat-box glow-pink">
                     <h4>Agile Execution</h4>
                     <p>Rapid delivery with global quality standards.</p>
                   </div>
