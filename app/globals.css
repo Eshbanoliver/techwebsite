@@ -1096,6 +1096,7 @@ input, textarea, select { font-family: inherit; }
   color: #ff8a00; /* Consistent brand color */
   background: var(--gradient-primary);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -2px;
 }
@@ -1105,6 +1106,7 @@ input, textarea, select { font-family: inherit; }
 .metric-card.glow-pink .metric-number {
   background: var(--gradient-primary); /* Use orange for consistency/visibility */
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .metric-label {
