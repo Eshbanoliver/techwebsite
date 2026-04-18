@@ -8700,14 +8700,16 @@ input, textarea, select { font-family: inherit; }
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Concentric Rings */
+/* Concentric Ripples Overlay */
 .cta-rings-container {
   position: absolute;
   top: 50%;
-  right: -10%;
-  transform: translateY(-50%);
-  width: 700px;
-  height: 700px;
+  right: 0;
+  transform: translate(50%, -50%); /* Ripple center exactly on the right edge */
+  width: 1200px;
+  height: 1200px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .cta-ring {
@@ -8716,15 +8718,15 @@ input, textarea, select { font-family: inherit; }
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 40px solid rgba(255, 255, 255, 0.1);
-  pointer-events: none;
+  background: white;
+  border: none;
 }
 
-.ring-1 { width: 100%; height: 100%; border-width: 80px; opacity: 0.05; }
-.ring-2 { width: 80%; height: 80%; border-width: 60px; opacity: 0.1; }
-.ring-3 { width: 60%; height: 60%; border-width: 50px; opacity: 0.15; }
-.ring-4 { width: 40%; height: 40%; border-width: 40px; opacity: 0.2; }
-.ring-5 { width: 20%; height: 20%; border-width: 30px; opacity: 0.3; }
+.ring-1 { width: 100%; height: 100%; opacity: 0.05; }
+.ring-2 { width: 80%; height: 80%; opacity: 0.1; }
+.ring-3 { width: 60%; height: 60%; opacity: 0.18; }
+.ring-4 { width: 40%; height: 40%; opacity: 0.28; }
+.ring-5 { width: 20%; height: 20%; opacity: 0.45; }
 
 @media (max-width: 992px) {
   .modern-cta-wrapper {
