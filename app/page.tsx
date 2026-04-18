@@ -38,7 +38,10 @@ import {
   Paintbrush,
   Brain,
   ShoppingCart,
-  Layers
+  Layers,
+  Crown,
+  Send,
+  Leaf
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -83,16 +86,16 @@ const whyUs = [
 
 
 const industries = [
-  { name: "E-commerce & Retail", icon: <ShoppingCart size={22} />, desc: "High-conversion growth engines with intelligent inventory and global payment maturity.", image: "/assets/industry_ecommerce_visual_1776415874745.png" },
-  { name: "Fintech & Banking", icon: <Banknote size={22} />, desc: "Secure transaction ecosystems, blockchain protocols, and AI fraud prevention systems.", image: "/assets/service_social_stock_1776416055715.png" },
-  { name: "Healthcare & MedTech", icon: <Stethoscope size={22} />, desc: "HIPAA-compliant platforms, diagnostic AI, and data-driven patient experience nodes.", image: "/assets/industry_healthcare_visual_1776415815696.png" },
-  { name: "Enterprise SaaS", icon: <Layers size={22} />, desc: "High-velocity product architectures designed for unlimited scale and global multi-tenancy.", image: "/assets/about_business_v2_stock_1776416113626.png" },
-  { name: "EdTech & Learning", icon: <GraduationCap size={22} />, desc: "Interactive digital classrooms and high-engagement LMS ecosystems for the modern age.", image: "/assets/about_business_growth_visual_1776415616126.png" },
-  { name: "Travel & Hospitality", icon: <Hotel size={22} />, desc: "Comprehensive booking logic, guest automation, and immersive tourism experiences.", image: "/assets/hospitality_no_human_stock_1776416321098.png" },
-  { name: "Real Estate & PropTech", icon: <HomeIcon size={22} />, desc: "Marketplace intelligence, virtual tours, and secure property transaction engines.", image: "/assets/industry_hospitality_visual_1776415839091.png" },
-  { name: "Logistics & Supply", icon: <Truck size={22} />, desc: "Real-time visibility, route optimization logic, and intelligence-driven supply chains.", image: "/assets/service_webdev_stock_1776416031626.png" },
-  { name: "Media & Entertainment", icon: <Zap size={22} />, desc: "Immersive streaming pipelines, digital asset management, and viral content tech.", image: "/assets/services_cinematic_bg_1776415793060.png" },
-  { name: "Impact & Nonprofits", icon: <Handshake size={22} />, desc: "High-transparency donation engines and community-centric global impact platforms.", image: "/assets/about_no_human_stock_1776416238612.png" }
+  { name: "E-commerce", icon: <ShoppingCart size={22} />, desc: "High-conversion growth engines with intelligent inventory and global payment maturity.", image: "/assets/industry_ecommerce_visual_1776415874745.png" },
+  { name: "Fintech", icon: <Banknote size={22} />, desc: "Secure transaction ecosystems, blockchain protocols, and AI fraud prevention systems.", image: "/assets/service_social_stock_1776416055715.png" },
+  { name: "Healthcare", icon: <Stethoscope size={22} />, desc: "HIPAA-compliant platforms, diagnostic AI, and data-driven patient experience nodes.", image: "/assets/industry_healthcare_visual_1776415815696.png" },
+  { name: "SaaS", icon: <Layers size={22} />, desc: "High-velocity product architectures designed for unlimited scale and global multi-tenancy.", image: "/assets/about_business_v2_stock_1776416113626.png" },
+  { name: "EdTech", icon: <GraduationCap size={22} />, desc: "Interactive digital classrooms and high-engagement LMS ecosystems for the age.", image: "/assets/about_business_growth_visual_1776415616126.png" },
+  { name: "Travel & Hospitality", icon: <Hotel size={22} />, desc: "Comprehensive booking logic, guest automation, and immersive experiences.", image: "/assets/hospitality_no_human_stock_1776416321098.png" },
+  { name: "Real Estate", icon: <HomeIcon size={22} />, desc: "Marketplace intelligence, virtual tours, and secure property engines.", image: "/assets/industry_hospitality_visual_1776415839091.png" },
+  { name: "Logistics & Transportation", icon: <Truck size={22} />, desc: "Real-time visibility, route optimization logic, and intelligence-driven supply chains.", image: "/assets/service_webdev_stock_1776416031626.png" },
+  { name: "Entertainment & Media", icon: <Zap size={22} />, desc: "Immersive streaming pipelines, digital asset management, and viral content tech.", image: "/assets/services_cinematic_bg_1776415793060.png" },
+  { name: "Nonprofit & Social Impact", icon: <Handshake size={22} />, desc: "High-transparency donation engines and community-centric global impact platforms.", image: "/assets/about_no_human_stock_1776416238612.png" }
 ];
 
 const fadeUp = {
@@ -353,33 +356,52 @@ export default function HomePage(): React.JSX.Element {
       <TechStack />
 
       <section className="industries-section-v5" id="industries">
+        {/* Doodles */}
+        <div className="doodle-crown"><Crown size={40} strokeWidth={1} /></div>
+        <div className="doodle-plane"><Send size={40} strokeWidth={1} /></div>
+        <div className="doodle-bow"><HomeIcon size={40} strokeWidth={1} /></div>
+        <div className="doodle-leaf"><Leaf size={40} strokeWidth={1} /></div>
+
         <div className="container">
           <SectionReveal>
-            <div className="section-header-centered">
-              <h2 className="industries-title-v5">
-                Industries <span className="italic-text">We Serve</span>
-              </h2>
-            </div>
+            <h2 className="industries-title-v5">
+              Industries <span className="italic-text">We Serve</span>
+            </h2>
           </SectionReveal>
 
-          <div className="industry-pill-grid">
-            {industries.map((ind, i) => (
-              <motion.div
-                key={i}
-                className="industry-pill-card"
-                {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-              >
-                <div className="pill-number-badge">{i + 1}</div>
-                <div className="pill-content">
-                  <h3>{ind.name.split(' & ')[0]}</h3>
-                  {ind.name.includes(' & ') && <span className="pill-sub">& {ind.name.split(' & ')[1]}</span>}
-                </div>
-              </motion.div>
-            ))}
+          <div className="industries-container-v5">
+            <div className="industry-pill-grid-v5">
+              {industries.map((ind, i) => (
+                <motion.div
+                  key={i}
+                  className="industry-pill-v5"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                >
+                  <div className="pill-num-v5">{i + 1}</div>
+                  <h3>{ind.name}</h3>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div 
+              className="industry-visual-v5"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Image 
+                src="/assets/industries_guide.png" 
+                alt="Ms Infinex Guide" 
+                fill
+                className="industry-character-img"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
+
 
 
       {/* ===== TESTIMONIALS ===== */}
