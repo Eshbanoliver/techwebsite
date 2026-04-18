@@ -172,8 +172,8 @@ export default function TechStack() {
       <style jsx>{`
         .corporate-tech-section {
           padding: 140px 0;
-          background: #0a0c12;
-          color: white;
+          background: transparent;
+          color: var(--text-primary);
           overflow: hidden;
         }
         .tech-header-centered {
@@ -199,15 +199,17 @@ export default function TechStack() {
           line-height: 1.1;
           letter-spacing: -2px;
           margin-bottom: 20px;
+          color: var(--text-primary);
         }
         .blue-gradient {
           background: linear-gradient(to right, #ff8a00, #ff5c00);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
         .tech-desc {
           font-size: 1.15rem;
-          color: rgba(255,255,255,0.6);
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
@@ -218,8 +220,8 @@ export default function TechStack() {
         }
 
         .tech-column {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: var(--bg-glass);
+          border: 1px solid var(--border-glass);
           border-radius: 32px;
           padding: 40px 30px;
           position: relative;
@@ -228,8 +230,8 @@ export default function TechStack() {
         }
 
         .tech-pink {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: var(--bg-glass);
+          border: 1px solid var(--border-glass);
           border-radius: 32px;
           padding: 40px 30px;
           position: relative;
@@ -239,7 +241,7 @@ export default function TechStack() {
 
         .tech-column:hover, .tech-pink:hover {
           transform: translateY(-10px);
-          background: rgba(255, 255, 255, 0.04);
+          background: var(--bg-glass-hover);
           border-color: rgba(255, 138, 0, 0.2);
         }
 
@@ -264,11 +266,12 @@ export default function TechStack() {
           font-size: 1.4rem;
           font-weight: 850;
           margin-bottom: 6px;
+          color: var(--text-primary);
         }
 
         .column-head p {
           font-size: 0.8rem;
-          color: rgba(255, 255, 255, 0.4);
+          color: var(--text-muted);
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 1px;
@@ -285,21 +288,21 @@ export default function TechStack() {
           align-items: center;
           gap: 16px;
           padding: 12px 16px;
-          background: rgba(255, 255, 255, 0.03);
+          background: var(--bg-glass);
           border-radius: 12px;
-          border: 1px solid rgba(255, 255, 255, 0.02);
+          border: 1px solid var(--border-glass);
           transition: all 0.3s ease;
         }
 
         .tech-row-item:hover {
-          background: rgba(255, 255, 255, 0.08);
+          background: var(--bg-glass-hover);
           transform: translateX(5px);
         }
 
         .tech-row-item span {
           font-weight: 700;
           font-size: 0.95rem;
-          color: rgba(255, 255, 255, 0.8);
+          color: var(--text-secondary);
         }
 
         /* Ambient Glows */
