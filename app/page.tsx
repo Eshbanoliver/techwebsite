@@ -45,7 +45,7 @@ import Image from 'next/image';
 
 const ParticleBackground = dynamic(() => import('@/components/ParticleBackground'), { ssr: false });
 const AnimatedCounter = dynamic(() => import('@/components/AnimatedCounter'), { ssr: false });
-const TestimonialCarousel = dynamic(() => import('@/components/TestimonialCarousel'), { ssr: false });
+const ModernTestimonialDesign = dynamic(() => import('@/components/ModernTestimonialDesign'), { ssr: false });
 const TechStack = dynamic(() => import('@/components/TechStack'), { ssr: false });
 const CategorizedFAQ = dynamic(() => import('@/components/CategorizedFAQ'), { ssr: false });
 import SectionReveal from '@/components/SectionReveal';
@@ -396,7 +396,7 @@ export default function HomePage(): React.JSX.Element {
               </p>
             </div>
           </SectionReveal>
-          <TestimonialCarousel />
+          <ModernTestimonialDesign />
         </div>
       </section>
 
