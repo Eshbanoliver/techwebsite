@@ -525,12 +525,7 @@ input, textarea, select { font-family: inherit; }
 }
 
 /* Glow Variants */
-.glow-blue { --glow-color: #00c6ff; }
-.glow-purple { --glow-color: #7f00ff; }
-.glow-pink { --glow-color: #ff00e5; }
-.glow-cyan { --glow-color: #00f0ff; }
-.glow-orange { --glow-color: #ff8a00; }
-.glow-green { --glow-color: #10b981; }
+/* Glow variants consolidated at the end of file */
 
 /* ---- Vibrant Rounded Value Cards ---- */
 .values-grid-vibrant {
@@ -826,7 +821,7 @@ input, textarea, select { font-family: inherit; }
 
 .designer-card:hover {
   transform: translateY(-12px);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--glow-color, rgba(255, 255, 255, 0.2));
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
 }
 
@@ -895,12 +890,7 @@ input, textarea, select { font-family: inherit; }
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Gradient Variants */
-.glow-orange { --vibrant-gradient: linear-gradient(135deg, #ff8a00, #ff5c00); }
-.glow-pink   { --vibrant-gradient: linear-gradient(135deg, #ec4899, #be185d); }
-.glow-purple { --vibrant-gradient: linear-gradient(135deg, #a855f7, #7e22ce); }
-.glow-green  { --vibrant-gradient: linear-gradient(135deg, #22c55e, #15803d); }
-.glow-cyan   { --vibrant-gradient: linear-gradient(135deg, #06b6d4, #0891b2); }
+/* Glow gradients consolidated at the end of file */
 
 .designer-card h3 {
   font-size: 1.6rem;
@@ -8760,4 +8750,74 @@ input, textarea, select { font-family: inherit; }
     width: 100%;
     justify-content: space-between;
   }
+}
+
+/* ============================================================
+   CONSOLIDATED ACCENT COLOR SYSTEM (GLOW)
+   This block overrides all previous definitions for consistent coloring.
+   ============================================================ */
+.glow-blue { 
+  --glow-color: #3b82f6; 
+  --glow-rgb: 59, 130, 246; 
+  --vibrant-gradient: linear-gradient(135deg, #3b82f6, #1d4ed8); 
+}
+.glow-purple { 
+  --glow-color: #a855f7; 
+  --glow-rgb: 168, 85, 247; 
+  --vibrant-gradient: linear-gradient(135deg, #a855f7, #7e22ce); 
+}
+.glow-pink { 
+  --glow-color: #ec4899; 
+  --glow-rgb: 236, 72, 153; 
+  --vibrant-gradient: linear-gradient(135deg, #ec4899, #be185d); 
+}
+.glow-cyan { 
+  --glow-color: #06b6d4; 
+  --glow-rgb: 6, 182, 212; 
+  --vibrant-gradient: linear-gradient(135deg, #06b6d4, #0891b2); 
+}
+.glow-orange { 
+  --glow-color: #f97316; 
+  --glow-rgb: 249, 115, 22; 
+  --vibrant-gradient: linear-gradient(135deg, #f97316, #ea580c); 
+}
+.glow-green { 
+  --glow-color: #10b981; 
+  --glow-rgb: 16, 185, 129; 
+  --vibrant-gradient: linear-gradient(135deg, #10b981, #059669); 
+}
+.glow-indigo { 
+  --glow-color: #6366f1; 
+  --glow-rgb: 99, 102, 241; 
+  --vibrant-gradient: linear-gradient(135deg, #6366f1, #4f46e5); 
+}
+.glow-teal { 
+  --glow-color: #14b8a6; 
+  --glow-rgb: 20, 184, 166; 
+  --vibrant-gradient: linear-gradient(135deg, #14b8a6, #0d9488); 
+}
+
+/* Ensure designer-cards and service-cards use these variables strictly */
+.designer-card:hover {
+  border-color: var(--glow-color) !important;
+}
+
+.designer-card::after {
+  background: var(--vibrant-gradient) !important;
+}
+
+.service-icon-box {
+  background: rgba(var(--glow-rgb), 0.1) !important;
+  border-color: rgba(var(--glow-rgb), 0.2) !important;
+  color: var(--glow-color) !important;
+}
+
+.designer-card:hover .service-icon-box {
+  background: var(--glow-color) !important;
+  color: white !important;
+  box-shadow: 0 0 20px rgba(var(--glow-rgb), 0.4) !important;
+}
+
+.service-card-footer {
+  color: var(--glow-color) !important;
 }
