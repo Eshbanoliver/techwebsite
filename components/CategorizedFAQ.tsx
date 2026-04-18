@@ -1,6 +1,4 @@
-'use client';
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Plus, 
@@ -33,11 +31,10 @@ const faqData: FAQCategory[] = [
     title: 'Digital Marketing',
     icon: <Search size={20} />,
     faqs: [
-      { question: "How does MS Infinex improve my search engine rankings?", answer: "We implement advanced technical SEO, including schema markup, Core Web Vitals optimization, and high-authority link building tailored to specific industry keywords." },
-      { question: "What is the typical ROI for a digital marketing campaign?", answer: "While ROI varies by sector, our data-driven approach typically sees a 300% increase in lead conversion rates within the first 6 months of execution." },
-      { question: "Do you provide monthly performance reports?", answer: "Yes, we providing transparent, granular reporting including CTR, conversion metrics, and keyword movement through enterprise-grade analytics dashboards." },
-      { question: "How long does it take to see results from SEO?", answer: "Initial improvements often appear within 45-60 days, with full authority build and stable top-tier rankings established within 4-6 months." },
-      { question: "Can you manage global marketing campaigns?", answer: "Absolutely. We engineer multi-regional campaigns that respect local cultural nuances while maintaining global brand consistency using geo-targeted Paid Ads." }
+      { question: "How does a digital marketing agency increase business revenue?", answer: "A digital marketing agency like MS Infinex uses data-driven strategies—such as high-intent SEO, targeted PPC, and conversion rate optimization (CRO)—to drive qualified traffic that converts into paying customers." },
+      { question: "How long does it take for SEO to show results on Google?", answer: "For most competitive keywords, SEO results typically start appearing within 3 to 6 months. However, technical optimizations can show indexing improvements in as little as 45 days." },
+      { question: "What is the ROI of professional SEO services?", answer: "Search engine optimization offers one of the highest ROIs in digital marketing because it targets users actively searching for your services, resulting in a lower Cost Per Acquisition (CPA) compared to paid ads." },
+      { question: "Why is local SEO important for businesses in Udaipur?", answer: "Local SEO focuses on hyper-targeted visibility in Udaipur and Rajasthan, ensuring your business appears in the 'Map Pack' for searches like 'best service provider near me'." }
     ]
   },
   {
@@ -45,10 +42,10 @@ const faqData: FAQCategory[] = [
     title: 'Web Development',
     icon: <Code size={20} />,
     faqs: [
-      { question: "What technologies do you use for web development?", answer: "We specialize in the T3 stack (Next.js, Tailwind, TypeScript), Node.js, and high-performance React frameworks for enterprise-grade scalability." },
-      { question: "Is every website you build mobile-responsive?", answer: "Yes, every portal is built with a mobile-first philosophy, ensuring seamless functionality across all device form-factors and browsers." },
-      { question: "Do you provide custom e-commerce solutions?", answer: "We engineer high-conversion storefronts using custom WooCommerce, Shopify Headless, and bespoke MERN stack solutions for complex retail requirements." },
-      { question: "How do you ensure website security?", answer: "We implement multi-layer security protocols including SSL/TLS encryption, WAF integration, and regular automated vulnerability scanning." }
+      { question: "How much does it cost to build a professional website in 2026?", answer: "The cost of web development depends on complexity. A modern business website typically ranges from ₹25,000 to ₹1,50,000+, while custom enterprise or e-commerce portals are quoted based on technical requirements." },
+      { question: "Which platform is best for e-commerce development?", answer: "We recommend Next.js with Shopify Headless for high-performance scale, or custom MERN stack solutions for businesses requiring unique functionality and full control over their data." },
+      { question: "What are the benefits of a headless CMS architecture?", answer: "Headless CMS allows for faster load times, superior security, and the ability to push content across various platforms (Web, App, IoT) through a single API-driven source." },
+      { question: "How to improve website loading speed for better SEO?", answer: "We improve speed by implementing image optimization, lazy loading, server-side rendering (SSR), and deploying on high-speed edge networks like Vercel and Cloudflare." }
     ]
   },
   {
@@ -56,9 +53,9 @@ const faqData: FAQCategory[] = [
     title: 'App Engineering',
     icon: <Smartphone size={20} />,
     faqs: [
-      { question: "Which platforms do you build mobile apps for?", answer: "We develop native-performance applications for both iOS and Android using Cross-Platform frameworks like Flutter and React Native." },
-      { question: "Can you help with App Store Optimization (ASO)?", answer: "Yes, we provide full ASO services including keyword research and optimized visual assets to ensure high visibility on both Play Store and App Store." },
-      { question: "How long does it take to build a mobile app?", answer: "A typical MVP (Minimum Viable Product) takes 8-12 weeks, while complex enterprise apps can take 4-6 months of focused engineering." }
+      { question: "How to choose between Native and Cross-Platform app development?", answer: "If you need extreme performance, Native is best. However, for most businesses, Cross-Platform (Flutter/React Native) is the superior choice as it reduces development costs by 40% while maintaining native-like quality." },
+      { question: "What is the process of launching a mobile app on App Store?", answer: "The process involves developer account setup, rigorous beta testing, metadata optimization (ASO), and a compliance review by Apple/Google which typically takes 3-7 days." },
+      { question: "How do mobile apps improve customer retention?", answer: "Mobile apps offer direct communication via push notifications, personalized user experiences, and offline accessibility, keeping your brand top-of-mind for the user." }
     ]
   },
   {
@@ -66,18 +63,8 @@ const faqData: FAQCategory[] = [
     title: 'Branding & Design',
     icon: <Palette size={20} />,
     faqs: [
-      { question: "What is included in a branding package?", answer: "Our packages include logo design, color typography systems, brand voice guidelines, and high-fidelity digital asset kits." },
-      { question: "What is your design philosophy?", answer: "We follow a high-end minimalist approach, focusing on 'Apple-style' clarity, premium spacing, and functional aesthetics that build trust." },
-      { question: "Can you refresh an old brand logo?", answer: "Yes, we specialize in 'Brand Modernization' where we evolve your existing logo into a modern, minimalist masterpiece." }
-    ]
-  },
-  {
-    id: 'marketplace',
-    title: 'Marketplace',
-    icon: <ShoppingBag size={20} />,
-    faqs: [
-      { question: "Which marketplaces do you manage?", answer: "We specialize in Amazon (Seller/Vendor Central), Flipkart, Myntra, and Nykaa management for both national and international sellers." },
-      { question: "How do you increase sales on Amazon?", answer: "We focus on high-intent keyword optimization, A+ content creation, and aggressive Amazon PPC management to drive BSR (Best Seller Rank)." }
+      { question: "Why is premium UI/UX design critical for conversion?", answer: "High-end UI/UX design reduces friction in the user journey. By focusing on accessibility and premium aesthetics, you build immediate trust, which is the primary driver for online conversions." },
+      { question: "What elements make a brand identity memorable?", answer: "A memorable brand identity requires a consistent visual language, a unique color psychology strategy, and a scalable logo system that works across all digital and print mediums." }
     ]
   }
 ];
@@ -92,8 +79,27 @@ export default function CategorizedFAQ() {
 
   const currentCategory = faqData.find(cat => cat.id === activeCategory) || faqData[0];
 
+  // SEO: FAQ Schema Markup (JSON-LD)
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.flatMap(cat => cat.faqs).map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <section className="faq-v2-section">
+      {/* Injecting JSON-LD Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="faq-v2-container">
         <div className="faq-v2-layout">
           {/* Left: Sidebar Categories */}
