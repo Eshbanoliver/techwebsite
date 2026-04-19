@@ -941,7 +941,7 @@ input, textarea, select { font-family: inherit; }
 
 @media (max-width: 650px) {
   .services-grid { grid-template-columns: 1fr; }
-  .designer-card { height: 400px; }
+  .designer-card { height: auto !important; min-height: 480px; }
 }
 
 .service-card-footer {
@@ -970,7 +970,7 @@ input, textarea, select { font-family: inherit; }
 
 @media (max-width: 650px) {
   .services-grid { grid-template-columns: 1fr; }
-  .designer-card { height: 400px; }
+  .designer-card { height: auto !important; min-height: 480px; }
 }
 
 .service-icon {
