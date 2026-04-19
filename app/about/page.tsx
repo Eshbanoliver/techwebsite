@@ -165,18 +165,7 @@ export default function AboutPage() {
                 unconventional creative strategies.
               </p>
               
-              <div className="flex-row gap-8" style={{ display: 'flex' }}>
-                <div className="tech-decal">
-                  // SYS_LOG: 0x44FF2<br/>
-                  // CORE_TEMP: 42C<br/>
-                  // STATUS: OPERATIONAL
-                </div>
-                <div className="tech-decal">
-                  // NODE_V: 20.11.0<br/>
-                  // FRAMEWORK: NEXT_14<br/>
-                  // LOC: 24.58 N / 73.71 E
-                </div>
-              </div>
+
             </motion.div>
             
             <motion.div 
