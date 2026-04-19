@@ -5,13 +5,15 @@ interface SkeletonProps {
   height?: string | number;
   borderRadius?: string | number;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export default function Skeleton({ 
   width = '100%', 
   height = '20px', 
   borderRadius = '8px',
-  className = '' 
+  className = '',
+  style = {}
 }: SkeletonProps) {
   return (
     <div 
@@ -19,7 +21,8 @@ export default function Skeleton({
       style={{ 
         width: typeof width === 'number' ? `${width}px` : width, 
         height: typeof height === 'number' ? `${height}px` : height,
-        borderRadius: typeof borderRadius === 'number' ? `${borderRadius}px` : borderRadius
+        borderRadius: typeof borderRadius === 'number' ? `${borderRadius}px` : borderRadius,
+        ...style
       }}
     >
       <style jsx>{`
