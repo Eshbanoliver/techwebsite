@@ -906,17 +906,14 @@ input, textarea, select { font-family: inherit; }
   font-size: 0.98rem;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
-  max-height: 0;
-  opacity: 0;
+  max-height: none;
+  opacity: 1;
+  margin-bottom: 24px;
   overflow: hidden;
   transition: all 0.5s ease;
 }
 
-.designer-card:hover p {
-  opacity: 1;
-  max-height: 100px;
-  margin-bottom: 28px;
-}
+
 
 .service-card-footer {
   display: flex;
