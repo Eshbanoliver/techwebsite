@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { MessageCircle, Phone, ArrowUp } from 'lucide-react';
-import ChatBot from './ChatBot';
 
 export default function FloatingButtons(): React.JSX.Element {
   const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
@@ -52,7 +51,6 @@ export default function FloatingButtons(): React.JSX.Element {
         >
           <ArrowUp size={20} />
         </button>
-        <ChatBot />
       </div>
     </>
   );
