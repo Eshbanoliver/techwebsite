@@ -300,7 +300,10 @@ export default function AboutPage() {
               background: var(--bg-card) !important;
               border: 1px solid var(--border-glass) !important;
               height: auto !important;
-              min-height: 100%;
+              min-height: 520px !important;
+              overflow: visible !important;
+              display: flex !important;
+              flex-direction: column !important;
             }
             :global([data-theme='light']) .mv-card-creative {
                background: white !important;
