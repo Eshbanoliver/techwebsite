@@ -3530,6 +3530,13 @@ input, textarea, select { font-family: inherit; }
     align-items: center;
     justify-content: center;
   }
+
+  .footer-tech-links .contact-item {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
   
   .footer-tech-social {
     justify-content: center;

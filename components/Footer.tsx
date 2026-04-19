@@ -78,15 +78,15 @@ export default function Footer(): React.JSX.Element {
           <div className="footer-tech-col">
             <h4>Access Points</h4>
             <div className="footer-tech-links">
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+              <div className="contact-item" style={{ display: 'flex', alignItems: 'flex-start', gap: 12, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                 <MapPin size={18} style={{ marginTop: 4, color: 'var(--neon-blue)' }} />
                 <span>Udaipur, Rajasthan<br />313001, India</span>
               </div>
-              <a href="mailto:msinfinex@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <a href="mailto:msinfinex@gmail.com" className="contact-item" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Mail size={18} style={{ color: 'var(--neon-blue)' }} />
                 <span>msinfinex@gmail.com</span>
               </a>
-              <a href="tel:+919251148882" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <a href="tel:+919251148882" className="contact-item" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <Phone size={18} style={{ color: 'var(--neon-blue)' }} />
                 <span>+91 92511 48882</span>
               </a>
