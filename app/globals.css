@@ -8896,12 +8896,15 @@ html, body {
 /* 9. Hero V3 Modern Centered Fixes (Mobile) */
 @media (max-width: 768px) {
   .hero-v3 {
-    padding-top: 40px !important;
+    padding-top: 100px !important;
     padding-bottom: 40px !important;
-    min-height: calc(100vh - 60px);
+    min-height: auto !important;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  #about-preview {
+    padding-top: 20px !important;
   }
   .hero-v3-inner.centered {
     min-height: auto !important;
