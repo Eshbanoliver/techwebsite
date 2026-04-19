@@ -164,26 +164,6 @@ export default function ServicesPage(): React.JSX.Element {
         </div>
       </section>
 
-      {/* ===== BOTTOM CTA ===== */}
-      <section className="subpage-bottom-cta">
-        <div className="container">
-          <motion.div
-            className="bottom-cta-wrapper"
-            style={{ background: 'linear-gradient(135deg, #f97316, #ec4899)' }}
-            {...fadeUp}
-          >
-            <div className="bottom-cta-content">
-              <h2>Not Sure What You Need? Let&apos;s Talk!</h2>
-              <p>Tell us about your business and we&apos;ll recommend the perfect service mix for your growth goals.</p>
-              <div className="bottom-cta-actions">
-                <Link href="/contact" className="bottom-cta-btn primary">
-                  Get Free Consultation <ArrowRight size={18} />
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </>
   );
 }

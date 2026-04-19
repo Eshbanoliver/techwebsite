@@ -249,8 +249,8 @@ export default function AboutPage() {
                 <div className="service-icon-box">
                   <Target size={36} className="text-blue-500" />
                 </div>
-                <h3 className="text-3xl font-black mb-6">Accelerating Innovation</h3>
-                <p className="text-lg text-secondary leading-relaxed mb-8">
+                <h3 className="text-3xl font-black mb-6" style={{ color: 'var(--text-primary)' }}>Accelerating Innovation</h3>
+                <p className="text-lg leading-relaxed mb-8" style={{ color: 'var(--text-secondary)', opacity: 1, maxHeight: 'none' }}>
                   To bridge the technical gap for businesses worldwide by delivering 
                   precision-engineered solutions. We empower growth through code 
                   integrity, architectural stability, and a client-centric engineering culture.
@@ -258,7 +258,7 @@ export default function AboutPage() {
                 <div className="mv-card-footer-meta">
                   <div className="status-indicator">
                     <span className="dot pulsed bg-green-500" /> 
-                    <span className="text-xs font-mono opacity-50">Live Operations</span>
+                    <span className="text-xs font-mono opacity-50" style={{ color: 'var(--text-muted)' }}>Live Operations</span>
                   </div>
                 </div>
               </motion.div>
@@ -274,8 +274,8 @@ export default function AboutPage() {
                 <div className="service-icon-box">
                   <Search size={36} className="text-purple-500" />
                 </div>
-                <h3 className="text-3xl font-black mb-6">Planetary Excellence</h3>
-                <p className="text-lg text-secondary leading-relaxed mb-8">
+                <h3 className="text-3xl font-black mb-6" style={{ color: 'var(--text-primary)' }}>Planetary Excellence</h3>
+                <p className="text-lg leading-relaxed mb-8" style={{ color: 'var(--text-secondary)', opacity: 1, maxHeight: 'none' }}>
                   To be the global benchmark for creative technical problem-solving. 
                   We envision a future where high-performance technology is accessible, 
                   ethical, and seamlessly integrated into every human success story.
@@ -283,12 +283,30 @@ export default function AboutPage() {
                 <div className="mv-card-footer-meta">
                   <div className="status-indicator">
                     <span className="dot pulsed bg-blue-500" />
-                    <span className="text-xs font-mono opacity-50">2030 Roadmap</span>
+                    <span className="text-xs font-mono opacity-50" style={{ color: 'var(--text-muted)' }}>2030 Roadmap</span>
                   </div>
                 </div>
               </motion.div>
             </div>
           </div>
+
+          <style jsx>{`
+            .mv-card-creative :global(p) {
+              max-height: none !important;
+              opacity: 1 !important;
+              margin-bottom: 32px !important;
+            }
+            .mv-card-creative {
+              background: var(--bg-card) !important;
+              border: 1px solid var(--border-glass) !important;
+              height: auto !important;
+              min-height: 100%;
+            }
+            :global([data-theme='light']) .mv-card-creative {
+               background: white !important;
+               box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+            }
+          `}</style>
         </div>
       </section>
 

@@ -199,34 +199,6 @@ export default function ServiceSubpageLayout({ service, subpage }: ServiceSubpag
         </div>
       </section>
 
-      {/* ===== BOTTOM MERGED CTA ===== */}
-      <section className="subpage-bottom-cta">
-        <div className="container">
-          <motion.div 
-            className="bottom-cta-wrapper"
-            style={{ background: service.gradient }}
-            {...fadeUp}
-          >
-            <div className="bottom-cta-content">
-              <h2>Grow Your Business in Udaipur with Smart Digital Solutions</h2>
-              <p>Partner with MS Infinex Tech to unlock your business&apos;s full digital potential. Let&apos;s build something amazing together.</p>
-              <div className="bottom-cta-actions">
-                <Link href="/contact" className="bottom-cta-btn primary">
-                  Start Your Project <ArrowRight size={18} />
-                </Link>
-                <a href="https://wa.me/919251148882" target="_blank" rel="noopener noreferrer" className="bottom-cta-btn secondary">
-                  <MessageCircle size={18} /> Chat on WhatsApp
-                </a>
-              </div>
-              <div className="bottom-cta-trust">
-                <div className="trust-item"><Star size={14} /> 4.9/5 Rating</div>
-                <div className="trust-item"><Shield size={14} /> 150+ Projects</div>
-                <div className="trust-item"><Clock size={14} /> 24hr Response</div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

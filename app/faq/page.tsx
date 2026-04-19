@@ -236,27 +236,6 @@ export default function FAQPage(): React.JSX.Element {
         </div>
       </section>
 
-      <section className="section faq-cta-bottom">
-        <div className="container">
-          <div className="cta-bordered-box">
-            <div className="cta-flex">
-              <div className="cta-text">
-                <h2>Still have <span className="gradient-text">doubts</span>?</h2>
-                <p>Let&apos;s talk about your business goals and how we can achieve them together.</p>
-              </div>
-              <div className="cta-action">
-                <Link href="/contact" className="btn btn-primary">
-                  Get a Free Consultation
-                </Link>
-                <div className="whatsapp-fast">
-                  <MessageCircle size={20} />
-                  <span>Avg. response: 15 mins</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

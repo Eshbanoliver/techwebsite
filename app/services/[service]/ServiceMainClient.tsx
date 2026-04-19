@@ -146,29 +146,6 @@ export default function ServiceMainClient({ service }: ServiceMainProps) {
         </div>
       </section>
 
-      {/* ===== BOTTOM CTA ===== */}
-      <section className="subpage-bottom-cta">
-        <div className="container">
-          <motion.div
-            className="bottom-cta-wrapper"
-            style={{ background: service.gradient }}
-            {...fadeUp}
-          >
-            <div className="bottom-cta-content">
-              <h2>Ready to Transform Your {service.title} Game?</h2>
-              <p>Get a free consultation and custom strategy tailored for your Udaipur business. No commitment required.</p>
-              <div className="bottom-cta-actions">
-                <Link href="/contact" className="bottom-cta-btn primary">
-                  Get Free Consultation <ArrowRight size={18} />
-                </Link>
-                <a href="tel:+919251148882" className="bottom-cta-btn secondary">
-                  📞 Call Now
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }
