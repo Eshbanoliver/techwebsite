@@ -296,16 +296,38 @@ export default function AboutPage() {
               opacity: 1 !important;
               margin-bottom: 32px !important;
             }
-            .mv-card-creative {
+            :global(.mv-card-creative) {
               background: var(--bg-card) !important;
+              background-image: none !important;
               border: 1px solid var(--border-glass) !important;
               height: auto !important;
               min-height: 520px !important;
               overflow: visible !important;
               display: flex !important;
               flex-direction: column !important;
+              box-shadow: none !important;
             }
-            :global([data-theme='light']) .mv-card-creative {
+            :global(.mv-card-creative)::before,
+            :global(.mv-card-creative)::after,
+            :global(.mv-card-creative:hover)::before,
+            :global(.mv-card-creative:hover)::after {
+              display: none !important;
+              content: none !important;
+              background: none !important;
+              opacity: 0 !important;
+              visibility: hidden !important;
+              height: 0 !important;
+            }
+            :global(.mv-card-creative:hover) {
+              transform: translateY(-5px) !important;
+              box-shadow: none !important;
+              border-color: var(--border-glass) !important;
+            }
+            :global(.mv-card-creative:hover .service-icon-box) {
+              box-shadow: none !important;
+              transform: none !important;
+            }
+            :global([data-theme='light'] .mv-card-creative) {
                background: white !important;
                box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
             }
