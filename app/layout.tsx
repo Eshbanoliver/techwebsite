@@ -196,6 +196,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
+        <link rel="preconnect" href="https://skillicons.dev" />
+        <link rel="dns-prefetch" href="https://skillicons.dev" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -221,6 +221,7 @@ export default function HomePage(): React.JSX.Element {
       fill
       className="object-cover opacity-30"
       sizes="100vw"
+      quality={60}
     />
           <div className="bg-overlay" />
         </div>
@@ -252,6 +253,7 @@ export default function HomePage(): React.JSX.Element {
                       fill 
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       className="object-cover"
+                      quality={70}
                     />
                     <div className="card-overlay" />
                   </div>

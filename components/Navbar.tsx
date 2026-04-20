@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
-import { allServices } from '@/lib/services-data';
+import { navServices } from '@/lib/services-data';
 import { 
   ChevronDown, 
   TrendingUp, 
@@ -131,7 +131,7 @@ export default function Navbar(): React.JSX.Element {
                         >
                           <div className="mega-menu-bubble">
                             <div className="mega-menu-grid">
-                              {allServices.map((svc) => (
+                              {navServices.map((svc) => (
                                 <Link 
                                   key={svc.slug} 
                                   href={`/services/${svc.slug}`}
@@ -245,7 +245,7 @@ export default function Navbar(): React.JSX.Element {
                       style={{ overflow: 'hidden' }}
                     >
                       <div className="mobile-dropdown-links">
-                        {allServices.map(svc => (
+                        {navServices.map(svc => (
                           <Link 
                             key={svc.slug} 
                             href={`/services/${svc.slug}`} 

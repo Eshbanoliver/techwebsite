@@ -1171,6 +1171,14 @@ export const allServices: ServiceData[] = [
   ecommerceManagement
 ];
 
+export const navServices = allServices.map(s => ({
+  title: s.title,
+  slug: s.slug,
+  icon: s.icon,
+  color: s.color,
+  tagline: s.tagline
+}));
+
 export function getServiceBySlug(slug: string): ServiceData | undefined {
   return allServices.find(s => s.slug === slug);
 }
