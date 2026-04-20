@@ -103,7 +103,17 @@ export default function ParticleBackground(): React.JSX.Element {
       return p;
     }
 
-    const count = Math.min(Math.floor((canvas.width * canvas.height) / 10000), 100);
+    const getParticleCount = (): number => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const baseArea = 1920 * 1080;
+      const currentArea = w * h;
+      // More aggressive reduction for mobile (below 768px)
+      const ratio = w < 768 ? 0.3 : 1;
+      return Math.min(Math.floor((currentArea / 12000) * ratio), w < 768 ? 40 : 100);
+    };
+
+    const count = getParticleCount();
     for (let i = 0; i < count; i++) {
       particles.push(createParticle());
     }
@@ -111,17 +121,23 @@ export default function ParticleBackground(): React.JSX.Element {
     const drawConnections = (): void => {
       const connectionColor = isLight ? '255, 138, 0' : '255, 138, 0';
       const maxOpacity = isLight ? 0.08 : 0.15;
+      const maxDist = 150;
+      const maxDistSq = maxDist * maxDist;
       
       for (let i = 0; i < particles.length; i++) {
+        const p1 = particles[i];
         for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            const opacity = (1 - dist / 150) * maxOpacity;
+          const p2 = particles[j];
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const distSq = dx * dx + dy * dy;
+          
+          if (distSq < maxDistSq) {
+            const dist = Math.sqrt(distSq);
+            const opacity = (1 - dist / maxDist) * maxOpacity;
             ctx!.beginPath();
-            ctx!.moveTo(particles[i].x, particles[i].y);
-            ctx!.lineTo(particles[j].x, particles[j].y);
+            ctx!.moveTo(p1.x, p1.y);
+            ctx!.lineTo(p2.x, p2.y);
             ctx!.strokeStyle = `rgba(${connectionColor}, ${opacity})`;
             ctx!.lineWidth = 0.5;
             ctx!.stroke();

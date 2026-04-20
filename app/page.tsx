@@ -195,13 +195,15 @@ export default function HomePage(): React.JSX.Element {
               </div>
               <div className="about-visual">
                 <div className="visual-container glass-card">
-                  <motion.img 
-                    src="/assets/about_no_human_stock_1776416238612.png" 
-                    alt="Business Growth Visualization"
-                    initial={{ scale: 1.1, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 1.2, ease: "easeOut" }}
-                  />
+                  <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <Image 
+                      src="/assets/about_no_human_stock_1776416238612.png" 
+                      alt="Business Growth Visualization"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
                   <div className="visual-overlay" />
                 </div>
               </div>
